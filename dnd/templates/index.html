@@ -1,0 +1,40 @@
+{% extends 'aiohttp_login/bootstrap-4/base.html' %}
+{% block auth_content %}
+{% include 'aiohttp_login/bootstrap-4/styles.html' %}
+<div class="auth-form">
+    <h1>Characters</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DateCreated</th>
+                <th>CurrentCampain</th>
+            </tr>
+        </thead>
+        {% for character in characters %}
+        <tr>
+            <td>{{ character.name }}</td>
+            <td>{{ character.created_at.date() }}</td>
+            <td>{{ character.current_campaign_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <h1>Campains</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>DateCreated</th>
+                <th>NumberOfPlayers</th>
+            </tr>
+        </thead>
+        {% for campaign in campaigns %}
+        <tr>
+            <td>{{ campaign.name }}</td>
+            <td>{{ campaign.created_at.date() }}</td>
+            <td>{{ campaign.current_campaign_name }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}
