@@ -34,5 +34,6 @@ def start():
     aiohttp_login.setup(app, MotorStorage(app['db']), settings.AUTH)
 
     app.router.add_get("/", index_handler)
+    app.router.add_post("/", index_handler)
     web.run_app(app, port=settings.PORT)
     cleanup_resources()
