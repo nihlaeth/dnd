@@ -59,9 +59,40 @@
                {% endif %}
             >
               <td>{{ ability|capitalize }}:</td>
-              <td>{{ character[ability] }}</td>
+              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#{{ ability }}-form">{{ character[ability] }}</a></td>
               <td><span class="badge">{{ character[ability + '_modifier'] }}</span></td>
             </tr>
+            <tr id="{{ ability }}-form" class="collapse">
+              <td colspan="3">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="base-{{ ability }}">
+                      <a href="#" data-toggle="tooltip" title="base score that your roll at character creation">
+                        Base:
+                      </a>
+                    </label>
+                    <input type="number" class="form-control" id="base-{{ ability }}" value="{{ character[ability + '_base'] }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="level-{{ ability }}">
+                      <a href="#" data-toggle="tooltip" title="you get to alter one attribute by one point every four levels">
+                        Attribute points:
+                      </a>
+                    </label>
+                    <input type="number" class="form-control" id="level-{{ ability }}" value="{{ character[ability + '_level'] }}">
+                  </div>
+                  <div class="form-group">
+                    <label for="temp-{{ ability }}">
+                      <a href="#" data-toggle="tooltip" title="temporary changes from spell effects">
+                        Temporary:
+                      </a>
+                    </label>
+                    <input type="number" class="form-control" id="temp-{{ ability }}" value="{{ character[ability + '_temp'] }}">
+                  </div>
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+              </td>
+            </td>
             {% endfor %}
           </tbody>
         </table>
