@@ -1,0 +1,172 @@
+{% extends 'base.html' %}
+{% block title %}{{ character.name }}{% endblock %}
+{% block content %}
+
+{% for message in successes %}
+<div class="alert alert-success alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{ message }}
+</div>
+{% endfor %}
+
+{% for message in errors %}
+<div class="alert alert-danger alert-dismissable fade in">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    {{ message }}
+</div>
+{% endfor %}
+
+<div class="container text-center">
+  <div class="row">
+    <div class="col-sm-4">
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#general-panel">General</a>
+      </h4>
+    </div>
+    <div id="general-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#abilities-panel">Abilities</a>
+      </h4>
+    </div>
+    <div id="abilities-panel" class="panel-collapse collapse in">
+      <div class="panel-body">
+        <table class="table">
+          <tbody>
+            {% for ability in [
+                'strength',
+                'dexterity',
+                'constitution',
+                'intelligence',
+                'wisdom',
+                'charisma',
+                'perception'] %}
+            <tr 
+               {% if character[ability + '_temp'] < 0 %}
+               class="danger"
+               {% elif character[ability + '_temp'] > 0 %}
+               class="success"
+               {% endif %}
+            >
+              <td>{{ ability|capitalize }}:</td>
+              <td>{{ character[ability] }}</td>
+              <td><span class="badge">{{ character[ability + '_modifier'] }}</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="panel-footer">Unspent ability points: {{ character['unspent_ability_points'] }}</div>
+    </div>
+  </div>
+</div>
+
+    </div>
+    <div class="col-sm-4"> 
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#skills-panel">Skills</a>
+      </h4>
+    </div>
+    <div id="skills-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#prayer-panel">Prayer</a>
+      </h4>
+    </div>
+    <div id="prayer-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#magic-panel">Magic</a>
+      </h4>
+    </div>
+    <div id="magic-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#sorcery-panel">Sorcery</a>
+      </h4>
+    </div>
+    <div id="sorcery-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#equipment-panel">Equipment</a>
+      </h4>
+    </div>
+    <div id="equipment-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="col-sm-4">
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#inventory-panel">Inventory</a>
+      </h4>
+    </div>
+    <div id="inventory-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#background-panel">Background</a>
+      </h4>
+    </div>
+    <div id="background-panel" class="panel-collapse collapse">
+      <div class="panel-body">Panel Body</div>
+      <div class="panel-footer">Panel Footer</div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

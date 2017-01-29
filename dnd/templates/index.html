@@ -67,7 +67,7 @@
     </thead>
     {% for character in characters %}
     <tr>
-        <td>{{ character.name }}</td>
+        <td><a href="/{{ character['_id'] }}/{{ character.name }}/" class="btn btn-default" role="button">{{ character.name }}</a></td>
         <td>{{ character.created_at.date() }}</td>
         <td>{{ character.current_campaign_name }}</td>
     </tr>

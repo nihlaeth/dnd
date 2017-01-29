@@ -11,6 +11,7 @@ from aiohttp_login.motor_storage import MotorStorage
 import jinja_app_loader
 
 from dnd.views.index import index_handler
+from dnd.views.character import character_handler
 import dnd.settings as settings
 
 def start():
@@ -35,5 +36,7 @@ def start():
 
     app.router.add_get("/", index_handler)
     app.router.add_post("/", index_handler)
+    app.router.add_get("/{id}/{name}/", character_handler)
+    app.router.add_post("/{id}/{name}/", character_handler)
     web.run_app(app, port=settings.PORT)
     cleanup_resources()
