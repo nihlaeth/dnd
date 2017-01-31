@@ -13,7 +13,8 @@ from dnd.views.index import index_handler, new_character_data_handler
 from dnd.views.character import (
     character_handler,
     ability_data_handler,
-    xp_data_handler)
+    xp_data_handler,
+    hp_data_handler)
 import dnd.settings as settings
 
 def start():
@@ -40,5 +41,6 @@ def start():
     app.router.add_post(
         "/api/{id}/ability/{ability}/", ability_data_handler)
     app.router.add_post("/api/{id}/xp/", xp_data_handler)
+    app.router.add_post("/api/{id}/hp/", hp_data_handler)
     web.run_app(app, port=settings.PORT)
     cleanup_resources()

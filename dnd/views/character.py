@@ -4,65 +4,7 @@ from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from dnd.decorators import login_required
 from dnd.common import format_errors
-
-ABILITIES = [
-    'strength',
-    'dexterity',
-    'constitution',
-    'intelligence',
-    'wisdom',
-    'charisma',
-    'perception']
-
-def calculate_stats(character):
-    """Calculate and set characters statistics."""
-    ###########
-    #  level  #
-    ###########
-    xp = 0 if 'xp' not in character else character['xp']
-    level = 1
-    while xp > 0:
-        xp -= level * 100
-        if xp >= 0:
-            level += 1
-    character['level'] = level
-    ability_points_to_spend = int(level / 4)
-
-    ###############
-    #  abilities  #
-    ###############
-    spent_ability_points = 0
-    for stat in ABILITIES:
-        base_stat = '{}_base'.format(stat)
-        base = character.get(base_stat, 0)
-        character[base_stat] = base
-        temp_stat = '{}_temp'.format(stat)
-        temp = character.get(temp_stat, 0)
-        character[temp_stat] = temp
-        level_stat = '{}_level'.format(stat)
-        level = character.get(level_stat, 0)
-        spent_ability_points += level
-        character[level_stat] = level
-        # calculate bonus
-        bonus_stat = '{}_bonus'.format(stat)
-        bonus = 0
-        character[bonus_stat] = bonus
-
-        value = base + temp + level + bonus
-        if value > 25:
-            value = 25
-        if value < 1:
-            value = 1
-        character[stat] = value
-
-        modifier_stat = '{}_modifier'.format(stat)
-        modifier = int((value - 10) // 3)
-        if modifier < -3:
-            modifier = -3
-        if modifier > 5:
-            modifier = 5
-        character[modifier_stat] = modifier
-    character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
+from dnd.character import ABILITIES, calculate_stats
 
 async def get_character(request):
     """Fetch character from database."""
@@ -178,3 +120,62 @@ async def xp_data_handler(request):
         'close': True,
         '#xp-value': {'data': character['xp']},
         '#level-value': {'data': character['level']}})
+
+@restricted_api
+async def hp_data_handler(request):
+    """Edit character hp data."""
+    _, errors, editing_privileges, character = await get_character(request)
+    if not editing_privileges:
+        errors.append("you don't have the required privileges to alter this character")
+    await request.post()
+    try:
+        max_hp = int(request.POST['max-hp'])
+        temp_hp = int(request.POST['temp-hp'])
+        damage = int(request.POST['damage'])
+    except ValueError:
+        errors.append("invalid value: only integers allowed")
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if len(errors) == 0:
+        characters = request.app['db'].characters
+        result = await characters.update_one(
+            {'_id': ObjectId(request.match_info['id'])},
+            {'$set': {
+                'max_hp': max_hp,
+                'temp_hp': temp_hp,
+                'damage': damage}})
+        if not result.acknowledged:
+            errors.append("database error")
+    if len(errors) > 0:
+        return json_response({'errors': format_errors(errors)})
+    # no errors whatsoever, return data
+    character = await characters.find_one(
+        {'_id': ObjectId(request.match_info['id'])})
+    calculate_stats(character)
+    add_classes = []
+    remove_classes = []
+    if character['damage'] > 0:
+        add_classes.append('danger')
+        remove_classes.append('success')
+        remove_classes.append('warning')
+    elif character['temp_hp'] < 0:
+        add_classes.append('warning')
+        remove_classes.append('success')
+        remove_classes.append('danger')
+    elif character['temp_hp'] > 0:
+        add_classes.append('success')
+        remove_classes.append('danger')
+        remove_classes.append('warning')
+    else:
+        remove_classes.append('success')
+        remove_classes.append('danger')
+        remove_classes.append('warning')
+    rest_in_peace = "" if character['hp'] > -10 else "<span class=\"badge\">R.I.P</span>"
+    return json_response({
+        'close': True,
+        '#hp-value': {'data': character['hp']},
+        '#alive': {
+            'data': rest_in_peace},
+        '#hp-row': {
+            'addClass': add_classes,
+            'removeClass': remove_classes}})

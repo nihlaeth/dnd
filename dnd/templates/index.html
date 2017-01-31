@@ -43,7 +43,9 @@
     </thead>
     {% for character in characters %}
     <tr>
-        <td><a href="/{{ character['_id'] }}/{{ character.name }}/" class="btn btn-default" role="button">{{ character.name }}</a></td>
+        <td><a href="/{{ character['_id'] }}/{{ character.name }}/" class="btn btn-default" role="button">{{ character.name }}
+        {% if character['hp'] < -9 %}<span class="badge">R.I.P</span>{% endif %}
+        </a></td>
         <td>{{ character.created_at.date() }}</td>
         <td>{{ character.current_campaign_name }}</td>
     </tr>

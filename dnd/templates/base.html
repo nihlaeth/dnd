@@ -89,7 +89,7 @@
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         {% for character in characters %}
-                        {% if 'hp' in character and character['hp'] > -10 %}
+                        {% if character['hp'] > -10 %}
                         <li><a href="/{{ character['_id'] }}/{{ character.name }}/">{{ character.name }}</a></li>
                         {% endif %}
                         {% endfor %}
