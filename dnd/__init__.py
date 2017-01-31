@@ -20,7 +20,7 @@ def start():
     aiohttp_jinja2.setup(
         app,
         loader=jinja2.ChoiceLoader([
-            jinja_app_loader.Loader(),
+            # jinja_app_loader.Loader(),
             jinja2.FileSystemLoader(resource_filename(
                 Requirement.parse('dnd'), 'dnd/templates'))]),
         auto_reload=settings.DEBUG,
