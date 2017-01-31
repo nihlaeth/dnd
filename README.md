@@ -1,2 +1,2 @@
 # dnd
-online character sheets for Dungeons &amp; Dragons v2.thomaas
+online character sheets for Dungeons &amp; Dragons v2.tomaas
