@@ -8,10 +8,12 @@ import aiohttp_session
 from aiohttp_session.cookie_storage import EncryptedCookieStorage
 import aiohttp_login
 from aiohttp_login.motor_storage import MotorStorage
-import jinja_app_loader
 
 from dnd.views.index import index_handler, new_character_data_handler
-from dnd.views.character import character_handler, ability_data_handler
+from dnd.views.character import (
+    character_handler,
+    ability_data_handler,
+    xp_data_handler)
 import dnd.settings as settings
 
 def start():
@@ -19,10 +21,8 @@ def start():
     app = web.Application(debug=settings.DEBUG)
     aiohttp_jinja2.setup(
         app,
-        loader=jinja2.ChoiceLoader([
-            # jinja_app_loader.Loader(),
-            jinja2.FileSystemLoader(resource_filename(
-                Requirement.parse('dnd'), 'dnd/templates'))]),
+        loader=jinja2.FileSystemLoader(resource_filename(
+            Requirement.parse('dnd'), 'dnd/templates')),
         auto_reload=settings.DEBUG,
         context_processors=[aiohttp_login.flash.context_processor])
     aiohttp_session.setup(app, EncryptedCookieStorage(
@@ -39,5 +39,6 @@ def start():
     app.router.add_get("/{id}/{name}/", character_handler)
     app.router.add_post(
         "/api/{id}/ability/{ability}/", ability_data_handler)
+    app.router.add_post("/api/{id}/xp/", xp_data_handler)
     web.run_app(app, port=settings.PORT)
     cleanup_resources()

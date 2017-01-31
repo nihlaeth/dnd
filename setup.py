@@ -11,15 +11,14 @@ setup(
     packages=find_packages(),
     install_requires=[
         'aiohttp',
-        'WTForms',
+        'markupsafe',
         'aiohttp_session[secure]',
         'Jinja2',
         'aiohttp_jinja2',
         'motor',
         'cchardet',
         'aiodns',
-        'aiohttp-login',
-        'jinja_app_loader'],
+        'aiohttp-login'],
     entry_points={
         'console_scripts': ['dnd = dnd:start']},
     package_data={'dnd': ['static/*', 'templates/*']},

@@ -27,7 +27,41 @@
       </h4>
     </div>
     <div id="general-panel" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
+      <div class="panel-body">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Level:</td>
+              <td id="level-value">{{ character['level'] }}</td>
+            </tr>
+            <tr>
+              <td>Experience:</td>
+              {% if editing_privileges %}
+              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#xp-form" id="xp-value">{{ character['xp'] }}</a></td>
+              {% else %}
+              <td>{{ character['xp'] }}</td>
+              {% endif %}
+            </tr>
+            {% if editing_privileges %}
+            <tr id="xp-form" class="collapse">
+              <td colspan="3">
+                <form data-async data-target="#xp-errors" action="/api/{{ character['_id'] }}/xp/" method="POST" class="form-horizontal">
+                  <div id="xp-errors"></div>
+                  <div class="input-group">
+                    <input type="number" class="form-control" id="xp" name="xp" value="{{ character['xp'] }}" min="0">
+                    <div class="input-group-btn">
+                      <button class="btn btn-default" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </td>
+            </tr>
+            {% endif %}
+          </tbody>
+        </table>
+      </div>
       <div class="panel-footer">Panel Footer</div>
     </div>
   </div>

@@ -147,3 +147,34 @@ async def ability_data_handler(request):
         '#{}-row'.format(ability): {
             'addClass': add_classes,
             'removeClass': remove_classes}})
+
+@restricted_api
+async def xp_data_handler(request):
+    """Edit character xp data."""
+    _, errors, editing_privileges, character = await get_character(request)
+    if not editing_privileges:
+        errors.append("you don't have the required privileges to alter this character")
+    await request.post()
+    try:
+        xp = int(request.POST['xp'])
+    except ValueError:
+        errors.append("invalid value: only integers allowed")
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if len(errors) == 0:
+        characters = request.app['db'].characters
+        result = await characters.update_one(
+            {'_id': ObjectId(request.match_info['id'])},
+            {'$set': {'xp': xp}})
+        if not result.acknowledged:
+            errors.append("database error")
+    if len(errors) > 0:
+        return json_response({'errors': format_errors(errors)})
+    # no errors whatsoever, return data
+    character = await characters.find_one(
+        {'_id': ObjectId(request.match_info['id'])})
+    calculate_stats(character)
+    return json_response({
+        'close': True,
+        '#xp-value': {'data': character['xp']},
+        '#level-value': {'data': character['level']}})
