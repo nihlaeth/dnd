@@ -10,7 +10,7 @@ import aiohttp_login
 from aiohttp_login.motor_storage import MotorStorage
 import jinja_app_loader
 
-from dnd.views.index import index_handler
+from dnd.views.index import index_handler, new_character_data_handler
 from dnd.views.character import character_handler, ability_data_handler
 import dnd.settings as settings
 
@@ -35,7 +35,7 @@ def start():
     aiohttp_login.setup(app, MotorStorage(app['db']), settings.AUTH)
 
     app.router.add_get("/", index_handler)
-    app.router.add_post("/", index_handler)
+    app.router.add_post("/api/new-character/", new_character_data_handler)
     app.router.add_get("/{id}/{name}/", character_handler)
     app.router.add_post(
         "/api/{id}/ability/{ability}/", ability_data_handler)

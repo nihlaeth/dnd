@@ -16,48 +16,24 @@
 </div>
 {% endfor %}
 
-{% if character_form.errors %}
-{% for field_name, field_errors in character_form.errors|dictsort if field_errors %}
-{% for error in field_errors %}
-<div class="alert alert-danger alert-dismissable fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    {{ character_form[field_name].label }}: {{ error }}
-</div>
-{% endfor %}
-{% endfor %}
-{% endif %}
-<h1>Characters<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#characterModal">Add</button></h1>
+<h1>Characters<button type="button" class="btn btn-info btn-lg" data-toggle="collapse" data-target="#new-character-form">Add</button></h1>
 <!-- Modal -->
-<div id="characterModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Create new character</h4>
-            </div>
-            <div class="modal-body">
-                <form method="POST" class="form-horizontal">
-                    <div class="form-group">
-                        <label class="control-label col-sm-2" for="pwd">
-                            {{ character_form.character_name.label }}:
-                        </label>
-                        <div class="col-sm-10">
-                            {{ character_form.character_name(class="form-control", id="name", placeholder="Character name") }}
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-default">Create</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-
+<div id="new-character-form" class="collapse">
+  <div id="character-errors"></div>
+  <form data-async data-target="#character-errors" action="/api/new-character/" method="POST" class="form-inline">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">
+        Name:
+      </label>
+      <div class="col-sm-10">
+        <input type="input" class="form-control" id="character-name" name="name" placeholder="Character name">
+      </div>
     </div>
+    <button type="submit" class="btn btn-default">Create</button>
+  </form>
 </div>
-<table class="table">
+
+<table class="table" id="character-table">
     <thead>
         <tr>
             <th>Name</th>

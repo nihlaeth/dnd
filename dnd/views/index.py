@@ -1,17 +1,32 @@
 """Index page."""
-from datetime import datetime
-from wtforms import Form, StringField, validators
+from datetime  import datetime
+from markupsafe import escape
+from aiohttp_login.decorators import restricted_api
+from aiohttp.web import json_response
 from dnd.decorators import login_required
+from dnd.common import format_errors
 
 @login_required(template_file='index.html')
 async def index_handler(request):
     """Index page."""
     successes = []
     errors = []
+    return {
+        'successes': successes,
+        'errors': errors}
+
+@restricted_api
+async def new_character_data_handler(request):
+    """Create new character."""
+    errors = []
     await request.post()
-    character_form = CreateCharacterForm(request.POST)
-    if request.method == 'POST' and character_form.validate():
-        name = character_form.character_name.data
+    try:
+        name = escape(request.POST['name'].strip())
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if name is not None and (len(name) < 1 or len(name) > 50):
+        errors.append("length should be between one and fifty characters")
+    if len(errors) == 0:
         characters = request.app['db'].characters
         if await characters.find_one(
                 {'user': request['user'], 'name': name}) is not None:
@@ -24,18 +39,24 @@ async def index_handler(request):
                 'hp': 0,
                 'created_at': datetime.now()})
             if result.acknowledged:
-                character_form.character_name.data = None
-                successes.append("creating character")
+                character = await characters.find_one({
+                    '_id': result.inserted_id})
+                table_row = """
+<tr>
+    <td>
+        <a href="/{}/{}/" class="btn btn-default" role="button">{}</a>
+    </td>
+    <td>{}</td>
+    <td>{}</td>
+</tr>""".format(character['_id'],
+                character['name'],
+                character['name'],
+                character['created_at'].date(),
+                "")
+                return json_response({
+                    'close': True,
+                    '#character-table': {'appendTable': table_row}})
             else:
                 errors.append("computer says no")
-    return {
-        'character_form': character_form,
-        'successes': successes,
-        'errors': errors}
-
-class CreateCharacterForm(Form):
-
-    """Form to create a new character."""
-
-    character_name = StringField(
-        'name', [validators.length(min=1, max=30)])
+    if len(errors) > 0:
+        return json_response({'errors': format_errors(errors)})

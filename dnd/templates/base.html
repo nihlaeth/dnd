@@ -36,6 +36,9 @@
                                     $(key).removeClass(data[key]['removeClass'][i]);
                                 }
                             }
+                            if('appendTable' in data[key]){
+                                $(key + ' > tbody:last-child').append(data[key]['appendTable']);
+                            }
                         }
                     });
                 },

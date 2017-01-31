@@ -3,6 +3,7 @@ from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from dnd.decorators import login_required
+from dnd.common import format_errors
 
 ABILITIES = [
     'strength',
@@ -120,13 +121,7 @@ async def ability_data_handler(request):
         if not result.acknowledged:
             errors.append("database error")
     if len(errors) > 0:
-        error_string = "\n".join(["""
-<div class="alert alert-danger alert-dismissable fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    {}
-</div>
-""".format(message) for message in errors])
-        return json_response({'errors': error_string})
+        return json_response({'errors': format_errors(errors)})
     # no errors whatsoever, return data
     character = await characters.find_one(
         {'_id': ObjectId(request.match_info['id'])})
