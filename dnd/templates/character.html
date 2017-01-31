@@ -16,7 +16,7 @@
 </div>
 {% endfor %}
 
-<div class="container text-center">
+<div id="form-group" class="container text-center">
   <div class="row">
     <div class="col-sm-4">
 <div class="panel-group">
@@ -37,7 +37,7 @@
             <tr>
               <td>Experience:</td>
               {% if editing_privileges %}
-              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#xp-form" id="xp-value">{{ character['xp'] }}</a></td>
+              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#xp-form" id="xp-value">{{ character['xp'] }}</a></td>
               {% else %}
               <td>{{ character['xp'] }}</td>
               {% endif %}
@@ -87,7 +87,7 @@
             >
               <td>{{ ability|capitalize }}:</td>
               {% if editing_privileges %}
-              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#{{ ability }}-form" id="{{ ability }}-value">{{ character[ability] }}</a></td>
+              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#{{ ability }}-form" id="{{ ability }}-value">{{ character[ability] }}</a></td>
               {% else %}
               <td>{{ character[ability] }}</td>
               {% endif %}
