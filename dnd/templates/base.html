@@ -23,7 +23,19 @@
                         }else if(key == "errors"){
                             $target.html(data[key]);
                         }else{
-                            $(key).html(data[key]);
+                            if('data' in data[key]){
+                                $(key).html(data[key]['data']);
+                            }
+                            if('addClass' in data[key]){
+                                for(i in data[key]['addClass']){
+                                    $(key).addClass(data[key]['addClass'][i]);
+                                }
+                            }
+                            if('removeClass' in data[key]){
+                                for(i in data[key]['removeClass']){
+                                    $(key).removeClass(data[key]['removeClass'][i]);
+                                }
+                            }
                         }
                     });
                 },

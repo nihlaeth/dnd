@@ -44,7 +44,7 @@
         <table class="table">
           <tbody>
             {% for ability in abilities %}
-            <tr 
+            <tr id="{{ ability }}-row"
                {% if character[ability + '_temp'] < 0 %}
                class="danger"
                {% elif character[ability + '_temp'] > 0 %}

@@ -131,8 +131,24 @@ async def ability_data_handler(request):
     character = await characters.find_one(
         {'_id': ObjectId(request.match_info['id'])})
     calculate_stats(character)
+    add_classes = []
+    remove_classes = []
+    if character[ability + '_temp'] < 0:
+        add_classes.append('danger')
+        remove_classes.append('success')
+    elif character[ability + '_temp'] > 0:
+        add_classes.append('success')
+        remove_classes.append('danger')
+    else:
+        remove_classes.append('success')
+        remove_classes.append('danger')
     return json_response({
         'close': True,
-        '#{}-value'.format(ability): character[ability],
-        '#{}-modifier'.format(ability): character[ability + '_modifier'],
-        '#ability-points': character['unspent_ability_points']})
+        '#{}-value'.format(ability): {'data': character[ability]},
+        '#{}-modifier'.format(ability): {
+            'data': character[ability + '_modifier']},
+        '#ability-points': {
+            'data': character['unspent_ability_points']},
+        '#{}-row'.format(ability): {
+            'addClass': add_classes,
+            'removeClass': remove_classes}})
