@@ -55,7 +55,7 @@ def calculate_stats(character):
         character[stat] = value
 
         modifier_stat = '{}_modifier'.format(stat)
-        modifier = int((value - 10) / 3)
+        modifier = int((value - 10) // 3)
         if modifier < -3:
             modifier = -3
         if modifier > 5:
