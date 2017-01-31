@@ -8,6 +8,32 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
+        $(document).on('submit', 'form[data-async]', function(event) {
+            var $form = $(this);
+            var $target = $($form.attr('data-target'));
+            $.ajax({
+                type: $form.attr('method'),
+                url: $form.attr('action'),
+                data: $form.serialize(),
+                cache: false,
+                success: function(data, status) {
+                    $.each(data,function(key,value){
+                        if(key == "close"){
+                            $form.closest(".collapse").collapse("hide");
+                        }else if(key == "errors"){
+                            $target.html(data[key]);
+                        }else{
+                            $(key).html(data[key]);
+                        }
+                    });
+                },
+                error: function (result) {
+                    alert(result);
+                }
+            });
+            event.preventDefault();
+        });
+
         $(document).ready(function(){
             $('[data-toggle="tooltip"]').tooltip();
         });

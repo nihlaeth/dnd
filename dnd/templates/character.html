@@ -43,14 +43,7 @@
       <div class="panel-body">
         <table class="table">
           <tbody>
-            {% for ability in [
-                'strength',
-                'dexterity',
-                'constitution',
-                'intelligence',
-                'wisdom',
-                'charisma',
-                'perception'] %}
+            {% for ability in abilities %}
             <tr 
                {% if character[ability + '_temp'] < 0 %}
                class="danger"
@@ -59,19 +52,25 @@
                {% endif %}
             >
               <td>{{ ability|capitalize }}:</td>
-              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#{{ ability }}-form">{{ character[ability] }}</a></td>
-              <td><span class="badge">{{ character[ability + '_modifier'] }}</span></td>
+              {% if editing_privileges %}
+              <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-target="#{{ ability }}-form" id="{{ ability }}-value">{{ character[ability] }}</a></td>
+              {% else %}
+              <td>{{ character[ability] }}</td>
+              {% endif %}
+              <td><span class="badge" id="{{ ability }}-modifier">{{ character[ability + '_modifier'] }}</span></td>
             </tr>
+            {% if editing_privileges %}
             <tr id="{{ ability }}-form" class="collapse">
               <td colspan="3">
-                <form class="form-horizontal">
+                <form data-async data-target="#{{ ability }}-errors" action="/api/{{ character['_id'] }}/ability/{{ ability }}/" method="POST" class="form-horizontal">
+                  <div id="{{ ability }}-errors"></div>
                   <div class="form-group">
                     <label for="base-{{ ability }}">
                       <a href="#" data-toggle="tooltip" title="base score that your roll at character creation">
                         Base:
                       </a>
                     </label>
-                    <input type="number" class="form-control" id="base-{{ ability }}" value="{{ character[ability + '_base'] }}">
+                    <input type="number" class="form-control" id="base-{{ ability }}" name="base-{{ ability }}" value="{{ character[ability + '_base'] }}">
                   </div>
                   <div class="form-group">
                     <label for="level-{{ ability }}">
@@ -79,7 +78,7 @@
                         Attribute points:
                       </a>
                     </label>
-                    <input type="number" class="form-control" id="level-{{ ability }}" value="{{ character[ability + '_level'] }}">
+                    <input type="number" class="form-control" id="level-{{ ability }}" name="level-{{ ability }}" value="{{ character[ability + '_level'] }}">
                   </div>
                   <div class="form-group">
                     <label for="temp-{{ ability }}">
@@ -87,17 +86,18 @@
                         Temporary:
                       </a>
                     </label>
-                    <input type="number" class="form-control" id="temp-{{ ability }}" value="{{ character[ability + '_temp'] }}">
+                    <input type="number" class="form-control" id="temp-{{ ability }}" name="temp-{{ ability }}" value="{{ character[ability + '_temp'] }}">
                   </div>
                   <button type="submit" class="btn btn-default">Submit</button>
                 </form>
               </td>
-            </td>
+            </tr>
+            {% endif %}
             {% endfor %}
           </tbody>
         </table>
       </div>
-      <div class="panel-footer">Unspent ability points: {{ character['unspent_ability_points'] }}</div>
+      <div class="panel-footer">Unspent ability points: <div id="ability-points">{{ character['unspent_ability_points'] }}</div></div>
     </div>
   </div>
 </div>
