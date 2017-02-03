@@ -54,7 +54,7 @@ def calculate_stats(character):
         character[temp_stat] = temp
         level_stat = '{}_level'.format(stat)
         level = character.get(level_stat, 0)
-        spent_ability_points += level
+        spent_ability_points += abs(level)
         character[level_stat] = level
         # calculate bonus
         bonus_stat = '{}_bonus'.format(stat)

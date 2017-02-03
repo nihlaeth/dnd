@@ -29,6 +29,36 @@
       </td>
     </tr>
     {% endif %}
+    <tr>
+      <td>Class:</td>
+      <td>
+        {% if editing_privileges %}
+        <a href="#" class="btn btn-default btn-block" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#class-form" id="class-value">
+        {% endif %}
+        <ul class="list-group">
+          {% for class_ in classes if character[class_] > 0 %}
+          <li class="list-group-item">{{ class_|capitalize }} <span class="label label-info">{{ character[class_] }}</span></li>
+          {% endfor %}
+        </ul>
+        {% if editing_privileges %}</a>{% endif %}
+      </td>
+    </tr>
+    {% if editing_privileges %}
+    <tr id="class-form" class="collapse">
+      <td colspan="3">
+        <form data-async data-target="#class-errors" action="/api/{{ character['_id'] }}/class/" method="POST" class="form-horizontal">
+          <div id="class-errors"></div>
+          {% for class_ in classes %}
+          <div class="form-group">
+            <label for="{{ class_ }}">{{ class_|capitalize }}:</label>
+            <input type="number" class="form-control" id="{{ class_ }}" name="{{ class_ }}" value="{{ character[class_] }}" min="0">
+          </div>
+          {% endfor %}
+          <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+      </td>
+    </tr>
+    {% endif %}
     <tr id="hp-row"
        {% if character['damage'] > 0 %}
        class="danger"

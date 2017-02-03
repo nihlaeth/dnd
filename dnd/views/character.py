@@ -1,5 +1,5 @@
 """Character page."""
-from bson impo rt ObjectId
+from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from dnd.decorators import login_required
@@ -86,7 +86,11 @@ async def ability_data_handler(request):
         '#{}-modifier'.format(ability): {
             'data': character[ability + '_modifier']},
         '#ability-points': {
-            'data': character['unspent_ability_points']},
+            'data': character['unspent_ability_points'],
+            'addClass': ["label-danger"] if character[
+                'unspent_ability_points'] < 0 else ["label-default"],
+            'removeClass': ["label-danger"] if character[
+                'unspent_ability_points'] >= 0 else ["label-default"]},
         '#{}-row'.format(ability): {
             'addClass': add_classes,
             'removeClass': remove_classes}})
@@ -121,6 +125,48 @@ async def xp_data_handler(request):
         'close': True,
         '#xp-value': {'data': character['xp']},
         '#level-value': {'data': character['level']}})
+
+@restricted_api
+async def class_data_handler(request):
+    """Edit character class data."""
+    _, errors, editing_privileges, character = await get_character(request)
+    if not editing_privileges:
+        errors.append("you don't have the required privileges to alter this character")
+    await request.post()
+    try:
+        classes = {}
+        for class_ in CLASSES:
+            classes[class_] = int(request.POST[class_])
+    except ValueError:
+        errors.append("invalid value: only integers allowed")
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if len(errors) == 0:
+        characters = request.app['db'].characters
+        result = await characters.update_one(
+            {'_id': ObjectId(request.match_info['id'])},
+            {'$set': {class_: classes[class_] for class_ in CLASSES}})
+        if not result.acknowledged:
+            errors.append("database error")
+    if len(errors) > 0:
+        return json_response({'errors': format_errors(errors)})
+    # no errors whatsoever, return data
+    character = await characters.find_one(
+        {'_id': ObjectId(request.match_info['id'])})
+    calculate_stats(character)
+    class_list = "\n".join([
+        "<li class=\"list-group-item\">{} <span class=\"label label-info\">{}</span></li>".format(
+            class_.capitalize(),
+            character[class_]) for class_ in CLASSES if character[class_] > 0])
+    return json_response({
+        'close': True,
+        '#class-value': {'data': class_list},
+        '#class-points': {
+            'data': character['unspent_class_points'],
+            'addClass': ["label-danger"] if character[
+                'unspent_class_points'] < 0 else ["label-default"],
+            'removeClass': ["label-danger"] if character[
+                'unspent_class_points'] >= 0 else ["label-default"]}})
 
 @restricted_api
 async def hp_data_handler(request):

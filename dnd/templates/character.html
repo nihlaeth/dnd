@@ -30,7 +30,7 @@
       <div class="panel-body">
         {% include 'character_general.html' %}
       </div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-footer">Unspent class points: <span class="label {% if character['unspent_class_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="class-points">{{ character['unspent_class_points'] }}</span></div>
     </div>
   </div>
 </div>
@@ -45,7 +45,7 @@
       <div class="panel-body">
         {% include 'character_abilities.html' %}
       </div>
-      <div class="panel-footer">Unspent ability points: <div id="ability-points">{{ character['unspent_ability_points'] }}</div></div>
+      <div class="panel-footer">Unspent ability points: <span class="label {% if character['unspent_ability_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="ability-points">{{ character['unspent_ability_points'] }}</span></div>
     </div>
   </div>
 </div>
@@ -65,6 +65,7 @@
     </div>
   </div>
 </div>
+{% if character['priest'] > 0 %}
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -78,32 +79,37 @@
     </div>
   </div>
 </div>
+{% endif %}
+{% if character['wizard'] > 0 %}
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#magic-panel">Magic</a>
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#spells-panel">Spells</a>
       </h4>
     </div>
-    <div id="magic-panel" class="panel-collapse collapse">
+    <div id="spells-panel" class="panel-collapse collapse">
       <div class="panel-body">Panel Body</div>
       <div class="panel-footer">Panel Footer</div>
     </div>
   </div>
 </div>
+{% endif %}
+{% if character['warlock'] > 0 %}
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#sorcery-panel">Sorcery</a>
+        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#powers-panel">Powers</a>
       </h4>
     </div>
-    <div id="sorcery-panel" class="panel-collapse collapse">
+    <div id="powers-panel" class="panel-collapse collapse">
       <div class="panel-body">Panel Body</div>
       <div class="panel-footer">Panel Footer</div>
     </div>
   </div>
 </div>
+{% endif %}
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
