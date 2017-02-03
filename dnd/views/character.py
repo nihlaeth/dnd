@@ -1,10 +1,10 @@
 """Character page."""
-from bson import ObjectId
+from bson impo rt ObjectId
 from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from dnd.decorators import login_required
 from dnd.common import format_errors
-from dnd.character import ABILITIES, calculate_stats
+from dnd.character import ABILITIES, CLASSES, calculate_stats
 
 async def get_character(request):
     """Fetch character from database."""
@@ -28,6 +28,7 @@ async def character_handler(request):
     """Character page."""
     successes, errors, editing_privileges, character = await get_character(request)
     return {
+        'classes': CLASSES,
         'abilities': ABILITIES,
         'editing_privileges': editing_privileges,
         'character': character,

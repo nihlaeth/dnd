@@ -9,6 +9,13 @@ ABILITIES = [
     'charisma',
     'perception']
 
+CLASSES = [
+    'fighter',
+    'specialist',
+    'wizard',
+    'priest',
+    'warlock']
+
 def calculate_stats(character):
     """Calculate and set characters statistics."""
     ###########
@@ -23,6 +30,16 @@ def calculate_stats(character):
             level += 1
     character['level'] = level
     ability_points_to_spend = int(level / 4)
+
+    #############
+    #  classes  #
+    #############
+    unspent_class_points = level
+    for class_ in CLASSES:
+        value = character.get(class_, 0)
+        unspent_class_points -= value
+        character[class_] = value
+    character['unspent_class_points'] = unspent_class_points
 
     ###############
     #  abilities  #
