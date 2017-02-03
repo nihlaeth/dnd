@@ -4,7 +4,7 @@ from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from dnd.decorators import login_required
 from dnd.common import format_errors
-from dnd.character import ABILITIES, CLASSES, calculate_stats
+from dnd.character import ABILITIES, RACES, CLASSES, calculate_stats
 
 async def get_character(request):
     """Fetch character from database."""
@@ -29,6 +29,7 @@ async def character_handler(request):
     successes, errors, editing_privileges, character = await get_character(request)
     return {
         'classes': CLASSES,
+        'races': RACES,
         'abilities': ABILITIES,
         'editing_privileges': editing_privileges,
         'character': character,
@@ -125,6 +126,38 @@ async def xp_data_handler(request):
         'close': True,
         '#xp-value': {'data': character['xp']},
         '#level-value': {'data': character['level']}})
+
+@restricted_api
+async def race_data_handler(request):
+    """Edit character race data."""
+    _, errors, editing_privileges, character = await get_character(request)
+    if not editing_privileges:
+        errors.append("you don't have the required privileges to alter this character")
+    await request.post()
+    try:
+        race = request.POST['race'].strip()
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    else:
+        if race not in RACES:
+            errors.append("unknown race: {}".format(race))
+    if len(errors) == 0:
+        characters = request.app['db'].characters
+        result = await characters.update_one(
+            {'_id': ObjectId(request.match_info['id'])},
+            {'$set': {'race_name': race}})
+        if not result.acknowledged:
+            errors.append("database error")
+    if len(errors) > 0:
+        return json_response({'errors': format_errors(errors)})
+    # no errors whatsoever, return data
+    character = await characters.find_one(
+        {'_id': ObjectId(request.match_info['id'])})
+    calculate_stats(character)
+    return json_response({
+        'close': True,
+        '#inner-race-info': {'data': character['race']['description']},
+        '#race-value': {'data': character['race_name']}})
 
 @restricted_api
 async def class_data_handler(request):

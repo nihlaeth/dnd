@@ -18,8 +18,9 @@ setup(
         'motor',
         'cchardet',
         'aiodns',
-        'aiohttp-login'],
+        'aiohttp-login',
+        'pyyaml'],
     entry_points={
         'console_scripts': ['dnd = dnd:start']},
-    package_data={'dnd': ['static/*', 'templates/*']},
+    package_data={'dnd': ['static/*', 'templates/*', 'config/*']},
     )

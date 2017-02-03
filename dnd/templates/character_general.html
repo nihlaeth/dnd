@@ -1,6 +1,51 @@
 <table class="table">
   <tbody>
     <tr>
+      <td>Race:</td>
+      <td>
+        <div class="btn-group">
+        {% if editing_privileges %}
+        <a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#race-form" id="race-value">
+        {% endif %}
+          {{ character['race']['name'] }}
+        {% if editing_privileges %}
+        </a>
+        {% endif %}
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#race-info">?</button>
+        </div>
+      </td>
+    </tr>
+    <tr id="race-info" class="collapse">
+      <td colspan="3">
+        <div id="inner-race-info" class="well">
+          {{ character['race']['description'] }}
+        </div>
+      </td>
+    </tr>
+    {% if editing_privileges %}
+    <tr id="race-form" class="collapse">
+      <td colspan="3">
+        <form data-async data-target="#race-errors" action="/api/{{ character['_id'] }}/race/" method="POST" class="form-horizontal">
+          <div id="race-errors"></div>
+          <div class="form-group">
+            {% for race in races %}
+            <div class="radio">
+                <label>
+                  <input type="radio" name="race" value="{{ race }}" {% if character['race']['name'] == race %}checked{% endif %}>
+                  {{ race }}
+                </label> <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#race-info-{{ race|replace(' ', '-') }}">?</button>
+            </div>
+            <div id="race-info-{{ race|replace(' ', '-') }}" class="collapse well">
+                {{ races[race]['description'] }}
+            </div>
+            {% endfor %}
+          </div>
+          <button class="btn btn-default" type="submit">Submit</button>
+        </form>
+      </td>
+    </tr>
+    {% endif %}
+    <tr>
       <td>Level:</td>
       <td id="level-value">{{ character['level'] }}</td>
     </tr>

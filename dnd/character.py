@@ -1,4 +1,14 @@
 """Character tools."""
+from pkg_resources import resource_stream, Requirement
+from yaml import load_all
+try:
+    from yaml import CSafeLoader as Loader
+except ImportError:
+    from yaml import SafeLoader as Loader
+
+RACES = {race['name']: race for race in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/races.yaml'),
+    Loader=Loader)}
 
 ABILITIES = [
     'strength',
@@ -41,6 +51,13 @@ def calculate_stats(character):
         character[class_] = value
     character['unspent_class_points'] = unspent_class_points
 
+    ###########
+    #  races  #
+    ###########
+    race_name = character.get('race_name', 'Truman')
+    character['race_name'] = race_name
+    character['race'] = RACES[race_name]
+
     ###############
     #  abilities  #
     ###############
@@ -58,7 +75,7 @@ def calculate_stats(character):
         character[level_stat] = level
         # calculate bonus
         bonus_stat = '{}_bonus'.format(stat)
-        bonus = 0
+        bonus = character['race']['bonus'].get(stat, 0)
         character[bonus_stat] = bonus
 
         value = base + temp + level + bonus
