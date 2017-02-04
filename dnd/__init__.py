@@ -1,5 +1,7 @@
 """Dungeons & Dragons character sheet app."""
 from pkg_resources import resource_filename, Requirement, cleanup_resources
+import asyncio
+import uvloop
 from aiohttp import web
 import aiohttp_jinja2
 import jinja2
@@ -21,6 +23,7 @@ import dnd.settings as settings
 
 def start():
     """Start Web server."""
+    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
     app = web.Application(debug=settings.DEBUG)
     aiohttp_jinja2.setup(
         app,

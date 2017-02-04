@@ -19,7 +19,8 @@ setup(
         'cchardet',
         'aiodns',
         'aiohttp-login',
-        'pyyaml'],
+        'pyyaml',
+        'uvloop'],
     entry_points={
         'console_scripts': ['dnd = dnd:start']},
     package_data={'dnd': ['static/*', 'templates/*', 'config/*']},
