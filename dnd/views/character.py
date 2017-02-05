@@ -131,6 +131,7 @@ def _xp_response_factory(response, character):
     response['#xp-value'] = {'data': character['xp']}
     response['#level-value'] = {'data': character['level']}
     _skill_response_factory(response, character)
+    _class_response_factory(response, character)
 
 def _race_validator(request, errors):
     try:
