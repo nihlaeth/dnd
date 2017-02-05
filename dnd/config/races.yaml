@@ -1,0 +1,194 @@
+---
+name: Bastard
+description: |
+    <p>Bastards, or crossborn, are created by the
+    magic of marriage. At the moment of their
+    conception, one of their parents was breaking
+    a vow of matrimony.</p>
+    <p>Crossborn are easy to identify by their thin
+    figures, gaunt facial features and delicate
+    hands. There are no fat bastards.
+    These people tend to be more numerous in
+    more populated places with a more structured
+    society. In smaller cities and villages they are
+    rare. In societies without formal matrimony
+    they don't exist.</p>
+    <p>Bastards tend to be very emotional about
+    marriage. Whether for it or against it, they
+    consider it an institution of great importance.</p>
+    <p>This is probably caused by their own youth,
+    for growing up as a bastard is often tough. But
+    it could be the magic of marriage itself at
+    work, correcting some of the damage caused
+    to its existence.</p>
+    <p>Bastards gain a +1 bonus to intelligence, but
+    get a -2 penalty to constitution. They also gain
+    a +1 bonus to all saving throws.</p>
+bonus:
+    constitution: -2
+    intelligence: 1
+    saving_throw: 1
+---
+name: Moontouched
+description: |
+    <p>Moontouched are created by the magic of the
+    moon. They are born when the moon is full,
+    and are known by their pale skin.</p>
+    <p>Most of the moontouched are born in the
+    night. Sages maintain that moontouched born
+    during the day and the night are two distinct
+    races, but the differences, if any, are minor.</p>
+    <p>The moon people are born everywhere. They
+    are the most numerous of all magical races.</p>
+    <p>Many moontouched feel a special connection
+    to the moon. That, coupled with their ability to
+    see in the dark, often makes them active
+    during the night. This preference for the night
+    does their reputation no good.</p>
+    <p>Moontouched gain a +1 bonus to wisdom,
+    but get a -2 penalty to dexterity. They can also
+    see better in the dark; all penalties due to
+    darkness are reduced by 2.</p>
+bonus:
+    wisdom: 1
+    dexterity: -2
+---
+name: Orgy child
+description: |
+    <p>Orgy children are created by the magic of
+    sex. They are conceived in a religious
+    ceremony, using the ritual of fertility skill.
+    <p>They are sometimes known as bunnies, or
+    fertility children, with eyes with golden irises.
+    Orgy children are only born where fertility
+    rituals are practiced. There are persistent
+    rumours that performances from great artists
+    have the same effect, but this goes unproven.</p>
+    <p>These people are shunned in places that don't
+    acknowledge the ritual of fertility skill. They
+    are sometimes even banished, or orphaned.</p>
+    <p>Orgy children can be attracted to sex magic
+    just like other people. Their race grants some
+    innate status there, but their charisma is a
+    boon in any path they choose.</p>
+    <p>Orgy children gain a +1 bonus to charisma,
+    but get a -2 penalty to wisdom. They also gain
+    1 extra skill slot.</p>
+bonus:
+    charisma: 1
+    wisdom: -2
+    skills: 1
+---
+name: Orphan
+description: |
+    <p>Orphans are created by the magic of death.
+    They were born while their mothers breathed
+    their last. This tragedy has taken away all the
+    hair on their head, and they never grow any.</p>
+    <p>Tragedy in childbirth happens everywhere, so
+    orphans exist in all places. And an orphan is
+    always a bringer of loss.</p>
+    <p>Orphans often have a difficult youth. Even
+    without blame, they tend to feel like outsiders.</p>
+    <p>Some places have scary stories of orphans
+    trying to bring their mother back from the
+    grave, but on the whole they don't seem to
+    have a preferred path in life. Their hardiness
+    makes them good warriors, but hardiness is
+    useful in many careers.</p>
+    <p>Orphans gain a +1 bonus to constitution, but
+    get a -2 penalty to strength. Their will to live
+    is such that they resist aging, delaying all
+    aging effects, including natural death, by 50
+    years.</p>
+bonus:
+    constitution: 1
+    strength: -2
+    ageing: -50
+---
+name: Spellborn
+description: |
+    <p>Spellborn are created by magic itself. They
+    are the product of women who use magic
+    during their pregnancy. The kind of magic
+    doesn't seem to matter.</p>
+    <p>These children have an extra finger on their
+    main hand. Sages are unsure over which finger
+    is the extra one, the 'spellfinger'. Having an
+    extra finger has no specific pros or cons.</p>
+    <p>For there to be spellborn, there need to be
+    magic-using women. This means that there are
+    more of them where women cast spells. Where
+    they are more common, they are usually
+    treated well, but in some places they (and their
+    mothers) are in grave danger.</p>
+    <p>Spellborn often grow up with magic. After
+    all, it runs in the family. This makes them
+    more likely to learn some of it themselves,
+    often of the same variety as their mother uses.</p>
+    <p>Spellborn gain a +1 bonus to perception, but
+    get a -2 penalty to charisma. They roll
+    initiative with a d6 in stead of a d8.</p>
+bonus:
+    perception: 1
+    charisma: -2
+    initiative: d6
+---
+name: Trollborn
+description: |
+    <p>Trollborn are created by the magic of blood.
+    At least one of their great-grandparents is a
+    troll. Their existence depends on the existence
+    of trolls, and the frequency of interbreeding. It
+    is important to note that in different places,
+    different species have taken the 'troll' part.</p>
+    <p>Yeti, giants and apes have been named. This
+    implies that it is not so much the troll as the
+    interracial breeding that produces these
+    children.</p>
+    <p>Trollborn have thick hair on their back and
+    shoulders. In some, the fur extends to their
+    arms, and even their faces.</p>
+    <p>With their appearance and story, it will come
+    as no surprise that most people don't trust
+    trollborn. They often end up as bandits or
+    soldiers, which confirms people's views.</p>
+    <p>Trollborn gain a +1 bonus to dexterity, but
+    get a -2 penalty to intelligence. Their ancestry
+    grants them a damage reduction of 1.</p>
+bonus:
+    dexterity: 1
+    intelligence: -2
+    damage: -1
+---
+name: Wyndborn
+description: |
+    <p>Wyndborn, sometimes called ororo, are
+    created by the magic of thunder and lightning.
+    They were born in a storm. As such, they
+    occur more often in stormy areas.</p>
+    <p>All their hair is uniformly white, from head
+    to toe. Sages speak of subraces created by
+    different storms, but this may be the effect of
+    white hair on differently coloured skin.</p>
+    <p>Wyndborn often feel connected to the
+    weather. Some join cults that worship storms,
+    but only rarely do they form racial groups.</p>
+    <p>Wyndborn gain a +1 bonus to strength, but
+    get a -2 penalty to perception. If a wyndborn
+    uses a wizard spell, priest prayer, warlock
+    power, or the banishment or exorcism skill,
+    the DC for any saving throw is raised by one.</p>
+bonus:
+    strength: 1
+    perception: -2
+---
+name: Truman
+description: |
+    <p>Whether it's good or bad luck men cannot
+    tell, but for most people magic doesn't
+    blossom. They are born normal, as trumen.</p>
+    <p>Trumen have no ability adjustments, and no
+    special abilities.</p>
+bonus:
+    empty: None
