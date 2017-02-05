@@ -17,3 +17,18 @@ description: |
     <p>When warlocks use alcance, they face a -4
     penalty to the power-check.</p>
 ---
+name: Alertness
+group: all
+skill_check: [perception]
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+    <p>This skill teaches the character to be alert 
+    for the unexpected. It helps him to notice thieves, 
+    or to react swiftly when standing guard.</p>
+    <p>Altertness is the opposing skill for stealth,
+    sleight of hand and quickdraw. It also often 
+    determines surprise.</p>
+---
+
