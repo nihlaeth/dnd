@@ -108,12 +108,12 @@ def _character_skills(character):
         group = SKILLS[skill]['group']
         if group == 'all':
             skill_points -= 1
-        elif group == 'magic' and (
-                'sorcerer' in character or
-                'priest' in character or
-                'wizard' in character):
+        elif group in character and character[group] > 0:
             skill_points -= 1
-        elif group in character:
+        elif group == 'magic' and (
+                character['warlock'] > 0 or
+                character['priest'] > 0 or
+                character['wizard'] > 0):
             skill_points -= 1
         else:
             skill_points -= 2
