@@ -2,9 +2,9 @@
 name: Alcance
 group: magic
 skill_check: []
-specification: None
-prerequisite: None
-penalties_from_armour: None
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
 description: |
     <p>This skill allows the character to change the
     range of his wizard spells and warlock powers
