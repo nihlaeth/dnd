@@ -48,6 +48,7 @@ async def data_handler(request):
         'hp': (_hp_validator, _hp_response_factory),
         'race': (_race_validator, _race_response_factory),
         'class': (_class_validator, _class_response_factory),
+        'skill': (_skill_validator, _skill_response_factory),
     }
     if attribute not in attribute_functions:
         errors.append("unknown attribute")
@@ -115,6 +116,7 @@ def _ability_response_factory(response, character):
             'unspent_ability_points'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
             'unspent_ability_points'] >= 0 else ["label-default"]}
+    _skill_response_factory(response, character)
 
 def _xp_validator(request, errors):
     try:
@@ -128,6 +130,7 @@ def _xp_validator(request, errors):
 def _xp_response_factory(response, character):
     response['#xp-value'] = {'data': character['xp']}
     response['#level-value'] = {'data': character['level']}
+    _skill_response_factory(response, character)
 
 def _race_validator(request, errors):
     try:
@@ -144,6 +147,7 @@ def _race_response_factory(response, character):
         'data': character['race']['description']}
     response['#race-value'] = {'data': character['race_name']}
     _ability_response_factory(response, character)
+    _skill_response_factory(response, character)
 
 def _class_validator(request, errors):
     try:
@@ -208,3 +212,36 @@ def _hp_response_factory(response, character):
     response['#hp-row'] = {
         'addClass': add_classes,
         'removeClass': remove_classes}
+
+def _skill_validator(request, _):
+    skills = []
+    for skill in SKILLS:
+        if skill in request.POST:
+            skills.append(skill)
+    return {'skill_names': skills}
+
+
+def _skill_response_factory(response, character):
+    response['#skill-accordion'] = {'data': '\n'.join(["""
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#skill-accordion" href="#{}-collapse">{}</a>
+      </h4>
+    </div>
+    <div id="{}-collapse" class="panel-collapse collapse">
+      <div class="panel-body">
+        {}
+      </div>
+    </div>
+  </div>""".format(
+      skill,
+      skill,
+      skill,
+      character['skills'][skill]['description']) for skill in character['skills']])}
+    response['#skill-points'] = {
+        'data': character['unspent_skill_points'],
+        'addClass': ["label-danger"] if character[
+            'unspent_skill_points'] < 0 else ["label-default"],
+        'removeClass': ["label-danger"] if character[
+            'unspent_skill_points'] >= 0 else ["label-default"]}

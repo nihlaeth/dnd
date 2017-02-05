@@ -6,11 +6,53 @@
           <a data-toggle="collapse" data-parent="#skill-accordion" href="#{{ skill }}-collapse">{{ skill }}</a>
       </h4>
     </div>
-    <div id="{{ skill }}-collapse" class="panel-collapse collapse in">
+    <div id="{{ skill }}-collapse" class="panel-collapse collapse">
       <div class="panel-body">
         {{ character['skills'][skill]['description'] }}
       </div>
     </div>
   </div>
   {% endfor %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#skills-form">Edit</button>
+
+<div id="skills-form" class="collapse well">
+  <form data-async data-target="#skills-errors" action="/api/{{ character['_id'] }}/skill/" method="POST" class="form-horizontal">
+    <div id="skills-errors"></div>
+    <div class="form-group">
+      <div class="panel-group" id="skills-form-accordion">
+        {% for group in ['all', 'fighter', 'specialist', 'magic'] %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#skills-form-accordion" href="#{{ group }}-group">{{ group|capitalize }}</a>
+            </h4>
+          </div>
+          <div id="{{ group }}-group" class="panel-collapse collapse">
+            <div class="panel-body">
+              {% for skill in skills if skills[skill]['group'] == group %}
+              <div class="checkbox">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="{{ skill }}"
+                    value="selected"
+                    {% if skill in character['skills'] %}checked{% endif %}>
+                  {{ skill|capitalize }}
+                </label>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#skill-info-{{ skill }}">?</button>
+              </div>
+              <div id="skill-info-{{ skill }}" class="collapse well">
+                {{ skills[skill]['description'] }}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+  </form>
 </div>

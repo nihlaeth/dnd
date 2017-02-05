@@ -99,23 +99,26 @@ def _character_abilities(character):
     character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
 
 def _character_skills(character):
-    skills = character.get('skills', {})
+    skill_names = character.get('skill_names', [])
     skill_points = 5 + character['level'] + character['intelligence_modifier']
+    character['skills'] = {}
     if 'skills' in character['race']['bonus']:
         skill_points += character['race']['bonus']['skills']
-    for skill in skills:
-        group = skills[skill]['group']
+    for skill in skill_names:
+        group = SKILLS[skill]['group']
         if group == 'all':
             skill_points -= 1
-        elif group in character['classes']:
+        elif group in character:
             skill_points -= 1
         elif group == 'magic' and (
-                'sorcerer' in character['classes'] or
-                'priest' in character['classes'] or
-                'wizard' in character['classes']):
+                'sorcerer' in character or
+                'priest' in character or
+                'wizard' in character):
             skill_points -= 1
         else:
             skill_points -= 2
+        if skill in SKILLS:
+            character['skills'][skill] = SKILLS[skill]
     character['unspent_skill_points'] = skill_points
 
 def _character_hit_points(character):
