@@ -173,6 +173,7 @@ def _class_response_factory(response, character):
             'unspent_class_points'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
             'unspent_class_points'] >= 0 else ["label-default"]}
+    _skill_response_factory(response, character)
 
 def _hp_validator(request, errors):
     try:
