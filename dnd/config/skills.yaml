@@ -19,7 +19,8 @@ description: |
 ---
 name: Alertness
 group: all
-Specification: !!null
+skill_check: [perception]
+specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
