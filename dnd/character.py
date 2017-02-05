@@ -8,7 +8,12 @@ except ImportError:
 
 RACES = {race['name']: race for race in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/races.yaml'),
-    Loader=Loader)}
+    Loader=Loader) if race is not None}
+
+
+SKILLS = {skill['name']: skill for skill in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/skills.yaml'),
+    Loader=Loader) if skill is not None}
 
 ABILITIES = [
     'strength',
@@ -93,6 +98,28 @@ def calculate_stats(character):
             modifier = 5
         character[modifier_stat] = modifier
     character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
+
+    ############
+    #  skills  #
+    ############
+    skills = character.get('skills', {})
+    skill_points = 5 + character['level'] + character['intelligence_modifier']
+    if 'skills' in character['race']['bonus']:
+        skill_points += character['race']['bonus']['skills']
+    for skill in skills:
+        group = skills[skill]['group']
+        if group == 'all':
+            skill_points -= 1
+        elif group in character['classes']:
+            skill_points -= 1
+        elif group == 'magic' and (
+                'sorcerer' in character['classes'] or
+                'priest' in character['classes'] or
+                'wizard' in character['classes']):
+            skill_points -= 1
+        else:
+            skill_points -= 2
+    character['unspent_skill_points'] = skill_points
 
     ###############
     #  hitpoints  #

@@ -1,0 +1,19 @@
+---
+name: Alcance
+group: magic
+skill_check: []
+specification: None
+prerequisite: None
+penalties_from_armour: None
+description: |
+    <p>This skill allows the character to change the
+    range of his wizard spells and warlock powers
+    from short to medium, or from medium to
+    long. It cannot upgrade range from short to
+    long.</p>
+    <p>Wizards use up one circle of their reserve to
+    do this. Therefore, they cannot do this to a
+    spell of their highest circle.</p>
+    <p>When warlocks use alcance, they face a -4
+    penalty to the power-check.</p>
+---
