@@ -33,9 +33,14 @@ CLASSES = [
 
 def calculate_stats(character):
     """Calculate and set characters statistics."""
-    ###########
-    #  level  #
-    ###########
+    _character_level(character)
+    _character_classes(character)
+    _character_race(character)
+    _character_abilities(character)
+    _character_skills(character)
+    _character_hit_points(character)
+
+def _character_level(character):
     xp = character.get('xp', 0)
     character['xp'] = xp
     level = 1
@@ -44,28 +49,22 @@ def calculate_stats(character):
         if xp >= 0:
             level += 1
     character['level'] = level
-    ability_points_to_spend = int(level / 4)
 
-    #############
-    #  classes  #
-    #############
-    unspent_class_points = level
+def _character_classes(character):
+    unspent_class_points = character['level']
     for class_ in CLASSES:
         value = character.get(class_, 0)
         unspent_class_points -= value
         character[class_] = value
     character['unspent_class_points'] = unspent_class_points
 
-    ###########
-    #  races  #
-    ###########
+def _character_race(character):
     race_name = character.get('race_name', 'Truman')
     character['race_name'] = race_name
     character['race'] = RACES[race_name]
 
-    ###############
-    #  abilities  #
-    ###############
+def _character_abilities(character):
+    ability_points_to_spend = int(character['level'] / 4)
     spent_ability_points = 0
     for stat in ABILITIES:
         base_stat = '{}_base'.format(stat)
@@ -99,9 +98,7 @@ def calculate_stats(character):
         character[modifier_stat] = modifier
     character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
 
-    ############
-    #  skills  #
-    ############
+def _character_skills(character):
     skills = character.get('skills', {})
     skill_points = 5 + character['level'] + character['intelligence_modifier']
     if 'skills' in character['race']['bonus']:
@@ -121,9 +118,7 @@ def calculate_stats(character):
             skill_points -= 2
     character['unspent_skill_points'] = skill_points
 
-    ###############
-    #  hitpoints  #
-    ###############
+def _character_hit_points(character):
     max_hp = character.get('max_hp', 1)
     if max_hp < 1:
         max_hp = 1
