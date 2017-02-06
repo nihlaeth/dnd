@@ -53,6 +53,9 @@
                             if('appendTable' in data[key]){
                                 $(key + ' > tbody:last-child').append(data[key]['appendTable']);
                             }
+                            if('collapse' in data[key]){
+                                $(key).collapse(data[key]['collapse'])
+                            }
                         }
                     });
                 },

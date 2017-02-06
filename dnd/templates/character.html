@@ -68,8 +68,8 @@
     </div>
   </div>
 </div>
-{% if character['priest'] > 0 %}
-<div class="panel-group">
+
+<div id="prayer-section" class="panel-group collapse {% if character['priest'] > 0 %}in{% endif %}">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -82,9 +82,8 @@
     </div>
   </div>
 </div>
-{% endif %}
-{% if character['wizard'] > 0 %}
-<div class="panel-group">
+
+<div id="spells-section" class="panel-group collapse {% if character['wizard'] > 0 %}in{% endif %}">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -97,9 +96,8 @@
     </div>
   </div>
 </div>
-{% endif %}
-{% if character['warlock'] > 0 %}
-<div class="panel-group">
+
+<div id="powers-section" class="panel-group collapse {% if character['warlock'] > 0 %}in{% endif %}">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
@@ -112,7 +110,7 @@
     </div>
   </div>
 </div>
-{% endif %}
+
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
