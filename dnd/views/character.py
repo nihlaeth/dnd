@@ -175,14 +175,12 @@ def _class_response_factory(response, character):
 <li class="list-group-item">
   {}
   <span class="label label-default">{}</span>
-  <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#{}-info-dynamic">?</button>
-  <div id="{}-info-dynamic" class="well collapse">{}</div>
+  <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-parent="#class-group" data-target="#{}-info-dynamic">?</button>
 </li>""".format(
             class_.capitalize(),
             character[class_],
             class_,
-            class_,
-            CLASSES[class_]['description']) for class_ in CLASSES if character[class_] > 0])
+            class_) for class_ in CLASSES if character[class_] > 0])
     response['#class-value'] = {'data': class_list}
     response['#class-points'] = {
         'data': character['unspent_class_points'],

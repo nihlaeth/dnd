@@ -85,16 +85,22 @@
           <li class="list-group-item">
             {{ class_|capitalize }}
             <span class="label label-default">{{ character[class_] }}</span>
-            <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#{{ class_ }}-info-dynamic">?</button>
-            <div id="{{ class_ }}-info-dynamic" class="well collapse">
-              {{ classes[class_]['description'] }}
-            </div>
+            <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-parent="#class-group" data-target="#{{ class_ }}-info-dynamic">?</button>
           </li>
           {% endfor %}
         </ul>
         {% if editing_privileges %}</a>{% endif %}
       </td>
     </tr>
+    {% for class_ in classes %}
+    <tr id="{{ class_ }}-info-dynamic" class="collapse">
+      <td colspan="3">
+        <div class="well">
+          {{ classes[class_]['description'] }}
+        </div>
+      </td>
+    </tr>
+    {% endfor %}
     {% if editing_privileges %}
     <tr id="class-form" class="collapse">
       <td colspan="3">
