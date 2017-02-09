@@ -171,10 +171,18 @@ def _class_validator(request, errors):
     return {class_: classes[class_] for class_ in CLASSES}
 
 def _class_response_factory(response, character):
-    class_list = "\n".join([
-        "<li class=\"list-group-item\">{} <span class=\"label label-info\">{}</span></li>".format(
+    class_list = "\n".join(["""
+<li class="list-group-item">
+  {}
+  <span class="label label-default">{}</span>
+  <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#{}-info-dynamic">?</button>
+  <div id="{}-info-dynamic" class="well collapse">{}</div>
+</li>""".format(
             class_.capitalize(),
-            character[class_]) for class_ in CLASSES if character[class_] > 0])
+            character[class_],
+            class_,
+            class_,
+            CLASSES[class_]['description']) for class_ in CLASSES if character[class_] > 0])
     response['#class-value'] = {'data': class_list}
     response['#class-points'] = {
         'data': character['unspent_class_points'],

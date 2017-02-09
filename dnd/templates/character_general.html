@@ -82,7 +82,14 @@
         {% endif %}
         <ul class="list-group">
           {% for class_ in classes if character[class_] > 0 %}
-          <li class="list-group-item">{{ class_|capitalize }} <span class="label label-info">{{ character[class_] }}</span></li>
+          <li class="list-group-item">
+            {{ class_|capitalize }}
+            <span class="label label-default">{{ character[class_] }}</span>
+            <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#{{ class_ }}-info-dynamic">?</button>
+            <div id="{{ class_ }}-info-dynamic" class="well collapse">
+              {{ classes[class_]['description'] }}
+            </div>
+          </li>
           {% endfor %}
         </ul>
         {% if editing_privileges %}</a>{% endif %}
@@ -95,8 +102,11 @@
           <div id="class-errors"></div>
           {% for class_ in classes %}
           <div class="form-group">
-            <label for="{{ class_ }}">{{ class_|capitalize }}:</label>
+            <label for="{{ class_ }}">{{ class_|capitalize }}<button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#class-info-{{ class_ }}">?</button>:</label>
             <input type="number" class="form-control" id="{{ class_ }}" name="{{ class_ }}" value="{{ character[class_] }}" min="0">
+          </div>
+          <div id="class-info-{{ class_ }}" class="collapse well">
+            {{ classes[class_]['description'] }}
           </div>
           {% endfor %}
           <button class="btn btn-default" type="submit">Submit</button>
