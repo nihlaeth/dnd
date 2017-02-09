@@ -1,0 +1,17 @@
+---
+name: antidode
+sphere: healing
+circle: 4
+range: "touch (1 creature or 1 m³)"
+casting_time: "6 (VS)"
+duration: instantaneous
+mechanics: fortitude negates
+description: |
+    <p>This prayer grants the caster a healing-check
+    with a +5 bonus to remove all poisons from
+    the target. If successful, any poison is gone.</p>
+    <p>Venomous creatures or objects are unable to
+    use their poison until they create more.</p>
+    <p>Magically venomous items lose their
+    venomous abilities for 1 turn.</p>
+---
