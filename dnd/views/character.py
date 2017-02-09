@@ -1,7 +1,9 @@
 """Character page."""
+from inspect import iscoroutinefunction
 from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
+from markupsafe import escape
 from dnd.decorators import login_required
 from dnd.common import format_errors
 from dnd.character import ABILITIES, RACES, SKILLS, CLASSES, calculate_stats
@@ -49,13 +51,17 @@ async def data_handler(request):
         'race': (_race_validator, _race_response_factory),
         'class': (_class_validator, _class_response_factory),
         'skill': (_skill_validator, _skill_response_factory),
+        'name': (_name_validator, _name_response_factory),
     }
     if attribute not in attribute_functions:
         errors.append("unknown attribute")
     else:
         validator, response_factory = attribute_functions[attribute]
         await request.post()
-        validated_data = validator(request, errors)
+        if iscoroutinefunction(validator):
+            validated_data = await validator(request, errors)
+        else:
+            validated_data = validator(request, errors)
     if len(errors) == 0:
         characters = request.app['db'].characters
         result = await characters.update_one(
@@ -70,7 +76,10 @@ async def data_handler(request):
         {'_id': ObjectId(request.match_info['id'])})
     calculate_stats(character)
     response = {'close': True}
-    response_factory(response, character)
+    if iscoroutinefunction(response_factory):
+        await response_factory(response, character)
+    else:
+        response_factory(response, character)
     return json_response(response)
 
 def _ability_validator(request, errors):
@@ -253,3 +262,21 @@ def _skill_response_factory(response, character):
             'unspent_skill_points'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
             'unspent_skill_points'] >= 0 else ["label-default"]}
+
+async def _name_validator(request, errors):
+    try:
+        name = escape(request.POST['name'].strip())
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if name is not None and (len(name) < 1 or len(name) > 50):
+        errors.append("length should be between one and fifty characters")
+    if len(errors) == 0:
+        characters = request.app['db'].characters
+        if await characters.find_one(
+                {'user': request['user'], 'name': name}) is not None:
+            errors.append("you already have a character with this name")
+    return {'name': name}
+
+def _name_response_factory(response, character):
+    response['#name-value'] = {'data': character['name']}
+    response['title'] = {'data': "Dnd | {}".format(character['name'])}

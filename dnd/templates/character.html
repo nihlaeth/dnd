@@ -1,7 +1,26 @@
 {% extends 'base.html' %}
 {% block title %}{{ character.name }}{% endblock %}
-{% block page_header %}{{ character.name }}<span id="alive">{% if character['hp'] < -9 %}<span class="badge">R.I.P</span>{% endif %}</span>{% endblock %}
+{% block page_header %}
+<span id="name-value">{{ character.name }}</span><span id="alive">{% if character['hp'] < -9 %}<span class="badge">R.I.P</span>{% endif %}</span>
+{% if editing_privileges %}
+<a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#name-form">Edit</a>
+{% endif %}
+{% endblock %}
 {% block content %}
+{% if editing_privileges %}
+<div id="name-form" class="collapse">
+  <form data-async data-target="#name-errors" action="/api/{{ character['_id'] }}/name/" method="POST" class="form-horizontal">
+    <div id="name-errors"></div>
+    <div class="input-group">
+      <input type="text" class="form-control" id="name" name="name" value="{{ character['name'] }}">
+      <div class="input-group-btn">
+        <button class="btn btn-default" type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+{% endif %}
 
 {% for message in successes %}
 <div class="alert alert-success alert-dismissable fade in">
