@@ -1,1 +1,2 @@
-settings.py
+syntax: regex
+^dnd/settings\.py$

@@ -1,0 +1,21 @@
+PORT = 8000
+DEBUG = False
+SESSION_SECRET = '32-bit secret'
+SESSION_MAX_AGE = 315360000
+AUTH = {
+    'THEME': 'auth',
+    'COMMON_THEME': 'common',
+    'CSRF_SECRET': 'a second secret',
+    'VKONTAKTE_ID': None,
+    'VKONTAKTE_SECRET': None,
+    'GOOGLE_ID': None,
+    'GOOGLE_SECRET': None,
+    'FACEBOOK_ID': None,
+    'FACEBOOK_SECRET': None,
+    'SMTP_SENDER': 'Dungeons & Dragons <dnd@example.com>',
+    'SMTP_HOST': '192.168.1.6',
+    'SMTP_TLS': True,
+    'SMTP_PORT': 587,
+    'SMTP_USERNAME': 'dnd@example.com',
+    'SMTP_PASSWORD': 'SMTP password'
+    }
