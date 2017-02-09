@@ -24,12 +24,9 @@ ABILITIES = [
     'charisma',
     'perception']
 
-CLASSES = [
-    'fighter',
-    'specialist',
-    'wizard',
-    'priest',
-    'warlock']
+CLASSES = {class_['name'].lower(): class_ for class_ in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/classes.yaml'),
+    Loader=Loader) if class_ is not None}
 
 def calculate_stats(character):
     """Calculate and set characters statistics."""

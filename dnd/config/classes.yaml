@@ -1,0 +1,168 @@
+---
+name: fighter
+hitpoints: [1d10, constitution_modifier]
+to_hit: 1
+to_hit_untrained: -2
+skill_slots: 1
+fortitude: high
+reflex: medium
+will: low
+description: |
+    <p>Fighters have learned to fight and make war. They are
+    tough and resilient. Their class grants them a better to hit
+    modifier, and usually more hit points.</p>
+    <p>A character that starts as a fighter gets no extra benefits.</p>
+---
+name: specialist
+hitpoints: [1d6, constitution_modifier]
+to_hit: .5
+to_hit_untrained: -4
+skill_slots: 1
+fortitude: low
+reflex: high
+will: medium
+description: |
+    <p>Specialists are very good at the skills they have learned.</p>
+    <p>They are often criminals, but they can be artists, or
+    craftsmen, or sages.</p>
+    <p>A specialist receives 5 skill points (SP) per level, that can
+    improve skills he knows. He can spend 1 SP to get a +1
+    bonus to a skill-check, or 2 SP for a +1 to a power-check.</p>
+    <p>Skill points cannot be stored, they must be spent or lost.</p>
+    <p>Every level, at most 3 SP can be put in any one skill.</p>
+    <p>Furthermore, no skill can have more SP than 10 + the
+    character's specialist level. Skill points have no effect on
+    skills without a skill- or power-check, unless specifically
+    noted.</p>
+    <p>A character that starts as a specialist gets 5 extra SP at
+    first level.</p>
+---
+name: wizard
+hitpoints: [1d6, constitution_modifier]
+to_hit: .5
+to_hit_untrained: -4
+skill_slots: 1
+fortitude: low
+reflex: medium
+will: high
+description: |
+    <p>Wizards can cast magic spells. Spells are
+    divided into circles. A wizard starts with
+    access to the first of six circles, and his power
+    grows as he gains levels, as listed in the table
+    on page 27. For instance, a 6th-level wizard
+    casts 4 first, 2 second and 1 third circle spell.</p>
+    <p>Spells must be prepared ahead of time. To do
+    this, the wizard needs to clear his mind. This
+    takes one hour if he can study his spellbook,
+    or a full day without. A spellbook is where a
+    wizard writes down his spells.</p>
+    <p>A wizard with a clear mind can reallocate the
+    spell slots he has left. The spells remain in his
+    memory until they are cast, until he is below 0
+    hp, or until he replaces them. Used spell slots
+    are available again after a night's sleep.</p>
+    <p>A wizard can learn spells from other books
+    by making an intelligence-check with a -1
+    penalty for every circle of the spell. This takes
+    a full day. If the roll fails, he can't attempt that
+    spell again until he gains a wizard level. If he
+    rolls a 20, he can't learn it.</p>
+    <p>Wizard magic improves heavily with level. A
+    3rd-circle caster (a caster who has reached the
+    third circle of spells) casting a 1st-circle spell
+    has a 'reserve' of 2 circles. Many spells allow
+    the caster to use this reserve to add extra
+    effects to their spells. The spell is still cast
+    from a spell slot of its original circle.</p>
+    <p>If the caster doesn't use the reserve in order
+    to save on components, the saving throw DC
+    is 10 + &lt circle indicated by materials &gt + [int].</p>
+    <p>Spells cannot be cast or prepared when
+    wearing armour.</p>
+    <p>A character that starts as a wizard starts with
+    a spellbook, and knowledge of the spellsense
+    spell and 3 other first or second circle spells of
+    the player's choice. If he reaches a new circle,
+    he learns one spell of that circle automatically.</p>
+---
+name: priest
+hitpoints: [1d6, constitution_modifier]
+to_hit: .5
+to_hit_untrained: -4
+skill_slots: 1
+fortitude: medium
+reflex: low
+will: high
+description: |
+    <p>Priests serve a higher power, and for that they
+    receive prayers, divided into circles. A priest
+    starts with access to the first circle of seven,
+    and his power grows as he gains levels. This
+    progress is listed in the table below. For
+    instance, a 6th-level priest can cast 3 prayers
+    of the first, 3 of the second and one of the
+    third circle. He adds a number of prayers (of
+    any circle he has access to) equal to his [wis].
+    If his [wis] is negative, he gains fewer prayers.</p>
+    <p>He can replace any prepared prayer with the
+    'cure minor wounds' prayer, at any time.</p>
+    <p>Prayers must be prepared ahead of time. This
+    must be done after the priest has had a full
+    night's sleep. To prepare, he needs to clear his
+    mind. This takes one hour of prayer and the
+    priest's holy symbol. Without his holy symbol,
+    he has access only to the first circle of prayers.</p>
+    <p>Once the priest has prayed, he can reallocate
+    his prayers. The prayers remain in his memory
+    until they are cast, until he is below 0 hp, or
+    until he replaces them in his morning prayers.</p>
+    <p>Prayers cannot be cast or prepared when
+    wearing heavier than light armour.</p>
+    <p>Prayers are divided into spheres, listed in the
+    table on page 28. The priest has access to 4 of
+    those spheres. One of these is the 'all'-sphere.</p>
+    <p>Two others they receive from their cult. The
+    table on the right lists common spheres for
+    various standard religions, but every church
+    has its own story. The fourth sphere is chosen
+    by the priest himself.</p>
+    <p>A character that starts as a priest gets no extra
+    benefit, but a character that switches to priest
+    may need to qualify or be accepted by a cult
+    before he can take a priest-level.</p>
+---
+name: warlock
+hitpoints: [1d6, constitution_modifier]
+to_hit: .5
+to_hit_untrained: -4
+skill_slots: 2
+fortitude: high
+reflex: low
+will: medium
+description: |
+    <p>Warlocks can use powers that feed on their
+    essence. Powers do not have to be prepared
+    and can be used anytime. To do so, the
+    warlock rolls a power-check using their
+    warlock level and the ability associated with
+    the power. The result of the power-check
+    decides the effect of the magic, or sets the DC
+    for a saving throw.</p>
+    <p>However, there is a cost to this magic. The
+    ability associated with the power is reduced by
+    the number of points listed in the description.
+    This cost takes place after the magic has taken
+    effect.</p>
+    <p>Warlocks learn their powers by investing
+    their skill slots. It costs 2 skill slots to learn a
+    power. Warlocks receive an extra skill-slot (in
+    addition to the normal slot) every warlock
+    level that must be used to gain a warlock
+    power, or the skill focus or skill mastery for
+    such a power. They can also use their normal
+    skill slots for warlock powers.</p>
+    <p>A character that starts as a warlock gets yet
+    another skill-slot to learn a power, bringing the
+    total number of skill-slots for a warlock to
+    5 + 2 * level + [int] + 1.</p>
