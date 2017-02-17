@@ -1,5 +1,7 @@
 """Character tools."""
 from pkg_resources import resource_stream, Requirement
+from markupsafe import escape
+from markdown import markdown
 from yaml import load_all
 try:
     from yaml import CSafeLoader as Loader
@@ -36,6 +38,7 @@ def calculate_stats(character):
     _character_abilities(character)
     _character_skills(character)
     _character_hit_points(character)
+    _character_background(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -131,3 +134,11 @@ def _character_hit_points(character):
     damage = character.get('damage', 0)
     character['damage'] = damage
     character['hp'] = max_hp + temp_hp - damage
+
+def _character_background(character):
+    character['appearance_safe'] = markdown(escape(
+        character.get('appearance_unsafe', '')))
+    character['character_safe'] = markdown(escape(
+        character.get('character_unsafe', '')))
+    character['history_safe'] = markdown(escape(
+        character.get('history_unsafe', '')))

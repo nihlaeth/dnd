@@ -222,7 +222,7 @@ def start():
     app.router.add_post("/api/new-character/", new_character_data_handler)
     app.router.add_get("/{id}/{name}/", character_handler)
     app.router.add_post(
-        "/api/{id}/{attribute}/{ability}/", data_handler)
+        "/api/{id}/{attribute}/{extra}/", data_handler)
     app.router.add_post("/api/{id}/{attribute}/", data_handler)
     web.run_app(app, host=config.server.ip, port=config.server.port)
     cleanup_resources()

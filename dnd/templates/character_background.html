@@ -1,0 +1,20 @@
+{% for field in ['appearance', 'character', 'history'] %}
+<h4>{{ field|capitalize }}</h4>
+{% if editing_privileges %}
+<a href="#" class="btn btn-default btn-block" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#{{ field }}-form" id="{{ field }}-value">{{ character[field + '_safe'] }}</a>
+{% else %}
+{{ character[field + '_safe'] }}
+{% endif %}
+{% if editing_privileges %}
+<div id="{{ field }}-form" class="well collapse">
+  <form data-async data-target="#{{ field }}-errors" action="/api/{{ character['_id'] }}/background/{{ field }}/" method="POST" class="form">
+    <div id="{{ field }}-errors"></div>
+    <div class="form-group">
+      <label for="{{ field }}">{{ field|capitalize }}:</label>
+      <textarea class="form-control" rows="5" id="{{ field }}" name="text">{{ character[field + '_unsafe'] }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-default btn-block">Submit</button>
+  </form>
+</div>
+{% endif %}
+{% endfor %}

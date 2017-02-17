@@ -52,6 +52,7 @@ async def data_handler(request):
         'class': (_class_validator, _class_response_factory),
         'skill': (_skill_validator, _skill_response_factory),
         'name': (_name_validator, _name_response_factory),
+        'background': (_background_validator, _background_response_factory),
     }
     if attribute not in attribute_functions:
         errors.append("unknown attribute")
@@ -83,7 +84,7 @@ async def data_handler(request):
     return json_response(response)
 
 def _ability_validator(request, errors):
-    ability = request.match_info['ability']
+    ability = request.match_info['extra']
     if ability not in ABILITIES:
         errors.append("invalid ability")
         return {}
@@ -286,3 +287,19 @@ async def _name_validator(request, errors):
 def _name_response_factory(response, character):
     response['#name-value'] = {'data': character['name']}
     response['title'] = {'data': "Dnd | {}".format(character['name'])}
+
+def _background_validator(request, errors):
+    field = request.match_info['extra']
+    if field not in ['appearance', 'character', 'history']:
+        errors.append('unknown field {}'.format(field))
+    try:
+        text = request.POST['text']
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+        return {}
+    return {'{}_unsafe'.format(field): text}
+
+def _background_response_factory(response, character):
+    response['#appearance-value'] = {'data': character['appearance_safe']}
+    response['#character-value'] = {'data': character['character_safe']}
+    response['#history-value'] = {'data': character['history_safe']}

@@ -13,6 +13,7 @@ setup(
         'user_config',
         'aiohttp',
         'markupsafe',
+        'markdown',
         'aiohttp_session[secure]',
         'Jinja2',
         'aiohttp_jinja2',
