@@ -194,16 +194,16 @@ def start():
     """Start Web server."""
     config = DndConfiguration()
     # asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
-    app = web.Application(debug=config.debug)
+    app = web.Application(debug=config.server.debug)
     aiohttp_jinja2.setup(
         app,
         loader=jinja2.FileSystemLoader(resource_filename(
             Requirement.parse('dnd'), 'dnd/templates')),
-        auto_reload=config.debug,
+        auto_reload=config.server.debug,
         context_processors=[aiohttp_login.flash.context_processor])
     aiohttp_session.setup(app, EncryptedCookieStorage(
-        config.session_secret,
-        max_age=config.session_max_age))
+        config.server.session_secret,
+        max_age=config.server.session_max_age))
     app.middlewares.append(aiohttp_login.flash.middleware)
 
     app['db_client'] = AsyncIOMotorClient()
@@ -224,5 +224,5 @@ def start():
     app.router.add_post(
         "/api/{id}/{attribute}/{ability}/", data_handler)
     app.router.add_post("/api/{id}/{attribute}/", data_handler)
-    web.run_app(app, host=config.ip, port=config.port)
+    web.run_app(app, host=config.server.ip, port=config.server.port)
     cleanup_resources()
