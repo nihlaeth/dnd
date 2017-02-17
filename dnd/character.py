@@ -97,7 +97,10 @@ def _character_abilities(character):
 
 def _character_skills(character):
     skill_names = character.get('skill_names', [])
-    skill_points = 5 + character['level'] + character['intelligence_modifier']
+    class_skill_points = 0
+    for class_ in CLASSES:
+        class_skill_points += CLASSES[class_]['skill_slots'] * character[class_]
+    skill_points = 5 + class_skill_points + character['intelligence_modifier']
     character['skills'] = {}
     if 'skills' in character['race']['bonus']:
         skill_points += character['race']['bonus']['skills']
