@@ -1,4 +1,5 @@
 """Dungeons & Dragons character sheet app."""
+from pathlib import Path
 from pkg_resources import resource_filename, Requirement, cleanup_resources
 import asyncio
 # import uvloop
@@ -34,6 +35,10 @@ def start():
     app['db'] = app['db_client'].dnd
     aiohttp_login.setup(app, MotorStorage(app['db']), settings.AUTH)
 
+    app.router.add_static(
+        "/static/",
+        path=Path(__file__) / ".." / "static",
+        name="static")
     app.router.add_get("/", index_handler)
     app.router.add_post("/api/new-character/", new_character_data_handler)
     app.router.add_get("/{id}/{name}/", character_handler)
