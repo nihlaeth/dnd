@@ -21,6 +21,7 @@
 
                 $($(this).attr('data-target')).collapse("hide");
             });
+            event.preventDefault();
         });
         $(document).on('submit', 'form[data-async]', function(event) {
             var $form = $(this);
