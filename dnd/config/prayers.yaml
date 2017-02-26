@@ -1,5 +1,5 @@
 ---
-name: antidode
+name: antidote
 sphere: healing
 circle: 4
 range: "touch (1 creature or 1 m³)"
