@@ -2,8 +2,10 @@
 name: antidote
 sphere: healing
 circle: 4
-range: "touch (1 creature or 1 m³)"
-casting_time: "6 (VS)"
+range: "touch"
+area: "1 creature or 1 m³"
+casting_time: "6"
+components: "VS"
 duration: instantaneous
 mechanics: fortitude negates
 description: |
