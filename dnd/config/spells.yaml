@@ -1,7 +1,7 @@
+!!! IN PROGRESS !!!
 note to self - empty lines within an item means that they still need work.
 question - can I leave variables empty? do i just delete the line?
 question - how do I deal with the reserve table? Do I use html?
-question - how do I deal with lay-out? Hard or soft ends of line?
 
 ---
 name: Alarm
@@ -35,8 +35,7 @@ components: "VS"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell allows the caster to cast spells as if he had achieved one more circle. This allows him to use higher-circle effects, or increases his reserve by one. It does not allow him more spells, and doesn't raise the DCs of the saving throws of his magic. A caster can have only one augmentation spell in effect at the same time.
+  <p>This spell allows the caster to cast spells as if he had achieved one more circle. This allows him to use higher-circle effects, or increases his reserve by one. It does not allow him more spells, and doesn't raise the DCs of the saving throws of his magic. A caster can have only one augmentation spell in effect at the same time.</p>
 
 ---
 name: Bulwark
@@ -49,11 +48,9 @@ components: "VS"
 duration: sustainable
 mechanics: action to set target
 description: |
-
-  This spell creates a latent barrier around the caster that protects against a single creature. It grants the caster a bonus to AC, saving throws and damage reduction to melee attacks equal to the highest circle he has achieved.
-  The caster chooses the creature against which the spell protects. Changing the target is an action equivalent to spellcasting with a speed of 2.
-  The barrier is close to the caster and does not affect attacks by a large or greater weapon.
-
+  <p>This spell creates a latent barrier around the caster that protects against a single creature. It grants the caster a bonus to AC, saving throws and damage reduction to melee attacks equal to the highest circle he has achieved.</p>
+  <p>The caster chooses the creature against which the spell protects. Changing the target is an action equivalent to spellcasting with a speed of 2.</p>
+  <p>The barrier is close to the caster and does not affect attacks by a large or greater weapon.</p>
 ---
 name: Ception
 sphere: chaos
@@ -128,11 +125,9 @@ components: "VSM"
 duration: permanent
 mechanics: special
 description: |
-
-  This spell imbues a dead body with magic so as to transform it into a duplicate of the caster. This duplicate has the same exact abilities as the caster, and follows its orders. However, every time the clone wakes up within a kilometer of the caster, it must save vs will (DC 15) or be overcome with the desire to dispose of the caster and take his place.
-  This disadvantage can be negated by enchanting a living body instead of a dead one. This body must be conscious during the casting. It gets a saving throw vs fortitude to resist the physical transformation (which changes ability scores, class abilities and hit points). It also gets a saving throw vs will to maintain his skills and identity (the rest). Even if both these saves are failed, the clone still has a permanent -2 on all attack-rolls and skill- and ability-checks.
-  In addition to the generic components, this spell requires a body.
-
+  <p>This spell imbues a dead body with magic so as to transform it into a duplicate of the caster. This duplicate has the same exact abilities as the caster, and follows its orders. However, every time the clone wakes up within a kilometer of the caster, it must save vs will (DC 15) or be overcome with the desire to dispose of the caster and take his place.</p>
+  <p>This disadvantage can be negated by enchanting a living body instead of a dead one. This body must be conscious during the casting. It gets a saving throw vs fortitude to resist the physical transformation (which changes ability scores, class abilities and hit points). It also gets a saving throw vs will to maintain his skills and identity (the rest). Even if both these saves are failed, the clone still has a permanent -2 on all attack-rolls and skill- and ability-checks.</p>
+  <p>In addition to the generic components, this spell requires a body.</p>
 ---
 name: Deintegrate
 sphere: war
@@ -144,9 +139,7 @@ components: "VSM"
 duration: instantaneous
 mechanics: reflex halves, reflex + 4 negates
 description: |
-
-  This spell shoots a beam of green light at the target, which attempts to deintegrate him. If he fails his saving throw he takes 6d10 acid damage. If he fails the save with more than 4 points, his body is deintegrated and he dies.
-
+  <p>This spell shoots a beam of green light at the target, which attempts to deintegrate him. If he fails his saving throw he takes 6d10 acid damage. If he fails the save with more than 4 points, his body is deintegrated and he dies.</p>
 ---
 name: Demona
 sphere: chaos
@@ -216,9 +209,7 @@ components: "VSM"
 duration: instantaneous
 mechanics: fortitude halves
 description: |
-
-  This spell unleashes a storm of acid rain, that pours down onto everything, inflicting 4d8 acid damage.
-
+  <p>This spell unleashes a storm of acid rain, that pours down onto everything, inflicting 4d8 acid damage.</p>
 ---
 name: Disjunction
 sphere: aecane
@@ -230,11 +221,9 @@ components: "VS"
 duration: instantaneous
 mechanics: special
 description: |
-
-  This spell removes magic in the area. Non-permanent effects are automatically removed, and permanent effects, including curses, have a 50% chance of surviving. Magic items are treated as permanent effects.
-  A creature that gets rid of a curse this way permanently loses 1 point of constitution for every curse.
-  The DM may rule that certain items are special. These items, probably historical artefacts or holy relics, roll twice, and survive if they make the roll even once.
-
+  <p>This spell removes magic in the area. Non-permanent effects are automatically removed, and permanent effects, including curses, have a 50% chance of surviving. Magic items are treated as permanent effects.</p>
+  <p>A creature that gets rid of a curse this way permanently loses 1 point of constitution for every curse.</p>
+  <p>The DM may rule that certain items are special. These items, probably historical artefacts or holy relics, roll twice, and survive if they make the roll even once.</p>
 ---
 name: Dispel magic
 sphere: arcane
@@ -246,9 +235,7 @@ components: "VS"
 duration: instantaneous
 mechanics: power-check
 description: |
-
-  This spell is similar to the prayer with the same name, covered on page 76. The only difference is that the power-check of the spell uses the caster's wizard level and [int].
-
+  <p>This spell is similar to the prayer with the same name, covered on page 76. The only difference is that the power-check of the spell uses the caster's wizard level and [int].</p>
 ---
 name: Donnar
 sphere: storm
@@ -260,9 +247,7 @@ components: "VM"
 duration: instantaneous
 mechanics: fortitude halves damage and negates effect
 description: |
-
-  This spell creates a thunderclap that stuns all creatures around the caster while leaving him unharmed. It inflicts 1d6 points of sonic damage for every circle the caster has achieved, and stuns the targets so that they lose their next action.
-
+  <p>This spell creates a thunderclap that stuns all creatures around the caster while leaving him unharmed. It inflicts 1d6 points of sonic damage for every circle the caster has achieved, and stuns the targets so that they lose their next action.</p>
 ---
 name: Doorway
 sphere: chaos
@@ -274,10 +259,8 @@ components: "VSM"
 duration: 1 round
 mechanics: 
 description: |
-
-  This spell creates a doorway in front of the caster through which other places can be reached. He can place the exit of the doorway in any location he has seen that is within range. Any magic effect in the target location blocks the spell.
-  A third-circle caster can place the exit 1 kilometer away, a fourth-circle caster can put it within a day's march, a fifth-circle caster can place the exit anywhere (... in the world... ), and a sixth-level caster can reach other planes of existence.
-
+  <p>This spell creates a doorway in front of the caster through which other places can be reached. He can place the exit of the doorway in any location he has seen that is within range. Any magic effect in the target location blocks the spell.</p>
+  <p>A third-circle caster can place the exit 1 kilometer away, a fourth-circle caster can put it within a day's march, a fifth-circle caster can place the exit anywhere (... in the world... ), and a sixth-level caster can reach other planes of existence.</p>
 ---
 name: Elusivity
 sphere: thought
@@ -289,9 +272,8 @@ components: "S"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell protects creatures and places in the area from being magically watched. The DC for the power-check to find them is raised by 3 for every circle the caster has reached.
-  Additionally, any creature detecting magic must make an observation-check with a -3 for every circle the caster has reached to detect any magic at all in the area.
+  <p>This spell protects creatures and places in the area from being magically watched. The DC for the power-check to find them is raised by 3 for every circle the caster has reached.</p>
+  <p>Additionally, any creature detecting magic must make an observation-check with a -3 for every circle the caster has reached to detect any magic at all in the area.</p>
 
 ---
 name: Ethereality
@@ -304,11 +286,9 @@ components: "VSM"
 duration: instantaneous
 mechanics: special
 description: |
-
-  This spell sends the targets to another plane of existence. If the caster is familiar with his destination, the spell works automatically. If he isn't, then he must roll a save vs will DC 15 or end up in another unfamiliar place.
-  The caster has no control over where he arrives in the target plane.
-  The caster can take with him a number of willing people up to the circle he has achieved, that touch him. If more people touch him, the passengers are determined randomly.
-
+  <p>This spell sends the targets to another plane of existence. If the caster is familiar with his destination, the spell works automatically. If he isn't, then he must roll a save vs will DC 15 or end up in another unfamiliar place.</p>
+  <p>The caster has no control over where he arrives in the target plane.</p>
+  <p>The caster can take with him a number of willing people up to the circle he has achieved, that touch him. If more people touch him, the passengers are determined randomly.</p>
 ---
 name: Expulsion
 sphere: law
@@ -320,11 +300,9 @@ components: "VSM"
 duration: instantaneous
 mechanics: will negates
 description: |
-
-  This spell reduces the target's strength and constitution to 5 and sends him back to his home plane. There he must stay at least until his ability damage is healed.
-  If the target is already on his home plane, he is expelled from the caster's presence. He is cast back at least a hundred meters, taking 6d12 sonic damage. He does not take ability damage.
-  If the caster has a substance that is especially harmful to the target creature, he faces a -4 penalty to his saving throw.
-
+  <p>This spell reduces the target's strength and constitution to 5 and sends him back to his home plane. There he must stay at least until his ability damage is healed.</p>
+  <p>If the target is already on his home plane, he is expelled from the caster's presence. He is cast back at least a hundred meters, taking 6d12 sonic damage. He does not take ability damage.</p>
+  <p>If the caster has a substance that is especially harmful to the target creature, he faces a -4 penalty to his saving throw.</p>
 ---
 name: Faraday
 sphere: law
@@ -336,9 +314,8 @@ components: "VSM"
 duration: 1 round / level
 mechanics: 
 description: |
-
-  This spell creates an immobile sphere where magic does not exist. Spells do not penetrate, magical creatures or those from other planes cannot enter, and breath weapons and gaze attacks can't hurt anyone in the area. Any creature with a magical compulsion or curse in the area will find that he is free of the effect while he remains within. The area is even immune to scrying, dispel magic and disjunction.
-  Some things, such as holy relics and gods, may be able to negate the spell. That is for the DM to decide.
+  <p>This spell creates an immobile sphere where magic does not exist. Spells do not penetrate, magical creatures or those from other planes cannot enter, and breath weapons and gaze attacks can't hurt anyone in the area. Any creature with a magical compulsion or curse in the area will find that he is free of the effect while he remains within. The area is even immune to scrying, dispel magic and disjunction.</p>
+  <p>Some things, such as holy relics and gods, may be able to negate the spell. That is for the DM to decide.</p>
 
 ---
 name: Fivefold
@@ -351,9 +328,7 @@ components: "VSM"
 duration: permanent
 mechanics: fortitude negates
 description: |
-
-  This spell changes the target's race into its fivefold version, as described in chapter 2. If the target is affected, he can no longer be a player character. The spell does not affect trumen. It is a curse.
-
+  <p>This spell changes the target's race into its fivefold version, as described in chapter 2. If the target is affected, he can no longer be a player character. The spell does not affect trumen. It is a curse.</p>
 ---
 name: Flame
 sphere: war
@@ -363,9 +338,9 @@ area: "2 meters"
 casting_time: "3"
 components: "VSM"
 duration:	instantaneous
+mechanics: 
 description: |
-
-  This spell creates fans of flames from the caster's hands, burning up to two creatures in melee distance. It inflicts 1d6 points of heat damage for every circle the caster has achieved, plus 1 point per level for every wizard level.
+  <p>This spell creates fans of flames from the caster's hands, burning up to two creatures in melee distance. It inflicts 1d6 points of heat damage for every circle the caster has achieved, plus 1 point per level for every wizard level.</p>
 
 ---
 name: Fortress
@@ -378,10 +353,9 @@ components: "VSM"
 duration:	special
 mechanics: 
 description: |
-
-  This spell strengthens all the walls, doors, floors and ceilings in the area, granting them damage reduction of 2 vs blunt damage and 3 vs all other damage for every circle the caster has achieved.
-  It also inflicts a -4 penalty for every circle to the lockpicking-check to open any locks or dismantle any traps or devices in the area.
-  The spell duration is sustainable as long as the caster is in the area. If he leaves, then the spell lasts until the next sunrise.
+  <p>This spell strengthens all the walls, doors, floors and ceilings in the area, granting them damage reduction of 2 vs blunt damage and 3 vs all other damage for every circle the caster has achieved.</p>
+  <p>It also inflicts a -4 penalty for every circle to the lockpicking-check to open any locks or dismantle any traps or devices in the area.</p>
+  <p>The spell duration is sustainable as long as the caster is in the area. If he leaves, then the spell lasts until the next sunrise.</p>
 
 ---
 name: Frost
@@ -394,9 +368,7 @@ components: "VSM"
 duration: instantaneous
 mechanics: fortitude halves
 description: |
-
-  This spell creates an area of extreme cold. All creatures in the area receive 6d8 points of cold damage. All fires are extinguished, as are all magical effects that inflict heat damage.
-
+  <p>This spell creates an area of extreme cold. All creatures in the area receive 6d8 points of cold damage. All fires are extinguished, as are all magical effects that inflict heat damage.</p>
 ---
 name: Glamour
 sphere: thought
@@ -408,7 +380,6 @@ components: "VSM"
 duration: 1 round / level
 mechanics: disbelief
 description: |
-
   This spell creates an illusionary reality in the area of effect. The wizard can cover 1 sense (sight, sound, touch, smell or taste).
   The illusion can consist of anything the caster can imagine, but it has limits. The caster can only maintain as many creatures as half his level, the spell has no more actions than the caster has, any attacks have the same to hit modifier as the caster would have, and the DC for the saving throw of any imagined effect is the same as the DC to disbelieve.
   At the moment of casting, the caster decides the form the spell takes. Any change in the form requires concentration.
@@ -431,9 +402,8 @@ components: "VSM"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell creates a floating hand that the caster can use to deliver touch attacks. The hand has a +1 bonus to hit for every circle the caster has achieved. It has an AC of 13 + the caster's achieved circle, and has 3 hit points per achieved circle. It always misses its saving throw against area attacks, but if the caster is concentrating on it, he can attempt a reflex save vs the attack's DC to whisk the hand out of the area in time.
-  The caster can choose to make the hand almost invisible, requiring an alertness-check with a -6 penalty to notice the hand. If the hand is not noticed, it gains a +2 bonus to hit. However, the spell is treated as if the caster has achieved one less circle of magic.
+  <p>This spell creates a floating hand that the caster can use to deliver touch attacks. The hand has a +1 bonus to hit for every circle the caster has achieved. It has an AC of 13 + the caster's achieved circle, and has 3 hit points per achieved circle. It always misses its saving throw against area attacks, but if the caster is concentrating on it, he can attempt a reflex save vs the attack's DC to whisk the hand out of the area in time.</p>
+  <p>The caster can choose to make the hand almost invisible, requiring an alertness-check with a -6 penalty to notice the hand. If the hand is not noticed, it gains a +2 bonus to hit. However, the spell is treated as if the caster has achieved one less circle of magic.</p>
 
 ---
 name: Glyph
@@ -475,16 +445,14 @@ components: "VSM"
 duration:	5 rounds or until discharged
 mechanics:	will negates, twice
 description: |
-
-  This spell infuses the target with fear for the caster. In the target's mind, the caster is a bigger, stronger, menacing entity.
-  The target faces a -2 penalty to AC and saving throws for every circle the caster has achieved, but only against attacks or spells originating from the caster.
-  A higher-level caster can discharge the spell to inflict an additional effect on the target. Discharging is equivalent to spellcasting and has a speed of 1. The target can roll a new saving throw to avoid the second effect.
-  A 2nd-circle caster can paralyse the target with fear. He faces a -1 to hit, AC and a +3 to initiative until he can regain his composure by resting for 1 turn.
-  A 3rd-circle caster can force the target to flee. The target is then unable to face the caster again until he has had time to regain his composure.
-  A 4th-circle caster can force the target to face his greatest fear. The target ignores other dangers, focusing only on fighting or fleeing from his foe. He rolls a save vs will -2 every round, and cannot decide his own actions until he has made this roll.
-  A 5th-circle caster can inflict 2d6 wisdom damage.
-  A 6th-circle caster can kill the target. A target killed by this spell, if brought back to life, loses 3 points of wisdom from the mental anguish.
-
+  <p>This spell infuses the target with fear for the caster. In the target's mind, the caster is a bigger, stronger, menacing entity.</p>
+  <p>The target faces a -2 penalty to AC and saving throws for every circle the caster has achieved, but only against attacks or spells originating from the caster.</p>
+  <p>A higher-level caster can discharge the spell to inflict an additional effect on the target. Discharging is equivalent to spellcasting and has a speed of 1. The target can roll a new saving throw to avoid the second effect.</p>
+  <p>A 2nd-circle caster can paralyse the target with fear. He faces a -1 to hit, AC and a +3 to initiative until he can regain his composure by resting for 1 turn.</p>
+  <p>A 3rd-circle caster can force the target to flee. The target is then unable to face the caster again until he has had time to regain his composure.</p>
+  <p>A 4th-circle caster can force the target to face his greatest fear. The target ignores other dangers, focusing only on fighting or fleeing from his foe. He rolls a save vs will -2 every round, and cannot decide his own actions until he has made this roll.</p>
+  <p>A 5th-circle caster can inflict 2d6 wisdom damage.</p>
+  <p>A 6th-circle caster can kill the target. A target killed by this spell, if brought back to life, loses 3 points of wisdom from the mental anguish.</p>
 ---
 name: Grenata
 sphere: harvest
@@ -517,14 +485,12 @@ components: "VS"
 duration:	instantaneous
 mechanics:	fortitude negates
 description: |
-
-  This spell creates a demonic laughter in the area, a laughter that inflicts 2d6 sonic damage and an effect chosen by the caster. If successful, the saving throw negates both the effect and the damage. The caster is not affected by the spell.
-  A 2nd-circle caster can cause the targets to lose their next action.
-  A 3rd-circle caster can sicken the targets, inflicting a -2 to hit for one round and lowering their constitution by one point.
-  A 4th-circle caster can inflict 1d6 points of wisdom damage.
-  A 5th-circle caster can inflict 2d6 subdual damage in addition to the sonic damage.
-  A 6th-circle caster can kill the targets.
-
+  <p>This spell creates a demonic laughter in the area, a laughter that inflicts 2d6 sonic damage and an effect chosen by the caster. If successful, the saving throw negates both the effect and the damage. The caster is not affected by the spell.</p>
+  <p>A 2nd-circle caster can cause the targets to lose their next action.</p>
+  <p>A 3rd-circle caster can sicken the targets, inflicting a -2 to hit for one round and lowering their constitution by one point.</p>
+  <p>A 4th-circle caster can inflict 1d6 points of wisdom damage.</p>
+  <p>A 5th-circle caster can inflict 2d6 subdual damage in addition to the sonic damage.</p>
+  <p>A 6th-circle caster can kill the targets.</p>
 ---
 name: Hulk
 sphere: tribe
@@ -556,13 +522,11 @@ components: "VSM"
 duration:	1 round / level
 mechanics:	will negates
 description: |
-
-  This spell creates an area full of hypnotic visual effects that capture the attention of any who venture inside. The targets will stand still gazing at the pretty lights. Any damage breaks this effect.
-  A third-circle caster also slows his targets, halving their movement, delaying their actions (+2 initiative) and inflicting a -2 to hit and a -2 to skill- and ability-checks. This effect lasts until the spell ends, even if the targets leave the area.
-  A fourth-circle caster can influence a target's actions, giving him orders which he follows as long as the caster is concentrating and the target stays inside the area. This does not require the targets to understand the caster's language; the control is mental. If the orders are obviously suicidal, the spell ends.
-  A fifth-circle caster can give orders that the target will follow until the spell ends without requiring the caster's concentration.
-  A sixth-circle caster can give orders to all targets in the spell simultaneously.
-
+  <p>This spell creates an area full of hypnotic visual effects that capture the attention of any who venture inside. The targets will stand still gazing at the pretty lights. Any damage breaks this effect.</p>
+  <p>A third-circle caster also slows his targets, halving their movement, delaying their actions (+2 initiative) and inflicting a -2 to hit and a -2 to skill- and ability-checks. This effect lasts until the spell ends, even if the targets leave the area.</p>
+  <p>A fourth-circle caster can influence a target's actions, giving him orders which he follows as long as the caster is concentrating and the target stays inside the area. This does not require the targets to understand the caster's language; the control is mental. If the orders are obviously suicidal, the spell ends.</p>
+  <p>A fifth-circle caster can give orders that the target will follow until the spell ends without requiring the caster's concentration.</p>
+  <p>A sixth-circle caster can give orders to all targets in the spell simultaneously.</p>
 ---
 name: Icarus
 sphere: storm
@@ -574,13 +538,11 @@ components: "VSM"
 duration: 1 hour
 mechanics:	concentration to steer
 description: |
-
-  This spell enchants an object so that it can fly as fast as a galloping horse. The caster can control the flight by concentration, using either the meditation or the spellcraft skill. If he does not, the item continues on its course and speed.
-  The type of object the spell can affect is determined by the circle the caster has achieved. A fourth-circle caster can enchant a broom, a fifth-circle caster also a shield, and a sixth-circle caster also a carpet.
-  A broom can also be a spear or staff. It can carry up to two people, one of which is the caster. It has a handling and speed modifier of -5. If a rider takes damage, fails a saving throw or fails to hold on with both hands, he must make a tumbling-check every round or fall. The caster may roll this as a group-check.
-  A shield can carry the caster. It has a handling modifier equal to the caster's highest circle, and a speed modifier of -10. The caster can instinctively keep his balance on the shield, but if he fails a saving throw, he must make a tumbling-check or fall off.
-  A carpet can also be a table, a couch or any object of the same general size. It can hold several people, its limitation being room not weight. It has a handling modifier of -10 and a speed modifier equal to the caster's highest circle. If a rider falls on or below 0 hit points, he must save vs reflex (DC 10) or fall off.
-
+  <p>This spell enchants an object so that it can fly as fast as a galloping horse. The caster can control the flight by concentration, using either the meditation or the spellcraft skill. If he does not, the item continues on its course and speed.</p>
+  <p>The type of object the spell can affect is determined by the circle the caster has achieved. A fourth-circle caster can enchant a broom, a fifth-circle caster also a shield, and a sixth-circle caster also a carpet.</p>
+  <p>A broom can also be a spear or staff. It can carry up to two people, one of which is the caster. It has a handling and speed modifier of -5. If a rider takes damage, fails a saving throw or fails to hold on with both hands, he must make a tumbling-check every round or fall. The caster may roll this as a group-check.</p>
+  <p>A shield can carry the caster. It has a handling modifier equal to the caster's highest circle, and a speed modifier of -10. The caster can instinctively keep his balance on the shield, but if he fails a saving throw, he must make a tumbling-check or fall off.</p>
+  <p>A carpet can also be a table, a couch or any object of the same general size. It can hold several people, its limitation being room not weight. It has a handling modifier of -10 and a speed modifier equal to the caster's highest circle. If a rider falls on or below 0 hit points, he must save vs reflex (DC 10) or fall off.</p>
 ---
 name: Ikea
 sphere: arcane
@@ -592,14 +554,12 @@ components: "S"
 duration:	sustainable until discharged
 mechanics: 
 description: |
-
-  This spell allows the caster to create minor effects when concentrating. He can fetch coins from ears and rabbits from hats, sweep the floor and dry or brush off clothes. These effects cannot inflict damage or force a saving throw, and they are obviously magical.
-  A 2nd-circle caster can discharge this spell to repair things. A shattered vase, punctured waterskin or snapped leather strap, when put together, fuses again and is as good as new. A skill-check may be needed to ensure that the item is repaired correctly.
-  A 3rd-circle caster can discharge this spell to create nonmagical items out of thin air. These items are of improvised quality unless the caster has the skill to create them normally. Creating very specific items, such as keys, grants the caster an applicable skill-check with a -4 penalty to succeed.
-  A 4th-circle caster can discharge this spell to harden an object no larger than a brick, making it as strong as steel and giving it a damage reduction of 10 to all attacks.
-  A 5th-circle caster can repair and fabricate items without discharging the spell.
-  A 6th-circle caster can harden items without discharging the spell.
-
+  <p>This spell allows the caster to create minor effects when concentrating. He can fetch coins from ears and rabbits from hats, sweep the floor and dry or brush off clothes. These effects cannot inflict damage or force a saving throw, and they are obviously magical.</p>
+  <p>A 2nd-circle caster can discharge this spell to repair things. A shattered vase, punctured waterskin or snapped leather strap, when put together, fuses again and is as good as new. A skill-check may be needed to ensure that the item is repaired correctly.</p>
+  <p>A 3rd-circle caster can discharge this spell to create nonmagical items out of thin air. These items are of improvised quality unless the caster has the skill to create them normally. Creating very specific items, such as keys, grants the caster an applicable skill-check with a -4 penalty to succeed.</p>
+  <p>A 4th-circle caster can discharge this spell to harden an object no larger than a brick, making it as strong as steel and giving it a damage reduction of 10 to all attacks.</p>
+  <p>A 5th-circle caster can repair and fabricate items without discharging the spell.</p>
+  <p>A 6th-circle caster can harden items without discharging the spell.</p>
 ---
 name: Imbuement
 sphere: tribe
@@ -611,9 +571,8 @@ components: "VSM"
 duration: 6 hours
 mechanics: 
 description: |
-
-  This spell enchants a weapon or armour. A weapon gains a +1 to hit and damage. An armour gains a +1 AC and its skill-penalty is reduced by one.
-  These bonuses are increased by one for every circle over third the caster has achieved. They are not cumulative with bonuses from other magical enhancements, or from masterwork items.
+  <p>This spell enchants a weapon or armour. A weapon gains a +1 to hit and damage. An armour gains a +1 AC and its skill-penalty is reduced by one.</p>
+  <p>These bonuses are increased by one for every circle over third the caster has achieved. They are not cumulative with bonuses from other magical enhancements, or from masterwork items.</p>
 
 ---
 name: Infusion
@@ -626,9 +585,7 @@ components: "VS"
 duration:	instantaneous
 mechanics:	weakest save negates
 description: |
-
-  This spell causes the target to soundlessly explode into a ball of white light. He has a saving throw to negate, but this save is the one for which he has the lowest class bonus. A tie is decided by his starting class.
-
+  <p>This spell causes the target to soundlessly explode into a ball of white light. He has a saving throw to negate, but this save is the one for which he has the lowest class bonus. A tie is decided by his starting class.</p>
 ---
 name: Ironguard
 sphere: war
@@ -640,8 +597,7 @@ components: "VSM"
 duration:	sustainable or 1 round / level
 mechanics: 
 description: |
-
-  This spell makes the target highly resistant to damage from normal weapons. All attacks that hit are assumed to roll minimum damage. A 5th-circle caster is also guarded from +1 weapons, and a 6th-circle caster from +2 weapons. If the target is the caster, then the duration is sustainable.
+  <p>This spell makes the target highly resistant to damage from normal weapons. All attacks that hit are assumed to roll minimum damage. A 5th-circle caster is also guarded from +1 weapons, and a 6th-circle caster from +2 weapons. If the target is the caster, then the duration is sustainable.</p>
 
 ---
 name: Irritation
@@ -654,13 +610,11 @@ components: "VSM"
 duration:	1 round / level
 mechanics:	to hit, fortitude may negate
 description: |
-
-  This spell inflicts the target with a disability chosen by the caster at the time of casting, but limited by the circle he has achieved.
-  A 2nd-circle caster can make the target deaf or itching. A deaf target cannot hear, and an itching target faces a -2 to all ability-, skill- and power-checks, saving throws and to hit.
-  A 3rd-circle caster can make the target blind or mute. A blind target faces a -4 penalty to hit and to AC. Creatures with more heads may be less crippled. A mute target cannot speak or use magic with verbal components.
-  A 4th-circle caster can slow the target. A slowed target has only half his movement speed, and can take an action only every second round. He also loses his [str] to attack- and damage-rolls, and his [dex] to AC.
-  If the caster chooses an effect at least two circles below his abilities, he can try to make the effect permanent. If he does this, the target gains a saving throw versus fortitude to negate the entire effect. As soon as this permanent effect has taken hold, it is treated as a curse.
-
+  <p>This spell inflicts the target with a disability chosen by the caster at the time of casting, but limited by the circle he has achieved.</p>
+  <p>A 2nd-circle caster can make the target deaf or itching. A deaf target cannot hear, and an itching target faces a -2 to all ability-, skill- and power-checks, saving throws and to hit.</p>
+  <p>A 3rd-circle caster can make the target blind or mute. A blind target faces a -4 penalty to hit and to AC. Creatures with more heads may be less crippled. A mute target cannot speak or use magic with verbal components.</p>
+  <p>A 4th-circle caster can slow the target. A slowed target has only half his movement speed, and can take an action only every second round. He also loses his [str] to attack- and damage-rolls, and his [dex] to AC.</p>
+  <p>If the caster chooses an effect at least two circles below his abilities, he can try to make the effect permanent. If he does this, the target gains a saving throw versus fortitude to negate the entire effect. As soon as this permanent effect has taken hold, it is treated as a curse.</p>
 ---
 name: Lightning
 sphere: storm
@@ -691,9 +645,7 @@ components: "VSM"
 duration:	3 turns
 mechanics:	will negates
 description: |
-
-  This spell enchants both the caster and the target to speak a secret language during the duration. They can speak only this language, and no other. The language is a new one for every casting, and is not spoken anywhere in the world. The effect does not interfere with spellcasting.
-
+  <p>This spell enchants both the caster and the target to speak a secret language during the duration. They can speak only this language, and no other. The language is a new one for every casting, and is not spoken anywhere in the world. The effect does not interfere with spellcasting.</p>
 ---
 name: Magic missile
 sphere: hunt
@@ -705,9 +657,8 @@ components: "VS"
 duration: instantaneous
 mechanics: 
 description: |
-
-  This spell fires bursts of lightning from the caster towards a living target within range. The missiles strike instantaneously, and always hit. The caster can choose to fire each missile at a different target, or group them together. This is decided before damage is rolled.
-  The caster can fire one missile per spell circle he has achieved. The missiles inflict 1d4+1 lightning damage, and ignore 2 points of damage reduction per caster circle. The caster can give up one missile to make the others inflict 1d6+1 damage instead, or two missiles to make the others inflict 1d8+1 damage.
+  <p>This spell fires bursts of lightning from the caster towards a living target within range. The missiles strike instantaneously, and always hit. The caster can choose to fire each missile at a different target, or group them together. This is decided before damage is rolled.</p>
+  <p>The caster can fire one missile per spell circle he has achieved. The missiles inflict 1d4+1 lightning damage, and ignore 2 points of damage reduction per caster circle. The caster can give up one missile to make the others inflict 1d6+1 damage instead, or two missiles to make the others inflict 1d8+1 damage.</p>
 
 ---
 name: Majesty
@@ -720,8 +671,7 @@ components: "S"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell magically boosts a wizard's presence, granting a +1 bonus to charisma per circle the caster has achieved.
+  <p>This spell magically boosts a wizard's presence, granting a +1 bonus to charisma per circle the caster has achieved.</p>
 
 ---
 name: Mellon
@@ -734,9 +684,7 @@ components: "VS"
 duration:	instantaneous
 mechanics:	skill-check
 description: |
-
-  This spell can be used to try and open a door, portal, chest, book, or anything else that is protected by normal or magical locks and traps. The caster can roll a lockpicking check with a +3 for every circle he has achieved to open the target object. If the target is trapped, then the caster gains a +4 to the applicable saving throws.
-
+  <p>This spell can be used to try and open a door, portal, chest, book, or anything else that is protected by normal or magical locks and traps. The caster can roll a lockpicking check with a +3 for every circle he has achieved to open the target object. If the target is trapped, then the caster gains a +4 to the applicable saving throws.</p>
 ---
 name: Metamorphosis
 sphere: harvest
@@ -772,18 +720,16 @@ components: "VS"
 duration:	sustainable
 mechanics:	special, will negates
 description: |
-
-  This spell binds one small creature of animal intelligence to the caster. The minion becomes an extension of the caster, and is infused with some of his magic.
-  The caster gains a +1 to saving throws and AC when the minion is within 10 meters. If it's in this range, its presence also grants him a +1 to alertness- and observation-checks for every circle he has achieved.
-  The caster can see and hear through the senses of the minion. It takes him one round to switch his senses to his minion's. Switching back is instantaneous, but the caster still needs a moment to regain his bearings; on the round he switches back, his initiative is delayed by 3.
-  A fourth-circle caster gains the ability to speak through his minion. He can then also speak the language of his minion, and thus communicate with animals of its species.
-  A fifth-circle caster gains the ability to cast his spells through his familiar. The minion must produce the necessary material and somatic components for this.
-  The minion has 5 hit points and an AC of 15. It has the same bonus to hit as the caster, but it does only 1 point of slashing damage on a hit. Its attack speed is 3.
-  The caster can choose to sacrifice his minion in a magical attack. This action has a speed of 3. If he succeeds on an attack vs AC 10, the caster cannot use any more magic until he has had a full night's rest. The target must save vs will or suffer the same. This attack counts as an action for the caster as well as his minion.
-  Any animal no smaller than a frog or a mouse can serve as a minion. However, some can serve better, either because they can fly or swim or because they can produce the somatic components for spellcasting.
-  If the minion is fed its normal food, then it retains its natural appearance. If only the magic sustains it, then it will eventually shrivel away to a skeletal form.
-  The caster can also create an artificial creature for this spell. Such a creature is usually called a homunculus and its appearance is decided by the caster. Creating it requires one week, one annum of supplies and an itemcraft-check. A failed check ruins the materials, but a successful check changes the duration of the spell from sustainable to permanent.
-
+  <p>This spell binds one small creature of animal intelligence to the caster. The minion becomes an extension of the caster, and is infused with some of his magic.</p>
+  <p>The caster gains a +1 to saving throws and AC when the minion is within 10 meters. If it's in this range, its presence also grants him a +1 to alertness- and observation-checks for every circle he has achieved.</p>
+  <p>The caster can see and hear through the senses of the minion. It takes him one round to switch his senses to his minion's. Switching back is instantaneous, but the caster still needs a moment to regain his bearings; on the round he switches back, his initiative is delayed by 3.</p>
+  <p>A fourth-circle caster gains the ability to speak through his minion. He can then also speak the language of his minion, and thus communicate with animals of its species.</p>
+  <p>A fifth-circle caster gains the ability to cast his spells through his familiar. The minion must produce the necessary material and somatic components for this.</p>
+  <p>The minion has 5 hit points and an AC of 15. It has the same bonus to hit as the caster, but it does only 1 point of slashing damage on a hit. Its attack speed is 3.</p>
+  <p>The caster can choose to sacrifice his minion in a magical attack. This action has a speed of 3. If he succeeds on an attack vs AC 10, the caster cannot use any more magic until he has had a full night's rest. The target must save vs will or suffer the same. This attack counts as an action for the caster as well as his minion.</p>
+  <p>Any animal no smaller than a frog or a mouse can serve as a minion. However, some can serve better, either because they can fly or swim or because they can produce the somatic components for spellcasting.</p>
+  <p>If the minion is fed its normal food, then it retains its natural appearance. If only the magic sustains it, then it will eventually shrivel away to a skeletal form.</p>
+  <p>The caster can also create an artificial creature for this spell. Such a creature is usually called a homunculus and its appearance is decided by the caster. Creating it requires one week, one annum of supplies and an itemcraft-check. A failed check ruins the materials, but a successful check changes the duration of the spell from sustainable to permanent.</p>
 ---
 name: Mortis
 sphere: dark
@@ -795,9 +741,7 @@ components: "VSM"
 duration:	instantaneous
 mechanics: fortitude negates
 description: |
-
-  This spell kills the target.
-
+  <p>This spell kills the target.</p>
 ---
 name: Mute
 sphere: arcane
@@ -809,11 +753,9 @@ components: "VSM"
 duration: 1 round / level
 mechanics: special
 description: |
-
-  This spell nullifies all magical effects that are of a lower circle than the highest that the caster has achieved. This effect moves with the caster and has no effect on magic cast from inside its area. Area magic with its centre inside the effect do not happen. Area magic with its centre outside the effect behaves normally, but does not enter the effect.
-  The caster can create a 3 meter radius around himself, but this causes the spell to work as if he were 1 circle lower in power.
-  Warlock powers have no circles, but their power-checks face a -3 penalty for every caster circle.
-
+  <p>This spell nullifies all magical effects that are of a lower circle than the highest that the caster has achieved. This effect moves with the caster and has no effect on magic cast from inside its area. Area magic with its centre inside the effect do not happen. Area magic with its centre outside the effect behaves normally, but does not enter the effect.</p>
+  <p>The caster can create a 3 meter radius around himself, but this causes the spell to work as if he were 1 circle lower in power.</p>
+  <p>Warlock powers have no circles, but their power-checks face a -3 penalty for every caster circle.</p>
 ---
 name: Myst
 sphere: storm
@@ -869,9 +811,8 @@ components: "VS"
 duration: 1 turn / level
 mechanics: 
 description: |
-
-  This spell enhances the caster's senses, granting him a +3 bonus per circle to skill-checks to detect stealthed, displaced, incorporeal or invisible creatures or objects. A successful observation-check (with this bonus) also alerts the caster to areas where magic is used to alter the appearance of reality. A successful spellcraft-check reveals the nature of this magic, but the spell grants no defenses against it.
-  A fourth-circle caster can also use this spell to detect some creatures in darkness. Any creatures that have a magic item on them or a magic effect active become obvious to the caster.
+  <p>This spell enhances the caster's senses, granting him a +3 bonus per circle to skill-checks to detect stealthed, displaced, incorporeal or invisible creatures or objects. A successful observation-check (with this bonus) also alerts the caster to areas where magic is used to alter the appearance of reality. A successful spellcraft-check reveals the nature of this magic, but the spell grants no defenses against it.</p>
+  <p>A fourth-circle caster can also use this spell to detect some creatures in darkness. Any creatures that have a magic item on them or a magic effect active become obvious to the caster.</p>
 
 ---
 name: Parry
@@ -884,8 +825,7 @@ components: "VSM"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell allows the caster to parry all melee attacks. These parries have a -1 to hit.
+  <p>This spell allows the caster to parry all melee attacks. These parries have a -1 to hit.</p>
 
 ---
 name: Personal note
@@ -921,15 +861,13 @@ components: "VSM"
 duration: 1 round / level
 mechanics: reflex negates
 description: |
-
-  This spell plodes the terrain. The change is obvious to anyone. Creatures in the area must roll a saving throw just before their own action, or during if they are moving through the area. A creature can try to avoid a saving throw when moving through the area (not if already in it) by attempting a tumbling-check with a penalty equal to the caster's wizard level.
-  A first-circle caster can choose to implode the area. Everything in the area gets stuck and harder to move around. Affected creatures lose 2 points of dexterity for every circle the caster has achieved.
-  A second-circle caster can choose to explode the area. Everything in the area starts sparking when there is friction with other matter. Affected creatures take 1d4 lightning damage for every circle the caster has achieved.
-  A third-circle caster can choose to deplode the area. Everything in the area clings and sticks together. Affected creatures lose their action for the round.
-  A fourth-circle caster can choose to transplode the area. Everything in the area jumps around unpredictably. Affected creatures move 50 meters in a random direction. Roll 1d8; 1 is straight ahead, 3 to the right, 5 to the rear and 7 to the left.
-  A fifth-circle caster can choose to replode the area. Everything in the area takes itself apart and puts itself together again. Affected creatures must roll to see if they still have their equipment. The chance is 50%, and is rolled for every item.
-  A sixth-circle caster can choose to multiplode the area. Two plosions of his choosing fill the area, and a creature failing his saving throw is affected by both.
-
+  <p>This spell plodes the terrain. The change is obvious to anyone. Creatures in the area must roll a saving throw just before their own action, or during if they are moving through the area. A creature can try to avoid a saving throw when moving through the area (not if already in it) by attempting a tumbling-check with a penalty equal to the caster's wizard level.</p>
+  <p>A first-circle caster can choose to implode the area. Everything in the area gets stuck and harder to move around. Affected creatures lose 2 points of dexterity for every circle the caster has achieved.</p>
+  <p>A second-circle caster can choose to explode the area. Everything in the area starts sparking when there is friction with other matter. Affected creatures take 1d4 lightning damage for every circle the caster has achieved.</p>
+  <p>A third-circle caster can choose to deplode the area. Everything in the area clings and sticks together. Affected creatures lose their action for the round.</p>
+  <p>A fourth-circle caster can choose to transplode the area. Everything in the area jumps around unpredictably. Affected creatures move 50 meters in a random direction. Roll 1d8; 1 is straight ahead, 3 to the right, 5 to the rear and 7 to the left.</p>
+  <p>A fifth-circle caster can choose to replode the area. Everything in the area takes itself apart and puts itself together again. Affected creatures must roll to see if they still have their equipment. The chance is 50%, and is rolled for every item.</p>
+  <p>A sixth-circle caster can choose to multiplode the area. Two plosions of his choosing fill the area, and a creature failing his saving throw is affected by both.</p>
 ---
 name: Polymorph
 sphere: war
@@ -941,10 +879,8 @@ components: "VSM"
 duration: permanent or instantaneous
 mechanics: fortitude negates
 description: |
-
-  This spell transforms the target into another race or species. To do this, the caster must be intimately familiar with the creature he is trying to create. Specifically, he must have studied a fresh corpse of the 'target race' with detect magic for at least 1 turn.
-  A fifth-circle caster can choose to make the duration instantaneous in stead of permanent, but this lowers the save DC by 4.
-
+  <p>This spell transforms the target into another race or species. To do this, the caster must be intimately familiar with the creature he is trying to create. Specifically, he must have studied a fresh corpse of the 'target race' with detect magic for at least 1 turn.</p>
+  <p>A fifth-circle caster can choose to make the duration instantaneous in stead of permanent, but this lowers the save DC by 4.</p>
 ---
 name: Power word
 sphere: law
@@ -956,14 +892,12 @@ components: "V"
 duration: permanent or instantaneous
 mechanics: fortitude halves damage and negates effect
 description: |
-
-  This spell invokes an ancient word of power, which takes effect on all targets in the area except the caster. The caster must choose one effect from the following list.
-  A 4th-circle caster can cause blindness or deafness in all targets. They also take 1d8 sonic damage.
-  A 5th-circle caster can cause the targets to be stunned, instantly losing half their dexterity and taking 4d12 sonic damage.
-  A 6th-circle caster can kill the targets.
-  If a target's save result is less than the caster's wizard level, then the effect is permanent.
-  The caster can choose to increase the DC of the saving throw by 4, but then he must roll a saving throw against his own spell.
-
+  <p>This spell invokes an ancient word of power, which takes effect on all targets in the area except the caster. The caster must choose one effect from the following list.</p>
+  <p>A 4th-circle caster can cause blindness or deafness in all targets. They also take 1d8 sonic damage.</p>
+  <p>A 5th-circle caster can cause the targets to be stunned, instantly losing half their dexterity and taking 4d12 sonic damage.</p>
+  <p>A 6th-circle caster can kill the targets.</p>
+  <p>If a target's save result is less than the caster's wizard level, then the effect is permanent.</p>
+  <p>The caster can choose to increase the DC of the saving throw by 4, but then he must roll a saving throw against his own spell.</p>
 ---
 name: Projection
 sphere: chaos
@@ -975,12 +909,10 @@ components: "VSM"
 duration: 2 rounds / level
 mechanics: disbelief
 description: |
-
-  This spell allows the caster to create one or more images of himself.
-  If the caster decides to create only one image, he can make it appear anywhere within range. This can be a place the caster cannot see, but he must have seen it beforehand. The image can see and hear within a 5-meter radius, and converse with people present, but not cast spells.
-  A 5th-circle caster can cast spells through the image. Sustainable spell effects end when the image disappears.
-  If the caster decides to create more images, one image appears for every circle the caster has achieved. The images phase around him, making enemies attack a random 'caster'. The images have the same AC, saves and damage reduction as the caster, but they have only 1 hit point.
-
+  <p>This spell allows the caster to create one or more images of himself.</p>
+  <p>If the caster decides to create only one image, he can make it appear anywhere within range. This can be a place the caster cannot see, but he must have seen it beforehand. The image can see and hear within a 5-meter radius, and converse with people present, but not cast spells.</p>
+  <p>A 5th-circle caster can cast spells through the image. Sustainable spell effects end when the image disappears.</p>
+  <p>If the caster decides to create more images, one image appears for every circle the caster has achieved. The images phase around him, making enemies attack a random 'caster'. The images have the same AC, saves and damage reduction as the caster, but they have only 1 hit point.</p>
 ---
 name: Resistance
 sphere: healing
@@ -992,8 +924,7 @@ components: "VS"
 duration: sustainable or 1 hour / level
 mechanics: 
 description: |
-
-  This spell grants the target a damage reduction of 5 against all continual and environmental damage. This includes damage from weather or otherworldly places. It works against bleeding wounds, but doesn't stabilize an unconscious target. If the target is the caster, then the duration is sustainable.
+  <p>This spell grants the target a damage reduction of 5 against all continual and environmental damage. This includes damage from weather or otherworldly places. It works against bleeding wounds, but doesn't stabilize an unconscious target. If the target is the caster, then the duration is sustainable.</p>
 
 ---
 name: Runic armour
@@ -1006,9 +937,8 @@ components: "VS"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell forms a barrier that protects the caster from harm. It grants a bonus to AC equal to the highest circle the caster has achieved.
-  This spell is dispelled whenever a runic shield or runic resilience spell is cast on the same target.
+  <p>This spell forms a barrier that protects the caster from harm. It grants a bonus to AC equal to the highest circle the caster has achieved.</p>
+  <p>This spell is dispelled whenever a runic shield or runic resilience spell is cast on the same target.</p>
 
 ---
 name: Runic resilience
@@ -1021,10 +951,8 @@ components: "VSM"
 duration: 3 rounds / level
 mechanics: willing
 description: |
-
-  This spell strengthens the target, granting him a +1 to saving throws for every circle the caster has achieved. Also, he gains one point of damage reduction for every circle he has achieved against one of the following damage categories: piercing, slashing, blunt, acid, cold, heat, lightning or sonic, to be decided on the time of casting.
-  This spell is dispelled whenever a runic armour or runic shield spell is cast on the same target.
-
+  <p>This spell strengthens the target, granting him a +1 to saving throws for every circle the caster has achieved. Also, he gains one point of damage reduction for every circle he has achieved against one of the following damage categories: piercing, slashing, blunt, acid, cold, heat, lightning or sonic, to be decided on the time of casting.</p>
+  <p>This spell is dispelled whenever a runic armour or runic shield spell is cast on the same target.</p>
 ---
 name: Runic shield
 sphere: law
@@ -1036,10 +964,9 @@ components: "SM"
 duration: 2 rounds / level
 mechanics: 
 description: |
-
-  This spell creates a barrier in front of the caster. This barrier slows incoming attacks, giving the caster more time to react. He gains a bonus to AC and saves vs gaze effects equal to 4 + the circle he has achieved.
-  Normally the caster has time to turn the shield towards threats. However, an unnoticed threat can bypass the shield. This is resolved by an alertness-check opposed by stealth, quickdraw or another applicable skill.
-  This spell is dispelled whenever a runic armour or runic resilience spell is cast on the same target.
+  <p>This spell creates a barrier in front of the caster. This barrier slows incoming attacks, giving the caster more time to react. He gains a bonus to AC and saves vs gaze effects equal to 4 + the circle he has achieved.</p>
+  <p>Normally the caster has time to turn the shield towards threats. However, an unnoticed threat can bypass the shield. This is resolved by an alertness-check opposed by stealth, quickdraw or another applicable skill.</p>
+  <p>This spell is dispelled whenever a runic armour or runic resilience spell is cast on the same target.</p>
 
 ---
 name: Scry
@@ -1095,13 +1022,11 @@ components: "VS"
 duration: sustainable until discharged
 mechanics: fortitude negates discharge
 description: |
-
-  This spell illuminates the tip of the caster's staff with a bright white light. The caster must hold the staff, if he drops it the spell ends.
-  A 2nd-circle caster can change the intensity of the light. This requires a round of concentration equivalent to spellcasting.
-  A 3rd-circle caster can change the colour of the light just like the intensity.
-  The caster can discharge the spell in an attempt to blind a target within short range for 1 turn. This is an action with a speed of 3 that is equivalent to spellcasting.
-  This spell requires the caster to wield a staff or club, but it does not interfere with the somatic components for his spells as a normal staff would. It does not require him to be trained in the use of maces.
-
+  <p>This spell illuminates the tip of the caster's staff with a bright white light. The caster must hold the staff, if he drops it the spell ends.</p>
+  <p>A 2nd-circle caster can change the intensity of the light. This requires a round of concentration equivalent to spellcasting.</p>
+  <p>A 3rd-circle caster can change the colour of the light just like the intensity.</p>
+  <p>The caster can discharge the spell in an attempt to blind a target within short range for 1 turn. This is an action with a speed of 3 that is equivalent to spellcasting.</p>
+  <p>This spell requires the caster to wield a staff or club, but it does not interfere with the somatic components for his spells as a normal staff would. It does not require him to be trained in the use of maces.</p>
 ---
 name: Soulcage
 sphere: dark
@@ -1113,13 +1038,11 @@ components: "VSF"
 duration: permanent
 mechanics: fortitude negates
 description: |
-
-  This spell sucks out the identity of the target and places it inside a gem. The target's body collapses into nothingness, leaving his possessions. The caster also sets a password.
-  The gem functions as if it is a different plane of existence. The occupant exists in an endless fog without any substance, naked and cold, without needing to eat, drink or sleep. He does not age. He is alone.
-  A person holding the gem can communicate with the occupant, sounding like a booming voice in the gem, and hearing a little voice in his mind. He can also release the occupant, an action that takes one round and the password.
-  The gem's magic can be dispelled, but that kills the occupant. The occupant can be scried normally. A lockpicking-check with a -20 penalty can open the gem, if the person trying that can detect magic. It is possible to use plane-travelling magic to enter the gem, a process requiring a successful planar theory-check. However, the gem's magic is such that the travellers arrive without possessions, like the occupant. A caster attempting the journey will realize this and may roll a save vs reflex (DC 15) to abort the journey before it is too late.
-  The focus is a specially prepared gem, worth at least 1 annum. The gem can hold only one target. If it is used again, or if another creature enters the gem, its occupant is released.
-
+  <p>This spell sucks out the identity of the target and places it inside a gem. The target's body collapses into nothingness, leaving his possessions. The caster also sets a password.</p>
+  <p>The gem functions as if it is a different plane of existence. The occupant exists in an endless fog without any substance, naked and cold, without needing to eat, drink or sleep. He does not age. He is alone.</p>
+  <p>A person holding the gem can communicate with the occupant, sounding like a booming voice in the gem, and hearing a little voice in his mind. He can also release the occupant, an action that takes one round and the password.</p>
+  <p>The gem's magic can be dispelled, but that kills the occupant. The occupant can be scried normally. A lockpicking-check with a -20 penalty can open the gem, if the person trying that can detect magic. It is possible to use plane-travelling magic to enter the gem, a process requiring a successful planar theory-check. However, the gem's magic is such that the travellers arrive without possessions, like the occupant. A caster attempting the journey will realize this and may roll a save vs reflex (DC 15) to abort the journey before it is too late.</p>
+  <p>The focus is a specially prepared gem, worth at least 1 annum. The gem can hold only one target. If it is used again, or if another creature enters the gem, its occupant is released.</p>
 ---
 name: Spell turning
 sphere: chaos
@@ -1131,14 +1054,12 @@ components: "VSM"
 duration: 1 round / level
 mechanics: special
 description: |
-
-  This spell attempt to turn magic used against the target back on its caster. It has no effect on area attacks that include the target, or on magic that functions through touch.
-  The effect of the spell depends on the kind of magic being used.
-  If the target must save vs fortitude, then a successful save reflects the attack back on the caster, while a failed save has its normal effect.
-  If the target must save vs reflex, then a successful save reflects the attack back on the caster, while a failed save merely deflects it onto any creature nearby unlucky enough to roll a 1 on a d20. This new target (or targets) must then save vs the original spell.
-  If the target must save vs will, then he gains a +4 bonus from this spell, but the magic does not reflect.
-  If there is no defense against the attack, then the caster is allowed a saving throw vs fortitude (DC 20) to dissipate the magic harmlessly.
-
+  <p>This spell attempt to turn magic used against the target back on its caster. It has no effect on area attacks that include the target, or on magic that functions through touch.</p>
+  <p>The effect of the spell depends on the kind of magic being used.</p>
+  <p>If the target must save vs fortitude, then a successful save reflects the attack back on the caster, while a failed save has its normal effect.</p>
+  <p>If the target must save vs reflex, then a successful save reflects the attack back on the caster, while a failed save merely deflects it onto any creature nearby unlucky enough to roll a 1 on a d20. This new target (or targets) must then save vs the original spell.</p>
+  <p>If the target must save vs will, then he gains a +4 bonus from this spell, but the magic does not reflect.</p>
+  <p>If there is no defense against the attack, then the caster is allowed a saving throw vs fortitude (DC 20) to dissipate the magic harmlessly.</p>
 ---
 name: Spellfinger
 sphere: hunt
@@ -1150,13 +1071,12 @@ components: "VS"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell allows the caster to be faster, changing the die he uses to roll initiative.
-  A 3rd-circle caster rolls a d6 for initiative.
-  A 4th-circle caster rolls a d4 for initiative.
-  A 5th-circle caster rolls a d4 for initiative.
-  A 6th-circle caster rolls a d3 for initiative.
-  This spell doesn't change weapon speeds, casting times, or other initiative modifiers. It grants no extra bonus to spellborn.
+  <p>This spell allows the caster to be faster, changing the die he uses to roll initiative.</p>
+  <p>A 3rd-circle caster rolls a d6 for initiative.</p>
+  <p>A 4th-circle caster rolls a d4 for initiative.</p>
+  <p>A 5th-circle caster rolls a d4 for initiative.</p>
+  <p>A 6th-circle caster rolls a d3 for initiative.</p>
+  <p>This spell doesn't change weapon speeds, casting times, or other initiative modifiers. It grants no extra bonus to spellborn.</p>
 
 ---
 name: Spellsense
@@ -1169,16 +1089,14 @@ components: "VSF"
 duration: sustainable until discharged
 mechanics: special
 description: |
-
-  This spell allows the caster to see magic that is in effect in close range. If magic is detected from either a spell, prayer or warlock power, the caster can try to learn more about it. This takes one round, and requires a spellcraft-check. On a successful check, he learns the strength of the magic compared to his own caster level (stronger, comparable or weaker). He can make an observation-check to see the remnants of past magic, with a -2 penalty for every turn that has passed.
-  The caster can detect more magic depending on the circle he has achieved.
-  A 2nd-circle caster can discharge this spell to examine the magic on an item. This takes one turn. He then rolls a spellcraft-check and loses 2 points of intelligence. On a successful check, he learns more of the item, depending on the DM's wisdom.
-  A 3rd-circle caster can discharge this spell to examine a person. This takes one round. He learns if the target is capable of using magic. If the target fails a saving throw vs will, the caster learns the type(s) of magic.
-  A 4th-circle caster using this spell can try to determine if he is being magically watched. This takes one round. He then rolls a saving throw vs will. If the result of that roll is equal to or higher than 10 + circle + caster's [int] of any observer, the caster detects the scrying magic.
-  A 5th-circle caster can attempt to examine items and casters without discharging the spell.
-  A 6th-circle caster can detect more than you could ever imagine.
-  This spell never detects any form of invisibility magic or magic that enhances stealth.
-
+  <p>This spell allows the caster to see magic that is in effect in close range. If magic is detected from either a spell, prayer or warlock power, the caster can try to learn more about it. This takes one round, and requires a spellcraft-check. On a successful check, he learns the strength of the magic compared to his own caster level (stronger, comparable or weaker). He can make an observation-check to see the remnants of past magic, with a -2 penalty for every turn that has passed.</p>
+  <p>The caster can detect more magic depending on the circle he has achieved.</p>
+  <p>A 2nd-circle caster can discharge this spell to examine the magic on an item. This takes one turn. He then rolls a spellcraft-check and loses 2 points of intelligence. On a successful check, he learns more of the item, depending on the DM's wisdom.</p>
+  <p>A 3rd-circle caster can discharge this spell to examine a person. This takes one round. He learns if the target is capable of using magic. If the target fails a saving throw vs will, the caster learns the type(s) of magic.</p>
+  <p>A 4th-circle caster using this spell can try to determine if he is being magically watched. This takes one round. He then rolls a saving throw vs will. If the result of that roll is equal to or higher than 10 + circle + caster's [int] of any observer, the caster detects the scrying magic.</p>
+  <p>A 5th-circle caster can attempt to examine items and casters without discharging the spell.</p>
+  <p>A 6th-circle caster can detect more than you could ever imagine.</p>
+  <p>This spell never detects any form of invisibility magic or magic that enhances stealth.</p>
 ---
 name: Stabback
 sphere: law
@@ -1190,9 +1108,7 @@ components: "SM"
 duration: 1 round / level or until discharged
 mechanics: reflex halves
 description: |
-
-  This spell reflects damage from the first successful melee attack made against the target. If the attacker fails the save, then he takes the damage from his own attack. If the save succeeds, then the attacker takes half damage and the target takes full damage.
-
+  <p>This spell reflects damage from the first successful melee attack made against the target. If the attacker fails the save, then he takes the damage from his own attack. If the save succeeds, then the attacker takes half damage and the target takes full damage.</p>
 ---
 name: Stance
 sphere: war
@@ -1204,8 +1120,7 @@ components: "S"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell improves the caster's footing and balance, granting him a +1 to hit for every circle he has achieved.
+  <p>This spell improves the caster's footing and balance, granting him a +1 to hit for every circle he has achieved.</p>
 
 ---
 name: Statue
@@ -1218,13 +1133,11 @@ components: "VSM"
 duration: 1 hour / level
 mechanics: fortitude partially negates
 description: |
-
-  This spell transforms the target into a stone statue. If he makes his saving throw, then he gains the ability to switch back and forth between his normal form and a stone aspect.
-  As a statue, standing still comes naturally. Also, the target cannot move. It takes an observation-check with a -10 penalty or an opposed artistic ability-check to determine that something is wrong with the statue. Its nature is undetectable with magic that detects magic.
-  Changing back and forth between stone and flesh takes 1 round. Even in his normal form, the target retains the advantages of the spell, as well as a slightly rocky appearance, obvious on a successful observation-check.
-  The target gains 10 points of damage reduction against all forms of damage. He is immune to bleeding. His strength score is raised by 1 point or to 16, whichever is higher. His AC is raised by 5 points.
-  However, he is also slowed. His movement is halved, and he cannot jump or tumble. He is also as heavy as, well, a statue.
-
+  <p>This spell transforms the target into a stone statue. If he makes his saving throw, then he gains the ability to switch back and forth between his normal form and a stone aspect.</p>
+  <p>As a statue, standing still comes naturally. Also, the target cannot move. It takes an observation-check with a -10 penalty or an opposed artistic ability-check to determine that something is wrong with the statue. Its nature is undetectable with magic that detects magic.</p>
+  <p>Changing back and forth between stone and flesh takes 1 round. Even in his normal form, the target retains the advantages of the spell, as well as a slightly rocky appearance, obvious on a successful observation-check.</p>
+  <p>The target gains 10 points of damage reduction against all forms of damage. He is immune to bleeding. His strength score is raised by 1 point or to 16, whichever is higher. His AC is raised by 5 points.</p>
+  <p>However, he is also slowed. His movement is halved, and he cannot jump or tumble. He is also as heavy as, well, a statue.</p>
 ---
 name: Submersion
 sphere: storm
@@ -1364,10 +1277,8 @@ components: "VSM"
 duration: sustainable
 mechanics: disbelief
 description: |
-
-  This spell allows the caster to alter his appearance and that of his clothing. This translates into a +3 to his disguise-check per circle he has achieved. If the caster wishes, it can also negate the penalty to the etiquette-check for wearing less than fancy clothes.
-  The caster can change his appearance by concentrating for 1 round. This action can be interrupted like spellcasting.
-
+  <p>This spell allows the caster to alter his appearance and that of his clothing. This translates into a +3 to his disguise-check per circle he has achieved. If the caster wishes, it can also negate the penalty to the etiquette-check for wearing less than fancy clothes.</p>
+  <p>The caster can change his appearance by concentrating for 1 round. This action can be interrupted like spellcasting.</p>
 ---
 name: Versatility
 sphere: arcane
@@ -1379,8 +1290,7 @@ components: "VS"
 duration: sustainable
 mechanics: 
 description: |
-
-  This spell allows the caster to fill spell slots with spells of the same circle, as usual, or with spells of lower circles. These spells can be cast as long as the versatility spell is active. They are cast exactly as if they were cast from a slot of the correct circle. If the versatility spell ends, then any prepared spells in a slot of the wrong circle are lost.
+  <p>This spell allows the caster to fill spell slots with spells of the same circle, as usual, or with spells of lower circles. These spells can be cast as long as the versatility spell is active. They are cast exactly as if they were cast from a slot of the correct circle. If the versatility spell ends, then any prepared spells in a slot of the wrong circle are lost.</p>
 
 ---
 name: Wish
@@ -1414,11 +1324,11 @@ components: "VSM"
 duration: 1 round / level
 mechanics: reflex negates twice
 description: |
-
-  This spell traps the target in an area 3 meters high, with a radius of 1 meter. In there, he is subjected to continual damage. The area is ringed with a border, which delivers an secondary effect if the target leaves the area by crossing it, unless he succeeds at a second saving throw.
-  A second-circle caster can choose to make a zeta of cold, inflicting 1d4 cold damage per round. If the target leaves the zeta, his class bonus to attack rolls is halved until he rests for half an hour.
-  A third-circle caster can choose to make a zeta of fire, inflicting 1d4 fire damage per round. If the target leaves the zeta, he can only cast the lowest effect of his spells, without any reserve effects, until he rests for half an hour.
-  A fourth-circle caster can choose to make a zeta of thunder, inflicting 1d4 sonic damage per round. If the target leaves the zeta, he can no longer cast prayers of the highest circle he has attained until he rests for half an hour.
-  A fifth-circle caster can choose to make a zeta of lightning, inflicting 1d4 lightning damage per round. If the target leaves the zeta, the bonuses he gets from his skill points are halved until he rests for half an hour.
-  A sixth-circle caster can choose to make a zeta of acid fog, inflicting 1d4 acid damage per round. If the target leaves the zeta, his class bonus to power checks is halved until he rests for half an hour.
-  The spell surrounds only one target. If the target actively carries or supports another creature, it may be possible to catch two targets; otherwise, the mechanics of dodging ensure a single target.
+  <p>This spell traps the target in an area 3 meters high, with a radius of 1 meter. In there, he is subjected to continual damage. The area is ringed with a border, which delivers an secondary effect if the target leaves the area by crossing it, unless he succeeds at a second saving throw.</p>
+  <p>A second-circle caster can choose to make a zeta of cold, inflicting 1d4 cold damage per round. If the target leaves the zeta, his class bonus to attack rolls is halved until he rests for half an hour.</p>
+  <p>A third-circle caster can choose to make a zeta of fire, inflicting 1d4 fire damage per round. If the target leaves the zeta, he can only cast the lowest effect of his spells, without any reserve effects, until he rests for half an hour.</p>
+  <p>A fourth-circle caster can choose to make a zeta of thunder, inflicting 1d4 sonic damage per round. If the target leaves the zeta, he can no longer cast prayers of the highest circle he has attained until he rests for half an hour.</p>
+  <p>A fifth-circle caster can choose to make a zeta of lightning, inflicting 1d4 lightning damage per round. If the target leaves the zeta, the bonuses he gets from his skill points are halved until he rests for half an hour.</p>
+  <p>A sixth-circle caster can choose to make a zeta of acid fog, inflicting 1d4 acid damage per round. If the target leaves the zeta, his class bonus to power checks is halved until he rests for half an hour.</p>
+  <p>The spell surrounds only one target. If the target actively carries or supports another creature, it may be possible to catch two targets; otherwise, the mechanics of dodging ensure a single target.</p>
+---
