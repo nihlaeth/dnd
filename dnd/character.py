@@ -13,7 +13,7 @@ RACES = {race['name']: race for race in load_all(
     Loader=Loader) if race is not None}
 
 
-SKILLS = {skill['name']: skill for skill in load_all(
+SKILLS = {skill['name'].lower(): skill for skill in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/skills.yaml'),
     Loader=Loader) if skill is not None}
 
@@ -108,6 +108,7 @@ def _character_skills(character):
     if 'skills' in character['race']['bonus']:
         skill_points += character['race']['bonus']['skills']
     for skill in skill_names:
+        skill = skill.lower()
         group = SKILLS[skill]['group']
         if group == 'all':
             skill_points -= 1
@@ -122,6 +123,12 @@ def _character_skills(character):
             skill_points -= 2
         if skill in SKILLS:
             character['skills'][skill] = SKILLS[skill]
+            character['skills'][skill]['skill_check_text'] = ' + '.join([
+                element if not element.endswith(
+                    '_modifier') else "[{}]".format(
+                        element[0:-9]) for element in SKILLS[skill]['skill_check']])
+            character['skills'][skill]['skill_check_value'] = sum([
+                character[element] for element in SKILLS[skill]['skill_check']])
     character['unspent_skill_points'] = skill_points
 
 def _character_hit_points(character):

@@ -3,11 +3,17 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#skill-accordion" href="#{{ skill }}-collapse">{{ skill }}</a>
+          <a data-toggle="collapse" data-parent="#skill-accordion" href="#{{ skill }}-collapse">{{ skill|capitalize }}</a>
       </h4>
     </div>
     <div id="{{ skill }}-collapse" class="panel-collapse collapse">
       <div class="panel-body">
+        <table class="table">
+          <tr>
+            <td>Skill check:</td>
+            <td><a href="#" data-toggle="tooltip" title="{{ character['skills'][skill]['skill_check_text'] }}">{{ character['skills'][skill]['skill_check_value'] }}</a></td>
+          </tr>
+        </table>
         {{ character['skills'][skill]['description'] }}
       </div>
     </div>
