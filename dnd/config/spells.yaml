@@ -147,12 +147,12 @@ mechanics: !!null
 description: |
   <p>This spell summons 1d3+1 demona from another reality to attack any targets the caster orders them to. The demona disappear when the duration ends or if they fall below 1 hp.</p>
   <p>The demona are all of the same randomly generated type, with most their statistics decided by dice-rolls:<ul>
-  <li\>Their AC is 8 + 1d10 + the caster's circle.
-  <li\>Demona have 4 hit points per caster circle.
-  <li\>Demonic saves equal half the caster's level.
-  <li\>Demona have 1d6 appendages, of which 1d4 are 'legs', used for balance. The others can be used for attack, determining the demona's number of attacks. They have at least 1 attack; if no appendages are available, the dice will suggest a solution.
-  <li\>The demona's to hit is the caster's circle. If they have 2 or less attacks, they get a +1 to hit.
-  <li\>Four d8 rolls determine the demona's final statistics: the damage the demona inflict on a successful attack (the same roll includes their attack speed), the damage type they inflict, the damage type they are immune to and their general appearance.</ul></p>
+  <li>Their AC is 8 + 1d10 + the caster's circle.</li>
+  <li>Demona have 4 hit points per caster circle.</li>
+  <li>Demonic saves equal half the caster's level.</li>
+  <li>Demona have 1d6 appendages, of which 1d4 are 'legs', used for balance. The others can be used for attack, determining the demona's number of attacks. They have at least 1 attack; if no appendages are available, the dice will suggest a solution.</li>
+  <li>The demona's to hit is the caster's circle. If they have 2 or less attacks, they get a +1 to hit.</li>
+  <li>Four d8 rolls determine the demona's final statistics: the damage the demona inflict on a successful attack (the same roll includes their attack speed), the damage type they inflict, the damage type they are immune to and their general appearance.</li></ul></p>
   <table>
   <tr><td>1</td><td>1d3, speed 1</td><td>piercing</td><td>hairy</td></tr>
   <tr><td>2</td><td>1d4, speed 2</td><td>slashing</td><td>scaly</td></tr>
@@ -177,11 +177,11 @@ mechanics: !!null
 description: |
   <p>This spell summons a diablo from another reality to attack any targets the caster orders it to. The diablo disappears when the duration ends or if it falls below 1 hp.</p>
   <p>The diablo's statistics are decided by the caster:<ul>
-  <li\>Its AC is 15 + the caster's circle.
-  <li\>It has 5 hit points per caster circle.
-  <li\>Its saves equal the caster's wizard level.
-  <li\>The diablo has 2 claws, granting it 2 attacks, 2 legs and a tail.
-  <li\>Its to hit-bonus equals the caster's circle. Its attacks inflict 1d6 + the caster's circle in slashing damage, and have a speed of 4.</ul></p>
+  <li>Its AC is 15 + the caster's circle.</li>
+  <li>It has 5 hit points per caster circle.</li>
+  <li>Its saves equal the caster's wizard level.</li>
+  <li>The diablo has 2 claws, granting it 2 attacks, 2 legs and a tail.</li>
+  <li>Its to hit-bonus equals the caster's circle. Its attacks inflict 1d6 + the caster's circle in slashing damage, and have a speed of 4.</li></ul></p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
   <table>
   <tr><td>reserve</td><td>effect</td></tr>
@@ -329,7 +329,7 @@ range: "caster"
 area: "2 meters"
 casting_time: "3"
 components: "VSM"
-duration:	instantaneous
+duration: instantaneous
 mechanics: !!null
 description: |
   <p>This spell creates fans of flames from the caster's hands, burning up to two creatures in melee distance. It inflicts 1d6 points of heat damage for every circle the caster has achieved, plus 1 point per level for every wizard level.</p>
@@ -432,8 +432,8 @@ range: "short"
 area: "1 creature"
 casting_time: "3"
 components: "VSM"
-duration:	5 rounds or until discharged
-mechanics:	will negates, twice
+duration: 5 rounds or until discharged
+mechanics: will negates, twice
 description: |
   <p>This spell infuses the target with fear for the caster. In the target's mind, the caster is a bigger, stronger, menacing entity.</p>
   <p>The target faces a -2 penalty to AC and saving throws for every circle the caster has achieved, but only against attacks or spells originating from the caster.</p>
@@ -472,8 +472,8 @@ range: "caster"
 area: "10 meter radius"
 casting_time: "3"
 components: "VS"
-duration:	instantaneous
-mechanics:	fortitude negates
+duration: instantaneous
+mechanics: fortitude negates
 description: |
   <p>This spell creates a demonic laughter in the area, a laughter that inflicts 2d6 sonic damage and an effect chosen by the caster. If successful, the saving throw negates both the effect and the damage. The caster is not affected by the spell.</p>
   <p>A 2nd-circle caster can cause the targets to lose their next action.</p>
@@ -489,8 +489,8 @@ range: "short"
 area: "1 creature"
 casting_time: "1 round"
 components: "VSM"
-duration:	3 rounds / level
-mechanics:	fortitude negates
+duration: 3 rounds / level
+mechanics: fortitude negates
 description: |
   <p>This spell grows the target. He becomes a head taller and gains a +1 to attack rolls and to physical damage. Worn and carried items grow with him.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -510,7 +510,7 @@ area: "3 meter radius"
 casting_time: "4"
 components: "VSM"
 duration:	1 round / level
-mechanics:	will negates
+mechanics: will negates
 description: |
   <p>This spell creates an area full of hypnotic visual effects that capture the attention of any who venture inside. The targets will stand still gazing at the pretty lights. Any damage breaks this effect.</p>
   <p>A third-circle caster also slows his targets, halving their movement, delaying their actions (+2 initiative) and inflicting a -2 to hit and a -2 to skill- and ability-checks. This effect lasts until the spell ends, even if the targets leave the area.</p>
@@ -526,7 +526,7 @@ area: "1 object"
 casting_time: "1 hour"
 components: "VSM"
 duration: 1 hour
-mechanics:	concentration to steer
+mechanics: concentration to steer
 description: |
   <p>This spell enchants an object so that it can fly as fast as a galloping horse. The caster can control the flight by concentration, using either the meditation or the spellcraft skill. If he does not, the item continues on its course and speed.</p>
   <p>The type of object the spell can affect is determined by the circle the caster has achieved. A fourth-circle caster can enchant a broom, a fifth-circle caster also a shield, and a sixth-circle caster also a carpet.</p>
@@ -572,7 +572,7 @@ area: "1 creature"
 casting_time: "6"
 components: "VS"
 duration:	instantaneous
-mechanics:	weakest save negates
+mechanics: weakest save negates
 description: |
   <p>This spell causes the target to soundlessly explode into a ball of white light. He has a saving throw to negate, but this save is the one for which he has the lowest class bonus. A tie is decided by his starting class.</p>
 ---
@@ -596,7 +596,7 @@ area: "1 creature"
 casting_time: "3"
 components: "VSM"
 duration:	1 round / level
-mechanics:	to hit, fortitude may negate
+mechanics: to hit, fortitude may negate
 description: |
   <p>This spell inflicts the target with a disability chosen by the caster at the time of casting, but limited by the circle he has achieved.</p>
   <p>A 2nd-circle caster can make the target deaf or itching. A deaf target cannot hear, and an itching target faces a -2 to all ability-, skill- and power-checks, saving throws and to hit.</p>
@@ -612,7 +612,7 @@ area: "3 meter radius"
 casting_time: "2 + number of effects"
 components: "VSM"
 duration:	instantaneous
-mechanics:	fortitude halves
+mechanics: fortitude halves
 description: |
   <p>This spell shoots a bolt of lightning from the caster's fingertips. The bolt explodes when it reaches its destination, inflicting 1d4 lightning damage per level of the caster.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -631,7 +631,7 @@ area: "caster and 1 person"
 casting_time: "1 round"
 components: "VSM"
 duration:	3 turns
-mechanics:	will negates
+mechanics: will negates
 description: |
   <p>This spell enchants both the caster and the target to speak a secret language during the duration. They can speak only this language, and no other. The language is a new one for every casting, and is not spoken anywhere in the world. The effect does not interfere with spellcasting.</p>
 ---
@@ -667,7 +667,7 @@ area: "1 locked object"
 casting_time: "3"
 components: "VS"
 duration:	instantaneous
-mechanics:	skill-check
+mechanics: skill-check
 description: |
   <p>This spell can be used to try and open a door, portal, chest, book, or anything else that is protected by normal or magical locks and traps. The caster can roll a lockpicking check with a +3 for every circle he has achieved to open the target object. If the target is trapped, then the caster gains a +4 to the applicable saving throws.</p>
 ---
@@ -703,7 +703,7 @@ area: "1 creature"
 casting_time: "1 hour"
 components: "VS"
 duration:	sustainable
-mechanics:	special, will negates
+mechanics: special, will negates
 description: |
   <p>This spell binds one small creature of animal intelligence to the caster. The minion becomes an extension of the caster, and is infused with some of his magic.</p>
   <p>The caster gains a +1 to saving throws and AC when the minion is within 10 meters. If it's in this range, its presence also grants him a +1 to alertness- and observation-checks for every circle he has achieved.</p>
@@ -750,7 +750,7 @@ area: "1 meter radius / level"
 casting_time: "2 + number of effects"
 components: "VSM"
 duration:	2 rounds / level
-mechanics:	special
+mechanics: special
 description: |
   <p>This spell creates an area of fog. In its base form, it merely limits vision to a range of one meter. However, higher circle casters can add effects to the spell, depending on their reserve.</p>
   <table>
@@ -1278,10 +1278,10 @@ duration: instantaneous
 mechanics: special, costs 1 intelligence
 description: |
   <p>This spell uses magic to fulfil a wish for the caster. This wish can be any one thing. For instance, this spell can:<ul>
-  <li\>duplicate any know spell effect;
-  <li\>bring someone back to life;
-  <li\>kill someone;
-  <li\>raise an ability score by one point.</ul></p>
+  <li>duplicate any know spell effect;</li>
+  <li>bring someone back to life;</li>
+  <li>kill someone;</li>
+  <li>raise an ability score by one point.</li></ul></p>
   <p>The DM may rule that wishes have other constraints. A successful spellcraft-check will explain more about that.</p>
   <p>This spell cannot be used more than once in a game session by the same caster.</p>
   <p>Casting this spell removes one point of intelligence from the caster permanently. This is not a curse. It is a change in the core of the person, and no magic short of a wish can restore it.</p>
