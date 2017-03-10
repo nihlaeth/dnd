@@ -1,1 +1,68 @@
-nothing yet
+{% for circle in range(1, 7)|reverse %}
+{% for spell in character['spells'] if character['spells'][spell]['circle'] == circle %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell }}-collapse">{{ spell|capitalize }}</a>
+    </h4>
+  </div>
+  <div id="{{ spell }}-collapse" class="panel-collapse collapse">
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <td>Circle:</td>
+          <td>
+            {{ character['spells'][spell]['circle'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Sphere:</td>
+          <td>
+            {{ character['spells'][spell]['sphere'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Range:</td>
+          <td>
+            {{ character['spells'][spell]['range'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Area:</td>
+          <td>
+            {{ character['spells'][spell]['area'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Casting time:</td>
+          <td>
+            {{ character['spells'][spell]['casting_time'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Components:</td>
+          <td>
+            {{ character['spells'][spell]['components'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Duration:</td>
+          <td>
+            {{ character['spells'][spell]['duration'] }}
+          </td>
+        </tr>
+        {% if character['spells'][spell]['mechanics'] is not none %}
+        <tr>
+          <td>Mechanics:</td>
+          <td>
+            {{ character['spells'][spell]['mechanics'] }}
+          </td>
+        </tr>
+        {% endif %}
+      </table>
+      {{ character['spells'][spell]['description'] }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endfor %}

@@ -130,6 +130,7 @@ def _ability_response_factory(response, character, app):
         'removeClass': ["label-danger"] if character[
             'unspent_ability_points'] >= 0 else ["label-default"]}
     _skill_response_factory(response, character, app)
+    _spell_response_factory(response, character, app)
 
 def _xp_validator(request, errors):
     try:
