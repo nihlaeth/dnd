@@ -1,4 +1,5 @@
 """Character tools."""
+import copy
 from pkg_resources import resource_stream, Requirement
 from markupsafe import escape
 from markdown import markdown
@@ -122,7 +123,7 @@ def _character_skills(character):
         else:
             skill_points -= 2
         if skill in SKILLS:
-            character['skills'][skill] = SKILLS[skill]
+            character['skills'][skill] = copy.deepcopy(SKILLS[skill])
             character['skills'][skill]['skill_check_text'] = ' + '.join([
                 element if not element.endswith(
                     '_modifier') else "[{}]".format(
