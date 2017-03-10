@@ -4,6 +4,7 @@ from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
 from aiohttp.web import json_response
 from markupsafe import escape
+from aiohttp_jinja2 import get_env
 from dnd.decorators import login_required
 from dnd.common import format_errors
 from dnd.character import ABILITIES, RACES, SKILLS, CLASSES, calculate_stats
@@ -78,9 +79,9 @@ async def data_handler(request):
     calculate_stats(character)
     response = {'close': True}
     if iscoroutinefunction(response_factory):
-        await response_factory(response, character)
+        await response_factory(response, character, request.app)
     else:
-        response_factory(response, character)
+        response_factory(response, character, request.app)
     return json_response(response)
 
 def _ability_validator(request, errors):
@@ -101,7 +102,7 @@ def _ability_validator(request, errors):
         ability + '_level': level,
         ability + '_temp': temp}
 
-def _ability_response_factory(response, character):
+def _ability_response_factory(response, character, app):
     for ability in ABILITIES:
         add_classes = []
         remove_classes = []
@@ -126,7 +127,7 @@ def _ability_response_factory(response, character):
             'unspent_ability_points'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
             'unspent_ability_points'] >= 0 else ["label-default"]}
-    _skill_response_factory(response, character)
+    _skill_response_factory(response, character, app)
 
 def _xp_validator(request, errors):
     try:
@@ -137,11 +138,11 @@ def _xp_validator(request, errors):
         errors.append("missing value: {}".format(error))
     return {'xp': xp}
 
-def _xp_response_factory(response, character):
+def _xp_response_factory(response, character, app):
     response['#xp-value'] = {'data': character['xp']}
     response['#level-value'] = {'data': character['level']}
-    _skill_response_factory(response, character)
-    _class_response_factory(response, character)
+    _skill_response_factory(response, character, app)
+    _class_response_factory(response, character, app)
 
 def _race_validator(request, errors):
     try:
@@ -153,12 +154,12 @@ def _race_validator(request, errors):
             errors.append("unknown race: {}".format(race))
     return {'race_name': race}
 
-def _race_response_factory(response, character):
+def _race_response_factory(response, character, app):
     response['#inner-race-info'] = {
         'data': character['race']['description']}
     response['#race-value'] = {'data': character['race_name']}
-    _ability_response_factory(response, character)
-    _skill_response_factory(response, character)
+    _ability_response_factory(response, character, app)
+    _skill_response_factory(response, character, app)
 
 def _class_validator(request, errors):
     try:
@@ -171,7 +172,7 @@ def _class_validator(request, errors):
         errors.append("missing value: {}".format(error))
     return {class_: classes[class_] for class_ in CLASSES}
 
-def _class_response_factory(response, character):
+def _class_response_factory(response, character, app):
     class_list = "\n".join(["""
 <li class="list-group-item">
   {}
@@ -195,7 +196,7 @@ def _class_response_factory(response, character):
         'collapse': "show" if character['wizard'] > 0 else "hide"}
     response['#powers-section'] = {
         'collapse': "show" if character['warlock'] > 0 else "hide"}
-    _skill_response_factory(response, character)
+    _skill_response_factory(response, character, app)
 
 def _hp_validator(request, errors):
     try:
@@ -211,7 +212,7 @@ def _hp_validator(request, errors):
         'temp_hp': temp_hp,
         'damage': damage}
 
-def _hp_response_factory(response, character):
+def _hp_response_factory(response, character, _):
     add_classes = []
     remove_classes = []
     if character['damage'] > 0:
@@ -245,24 +246,9 @@ def _skill_validator(request, _):
     return {'skill_names': skills}
 
 
-def _skill_response_factory(response, character):
-    response['#skill-accordion'] = {'data': '\n'.join(["""
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#skill-accordion" href="#{}-collapse">{}</a>
-      </h4>
-    </div>
-    <div id="{}-collapse" class="panel-collapse collapse">
-      <div class="panel-body">
-        {}
-      </div>
-    </div>
-  </div>""".format(
-      skill,
-      skill,
-      skill,
-      character['skills'][skill]['description']) for skill in character['skills']])}
+def _skill_response_factory(response, character, app):
+    response['#skill-accordion'] = {'data': get_env(app).get_template(
+        'character_skills_display.html').render(character=character)}
     response['#skill-points'] = {
         'data': character['unspent_skill_points'],
         'addClass': ["label-danger"] if character[
@@ -284,7 +270,7 @@ async def _name_validator(request, errors):
             errors.append("you already have a character with this name")
     return {'name': name}
 
-def _name_response_factory(response, character):
+def _name_response_factory(response, character, _):
     response['#name-value'] = {'data': character['name']}
     response['title'] = {'data': "Dnd | {}".format(character['name'])}
 
@@ -299,7 +285,7 @@ def _background_validator(request, errors):
         return {}
     return {'{}_unsafe'.format(field): text}
 
-def _background_response_factory(response, character):
+def _background_response_factory(response, character, _):
     response['#appearance-value'] = {'data': character['appearance_safe']}
     response['#character-value'] = {'data': character['character_safe']}
     response['#history-value'] = {'data': character['history_safe']}
