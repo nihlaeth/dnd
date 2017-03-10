@@ -8,6 +8,7 @@
   <div id="{{ skill }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">
       <table class="table">
+        {% if character['skills'][skill]['skill_check']|length > 0 %}
         <tr>
           <td>Skill check:</td>
           <td>
@@ -16,6 +17,7 @@
             </a>
           </td>
         </tr>
+        {% endif %}
       </table>
       {{ character['skills'][skill]['description'] }}
     </div>

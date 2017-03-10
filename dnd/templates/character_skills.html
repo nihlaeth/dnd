@@ -31,6 +31,16 @@
                 <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#skill-info-{{ skill }}">?</button>
               </div>
               <div id="skill-info-{{ skill }}" class="collapse well">
+                <table class="table">
+                  {% if skills[skill]['skill_check']|length > 0 %}
+                  <tr>
+                    <td>Skill check:</td>
+                    <td>
+                      {{ skills[skill]['skill_check']|join(' + ') }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                </table>
                 {{ skills[skill]['description'] }}
               </div>
               {% endfor %}
