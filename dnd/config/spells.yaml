@@ -176,12 +176,12 @@ duration: 1 round / level
 mechanics: !!null
 description: |
   <p>This spell summons a diablo from another reality to attack any targets the caster orders it to. The diablo disappears when the duration ends or if it falls below 1 hp.</p>
-  <p>The diablo's statistics are decided by the caster:</p>
-- Its AC is 15 + the caster's circle.
-- It has 5 hit points per caster circle.
-- Its saves equal the caster's wizard level.
-- The diablo has 2 claws, granting it 2 attacks, 2 legs and a tail.
-- Its to hit-bonus equals the caster's circle. Its attacks inflict 1d6 + the caster's circle in slashing damage, and have a speed of 4.
+  <p>The diablo's statistics are decided by the caster:<ul>
+  <li\>Its AC is 15 + the caster's circle.
+  <li\>It has 5 hit points per caster circle.
+  <li\>Its saves equal the caster's wizard level.
+  <li\>The diablo has 2 claws, granting it 2 attacks, 2 legs and a tail.
+  <li\>Its to hit-bonus equals the caster's circle. Its attacks inflict 1d6 + the caster's circle in slashing damage, and have a speed of 4.</ul></p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
   <table>
   <tr><td>reserve</td><td>effect</td></tr>
@@ -1277,15 +1277,14 @@ components: "V"
 duration: instantaneous
 mechanics: special, costs 1 intelligence
 description: |
-  <p>This spell uses magic to fulfil a wish for the caster. This wish can be any one thing. For instance, this spell can:</p>
- - duplicate any know spell effect;
- - bring someone back to life;
- - kill someone;
- - raise an ability score by one point.
+  <p>This spell uses magic to fulfil a wish for the caster. This wish can be any one thing. For instance, this spell can:<ul>
+  <li\>duplicate any know spell effect;
+  <li\>bring someone back to life;
+  <li\>kill someone;
+  <li\>raise an ability score by one point.</ul></p>
   <p>The DM may rule that wishes have other constraints. A successful spellcraft-check will explain more about that.</p>
   <p>This spell cannot be used more than once in a game session by the same caster.</p>
   <p>Casting this spell removes one point of intelligence from the caster permanently. This is not a curse. It is a change in the core of the person, and no magic short of a wish can restore it.</p>
-
 ---
 name: Zeta
 sphere: law
