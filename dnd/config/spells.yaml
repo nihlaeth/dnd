@@ -341,7 +341,7 @@ range: "short"
 area: "10 meter radius"
 casting_time: "1 turn"
 components: "VSM"
-duration:	special
+duration: special
 mechanics: !!null
 description: |
   <p>This spell strengthens all the walls, doors, floors and ceilings in the area, granting them damage reduction of 2 vs blunt damage and 3 vs all other damage for every circle the caster has achieved.</p>
@@ -509,7 +509,7 @@ range: "short"
 area: "3 meter radius"
 casting_time: "4"
 components: "VSM"
-duration:	1 round / level
+duration: 1 round / level
 mechanics: will negates
 description: |
   <p>This spell creates an area full of hypnotic visual effects that capture the attention of any who venture inside. The targets will stand still gazing at the pretty lights. Any damage breaks this effect.</p>
@@ -541,7 +541,7 @@ range: "caster"
 area: "3 meter radius"
 casting_time: "1 round"
 components: "S"
-duration:	sustainable until discharged
+duration: sustainable until discharged
 mechanics: !!null
 description: |
   <p>This spell allows the caster to create minor effects when concentrating. He can fetch coins from ears and rabbits from hats, sweep the floor and dry or brush off clothes. These effects cannot inflict damage or force a saving throw, and they are obviously magical.</p>
@@ -571,7 +571,7 @@ range: "short"
 area: "1 creature"
 casting_time: "6"
 components: "VS"
-duration:	instantaneous
+duration: instantaneous
 mechanics: weakest save negates
 description: |
   <p>This spell causes the target to soundlessly explode into a ball of white light. He has a saving throw to negate, but this save is the one for which he has the lowest class bonus. A tie is decided by his starting class.</p>
@@ -583,7 +583,7 @@ range: "touch"
 area: "1 creature"
 casting_time: "4"
 components: "VSM"
-duration:	sustainable or 1 round / level
+duration: sustainable or 1 round / level
 mechanics: !!null
 description: |
   <p>This spell makes the target highly resistant to damage from normal weapons. All attacks that hit are assumed to roll minimum damage. A 5th-circle caster is also guarded from +1 weapons, and a 6th-circle caster from +2 weapons. If the target is the caster, then the duration is sustainable.</p>
@@ -595,7 +595,7 @@ range: "touch"
 area: "1 creature"
 casting_time: "3"
 components: "VSM"
-duration:	1 round / level
+duration: 1 round / level
 mechanics: to hit, fortitude may negate
 description: |
   <p>This spell inflicts the target with a disability chosen by the caster at the time of casting, but limited by the circle he has achieved.</p>
@@ -611,7 +611,7 @@ range: "medium"
 area: "3 meter radius"
 casting_time: "2 + number of effects"
 components: "VSM"
-duration:	instantaneous
+duration: instantaneous
 mechanics: fortitude halves
 description: |
   <p>This spell shoots a bolt of lightning from the caster's fingertips. The bolt explodes when it reaches its destination, inflicting 1d4 lightning damage per level of the caster.</p>
@@ -630,7 +630,7 @@ range: "touch"
 area: "caster and 1 person"
 casting_time: "1 round"
 components: "VSM"
-duration:	3 turns
+duration: 3 turns
 mechanics: will negates
 description: |
   <p>This spell enchants both the caster and the target to speak a secret language during the duration. They can speak only this language, and no other. The language is a new one for every casting, and is not spoken anywhere in the world. The effect does not interfere with spellcasting.</p>
@@ -666,7 +666,7 @@ range: "touch"
 area: "1 locked object"
 casting_time: "3"
 components: "VS"
-duration:	instantaneous
+duration: instantaneous
 mechanics: skill-check
 description: |
   <p>This spell can be used to try and open a door, portal, chest, book, or anything else that is protected by normal or magical locks and traps. The caster can roll a lockpicking check with a +3 for every circle he has achieved to open the target object. If the target is trapped, then the caster gains a +4 to the applicable saving throws.</p>
@@ -678,7 +678,7 @@ range: "caster"
 area: "caster"
 casting_time: "2 + number of effects"
 components: "SM"
-duration:	1 turn / level
+duration: 1 turn / level
 mechanics: !!null
 description: |
   <p>This spell magically strengthens the caster's body. He gains 1 point of strength, dexterity, constitution and perception.</p>
@@ -702,7 +702,7 @@ range: "touch"
 area: "1 creature"
 casting_time: "1 hour"
 components: "VS"
-duration:	sustainable
+duration: sustainable
 mechanics: special, will negates
 description: |
   <p>This spell binds one small creature of animal intelligence to the caster. The minion becomes an extension of the caster, and is infused with some of his magic.</p>
@@ -723,7 +723,7 @@ range: "medium"
 area: "1 creature"
 casting_time: "5"
 components: "VSM"
-duration:	instantaneous
+duration: instantaneous
 mechanics: fortitude negates
 description: |
   <p>This spell kills the target.</p>
@@ -749,7 +749,7 @@ range: "short"
 area: "1 meter radius / level"
 casting_time: "2 + number of effects"
 components: "VSM"
-duration:	2 rounds / level
+duration: 2 rounds / level
 mechanics: special
 description: |
   <p>This spell creates an area of fog. In its base form, it merely limits vision to a range of one meter. However, higher circle casters can add effects to the spell, depending on their reserve.</p>
