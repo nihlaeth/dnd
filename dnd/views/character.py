@@ -247,8 +247,10 @@ def _skill_validator(request, _):
 
 
 def _skill_response_factory(response, character, app):
-    response['#skill-accordion'] = {'data': get_env(app).get_template(
-        'character_skills_display.html').render(character=character)}
+    response['#skill-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_skills_display.html').render(character=character),
+        'activateTooltip': True}
     response['#skill-points'] = {
         'data': character['unspent_skill_points'],
         'addClass': ["label-danger"] if character[

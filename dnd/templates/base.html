@@ -68,6 +68,9 @@
                             if('collapse' in data[key]){
                                 $(key).collapse(data[key]['collapse'])
                             }
+                            if('activateTooltip' in data[key]){
+                                $(key + ' [data-toggle="tooltip"]').tooltip();
+                            }
                         }
                     });
                 },
