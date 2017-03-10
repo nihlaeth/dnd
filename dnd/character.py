@@ -18,6 +18,10 @@ SKILLS = {skill['name'].lower(): skill for skill in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/skills.yaml'),
     Loader=Loader) if skill is not None}
 
+SPELLS = {spell['name'].lower(): spell for spell in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/spells.yaml'),
+    Loader=Loader) if spell is not None}
+
 ABILITIES = [
     'strength',
     'dexterity',
@@ -40,6 +44,7 @@ def calculate_stats(character):
     _character_skills(character)
     _character_hit_points(character)
     _character_background(character)
+    _character_spells(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -131,6 +136,15 @@ def _character_skills(character):
             character['skills'][skill]['skill_check_value'] = sum([
                 character[element] for element in SKILLS[skill]['skill_check']])
     character['unspent_skill_points'] = skill_points
+
+def _character_spells(character):
+    spell_names = character.get('spell_names', [])
+    character['spells'] = {}
+    for spell in spell_names:
+        spell = spell.lower()
+        if spell in SPELLS:
+            character['spells'][spell] = copy.deepcopy(SPELLS[spell])
+
 
 def _character_hit_points(character):
     max_hp = character.get('max_hp', 1)

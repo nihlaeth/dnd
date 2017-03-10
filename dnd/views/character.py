@@ -7,7 +7,7 @@ from markupsafe import escape
 from aiohttp_jinja2 import get_env
 from dnd.decorators import login_required
 from dnd.common import format_errors
-from dnd.character import ABILITIES, RACES, SKILLS, CLASSES, calculate_stats
+from dnd.character import ABILITIES, RACES, SKILLS, SPELLS, CLASSES, calculate_stats
 
 async def get_character(request):
     """Fetch character from database."""
@@ -30,6 +30,7 @@ async def character_handler(request):
     """Character page."""
     errors, editing_privileges, character = await get_character(request)
     return {
+        'spells': SPELLS,
         'skills': SKILLS,
         'classes': CLASSES,
         'races': RACES,
@@ -52,6 +53,7 @@ async def data_handler(request):
         'race': (_race_validator, _race_response_factory),
         'class': (_class_validator, _class_response_factory),
         'skill': (_skill_validator, _skill_response_factory),
+        'spell': (_spell_validator, _spell_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
     }
@@ -197,6 +199,7 @@ def _class_response_factory(response, character, app):
     response['#powers-section'] = {
         'collapse': "show" if character['warlock'] > 0 else "hide"}
     _skill_response_factory(response, character, app)
+    _spell_response_factory(response, character, app)
 
 def _hp_validator(request, errors):
     try:
@@ -245,7 +248,6 @@ def _skill_validator(request, _):
             skills.append(skill)
     return {'skill_names': skills}
 
-
 def _skill_response_factory(response, character, app):
     response['#skill-accordion'] = {
         'data': get_env(app).get_template(
@@ -257,6 +259,19 @@ def _skill_response_factory(response, character, app):
             'unspent_skill_points'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
             'unspent_skill_points'] >= 0 else ["label-default"]}
+
+def _spell_validator(request, _):
+    spells = []
+    for spell in SPELLS:
+        if spell in request.POST:
+            spells.append(spell)
+    return {'spell_names': spells}
+
+def _spell_response_factory(response, character, app):
+    response['#spell-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_spells_display.html').render(character=character),
+        'activateTooltip': True}
 
 async def _name_validator(request, errors):
     try:

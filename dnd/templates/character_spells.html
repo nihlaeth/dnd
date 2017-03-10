@@ -1,0 +1,97 @@
+<div class="panel-group" id="spell-accordion">
+  {% include 'character_spells_display.html' %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#spells-form">Edit</button>
+
+<div id="spells-form" class="collapse well">
+  <form data-async data-target="#spells-errors" action="/api/{{ character['_id'] }}/spell/" method="POST" class="form-horizontal">
+    <div id="spells-errors"></div>
+    <div class="form-group">
+      <div class="panel-group" id="spells-form-accordion">
+        {% for circle in range(1, 7) %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#spells-form-accordion" href="#circle-{{ circle }}">Circle: {{ circle }}</a>
+            </h4>
+          </div>
+          <div id="circle-{{ circle }}" class="panel-collapse collapse">
+            <div class="panel-body">
+              {% for spell in spells if spells[spell]['circle'] == circle %}
+              <div class="checkbox">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="{{ spell }}"
+                    value="selected"
+                    {% if spell in character['spells'] %}checked{% endif %}>
+                  {{ spell|capitalize }}
+                </label>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#spell-info-{{ spell }}">?</button>
+              </div>
+              <div id="spell-info-{{ spell }}" class="collapse well">
+                <table class="table">
+                  <tr>
+                    <td>Circle:</td>
+                    <td>
+                      {{ spells[spell]['circle'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Sphere:</td>
+                    <td>
+                      {{ spells[spell]['sphere'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Range:</td>
+                    <td>
+                      {{ spells[spell]['range'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Area:</td>
+                    <td>
+                      {{ spells[spell]['area'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Casting time:</td>
+                    <td>
+                      {{ spells[spell]['casting_time'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Components:</td>
+                    <td>
+                      {{ spells[spell]['components'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Duration:</td>
+                    <td>
+                      {{ spells[spell]['duration'] }}
+                    </td>
+                  </tr>
+                  {% if spells[spell]['mechanics'] is not none %}
+                  <tr>
+                    <td>Mechanics:</td>
+                    <td>
+                      {{ spells[spell]['mechanics'] }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                </table>
+                {{ spells[spell]['description'] }}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+  </form>
+</div>
