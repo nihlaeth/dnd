@@ -8,6 +8,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration: 2 hours / level or until discharged
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell wards the area, warning the caster when a creature enters. The ward cannot be set off by any creature smaller than a housecat.</p>
   <p>The ward can be detected by an observation-check. It can be circumvented by a stealth-check with a -5 penalty. It can be safely removed by a lockpicking-check with a -5 penalty.</p>
@@ -29,6 +30,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to cast spells as if he had achieved one more circle. This allows him to use higher-circle effects, or increases his reserve by one. It does not allow him more spells, and doesn't raise the DCs of the saving throws of his magic. A caster can have only one augmentation spell in effect at the same time.</p>
 ---
@@ -41,6 +43,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable
 mechanics: action to set target
+ability_cost: !!null
 description: |
   <p>This spell creates a latent barrier around the caster that protects against a single creature. It grants the caster a bonus to AC, saving throws and damage reduction to melee attacks equal to the highest circle he has achieved.</p>
   <p>The caster chooses the creature against which the spell protects. Changing the target is an action equivalent to spellcasting with a speed of 2.</p>
@@ -55,6 +58,7 @@ casting_time: "6"
 components: "VSM"
 duration: instantaneous
 mechanics: reflex negates
+ability_cost: !!null
 description: |
   <p>This spell releases its chaotic magical energy at the point of effect, which then translates in damage. All creatures in the area receive 1d8 points of damage for every circle the caster has reached. The caster decides the type of damage, from the list below. If he decides to do 1d8 extra damage, then the type of damage is determined randomly.</p>
   <table>
@@ -77,6 +81,7 @@ casting_time: "2 + number of effects"
 components: "SM"
 duration: 1 week
 mechanics: will negates
+ability_cost: !!null
 description: |
   <p>This spell convinces the target that the caster is a good friend. Higher circle casters can add more effects to the spell, depending on their reserve.</p>
   <table>
@@ -97,6 +102,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration: 1 round / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell surrounds the caster with an area of near invisibility. This grants him a +4 bonus to stealth.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -118,6 +124,7 @@ casting_time: "1 turn"
 components: "VSM"
 duration: permanent
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell imbues a dead body with magic so as to transform it into a duplicate of the caster. This duplicate has the same exact abilities as the caster, and follows its orders. However, every time the clone wakes up within a kilometer of the caster, it must save vs will (DC 15) or be overcome with the desire to dispose of the caster and take his place.</p>
   <p>This disadvantage can be negated by enchanting a living body instead of a dead one. This body must be conscious during the casting. It gets a saving throw vs fortitude to resist the physical transformation (which changes ability scores, class abilities and hit points). It also gets a saving throw vs will to maintain his skills and identity (the rest). Even if both these saves are failed, the clone still has a permanent -2 on all attack-rolls and skill- and ability-checks.</p>
@@ -132,6 +139,7 @@ casting_time: "4"
 components: "VSM"
 duration: instantaneous
 mechanics: reflex halves, reflex + 4 negates
+ability_cost: !!null
 description: |
   <p>This spell shoots a beam of green light at the target, which attempts to deintegrate him. If he fails his saving throw he takes 6d10 acid damage. If he fails the save with more than 4 points, his body is deintegrated and he dies.</p>
 ---
@@ -144,6 +152,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 round / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell summons 1d3+1 demona from another reality to attack any targets the caster orders them to. The demona disappear when the duration ends or if they fall below 1 hp.</p>
   <p>The demona are all of the same randomly generated type, with most their statistics decided by dice-rolls:<ul>
@@ -174,6 +183,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 round / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell summons a diablo from another reality to attack any targets the caster orders it to. The diablo disappears when the duration ends or if it falls below 1 hp.</p>
   <p>The diablo's statistics are decided by the caster:<ul>
@@ -202,6 +212,7 @@ casting_time: "5"
 components: "VSM"
 duration: instantaneous
 mechanics: fortitude halves
+ability_cost: !!null
 description: |
   <p>This spell unleashes a storm of acid rain, that pours down onto everything, inflicting 4d8 acid damage.</p>
 ---
@@ -214,6 +225,7 @@ casting_time: "4"
 components: "VS"
 duration: instantaneous
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell removes magic in the area. Non-permanent effects are automatically removed, and permanent effects, including curses, have a 50% chance of surviving. Magic items are treated as permanent effects.</p>
   <p>A creature that gets rid of a curse this way permanently loses 1 point of constitution for every curse.</p>
@@ -228,6 +240,7 @@ casting_time: "5"
 components: "VS"
 duration: instantaneous
 mechanics: power-check
+ability_cost: !!null
 description: |
   <p>This spell is similar to the prayer with the same name, covered on page 76. The only difference is that the power-check of the spell uses the caster's wizard level and [int].</p>
 ---
@@ -240,6 +253,7 @@ casting_time: "3"
 components: "VM"
 duration: instantaneous
 mechanics: fortitude halves damage and negates effect
+ability_cost: !!null
 description: |
   <p>This spell creates a thunderclap that stuns all creatures around the caster while leaving him unharmed. It inflicts 1d6 points of sonic damage for every circle the caster has achieved, and stuns the targets so that they lose their next action.</p>
 ---
@@ -252,6 +266,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 round
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates a doorway in front of the caster through which other places can be reached. He can place the exit of the doorway in any location he has seen that is within range. Any magic effect in the target location blocks the spell.</p>
   <p>A third-circle caster can place the exit 1 kilometer away, a fourth-circle caster can put it within a day's march, a fifth-circle caster can place the exit anywhere (... in the world... ), and a sixth-level caster can reach other planes of existence.</p>
@@ -265,6 +280,7 @@ casting_time: "1 round"
 components: "S"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell protects creatures and places in the area from being magically watched. The DC for the power-check to find them is raised by 3 for every circle the caster has reached.</p>
   <p>Additionally, any creature detecting magic must make an observation-check with a -3 for every circle the caster has reached to detect any magic at all in the area.</p>
@@ -278,6 +294,7 @@ casting_time: "1 turn"
 components: "VSM"
 duration: instantaneous
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell sends the targets to another plane of existence. If the caster is familiar with his destination, the spell works automatically. If he isn't, then he must roll a save vs will DC 15 or end up in another unfamiliar place.</p>
   <p>The caster has no control over where he arrives in the target plane.</p>
@@ -292,6 +309,7 @@ casting_time: "5"
 components: "VSM"
 duration: instantaneous
 mechanics: will negates
+ability_cost: !!null
 description: |
   <p>This spell reduces the target's strength and constitution to 5 and sends him back to his home plane. There he must stay at least until his ability damage is healed.</p>
   <p>If the target is already on his home plane, he is expelled from the caster's presence. He is cast back at least a hundred meters, taking 6d12 sonic damage. He does not take ability damage.</p>
@@ -306,6 +324,7 @@ casting_time: "5"
 components: "VSM"
 duration: 1 round / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates an immobile sphere where magic does not exist. Spells do not penetrate, magical creatures or those from other planes cannot enter, and breath weapons and gaze attacks can't hurt anyone in the area. Any creature with a magical compulsion or curse in the area will find that he is free of the effect while he remains within. The area is even immune to scrying, dispel magic and disjunction.</p>
   <p>Some things, such as holy relics and gods, may be able to negate the spell. That is for the DM to decide.</p>
@@ -319,6 +338,7 @@ casting_time: "3"
 components: "VSM"
 duration: permanent
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell changes the target's race into its fivefold version, as described in chapter 2. If the target is affected, he can no longer be a player character. The spell does not affect trumen. It is a curse.</p>
 ---
@@ -331,6 +351,7 @@ casting_time: "3"
 components: "VSM"
 duration: instantaneous
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates fans of flames from the caster's hands, burning up to two creatures in melee distance. It inflicts 1d6 points of heat damage for every circle the caster has achieved, plus 1 point per level for every wizard level.</p>
 ---
@@ -343,6 +364,7 @@ casting_time: "1 turn"
 components: "VSM"
 duration:	special
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell strengthens all the walls, doors, floors and ceilings in the area, granting them damage reduction of 2 vs blunt damage and 3 vs all other damage for every circle the caster has achieved.</p>
   <p>It also inflicts a -4 penalty for every circle to the lockpicking-check to open any locks or dismantle any traps or devices in the area.</p>
@@ -357,6 +379,7 @@ casting_time: "4"
 components: "VSM"
 duration: instantaneous
 mechanics: fortitude halves
+ability_cost: !!null
 description: |
   <p>This spell creates an area of extreme cold. All creatures in the area receive 6d8 points of cold damage. All fires are extinguished, as are all magical effects that inflict heat damage.</p>
 ---
@@ -369,6 +392,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration: 1 round / level
 mechanics: disbelief
+ability_cost: !!null
 description: |
   <p>This spell creates an illusionary reality in the area of effect. The wizard can cover 1 sense (sight, sound, touch, smell or taste).</p>
   <p>The illusion can consist of anything the caster can imagine, but it has limits. The caster can only maintain as many creatures as half his level, the spell has no more actions than the caster has, any attacks have the same to hit modifier as the caster would have, and the DC for the saving throw of any imagined effect is the same as the DC to disbelieve.</p>
@@ -392,6 +416,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates a floating hand that the caster can use to deliver touch attacks. The hand has a +1 bonus to hit for every circle the caster has achieved. It has an AC of 13 + the caster's achieved circle, and has 3 hit points per achieved circle. It always misses its saving throw against area attacks, but if the caster is concentrating on it, he can attempt a reflex save vs the attack's DC to whisk the hand out of the area in time.</p>
   <p>The caster can choose to make the hand almost invisible, requiring an alertness-check with a -6 penalty to notice the hand. If the hand is not noticed, it gains a +2 bonus to hit. However, the spell is treated as if the caster has achieved one less circle of magic.</p>
@@ -405,6 +430,7 @@ casting_time: "2 rounds"
 components: "SM"
 duration: 1 day or until discharged
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell creates a magical glyph. The glyph must be written on a wood, paper or stone surface, and have a diameter of between 10 and 50 cm. It cannot be erased without magic or without destroying the surface it is written on. It consists of one rune, or a single sentence of no more than 6 words.</p>
   <p>Targets within 2 meters, or targets within 5 meters looking at the rune, discharge it and activate its effects. If they try to avoid looking at it, they may save vs will to avoid the effect, but while doing so they face penalties as if blind, unless they have the blind-fighting skill.</p>
@@ -434,6 +460,7 @@ casting_time: "3"
 components: "VSM"
 duration: 5 rounds or until discharged
 mechanics: will negates, twice
+ability_cost: !!null
 description: |
   <p>This spell infuses the target with fear for the caster. In the target's mind, the caster is a bigger, stronger, menacing entity.</p>
   <p>The target faces a -2 penalty to AC and saving throws for every circle the caster has achieved, but only against attacks or spells originating from the caster.</p>
@@ -453,6 +480,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration: instantaneous
 mechanics: reflex negates
+ability_cost: !!null
 description: |
   <p>This spell fires a small glowing ball that explodes at its destination. It inflicts 1d6 points of heat damage per caster level.</p>
   <p>The grenata can be intercepted before it reaches its target, but this requires someone to parry it. The parry must hit an AC of 20 + the caster's [int]. If successful, the parrying creature sustains 1d6 of heat damage.</p>
@@ -474,6 +502,7 @@ casting_time: "3"
 components: "VS"
 duration: instantaneous
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell creates a demonic laughter in the area, a laughter that inflicts 2d6 sonic damage and an effect chosen by the caster. If successful, the saving throw negates both the effect and the damage. The caster is not affected by the spell.</p>
   <p>A 2nd-circle caster can cause the targets to lose their next action.</p>
@@ -491,6 +520,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 3 rounds / level
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell grows the target. He becomes a head taller and gains a +1 to attack rolls and to physical damage. Worn and carried items grow with him.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -511,6 +541,7 @@ casting_time: "4"
 components: "VSM"
 duration:	1 round / level
 mechanics: will negates
+ability_cost: !!null
 description: |
   <p>This spell creates an area full of hypnotic visual effects that capture the attention of any who venture inside. The targets will stand still gazing at the pretty lights. Any damage breaks this effect.</p>
   <p>A third-circle caster also slows his targets, halving their movement, delaying their actions (+2 initiative) and inflicting a -2 to hit and a -2 to skill- and ability-checks. This effect lasts until the spell ends, even if the targets leave the area.</p>
@@ -527,6 +558,7 @@ casting_time: "1 hour"
 components: "VSM"
 duration: 1 hour
 mechanics: concentration to steer
+ability_cost: !!null
 description: |
   <p>This spell enchants an object so that it can fly as fast as a galloping horse. The caster can control the flight by concentration, using either the meditation or the spellcraft skill. If he does not, the item continues on its course and speed.</p>
   <p>The type of object the spell can affect is determined by the circle the caster has achieved. A fourth-circle caster can enchant a broom, a fifth-circle caster also a shield, and a sixth-circle caster also a carpet.</p>
@@ -543,6 +575,7 @@ casting_time: "1 round"
 components: "S"
 duration:	sustainable until discharged
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to create minor effects when concentrating. He can fetch coins from ears and rabbits from hats, sweep the floor and dry or brush off clothes. These effects cannot inflict damage or force a saving throw, and they are obviously magical.</p>
   <p>A 2nd-circle caster can discharge this spell to repair things. A shattered vase, punctured waterskin or snapped leather strap, when put together, fuses again and is as good as new. A skill-check may be needed to ensure that the item is repaired correctly.</p>
@@ -560,6 +593,7 @@ casting_time: "1 turn"
 components: "VSM"
 duration: 6 hours
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell enchants a weapon or armour. A weapon gains a +1 to hit and damage. An armour gains a +1 AC and its skill-penalty is reduced by one.</p>
   <p>These bonuses are increased by one for every circle over third the caster has achieved. They are not cumulative with bonuses from other magical enhancements, or from masterwork items.</p>
@@ -573,6 +607,7 @@ casting_time: "6"
 components: "VS"
 duration:	instantaneous
 mechanics: weakest save negates
+ability_cost: !!null
 description: |
   <p>This spell causes the target to soundlessly explode into a ball of white light. He has a saving throw to negate, but this save is the one for which he has the lowest class bonus. A tie is decided by his starting class.</p>
 ---
@@ -585,6 +620,7 @@ casting_time: "4"
 components: "VSM"
 duration:	sustainable or 1 round / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell makes the target highly resistant to damage from normal weapons. All attacks that hit are assumed to roll minimum damage. A 5th-circle caster is also guarded from +1 weapons, and a 6th-circle caster from +2 weapons. If the target is the caster, then the duration is sustainable.</p>
 ---
@@ -597,6 +633,7 @@ casting_time: "3"
 components: "VSM"
 duration:	1 round / level
 mechanics: to hit, fortitude may negate
+ability_cost: !!null
 description: |
   <p>This spell inflicts the target with a disability chosen by the caster at the time of casting, but limited by the circle he has achieved.</p>
   <p>A 2nd-circle caster can make the target deaf or itching. A deaf target cannot hear, and an itching target faces a -2 to all ability-, skill- and power-checks, saving throws and to hit.</p>
@@ -613,6 +650,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration:	instantaneous
 mechanics: fortitude halves
+ability_cost: !!null
 description: |
   <p>This spell shoots a bolt of lightning from the caster's fingertips. The bolt explodes when it reaches its destination, inflicting 1d4 lightning damage per level of the caster.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -632,6 +670,7 @@ casting_time: "1 round"
 components: "VSM"
 duration:	3 turns
 mechanics: will negates
+ability_cost: !!null
 description: |
   <p>This spell enchants both the caster and the target to speak a secret language during the duration. They can speak only this language, and no other. The language is a new one for every casting, and is not spoken anywhere in the world. The effect does not interfere with spellcasting.</p>
 ---
@@ -644,6 +683,7 @@ casting_time: "2"
 components: "VS"
 duration: instantaneous
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell fires bursts of lightning from the caster towards a living target within range. The missiles strike instantaneously, and always hit. The caster can choose to fire each missile at a different target, or group them together. This is decided before damage is rolled.</p>
   <p>The caster can fire one missile per spell circle he has achieved. The missiles inflict 1d4+1 lightning damage, and ignore 2 points of damage reduction per caster circle. The caster can give up one missile to make the others inflict 1d6+1 damage instead, or two missiles to make the others inflict 1d8+1 damage.</p>
@@ -656,6 +696,7 @@ area: "caster"
 casting_time: "1 round"
 components: "S"
 duration: sustainable
+ability_cost: !!null
 description: |
   <p>This spell magically boosts a wizard's presence, granting a +1 bonus to charisma per circle the caster has achieved.</p>
 ---
@@ -668,6 +709,7 @@ casting_time: "3"
 components: "VS"
 duration:	instantaneous
 mechanics: skill-check
+ability_cost: !!null
 description: |
   <p>This spell can be used to try and open a door, portal, chest, book, or anything else that is protected by normal or magical locks and traps. The caster can roll a lockpicking check with a +3 for every circle he has achieved to open the target object. If the target is trapped, then the caster gains a +4 to the applicable saving throws.</p>
 ---
@@ -680,6 +722,7 @@ casting_time: "2 + number of effects"
 components: "SM"
 duration:	1 turn / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell magically strengthens the caster's body. He gains 1 point of strength, dexterity, constitution and perception.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -704,6 +747,7 @@ casting_time: "1 hour"
 components: "VS"
 duration:	sustainable
 mechanics: special, will negates
+ability_cost: !!null
 description: |
   <p>This spell binds one small creature of animal intelligence to the caster. The minion becomes an extension of the caster, and is infused with some of his magic.</p>
   <p>The caster gains a +1 to saving throws and AC when the minion is within 10 meters. If it's in this range, its presence also grants him a +1 to alertness- and observation-checks for every circle he has achieved.</p>
@@ -725,6 +769,7 @@ casting_time: "5"
 components: "VSM"
 duration:	instantaneous
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell kills the target.</p>
 ---
@@ -737,6 +782,7 @@ casting_time: "3"
 components: "VSM"
 duration: 1 round / level
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell nullifies all magical effects that are of a lower circle than the highest that the caster has achieved. This effect moves with the caster and has no effect on magic cast from inside its area. Area magic with its centre inside the effect do not happen. Area magic with its centre outside the effect behaves normally, but does not enter the effect.</p>
   <p>The caster can create a 3 meter radius around himself, but this causes the spell to work as if he were 1 circle lower in power.</p>
@@ -751,6 +797,7 @@ casting_time: "2 + number of effects"
 components: "VSM"
 duration:	2 rounds / level
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell creates an area of fog. In its base form, it merely limits vision to a range of one meter. However, higher circle casters can add effects to the spell, depending on their reserve.</p>
   <table>
@@ -775,6 +822,7 @@ casting_time: "1 round"
 components: "VSF"
 duration: 1 turn
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell creates a force that does the caster's bidding. The force operates with a strength score of 12 + the caster's highest achieved circle. The force can push, but can do no damage.</p>
   <p>A caster wishing to push a target must succeed on a to hit roll and a strength-check. Both rolls use the strength of the spell. A smaller target grants a +4 to the strength-check, while a larger target can inflict a -4 penalty, or worse, depending on the DM. If the checks succeed, the target is moved.</p>
@@ -795,6 +843,7 @@ casting_time: "3"
 components: "VS"
 duration: 1 turn / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell enhances the caster's senses, granting him a +3 bonus per circle to skill-checks to detect stealthed, displaced, incorporeal or invisible creatures or objects. A successful observation-check (with this bonus) also alerts the caster to areas where magic is used to alter the appearance of reality. A successful spellcraft-check reveals the nature of this magic, but the spell grants no defenses against it.</p>
   <p>A fourth-circle caster can also use this spell to detect some creatures in darkness. Any creatures that have a magic item on them or a magic effect active become obvious to the caster.</p>
@@ -808,6 +857,7 @@ casting_time: "3"
 components: "VSM"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to parry all melee attacks. These parries have a -1 to hit.</p>
 ---
@@ -820,6 +870,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 month
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell enchants a vellum so that any message on the target can be read only by the caster and one intended recipient. To all others the message reads as gibberish.</p>
   <p>The recipient is determined by the caster at the time of casting. This must be a creature whose skin he has touched before. The spell can be fooled by a person who successfully disguises himself as the recipient.</p>
@@ -843,6 +894,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 round / level
 mechanics: reflex negates
+ability_cost: !!null
 description: |
   <p>This spell plodes the terrain. The change is obvious to anyone. Creatures in the area must roll a saving throw just before their own action, or during if they are moving through the area. A creature can try to avoid a saving throw when moving through the area (not if already in it) by attempting a tumbling-check with a penalty equal to the caster's wizard level.</p>
   <p>A first-circle caster can choose to implode the area. Everything in the area gets stuck and harder to move around. Affected creatures lose 2 points of dexterity for every circle the caster has achieved.</p>
@@ -861,6 +913,7 @@ casting_time: "4"
 components: "VSM"
 duration: permanent or instantaneous
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell transforms the target into another race or species. To do this, the caster must be intimately familiar with the creature he is trying to create. Specifically, he must have studied a fresh corpse of the 'target race' with detect magic for at least 1 turn.</p>
   <p>A fifth-circle caster can choose to make the duration instantaneous in stead of permanent, but this lowers the save DC by 4.</p>
@@ -874,6 +927,7 @@ casting_time: "2"
 components: "V"
 duration: permanent or instantaneous
 mechanics: fortitude halves damage and negates effect
+ability_cost: !!null
 description: |
   <p>This spell invokes an ancient word of power, which takes effect on all targets in the area except the caster. The caster must choose one effect from the following list.</p>
   <p>A 4th-circle caster can cause blindness or deafness in all targets. They also take 1d8 sonic damage.</p>
@@ -891,6 +945,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 2 rounds / level
 mechanics: disbelief
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to create one or more images of himself.</p>
   <p>If the caster decides to create only one image, he can make it appear anywhere within range. This can be a place the caster cannot see, but he must have seen it beforehand. The image can see and hear within a 5-meter radius, and converse with people present, but not cast spells.</p>
@@ -906,6 +961,7 @@ casting_time: "3"
 components: "VS"
 duration: sustainable or 1 hour / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell grants the target a damage reduction of 5 against all continual and environmental damage. This includes damage from weather or otherworldly places. It works against bleeding wounds, but doesn't stabilize an unconscious target. If the target is the caster, then the duration is sustainable.</p>
 ---
@@ -918,6 +974,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell forms a barrier that protects the caster from harm. It grants a bonus to AC equal to the highest circle the caster has achieved.</p>
   <p>This spell is dispelled whenever a runic shield or runic resilience spell is cast on the same target.</p>
@@ -931,6 +988,7 @@ casting_time: "2"
 components: "VSM"
 duration: 3 rounds / level
 mechanics: willing
+ability_cost: !!null
 description: |
   <p>This spell strengthens the target, granting him a +1 to saving throws for every circle the caster has achieved. Also, he gains one point of damage reduction for every circle he has achieved against one of the following damage categories: piercing, slashing, blunt, acid, cold, heat, lightning or sonic, to be decided on the time of casting.</p>
   <p>This spell is dispelled whenever a runic armour or runic shield spell is cast on the same target.</p>
@@ -944,6 +1002,7 @@ casting_time: "2"
 components: "SM"
 duration: 2 rounds / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates a barrier in front of the caster. This barrier slows incoming attacks, giving the caster more time to react. He gains a bonus to AC and saves vs gaze effects equal to 4 + the circle he has achieved.</p>
   <p>Normally the caster has time to turn the shield towards threats. However, an unnoticed threat can bypass the shield. This is resolved by an alertness-check opposed by stealth, quickdraw or another applicable skill.</p>
@@ -958,6 +1017,7 @@ casting_time: "2 rounds"
 components: "VSM"
 duration: 1 round / level
 mechanics: power-check with [int]
+ability_cost: !!null
 description: |
   <p>This spell stretches the caster's senses towards faraway places. To do this, he rolls a power-check using [int]. The base DC to scry a place is 10, to scry an item is 15 and to scry a creature is his character level (or hit points divided by 5 for a monster). If the caster has seen the target in person, the DC is lowered by 5. Protective magic can raise the DC.</p>
   <p>The scrying can extend to all known realities. However, the DC for a target on another plane is increased by 5.</p>
@@ -980,6 +1040,7 @@ casting_time: "3"
 components: "SM"
 duration: 2 rounds / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell animates the caster's shadow. It is still attached to his feet, but stretches according to his will. This allows him to make melee attacks within short range, using his normal to hit and inflicting 1d4+[str] points of blunt damage.</p>
   <p>If the caster only attacks, he has two attacks with a speed of 2. If he decides on another action, the spell grants him one attack after his action, also with a speed of 2, starting on the round after the spell is cast. The spell does not interfere with spellcasting.</p>
@@ -1001,6 +1062,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable until discharged
 mechanics: fortitude negates discharge
+ability_cost: !!null
 description: |
   <p>This spell illuminates the tip of the caster's staff with a bright white light. The caster must hold the staff, if he drops it the spell ends.</p>
   <p>A 2nd-circle caster can change the intensity of the light. This requires a round of concentration equivalent to spellcasting.</p>
@@ -1017,6 +1079,7 @@ casting_time: "5"
 components: "VSF"
 duration: permanent
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell sucks out the identity of the target and places it inside a gem. The target's body collapses into nothingness, leaving his possessions. The caster also sets a password.</p>
   <p>The gem functions as if it is a different plane of existence. The occupant exists in an endless fog without any substance, naked and cold, without needing to eat, drink or sleep. He does not age. He is alone.</p>
@@ -1033,6 +1096,7 @@ casting_time: "3"
 components: "VSM"
 duration: 1 round / level
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell attempt to turn magic used against the target back on its caster. It has no effect on area attacks that include the target, or on magic that functions through touch.</p>
   <p>The effect of the spell depends on the kind of magic being used.</p>
@@ -1050,6 +1114,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to be faster, changing the die he uses to roll initiative.</p>
   <p>A 3rd-circle caster rolls a d6 for initiative.</p>
@@ -1067,6 +1132,7 @@ casting_time: "1 round"
 components: "VSF"
 duration: sustainable until discharged
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to see magic that is in effect in close range. If magic is detected from either a spell, prayer or warlock power, the caster can try to learn more about it. This takes one round, and requires a spellcraft-check. On a successful check, he learns the strength of the magic compared to his own caster level (stronger, comparable or weaker). He can make an observation-check to see the remnants of past magic, with a -2 penalty for every turn that has passed.</p>
   <p>The caster can detect more magic depending on the circle he has achieved.</p>
@@ -1086,6 +1152,7 @@ casting_time: "3"
 components: "SM"
 duration: 1 round / level or until discharged
 mechanics: reflex halves
+ability_cost: !!null
 description: |
   <p>This spell reflects damage from the first successful melee attack made against the target. If the attacker fails the save, then he takes the damage from his own attack. If the save succeeds, then the attacker takes half damage and the target takes full damage.</p>
 ---
@@ -1098,6 +1165,7 @@ casting_time: "1 round"
 components: "S"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell improves the caster's footing and balance, granting him a +1 to hit for every circle he has achieved.</p>
 ---
@@ -1110,6 +1178,7 @@ casting_time: "5"
 components: "VSM"
 duration: 1 hour / level
 mechanics: fortitude partially negates
+ability_cost: !!null
 description: |
   <p>This spell transforms the target into a stone statue. If he makes his saving throw, then he gains the ability to switch back and forth between his normal form and a stone aspect.</p>
   <p>As a statue, standing still comes naturally. Also, the target cannot move. It takes an observation-check with a -10 penalty or an opposed artistic ability-check to determine that something is wrong with the statue. Its nature is undetectable with magic that detects magic.</p>
@@ -1126,6 +1195,7 @@ casting_time: "3 + number of effects"
 components: "VSM"
 duration: 1 turn / level
 mechanics: willing
+ability_cost: !!null
 description: |
   <p>This spell makes the water in the area breathable for humans.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -1147,6 +1217,7 @@ casting_time: "1 turn"
 components: "VSM"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell transfers sustainable spell effects from the caster to the target. It affects spells cast by the caster of the sustenance that have "duration: sustainable" and "range: caster (caster)".</p>
   <p>The spells affected must still be sustained by the caster. Their bonuses are slightly reduced; they function as if the caster had achieved one fewer circles. However, range is not an issue. Only if the caster and the target are on different planes of existence is the spell broken.</p>
@@ -1160,6 +1231,7 @@ casting_time: "4"
 components: "VSM"
 duration: 1 round / level
 mechanics: special
+ability_cost: !!null
 description: |
   <p>This spell summons a swarm of vermin that attacks everything in the area. Targets in the area receive 1d4 piercing damage per round, unless they do nothing but defend against the swarm. This damage is applied just before the targets' action, but it is not continual damage; spells cast by the targets are interrupted by it.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
@@ -1181,6 +1253,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: 1 hour / level
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell creates a space where there is none. The new space is shaped like a demi-sphere, a circular flat floor with a dome. Its borders are cold, dark and impenetrable, and its surface has a radius of 1 meter for every circle the caster has achieved. The entrance is shaped like a doorway.</p>
   <p>The tardis is invisible to the naked eye, but it is possible to enter it accidentally. To do this, someone needs only to cross the entrance from the right direction. If he grazes it, he feels goosebumps. To a person detecting magic, these goosebumps are visible as a magic effect. The caster can detect the location of the spell even without detecting magic, by rolling an alertness-check.</p>
@@ -1204,6 +1277,7 @@ casting_time: "3"
 components: "VSM"
 duration: 1 action / level or until discharged
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
   <p>This spell inflicts the cold touch of death on the target. It has effects based on the caster's choice. Only one effect is used.</p>
   <p>A 1st-circle caster can inflict 1d4 points of cold damage per level.</p>
@@ -1228,6 +1302,7 @@ casting_time: "4"
 components: "VSM"
 duration: instantaneous or 3 rounds
 mechanics: attack roll
+ability_cost: !!null
 description: |
   <p>This spell creates an arrow that the caster shoots (from an imaginary bow) as if he were a fighter of the caster's wizard level. The arrow inflicts damage based on the caster's choice.</p>
   <p>A 2nd-circle caster can create an acid arrow that inflicts 2d4 acid damage.</p>
@@ -1251,6 +1326,7 @@ casting_time: "1 round"
 components: "VSM"
 duration: sustainable
 mechanics: disbelief
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to alter his appearance and that of his clothing. This translates into a +3 to his disguise-check per circle he has achieved. If the caster wishes, it can also negate the penalty to the etiquette-check for wearing less than fancy clothes.</p>
   <p>The caster can change his appearance by concentrating for 1 round. This action can be interrupted like spellcasting.</p>
@@ -1264,6 +1340,7 @@ casting_time: "1 round"
 components: "VS"
 duration: sustainable
 mechanics: !!null
+ability_cost: !!null
 description: |
   <p>This spell allows the caster to fill spell slots with spells of the same circle, as usual, or with spells of lower circles. These spells can be cast as long as the versatility spell is active. They are cast exactly as if they were cast from a slot of the correct circle. If the versatility spell ends, then any prepared spells in a slot of the wrong circle are lost.</p>
 ---
@@ -1276,6 +1353,7 @@ casting_time: "6"
 components: "V"
 duration: instantaneous
 mechanics: special, costs 1 intelligence
+ability_cost: !!null
 description: |
   <p>This spell uses magic to fulfil a wish for the caster. This wish can be any one thing. For instance, this spell can:<ul>
   <li>duplicate any know spell effect;</li>
@@ -1295,6 +1373,7 @@ casting_time: "3"
 components: "VSM"
 duration: 1 round / level
 mechanics: reflex negates twice
+ability_cost: !!null
 description: |
   <p>This spell traps the target in an area 3 meters high, with a radius of 1 meter. In there, he is subjected to continual damage. The area is ringed with a border, which delivers an secondary effect if the target leaves the area by crossing it, unless he succeeds at a second saving throw.</p>
   <p>A second-circle caster can choose to make a zeta of cold, inflicting 1d4 cold damage per round. If the target leaves the zeta, his class bonus to attack rolls is halved until he rests for half an hour.</p>
