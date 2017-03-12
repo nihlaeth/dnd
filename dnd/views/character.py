@@ -130,7 +130,6 @@ def _ability_response_factory(response, character, app):
         'removeClass': ["label-danger"] if character[
             'unspent_ability_points'] >= 0 else ["label-default"]}
     _skill_response_factory(response, character, app)
-    _spell_response_factory(response, character, app)
 
 def _xp_validator(request, errors):
     try:
@@ -273,6 +272,11 @@ def _spell_response_factory(response, character, app):
         'data': get_env(app).get_template(
             'character_spells_display.html').render(character=character),
         'activateTooltip': True}
+    response['#spell-slots'] = {
+        'data': ' '.join([
+            "{}: <span class='label label-default'> {}</span>".format(
+                circle + 1, slots) for circle, slots in enumerate(
+                    character['spell_slots'])])}
 
 async def _name_validator(request, errors):
     try:

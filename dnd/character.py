@@ -144,6 +144,29 @@ def _character_spells(character):
         spell = spell.lower()
         if spell in SPELLS:
             character['spells'][spell] = copy.deepcopy(SPELLS[spell])
+    spell_slots = (
+        tuple(),
+        (2,),
+        (2, 1),
+        (3, 1),
+        (3, 2),
+        (3, 2, 1),
+        (4, 2, 1),
+        (4, 3, 1),
+        (4, 3, 2),
+        (4, 3, 2, 1),
+        (5, 3, 2, 1),
+        (5, 4, 2, 1),
+        (5, 4, 3, 1),
+        (5, 4, 3, 2),
+        (5, 4, 3, 2, 1),
+        (6, 4, 3, 2, 1),
+        (6, 5, 3, 2, 1),
+        (6, 5, 4, 2, 1),
+        (6, 5, 4, 3, 1),
+        (6, 5, 4, 3, 2),
+        (6, 5, 4, 3, 2, 1))
+    character['spell_slots'] = spell_slots[character['wizard']]
 
 
 def _character_hit_points(character):
