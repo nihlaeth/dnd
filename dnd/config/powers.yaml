@@ -1,0 +1,670 @@
+---
+name: "Adaptation"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: "3"
+components: "-"
+duration: "1 hour"
+mechanics: "power-check with con"
+ability_cost: "2 constitution"
+description: |
+  </p>
+  This power grants the caster the ability to self-heal. He caster gains a number of hit points equal to the bonus after every turn of the entire duration (6 times).
+  An unconscious character under the influence of this power stabilises not only when rolling a 1, but when rolling equal to or lower than 1 + the bonus.
+DC   8 +1 bonus
+DC 12 +2 bonus
+DC 16 +3 bonus
+DC 20 +4 bonus
+DC 24 +5 bonus
+DC 28 +6 bonus
+DC 32 +7 bonus
+
+---
+name: "Atrophy"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 person"
+casting_time: "3"
+components: "VS"
+duration: "permanent"
+mechanics: "power-check with str, fortitude negates"
+ability_cost: "2 strength and 1 year"
+description: |
+  </p>
+  This power ages the target. The amount of aging depends on the result of the power-check.
+DC   8 3d3 years
+DC 12 3d4 years
+DC 16 3d6 years
+DC 20 3d8 years
+DC 24 3d10 years
+DC 28 3d12 years
+  Using this power ages the caster one year.
+
+---
+name: "Cleansing"
+sphere: !!null
+circle: !!null
+range: "touch"
+area: "1 creature"
+casting_time: "3 rounds"
+components: "VS"
+duration: "instantaneous"
+mechanics: "power-check with dex"
+ability_cost: "4 dexterity"
+description: |
+  </p>
+  This power gives the caster a chance to remove a curse from the target. The caster cannot be the target. The DC for the curse is the same as that of the original saving throw, possibly raised by earlier attempts to remove it. If an attempt to cleanse fails, the DC to remove the curse is increased by 2.
+  If in doubt, curses can be defined as detrimental spells with a permanent duration.
+
+---
+name: "Death field"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "10 meter radius"
+casting_time: "3"
+components: "-"
+duration: "instantaneous"
+mechanics: "power-check with str, fortitude halves"
+ability_cost: "6 strength"
+description: |
+  </p>
+  This power drains the life of all living creatures in the area, including the caster. How much life is drained depends on the result of the power-check. All living creatures feel and suffer this intensely.
+DC   4 3d3 hp
+DC   8 3d4 hp
+DC 12 3d6 hp
+DC 16 3d8 hp
+DC 20 3d10 hp
+DC 24 3d12 hp
+DC 28 3d20 hp
+  The caster can decide to enlarge the area to a 100 meter radius. He then faces a -5 to his power-check.
+
+---
+name: "Deepsight"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 person"
+casting_time: "3"
+components: "-"
+duration: "1 turn"
+mechanics: "power-check with per, will negates"
+ability_cost: "1 perception"
+description: |
+  </p>
+  This power reaches into the target to read his surface emotions. This grants the caster a +4 bonus to skill-checks and power-checks used against the target for the duration.
+  Regardless of the result of the saving throw, the target doesn't know his emotions are being read. If the save is successful, the target cannot be probed again until a day has passed.
+Deepsight can be used on standard character races without penalty, but the DM is free to assign any other creatures bonuses to their saving throws.
+
+---
+name: "Dream travel"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "special"
+casting_time: "8 hours"
+components: "-"
+duration: "instantaneous"
+mechanics: "power-check with wis, willing"
+ability_cost: "5 wisdom"
+description: |
+  </p>
+  This power allows the caster to travel in his dreams. He goes to sleep, starts a dream journey and wakes up in another place. When he wakes, his body and equipment fade away from his starting point.
+  The caster must have a destination in mind to use this power. The default distance to travel is one day's journey. Also, he must decide if he wants to bring along any companions and if he wants to go along himself. These factors set the DC for the dream.
+starting DC 10
+the caster stays behind +1
+per extra day of travel +1
+per 2 passengers +1
+per 4 animal passengers +1
+  If the caster fails to reach the DC, he 
+wakes up partway to his destination. If he fails to reach 10, he wakes up where he started.
+  This power does not interfere with the restful sleep of the passengers. The caster, however, does not regain hit points or ability points when using this power.
+  The DM may craft the dream to fit the story, and include obstacles to overcome. The characters' abilities in such situations are probably different from their actual powers, and often highly symbolic.
+
+---
+name: "Dyson"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 magic effect"
+casting_time: "3"
+components: "-"
+duration: "special"
+mechanics: "power-check with int"
+ability_cost: "3 intelligence"
+description: |
+  </p>
+  This power drains a magical effect and increases the caster's perception. It speeds up the target effect depending on the result of the power check. The power continues until the duration of the target effect is gone or until the caster falls unconscious or goes to sleep.
+DC   3 2 rounds/ round
+DC   6 3 rounds/ round, +1 perception
+DC   9 4 rounds/ round
+DC 12 5 rounds/ round, +2 perception
+DC 15 6 rounds/ round
+DC 18 7 rounds/ round, +3 perception
+DC 21 8 rounds/ round
+DC 24 9 rounds/ round, +4 perception
+DC 27 1 turn/ round
+DC 30 1 turn/ round, +5 perception
+  The caster can only target magic he can see. The effect's area must be a radius, and its duration may not be instantaneous. It can't be an effect that blocks magic, such as the faraday spell, nor can it be a holy ground prayer. The power has no effect on magical items.
+
+---
+name: "Ego whip"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 creature"
+casting_time: "3"
+components: "-"
+duration: "1 on d4 negates / round"
+mechanics: "power-check with cha, will negates"
+ability_cost: "1 charisma"
+description: |
+  </p>
+  This power assaults the target's ego, leaving him with feelings of inferiority and worthlessness. As long as this lasts, all of his die rolls are penalized 5 points (or 25%).
+  Every round, the target can try to shake off the effect. On his initiative, after he acts, he rolls 1d4. If he rolls a 1, he shakes it off.
+
+---
+name: "Farsight"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: "3"
+components: "-"
+duration: "instantaneous"
+mechanics: "power-check with wis"
+ability_cost: "2 wisdom"
+description: |
+  </p>
+ This power gives the caster impressions of events in another place or time. The DC is determined by what the caster is trying to learn. He can get impressions in all senses.
+DC   8 within 10 meters
+DC 12 farther away
+DC 16 events in the past
+DC 20 events in the future
+DC 24 unknown events
+  This power can be used to scry creatures, but the power-check has a penalty equal to the target's level (or hit points divided by 5 for a monster).
+
+---
+name: "Fear"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 creature"
+casting_time: "3"
+components: "S"
+duration: "1 on d4 negates / round"
+mechanics: "power-check with cha, will negates"
+ability_cost: "2 charisma"
+description: |
+  </p>
+  This power causes the target to flee the caster. Every round after the one in which the power is cast, the target can try to shake off the effect. On his initiative, after he acts, he rolls 1d4. If he rolls a 1, he shakes it off. It takes the target a round to return to his starting position, should he so desire.
+
+---
+name: "Insight"
+sphere: !!null
+circle: !!null
+range: "short"
+area: "1 target or 3 meter radius"
+casting_time: "3"
+components: "S"
+duration: "instantaneous"
+mechanics: "power-check with per, will partially negates"
+ability_cost: "2 perception"
+description: |
+  </p>
+  This power allows the caster to detect the presence of supernatural forces in a creature, an area or an object.
+  Scanning an area requires a DC of 8. Effects that force a saving throw vs will are easier to detect (-4 to the DC), but the DC is raised by 1 every round after the magic ends. The caster detects all effects that have a lower DC than the result of the power-check.
+  Scanning an object requires a DC of 10. A successful scan reveals the presence of any magical powers. A DC of 14 reveals the process of activation of these powers.
+  Scanning a creature requires a DC of 12. A successful scan reveals the presence or absence of magical powers. If the target misses his saving throw, the caster learns the origin of the magic, be it wizard spells, priest prayers, warlock powers or other.
+  An intelligent object gains a saving throw as if it were a creature, with a +12 bonus to saving throws vs will.
+
+---
+name: "Iron will"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "5 meter radius"
+casting_time: "3"
+components: "-"
+duration: "1 hour"
+mechanics: "power-check with wis, willing"
+ability_cost: "2 wisdom"
+description: |
+  </p>
+  This power stops mental attacks by sheer force of will, granting a bonus to saving throws vs will. It offers the same protection to other minds in the area of effect. They lose the bonus if they leave the area around the caster, but regain it if they return.
+DC   4 +1 bonus
+DC   8 +2 bonus
+DC 12 +3 bonus
+DC 16 +4 bonus
+DC 20 +5 bonus
+DC 24 +6 bonus
+DC 28 +7 bonus
+DC 32 +8 bonus
+
+
+
+
+
+
+---
+name: "Kimagure"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+casting time: 3 (S)
+duration: 1 round
+mechanics: power-check with per
+ costs 4 per
+  This power alters the caster's movement through time. In the round after the casting, he gains extra actions depending on the result of the power-check, at a speed also based on his result.
+DC   6 +1 action of speed 4
+DC 12 +2 actions of speed 3
+DC 18 +3 actions of speed 2
+DC 24 +4 actions of speed 1
+DC 30 +5 actions of speed 0
+ The caster declares his intentions for his first action and rolls initiative normally. After his normal action he declares intentions for his next action, and so on until either his actions are spent or initiative reaches 20. Weapon speeds and casting times apply as normal.
+
+---
+name: "Leeching"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: touch (1 person)
+casting time: 3 (S)
+duration: instantaneous
+mechanics: power-check with cha
+ costs 3 cha
+  This power leeches life energy from the target, and bestows some of it on the caster. The extent of the effect depends on the result of the power-check.
+DC   4 target loses 1 constitution
+DC   8 target loses 1 con and 2d4 hp, caster
+ gains 1d4 hp
+DC 12 target loses 1d2 con and 3d4 hp, caster
+ gains 1d6 hp
+DC 16 target loses 1d3 con and 4d4 hp, caster
+ gains 1d8 hp and the effects of a
+ restoration prayer
+DC 20 target loses 1d4 con and 5d4 hp, caster
+ gains 1d10 hp and the effects of a
+ restoration prayer
+DC 24 target loses 1d6 con and 6d4 hp, caster
+ gains 1d12 hp, the effects of a
+ restoration prayer and the age of his
+ natural death is increased by 1 year
+  This power can leave the caster with more hit points than his maximum. If this happens, he loses 1 hp every turn until the situation has been corrected.
+
+---
+name: "Lifegift"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: touch (1 creature)
+casting time: 3 (S)
+duration: instantaneous
+mechanics: power-check with con
+ will negates
+ costs 1 con
+  This power lets the caster take the wounds of the target unto himself. In effect, he gives away hit points. The caster doesn't know how much of his health he will give away. The amount healed depends on his power-check, and is listed in the table. The caster loses the same amount, plus 1 point extra. The target cannot exceed his current hit point maximum. Any excess hit points are lost.
+DC   5 3d3 hp
+DC 10 3d4 hp
+DC 15 3d6 hp
+DC 20 3d8 hp
+DC 25 3d10 hp
+DC 30 3d12 hp
+
+---
+name: "Locus"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+casting time: 3 rounds (-)
+duration: 1 hour
+mechanics: power-check with int
+ costs 2 int
+  This power allows the caster to raise his skill-check for one skill that he knows, specified at the casting. The bonus depends on the result of the power-check.
+DC   4 +1 bonus
+DC   8 +2 bonus
+DC 12 +3 bonus
+DC 16 +4 bonus
+DC 20 +5 bonus
+DC 24 +6 bonus
+DC 28 +7 bonus
+DC 32 +8 bonus
+
+---
+name: "Mantra"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+casting time: 3 (V)
+duration: 1 hour
+mechanics: power-check with int
+ costs 2 int
+  This power builds a wall of thought repetition that hones the caster's physical and mental reflexes. He gains a bonus to his saving throws, and if he fails a saving throw vs will, his persistence in the mantra grants him a second save just before his next action. If this roll is successful, he shrugs off the effect after all.
+  The bonus depends on the result of the power-check.
+DC   4 +1 bonus
+DC   8 +2 bonus
+DC 12 +3 bonus
+DC 16 +4 bonus
+DC 20 +5 bonus
+DC 24 +6 bonus
+DC 28 +7 bonus
+DC 32 +8 bonus
+  However, initiative rolls made by the caster when the mantra is active are increased by 2.
+
+---
+name: "Mind over matter"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 object)
+casting time: 3 (VS)
+duration: instantaneous
+mechanics: power-check with str
+ fortitude negates
+ costs 2 str
+  This power damages an object, within a maximum radius of half a meter. Living tissue is not affected. The caster's chance of success depends on the material he is trying to affect.
+cloth DC 4 to tear, DC 10 to ignite or sear
+ceramics DC 6 to crack, DC 8 to shatter
+wood DC 8 to warp, DC 12 to ignite
+leather DC 10 to warp, DC 18 to sear
+liquid DC 10 to boil, or ignite flammable
+metal DC 14 to warp, DC 18 to break
+stone DC 14 to crack, DC 22 to shatter
+  Paper is treated as cloth, glass as ceramic, rope as leather, and gems and bone as stone.
+  Torn, warped or cracked items are considered improvised, and can possibly be repaired by a craftsman, as ruled by the DM. Ignited, seared, shattered or broken items have become useless. The remains may be useful for other purposes, but the item is considered destroyed.
+  Ignited wood is not automatically burnt, especially if the wood is thick. Warped wood cannot be repaired except by magic, but handles and staffs can often be replaced.
+  Items often consist of more than one material. Books are bound in leather, doors are reinforced with metal, etc. In these cases, the highest DC is applied, unless the DM rules otherwise.
+  If the target object is physically held or worn by a resisting individual, he can attempt a saving throw vs fortitude to negate the effect. Intelligent objects also receive a saving throw.
+  Magic items add their bonus to the DC needed. Vellums that hold magic add their highest spell or prayer circle. Other special items also have a better chance to resist this skill. Holy symbols resist automatically.
+  A warped weapon has a -2 to hit and is considered improvised. A warped armour is also considered improvised.
+
+---
+name: "Mind thrust"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 person)
+casting time: 3 (-)
+duration: 1 on d6 negates / day
+mechanics: power-check with dex
+ will negates
+ costs 3 dex
+  This power seeks to "short" the brain of the target. If the target fails his saving throw, he loses the use of one of his skills. This skill is chosen randomly, so it doesn't have to be a warlock power. Even the use of weapons or languages could be affected, but not class abilities like thieving skills or casting spells.
+  The target has a chance to regain his skill every day. Upon waking, he rolls 1d6, and on a 1, he regains the skill. This power can also be negated by powers that remove curses.
+  If the target rolls a natural 1 on his saving throw, the effect becomes permanent and is considered a curse.
+  For targets without listed skills, the following table can provide ideas. The DM may of course rule that the target has more, less, or different skills than these.
+1 the target's native language
+2 a profession or food gathering skill
+3 a primary weapon skill or attack
+4 a basic class skill (as religion or spellcraft)
+5 a secondary weapon or class skill or attack
+6 a social skill
+7 a useless hobby
+8 a less useless hobby related to career plans
+
+---
+name: "Mindlink"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: special (1 person)
+casting time: 3 (V)
+duration: 3 rounds
+mechanics: power-check with wis
+ will negates
+ costs 1 wis
+  This power establishes a telepathic link with a specific target. Through the link, the caster and the target can exchange speech for 3 rounds. The caster also gains a basic idea of the target's situation; is he active or passive, awake or asleep, tired or fresh.
+  The target's distance sets the DC. The target can attempt a saving throw vs will to avoid the link.
+within 10 m DC   4
+within 100 m DC   8
+within 1 km DC 12
+within 10 km DC 16
+beyond 10 km DC 20
+  This power does not require line of sight. Effects and circumstances that increase the DC for scrying also increase the necessary DC for this power.
+
+---
+name: "Paimei"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+casting time: 1 round (S)
+duration: 3 turns
+mechanics: power-check with dex
+ costs 2 dex
+  This power grants the caster substantial bonuses to his tumbling-check. 
+DC   8 +1 bonus
+DC 12 +4 bonus
+DC 16 +9 bonus
+DC 20 +16 bonus
+DC 24 +25 bonus
+
+---
+name: "Paper tiger"
+sphere: arcane
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 person)
+casting time: 1 round (M)
+duration: 3 rounds
+mechanics: power-check with int
+ costs 2 int
+  This power transforms a piece of vellum into a mystical beast that attacks the target and drains his health. The effect is obvious to the caster and the target, but all others see a beast that seems to be made of smoke.
+  The paper tiger attacks the target with a single attack every round. Its speed is 2 and its bonus to hit is equal to the warlock level of the caster. Its AC is equal to the target's character level + 20, but the caster and the target have a +10 bonus to attack it. It has 1 hit point and takes no damage from area effects.
+  If the beast hits, its damage depends on the result of the power check.
+DC   4 1 hp
+DC   8 1 hp and 1 constitution
+DC 12 1 hp and 3 constitution
+DC 16 1 hp and 3d2 constitution
+DC 20 1 hp and 3d3 constitution
+DC 24 1 hp and 3d4 constitution
+  The material component for this power is the same vellum as is required for arcane magic, and costs 1 dies.
+
+---
+name: "Psionic blast"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 creature)
+casting time: 3 (-)
+duration: 1 turn
+mechanics: power-check with con
+ will negates
+ costs 2 con
+  This power jolts the target's mind like shocking news. In his mind, he is reduced to a certain number of hit points, depending on the power-check of the caster. He will pass out when the remaining hit points are gone, but he won't bleed to death. The effect wears off after one hour.
+  It is possible to gain hit points through the use of this power. In this case, the target stays conscious as long as he believes he has hit points, but he may suddenly lose health after the duration. The mind is a strange thing.
+3d20 + level hp DC   4
+3d12 + level hp DC   8
+3d10 + level hp DC 12
+3d8 + level hp DC 16
+3d6 + level hp DC 20
+3d4 + level hp DC 24
+3d3 + level hp DC 28
+
+---
+name: "Psychic crush"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 creature)
+casting time: 3 (S)
+duration: instantaneous
+mechanics: power-check with str
+ will negates
+ costs 1 str
+  This power attempts to destroy the target's brain by a massive overload of signals. The target gets an infuriating headache, and must save vs will or suffer 1d8 hp + 1 hp / level subdual damage.
+  Generally, victims realize right away that their situation is not natural. An alertness-check with a -6 penalty allows them to notice the guy who is staring at them funny. Other modifiers may apply.
+
+---
+name: "Suggestion"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (1 creature)
+casting time: 3 (V or S)
+duration: special
+mechanics: power-check with cha
+ will negates
+ costs 2 cha
+  This power allows the caster to influence the target mentally. He can distract the target, or make a suggestion sound reasonable. This power does not make the suggestion; it makes him more susceptible to what the caster says.
+  A distraction requires a somatic component. It grants a +4 bonus to skill-checks against the target. This applies to all skill-checks, not just those made by the caster.
+  A suggestion requires a verbal component, and the ability to communicate with the target. If the saving throw is failed, the suggestion sounds completely reasonable to the target. The DM is free to assign a modifier to the suggestion, or to rule out one that is completely unnatural to the target. If the save is failed, the target won't realise later that what he did was unreasonable. It can last for a maximum of one hour.
+
+---
+name: "Telekinesis"
+sphere: !!null
+circle: !!null
+range: ""
+area: ""
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+range: short (at least 1 object)
+casting time: 3 (S)
+duration: instantaneous
+mechanics: power-check with int, special
+ costs 2 int
+  This power allows the caster to move objects from a distance. Living creatures are not objects, although objects can carry creatures. The weight of the object sets the DC. If more people are contesting control over an object, the highest power-check gains control. A creature holding an object gains a saving throw vs fortitude to hold on to it. Intelligent objects gain a saving throw vs will to resist.
+up to 5 kg DC 10 1d6 damage
+5-50 kg DC 15 2d6 damage
+50-500 kg DC 20 4d6 damage
+500-5,000 kg DC 25 6d6 damage
+over 5,000 kg DC 30 8d6 damage
+  If the caster wants to attack with an object, the power-check counts as an attack roll. The amount of damage is determined by that result, which must be high enough to move the object. An object that is attached or bolted down, is treated as if it is one category heavier.
+  When moving multiple objects, the base DC is set by the heaviest object, and each additional object adds a +2 to the DC. When doing this, the caster cannot attack with any of the objects.
+
+---
+name: "Trollhide"
+sphere: !!null
+circle: !!null
+range: "caster"
+area: "caster"
+casting_time: ""
+components: ""
+duration: ""
+mechanics: ""
+ability_cost: ""
+description: |
+  </p>
+casting time: 3 (-)
+duration: 1 hour
+mechanics: power-check with con
+ costs 1 con
+  This power improves the caster's AC and grants him damage reduction against one form of damage. He can choose one of the following types: acid, cold, heat, lightning and sonic. The bonus depends on the result of the power check. 
+DC   4 +1 bonus
+DC   8 +2 bonus
+DC 12 +3 bonus
+DC 16 +4 bonus
+DC 20 +5 bonus
+DC 24 +6 bonus
+DC 28 +7 bonus
+DC 32 +8 bonus
