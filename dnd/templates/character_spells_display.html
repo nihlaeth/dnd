@@ -3,10 +3,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell }}-collapse">{{ spell|capitalize }}</a>
+        <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell|replace(' ', '-') }}-collapse">{{ spell|capitalize }}</a>
     </h4>
   </div>
-  <div id="{{ spell }}-collapse" class="panel-collapse collapse">
+  <div id="{{ spell|replace(' ', '-') }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">
       <table class="table">
         <tr>

@@ -28,9 +28,9 @@
                     {% if spell in character['spells'] %}checked{% endif %}>
                   {{ spell|capitalize }}
                 </label>
-                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#spell-info-{{ spell }}">?</button>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#spell-info-{{ spell|replace(' ', '-') }}">?</button>
               </div>
-              <div id="spell-info-{{ spell }}" class="collapse well">
+              <div id="spell-info-{{ spell|replace(' ', '-') }}" class="collapse well">
                 <table class="table">
                   <tr>
                     <td>Circle:</td>
