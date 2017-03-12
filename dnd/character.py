@@ -174,6 +174,22 @@ def _character_spells(character):
         if SPELLS[spell]['circle'] > len(leftover_spell_slots):
             continue
         leftover_spell_slots[SPELLS[spell]['circle'] - 1] -= prepared_spells[spell]['prepared']
+    debt_stack = []
+    for i in range(len(leftover_spell_slots)):
+        if leftover_spell_slots[i] < 0:
+            debt_stack.append([i, leftover_spell_slots[i]])
+        elif leftover_spell_slots[i] > 0 and len(debt_stack) > 0:
+            overflow_room = leftover_spell_slots[i]
+            for debt in debt_stack:
+                if abs(debt[1]) >= overflow_room:
+                    debt[1] += overflow_room
+                    leftover_spell_slots[i] = 0
+                    break
+                else:
+                    leftover_spell_slots[i] += debt[1]
+                    debt[1] = 0
+    for debt in debt_stack:
+        leftover_spell_slots[debt[0]] = debt[1]
     character['leftover_spell_slots'] = leftover_spell_slots
 
 def _character_hit_points(character):
