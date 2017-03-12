@@ -13,8 +13,8 @@ description: |
   <p>This spell wards the area, warning the caster when a creature enters. The ward cannot be set off by any creature smaller than a housecat.</p>
   <p>The ward can be detected by an observation-check. It can be circumvented by a stealth-check with a -5 penalty. It can be safely removed by a lockpicking-check with a -5 penalty.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the warning sounds out to everyone in the area, not just the caster</td></tr>
   <tr><td>1 circle</td><td>stealth-checks to pass the barrier face another -5 penalty (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>lockpicking-checks to remove the barrier face another -5 penalty (this can be taken multiple times)</td></tr>
@@ -61,8 +61,8 @@ mechanics: reflex negates
 ability_cost: !!null
 description: |
   <p>This spell releases its chaotic magical energy at the point of effect, which then translates in damage. All creatures in the area receive 1d8 points of damage for every circle the caster has reached. The caster decides the type of damage, from the list below. If he decides to do 1d8 extra damage, then the type of damage is determined randomly.</p>
-  <table>
-  <tr><td>1</td><td>biception</td><td>blunt</td></tr>
+  <table class='table'>
+  <thead><td>1</td><td>biception</td><td>blunt</td></thead>
   <tr><td>2</td><td>conception</td><td>heat</td></tr>
   <tr><td>3</td><td>contraception</td><td>acid</td></tr>
   <tr><td>4</td><td>exception</td><td>cold</td></tr>
@@ -84,8 +84,8 @@ mechanics: will negates
 ability_cost: !!null
 description: |
   <p>This spell convinces the target that the caster is a good friend. Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>target can also be an animal</td></tr>
   <tr><td>2 circles</td><td>target can be any living creature</td></tr>
   <tr><td>1 circle</td><td>caster can also make a reasonable suggestion that the target will obey</td></tr>
@@ -106,8 +106,8 @@ ability_cost: !!null
 description: |
   <p>This spell surrounds the caster with an area of near invisibility. This grants him a +4 bonus to stealth.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>+4 bonus to stealth (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>change duration from rounds to turns</td></tr>
   <tr><td>2 circles</td><td>change duration from rounds to hours</td></tr>
@@ -162,7 +162,7 @@ description: |
   <li>Demona have 1d6 appendages, of which 1d4 are 'legs', used for balance. The others can be used for attack, determining the demona's number of attacks. They have at least 1 attack; if no appendages are available, the dice will suggest a solution.</li>
   <li>The demona's to hit is the caster's circle. If they have 2 or less attacks, they get a +1 to hit.</li>
   <li>Four d8 rolls determine the demona's final statistics: the damage the demona inflict on a successful attack (the same roll includes their attack speed), the damage type they inflict, the damage type they are immune to and their general appearance.</li></ul></p>
-  <table>
+  <table class='table'>
   <tr><td>1</td><td>1d3, speed 1</td><td>piercing</td><td>hairy</td></tr>
   <tr><td>2</td><td>1d4, speed 2</td><td>slashing</td><td>scaly</td></tr>
   <tr><td>3</td><td>1d6, speed 3</td><td>blunt</td><td>rocky</td></tr>
@@ -193,8 +193,8 @@ description: |
   <li>The diablo has 2 claws, granting it 2 attacks, 2 legs and a tail.</li>
   <li>Its to hit-bonus equals the caster's circle. Its attacks inflict 1d6 + the caster's circle in slashing damage, and have a speed of 4.</li></ul></p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>AC increases by 3 (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>hit points increase by 20 (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>the diablo has an extra arm (this can be taken multiple times)</td></tr>
@@ -398,8 +398,8 @@ description: |
   <p>The illusion can consist of anything the caster can imagine, but it has limits. The caster can only maintain as many creatures as half his level, the spell has no more actions than the caster has, any attacks have the same to hit modifier as the caster would have, and the DC for the saving throw of any imagined effect is the same as the DC to disbelieve.</p>
   <p>At the moment of casting, the caster decides the form the spell takes. Any change in the form requires concentration.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the spell can cover one more sense (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>the duration is doubled</td></tr>
   <tr><td>1 circle</td><td>the duration becomes concentration</td></tr>
@@ -437,8 +437,8 @@ description: |
   <p>The standard effect of the glyph is an explosion that inflicts 3d4 heat damage. The explosion affects everything in a 3 meter radius. A successful save vs reflex halves the damage.</p>
   <p>The glyph is easily visible. It can be circumvented by a stealth-check with a -5 penalty. It can be safely removed by a lockpicking-check with a -5 penalty, but the character removing it must already be inside the radius.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the damage of the glyph increases to 1d4 damage per caster level in a 5 meter radius</td></tr>
   <tr><td>1 circle</td><td>the caster can set the damage type to acid, cold, lightning or sonic</td></tr>
   <tr><td>1 circle</td><td>the closest target is paralysed for 1 turn / level, fortitude negates</td></tr>
@@ -485,8 +485,8 @@ description: |
   <p>This spell fires a small glowing ball that explodes at its destination. It inflicts 1d6 points of heat damage per caster level.</p>
   <p>The grenata can be intercepted before it reaches its target, but this requires someone to parry it. The parry must hit an AC of 20 + the caster's [int]. If successful, the parrying creature sustains 1d6 of heat damage.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td> the spell uses the next higher damage die, up to d12 for 3 circles.</td></tr>
   <tr><td>1 circle</td><td>if parried, the grenata still explodes and does normal damage</td></tr>
   <tr><td>1 circle</td><td>the grenata can ricochet off flat surfaces, requiring a spellcraft-check with a -2 per ricochet to still reach its destination</td></tr>
@@ -524,8 +524,8 @@ ability_cost: !!null
 description: |
   <p>This spell grows the target. He becomes a head taller and gains a +1 to attack rolls and to physical damage. Worn and carried items grow with him.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the target gains another +1 to hit and damage (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>the target shrinks in stead of grows, making the bonuses into penalties</td></tr>
   <tr><td>1 circle</td><td>the target's possessions do not change size with him</td></tr>
@@ -654,8 +654,8 @@ ability_cost: !!null
 description: |
   <p>This spell shoots a bolt of lightning from the caster's fingertips. The bolt explodes when it reaches its destination, inflicting 1d4 lightning damage per level of the caster.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td> the spell uses the next higher damage die, up to d12 for 4 circles.</td></tr>
   <tr><td>1 circle</td><td>the bolt can ricochet off flat surfaces, requiring a spellcraft-check with a -4 penalty per ricochet to still reach its destination</td></tr>
   <tr><td>2 circles</td><td>the spell jumps from the targets in the area to all creatures within 10 meters, damaging them as well</td></tr>
@@ -726,8 +726,8 @@ ability_cost: !!null
 description: |
   <p>This spell magically strengthens the caster's body. He gains 1 point of strength, dexterity, constitution and perception.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the caster grows gills to breathe underwater</td></tr>
   <tr><td>1 circle</td><td>the caster grows mantis legs to jump 3 meters high and 10 meters far, and gains +4 tumbling</td></tr>
   <tr><td>1 circle</td><td>the caster grows a tentacle beneath his main arm that can attack at the end of the round for 1d8 blunt damage</td></tr>
@@ -800,8 +800,8 @@ mechanics: special
 ability_cost: !!null
 description: |
   <p>This spell creates an area of fog. In its base form, it merely limits vision to a range of one meter. However, higher circle casters can add effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>caster can see through the fog</td></tr>
   <tr><td>1 circle</td><td>sounds are muted, inflicting a -5 penalty to alertness-checks</td></tr>
   <tr><td>1 circle</td><td>all creatures must save vs fortitude or lose their action</td></tr>
@@ -827,8 +827,8 @@ description: |
   <p>This spell creates a force that does the caster's bidding. The force operates with a strength score of 12 + the caster's highest achieved circle. The force can push, but can do no damage.</p>
   <p>A caster wishing to push a target must succeed on a to hit roll and a strength-check. Both rolls use the strength of the spell. A smaller target grants a +4 to the strength-check, while a larger target can inflict a -4 penalty, or worse, depending on the DM. If the checks succeed, the target is moved.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the force can grasp things, and hold them in place, with the same mechanic as pushing</td></tr>
   <tr><td>1 circle</td><td>the duration is sustainable</td></tr>
   <tr><td>1 circle</td><td>the force becomes visible as a ghostly mount that can carry one creature, at walking speed, or two creatures if the caster has the riding-skill</td></tr>
@@ -875,8 +875,8 @@ description: |
   <p>This spell enchants a vellum so that any message on the target can be read only by the caster and one intended recipient. To all others the message reads as gibberish.</p>
   <p>The recipient is determined by the caster at the time of casting. This must be a creature whose skin he has touched before. The spell can be fooled by a person who successfully disguises himself as the recipient.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>message reads as another message to non-recipient readers</td></tr>
   <tr><td>1 circle</td><td>the message can have another intended recipient (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>disguise-checks face a penalty equal to the caster's achieved circle</td></tr>
@@ -1022,8 +1022,8 @@ description: |
   <p>This spell stretches the caster's senses towards faraway places. To do this, he rolls a power-check using [int]. The base DC to scry a place is 10, to scry an item is 15 and to scry a creature is his character level (or hit points divided by 5 for a monster). If the caster has seen the target in person, the DC is lowered by 5. Protective magic can raise the DC.</p>
   <p>The scrying can extend to all known realities. However, the DC for a target on another plane is increased by 5.</p>
   <p>The caster can either see or hear the target and a radius of 10 meters around it. Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>caster can both see and hear</td></tr>
   <tr><td>1 circle</td><td>the target is visible and/or audible to others (needs reflective surface)</td></tr>
   <tr><td>2 circles</td><td>caster knows location of target</td></tr>
@@ -1045,8 +1045,8 @@ description: |
   <p>This spell animates the caster's shadow. It is still attached to his feet, but stretches according to his will. This allows him to make melee attacks within short range, using his normal to hit and inflicting 1d4+[str] points of blunt damage.</p>
   <p>If the caster only attacks, he has two attacks with a speed of 2. If he decides on another action, the spell grants him one attack after his action, also with a speed of 2, starting on the round after the spell is cast. The spell does not interfere with spellcasting.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the shadow inflicts the next better die of damage; a d6 instead of a d4, etc, up to a d12.</td></tr>
   <tr><td>2 circles</td><td>the shadow can attack targets which are in range, but not in line of sight as long as the caster is aware of them</td></tr>
   </table>
@@ -1199,8 +1199,8 @@ ability_cost: !!null
 description: |
   <p>This spell makes the water in the area breathable for humans.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the duration changes from turns to hours</td></tr>
   <tr><td>1 circle</td><td>the spell affects all air-breathing animals</td></tr>
   <tr><td>1 circle</td><td>all affected creatures gain the swimming skill</td></tr>
@@ -1235,8 +1235,8 @@ ability_cost: !!null
 description: |
   <p>This spell summons a swarm of vermin that attacks everything in the area. Targets in the area receive 1d4 piercing damage per round, unless they do nothing but defend against the swarm. This damage is applied just before the targets' action, but it is not continual damage; spells cast by the targets are interrupted by it.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the swarm consists of flying insects, also attacking those flying or leaping over the area</td></tr>
   <tr><td>1 circle</td><td>damage is doubled to 2d4</td></tr>
   <tr><td>1 circle</td><td>the swarm moves after one particular target at half a man's walking speed</td></tr>
@@ -1259,8 +1259,8 @@ description: |
   <p>The tardis is invisible to the naked eye, but it is possible to enter it accidentally. To do this, someone needs only to cross the entrance from the right direction. If he grazes it, he feels goosebumps. To a person detecting magic, these goosebumps are visible as a magic effect. The caster can detect the location of the spell even without detecting magic, by rolling an alertness-check.</p>
   <p>Creatures inside the tardis don't notice anything outside the spell, and creatures outside cannot see in. It should be noticed, however, that some things, such as smoke from a fire or spilled liquid, can exit the spell.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the duration becomes 1 day / level</td></tr>
   <tr><td>1 circle</td><td>the radius of the area doubles</td></tr>
   <tr><td>1 circle</td><td>the opening is linked to touching an object, which can also be touched inside the area</td></tr>
@@ -1287,8 +1287,8 @@ description: |
   <p>A 5th-circle caster can end the target's life.</p>
   <p>A 6th-circle caster can destroy the target's soul, permanently.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve. For purposes of calculating the reserve, the circle of this spell is equal to that of the effect chosen.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the target doesn't get a saving throw</td></tr>
   <tr><td>2 circles</td><td>the duration is changed to permanent, making the spell a curse. If the 1st-circle effect is chosen, the spell lowers the target's hit point maximum</td></tr>
   </table>
@@ -1311,8 +1311,8 @@ description: |
   <p>A 5th-circle caster can create a lightning arrow that inflicts 2d10 lightning damage.</p>
   <p>A 6th-circle caster can create a sonic arrow that inflicts 2d12 sonic damage per circle.</p>
   <p>Higher circle casters can add more effects to the spell, depending on their reserve.</p>
-  <table>
-  <tr><td>reserve</td><td>effect</td></tr>
+  <table class='table'>
+  <thead><td>reserve</td><td>effect</td></thead>
   <tr><td>1 circle</td><td>the arrow inflicts 2 extra dice of damage (this can be taken multiple times)</td></tr>
   <tr><td>1 circle</td><td>the arrow inflicts one die of continual damage for the next three rounds</td></tr>
   </table>
