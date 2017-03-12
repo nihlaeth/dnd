@@ -114,10 +114,7 @@
         {% include 'character_spells.html' %}
       </div>
       <div class="panel-footer">
-        Spell slots: <span id='spell-slots'>
-        {% for slots in character['spell_slots'] %}
-        {{ loop.index }}: <span class='label label-default'> {{ slots }}</span>
-        {% endfor %}</span>
+        Spell slots: <span id='spell-slots'>{% include 'character_spell_slots.html' %}</span>
       </div>
     </div>
   </div>

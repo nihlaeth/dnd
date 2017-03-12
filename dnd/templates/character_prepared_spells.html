@@ -1,0 +1,35 @@
+<ul class="list-group">
+  {% for circle in range(1, 7)|reverse %}
+  {% for spell in character['prepared_spells'] if character['prepared_spells'][spell]['prepared'] > 0 and character['spells'][spell]['circle'] == circle %}
+  <li class="list-group-item">
+    <div class="pull-right">
+      <table><tr>{% if character['prepared_spells'][spell]['cast'] < character['prepared_spells'][spell]['prepared'] %}<td>
+      <form data-async data-target="#prepared-spells-errors" action="/api/{{ character['_id'] }}/prepare_spell/cast/" method="POST" class="form-inline">
+        <input type="hidden" name="name" value="{{ spell }}">
+        <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-screenshot"></span></button>
+      </form>
+      </td>{% endif %}<td>
+      <form data-async data-target="#prepared-spells-errors" action="/api/{{ character['_id'] }}/prepare_spell/forget/" method="POST" class="form-inline">
+        <input type="hidden" name="name" value="{{ spell }}">
+        <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-remove"></span></button>
+      </form>
+      </td></tr></table>
+    </div>
+    {{ spell|capitalize }} <span class="label label-default">{{ spells[spell].circle }}</span><br /><br />
+    <div class="progress">
+      <div
+          class="progress-bar progress-bar-striped progress-bar-{% if character['prepared_spells'][spell]['cast'] >= character['prepared_spells'][spell]['prepared'] %}warning{% else %}success{% endif %}"
+          class="progress-bar progress-bar-striped progress-bar-success"
+          role="progressbar"
+          aria-valuenow="{{ character['prepared_spells'][spell]['prepared'] - character['prepared_spells'][spell]['cast'] }}"
+          aria-valuemin="0"
+          aria-valuemax="{{ character['prepared_spells'][spell]['prepared'] }}"
+          style="width:{{ (character['prepared_spells'][spell]['prepared'] - character['prepared_spells'][spell]['cast']) / character['prepared_spells'][spell]['prepared'] * 100 }}%; min-width: 20%">
+        {{ character['prepared_spells'][spell]['prepared'] - character['prepared_spells'][spell]['cast'] }}
+        ({{ character['prepared_spells'][spell]['prepared'] }})
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+  {% endfor %}
+</ul>

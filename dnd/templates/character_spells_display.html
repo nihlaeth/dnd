@@ -1,10 +1,27 @@
+<form data-async data-target="#prepared-spells-errors" action="/api/{{ character['_id'] }}/prepare_spell/rest/" method="POST" class="form-inline">
+  <div class="pull-right">
+    <button class="btn btn-success btn-xs" type="submit">Rest</button>
+  </div>
+</form>
+<h5>Prepared</h5>
+<div id="prepared-spells-errors"></div>
+<div class="well" id="prepared-spells">
+  {% include "character_prepared_spells.html" %}
+</div>
 {% for circle in range(1, 7)|reverse %}
 {% for spell in character['spells'] if character['spells'][spell]['circle'] == circle %}
 <div class="panel panel-default">
   <div class="panel-heading">
+    <form data-async data-target="#prepared-spells-errors" action="/api/{{ character['_id'] }}/prepare_spell/prepare/" method="POST" class="form-inline">
+      <input type="hidden" name="name" value="{{ spell }}">
+      <div class="pull-right">
+        <button class="btn btn-success btn-xs" type="submit">Prepare</button>
+      </div>
+    </form>
     <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell|replace(' ', '-') }}-collapse">{{ spell|capitalize }}</a>
     </h4>
+
   </div>
   <div id="{{ spell|replace(' ', '-') }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">

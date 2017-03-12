@@ -4,7 +4,7 @@
     <title>DnD | {% block title %}{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="/static/bootstrap.min.js"></script>
     <style>
@@ -45,7 +45,9 @@
                 success: function(data, status) {
                     $.each(data,function(key,value){
                         if(key == "close"){
-                            $form.closest(".collapse").collapse("hide");
+                            if(data['close'] === true){
+                                $form.closest(".collapse").collapse("hide");
+                            }
                         }else if(key == "errors"){
                             $target.html(data[key]);
                         }else{

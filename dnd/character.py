@@ -167,7 +167,14 @@ def _character_spells(character):
         (6, 5, 4, 3, 2),
         (6, 5, 4, 3, 2, 1))
     character['spell_slots'] = spell_slots[character['wizard']]
-
+    leftover_spell_slots = list(character['spell_slots'])
+    prepared_spells = character.get('prepared_spells', {})
+    character['prepared_spells'] = prepared_spells
+    for spell in prepared_spells:
+        if SPELLS[spell]['circle'] > len(leftover_spell_slots):
+            continue
+        leftover_spell_slots[SPELLS[spell]['circle'] - 1] -= prepared_spells[spell]['prepared']
+    character['leftover_spell_slots'] = leftover_spell_slots
 
 def _character_hit_points(character):
     max_hp = character.get('max_hp', 1)

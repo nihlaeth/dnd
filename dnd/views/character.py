@@ -54,6 +54,7 @@ async def data_handler(request):
         'class': (_class_validator, _class_response_factory),
         'skill': (_skill_validator, _skill_response_factory),
         'spell': (_spell_validator, _spell_response_factory),
+        'prepare_spell': (_prepare_spell_validator, _prepare_spell_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
     }
@@ -270,13 +271,67 @@ def _spell_validator(request, _):
 def _spell_response_factory(response, character, app):
     response['#spell-accordion'] = {
         'data': get_env(app).get_template(
-            'character_spells_display.html').render(character=character),
+            'character_spells_display.html').render(
+                spells=SPELLS, character=character),
         'activateTooltip': True}
     response['#spell-slots'] = {
-        'data': ' '.join([
-            "{}: <span class='label label-default'> {}</span>".format(
-                circle + 1, slots) for circle, slots in enumerate(
-                    character['spell_slots'])])}
+        'data': get_env(app).get_template(
+            'character_spell_slots.html').render(character=character)}
+
+async def _prepare_spell_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['prepare', 'cast', 'forget', 'rest']:
+        errors.append("invalid action")
+        return {}
+    if action != 'rest':
+        try:
+            name = request.POST['name']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if len(errors) != 0:
+        return {}
+    if action == 'prepare':
+        if name not in character['spells']:
+            errors.append('{} is unknown to character'.format(name))
+        else:
+            if name not in character['prepared_spells']:
+                character['prepared_spells'][name] = {'prepared': 0, 'cast': 0}
+            character['prepared_spells'][name]['prepared'] += 1
+    elif action == 'cast':
+        if name not in character['prepared_spells']:
+            errors.append('{} is not a prepared spell'.format(name))
+        elif character['prepared_spells'][name]['cast'] + 1 > \
+                character['prepared_spells'][name]['prepared']:
+            errors.append('not enough spells prepared')
+        else:
+            character['prepared_spells'][name]['cast'] += 1
+    elif action == 'forget':
+        if name not in character['prepared_spells']:
+            errors.append('{} is not a prepared spell'.format(name))
+        else:
+            character['prepared_spells'][name]['prepared'] -= 1
+            if character['prepared_spells'][name]['cast'] > \
+                    character['prepared_spells'][name]['prepared']:
+                character['prepared_spells'][name]['cast'] = \
+                        character['prepared_spells'][name]['prepared']
+            if character['prepared_spells'][name]['prepared'] == 0:
+                del character['prepared_spells'][name]
+    elif action == 'rest':
+        for spell in character['prepared_spells']:
+            character['prepared_spells'][spell]['cast'] = 0
+    return {'prepared_spells': character['prepared_spells']}
+
+def _prepare_spell_response_factory(response, character, app):
+    response['close'] = False
+    response['#prepared-spells'] = {
+        'data': get_env(app).get_template(
+            'character_prepared_spells.html').render(
+                spells=SPELLS, character=character)}
+    response['#spell-slots'] = {
+        'data': get_env(app).get_template(
+            'character_spell_slots.html').render(character=character)}
 
 async def _name_validator(request, errors):
     try:

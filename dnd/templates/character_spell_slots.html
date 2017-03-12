@@ -1,0 +1,20 @@
+<table class="table">
+{% for slots in character['spell_slots'] %}
+<tr {% if character['leftover_spell_slots'][loop.index0] < 0 %}class="danger"{% endif %}>
+  <td>{{ loop.index }}</td>
+  <td>
+    <div class="progress">
+      <div
+          class="progress-bar progress-bar-striped progress-bar-{% if character['leftover_spell_slots'][loop.index0] > 0 %}info{% elif character['leftover_spell_slots'][loop.index0] < 0 %}danger{% else %}warning{% endif %}"
+          role="progressbar"
+          aria-valuenow="{% if character['leftover_spell_slots'][loop.index0] < 0 %}0{% else %}{{ character['leftover_spell_slots'][loop.index0] }}{% endif %}"
+          aria-valuemin="0"
+          aria-valuemax="{{ slots }}"
+          style="width:{% if character['leftover_spell_slots'][loop.index0] < 0 %}0{% else %}{{ character['leftover_spell_slots'][loop.index0] / slots * 100 }}{% endif %}%; min-width: 20%">
+        {{ character['leftover_spell_slots'][loop.index0] }} ({{ slots }})
+      </div>
+    </div>
+  </td>
+</tr>
+{% endfor %}
+</table>
