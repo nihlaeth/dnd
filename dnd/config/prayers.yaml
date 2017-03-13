@@ -1,5 +1,18 @@
 ---
-name: antidote
+name: ""
+sphere: 
+circle: 
+range: ""
+area: ""
+casting_time: ""
+components: "VSM"
+duration: 
+mechanics: 
+ability_cost: !!null
+description: |
+  </p>
+---
+name: "Antidote"
 sphere: healing
 circle: 4
 range: "touch"
@@ -8,12 +21,9 @@ casting_time: "6"
 components: "VS"
 duration: instantaneous
 mechanics: fortitude negates
+ability_cost: !!null
 description: |
-    <p>This prayer grants the caster a healing-check
-    with a +5 bonus to remove all poisons from
-    the target. If successful, any poison is gone.</p>
-    <p>Venomous creatures or objects are unable to
-    use their poison until they create more.</p>
-    <p>Magically venomous items lose their
-    venomous abilities for 1 turn.</p>
+  <p>This prayer grants the caster a healing-check with a +5 bonus to remove all poisons from the target. If successful, any poison is gone.</p>
+    <p>Venomous creatures or objects are unable to use their poison until they create more.</p>
+    <p>Magically venomous items lose their venomous abilities for 1 turn.</p>
 ---
