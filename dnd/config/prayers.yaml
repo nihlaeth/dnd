@@ -52,8 +52,8 @@ duration: 1 day / level
 name: "Aid"
 sphere: war
 circle: 2
-range: ""
-area: ""
+range: "touch"
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -61,7 +61,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 4 (VSM)
 duration: 1 round + 1 round / level
   This prayer grants the target a +1 bonus to hit, a +1 bonus to saving throws, and 1d8 temporary bonus hit points. It enables the target to have more hit points than his full normal total. If he takes damage, the bonus hit points are lost first. They cannot be regained.
@@ -104,7 +103,7 @@ name: "Aura of comfort"
 sphere: tribe
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: "1 round"
 components: "VS"
 duration: 
@@ -112,7 +111,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 duration: 1 hour / level
   This prayer grants the target protection from weather. He is surrounded by a shimmering aura that protects him from heat, cold and precipitation. If he encounters conditions that would affect him beyond discomfort (ie that would damage him), he has a damage reduction of 2 vs heat and cold.
 
@@ -143,7 +141,7 @@ name: "Barkskin"
 sphere: hunt
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -151,7 +149,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 4 (VSM)
 duration: 4 rounds + 1 round / level
   This prayer hardens the target's skin, creating a bonus to AC. It grants a base AC of 14, plus 1 for every four caster levels. In addition, saving throw rolls vs fortitude gain a +1 bonus. Armour worn still grants the target some protection, granting a +1 to AC. If the AC of the armour would be better, the barkskin prayer grants a +1 bonus to the target instead of its full effect. Shields still have their normal effect, as do magical bonuses.
@@ -161,7 +158,7 @@ name: "Battlefate"
 sphere: chaos
 circle: 1
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -205,7 +202,7 @@ name: "Bedlam"
 sphere: thought
 circle: 7
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -227,7 +224,7 @@ name: "Big bang"
 sphere: arcane
 circle: 7
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -268,7 +265,7 @@ name: "Blessed watch"
 sphere: law
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -288,7 +285,7 @@ name: "Body clock"
 sphere: healing
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -296,7 +293,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 1 round (VSM)
 duration: 1 hour / level
 mechanics: willing, fortitude negates the price
@@ -349,7 +345,7 @@ name: "Cause disease"
 sphere: thought
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -357,7 +353,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 1 round (VS)
 duration: special
 mechanics: fortitude negates, twice
@@ -371,7 +366,7 @@ name: "Cause fear"
 sphere: dark
 circle: 1
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -390,7 +385,7 @@ name: "Champion"
 sphere: tribe
 circle: 5
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -398,7 +393,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 1 round (VSM)
 duration: 1 round / level
   This prayer bestows one member of a group with bonuses from the rest of the group. It draws power from one person per two caster levels. All contributors must be within 10 meters of the caster.
@@ -453,7 +447,7 @@ name: "Chaotic combat"
 sphere: chaos
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -473,7 +467,7 @@ name: "Chaotic sleep"
 sphere: chaos
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -481,7 +475,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 1 round (VSM)
 duration: permanent
 mechanics: fortitude negates
@@ -517,7 +510,7 @@ name: "Choose future"
 sphere: arcane
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -525,7 +518,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-range: touch (1 creature)
 casting time: 5 (VSM)
 duration: 1 turn or until discharged
   This prayer lets the target reroll one of his die rolls, even one with more dice (eg 3d6). The reroll must be declared before the effect takes place. The result of the reroll applies.
@@ -616,7 +608,7 @@ name: "Cloak of fear"
 sphere: war
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -635,7 +627,7 @@ name: "Command"
 sphere: law
 circle: 1
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -650,7 +642,7 @@ mechanics: will negates
   This prayer commands the target to do the caster's bidding. He will obey to the best of his ability, but the command must be in a language he knows, and must consist of a single word. Typical commands are back, halt, flee, run, stop, fall, leave, surrender, or sleep.
 
 ---
-name: ""
+name: "Commune"
 sphere: all
 circle: 5
 range: ""
@@ -662,8 +654,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Commune (all 5 prayer)
-
 range: caster (caster)
 casting time: 1 turn (VSM)
 duration: 7 questions
@@ -671,11 +661,11 @@ duration: 7 questions
   The DM may limit the use of this prayer to once per week, month or game session.
 
 ---
-name: ""
-sphere: 
+name: "Compulsive order"
+sphere: law
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -683,8 +673,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Compulsive order (law 4 prayer)
-
 range: short (1 creature)
 casting time: 6 (VSM)
 duration: permanent
@@ -696,7 +684,7 @@ mechanics: will negates
   This enchantment is a curse.
 
 ---
-name: ""
+name: "Confusion"
 sphere: chaos
 circle: 6
 range: ""
@@ -708,8 +696,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Confusion (chaos 6 prayer)
-
 range: medium (20 meter radius)
 casting time: 1 round (VSM)
 duration: special
@@ -726,7 +712,7 @@ mechanics: will negates
   Actions are checked at the beginning of each round, after all other intentions have been decided.. The prayer has no fixed duration, it lasts until the last target leaves the area. 
 
 ---
-name: ""
+name: "Consequence"
 sphere: all
 circle: 5
 range: ""
@@ -738,8 +724,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Consequence (all 5 prayer)
-
 range: caster (caster)
 casting time: 1 round (VSF)
 duration: instantaneous
@@ -748,8 +732,8 @@ duration: instantaneous
   Casting this prayer "taints" subsequent castings of the same prayer. It takes a week for the taint to fade. If a second caster casts the prayer during this time, he receives an accurate reading.
 
 ---
-name: ""
-sphere: 
+name: "Continual light"
+sphere: light
 circle: 3
 range: ""
 area: ""
@@ -760,15 +744,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Continual light (light 3 prayer)
-
 range: medium (10 meter radius)
 casting time: 1 round (VS)
 duration: 1 year
   This prayer creates light as bright as full daylight. It can not be cast onto an object or at a creature, but otherwise acts as a light-prayer.
 
 ---
-name: ""
+name: "Creeping doom"
 sphere: war
 circle: 7
 range: ""
@@ -780,8 +762,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Creeping doom (war 7 prayer)
-
 range: long (moving 20 meter radius)
 casting time: 9 (VS)
 duration: 4 rounds / level
@@ -791,7 +771,7 @@ mechanics: reflex negates
   A character who makes his saving throw escapes from the area.
 
 ---
-name: ""
+name: "Crusader"
 sphere: war
 circle: 6
 range: ""
@@ -803,8 +783,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Crusader (war 6 prayer)
-
 range: short (1 person)
 casting time: 1 round (VSM)
 duration: 1 round / level
@@ -813,11 +791,11 @@ duration: 1 round / level
   This prayer ends if the caster drops below 0 hit points, or by an action with a speed of 3 equivalent to spellcasting.
 
 ---
-name: ""
-sphere: 
+name: "Cure disease"
+sphere: healing
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -825,20 +803,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Cure disease (healing 3 prayer)
-
-range: touch (1 creature)
 casting time: 1 round (VS)
 duration: instantaneous
   This prayer enables the caster to cure diseases by placing his hand upon the diseased creature. The affliction is instantly gone, but any damage to hit points or abilities remains. Parasitic monsters carried by the target are forced out of his body. Other symptoms take 1 turn to disappear.
   Note that the prayer does not prevent reoccurrence of a disease if the recipient is again exposed.
 
 ---
-name: ""
+name: "Curse of night"
 sphere: dark
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -846,8 +821,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Curse of night (dark 3 prayer)
-
 range: short (1 creature)
 casting time: 5 (VS)
 duration: permanent
@@ -855,11 +828,11 @@ mechanics: fortitude negates
   This prayer causes blindness in the target. It is treated as a curse.
 
 ---
-name: ""
-sphere: 
+name: "Curse of peace"
+sphere: law
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -867,8 +840,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Curse of peace (law 3 prayer)
-
 range: short (1 creature)
 casting time: 5 (VS)
 duration: 5 rounds or permanent
@@ -880,7 +851,7 @@ mechanics: will negates
   This prayer is treated as a curse.
 
 ---
-name: ""
+name: "Darkness"
 sphere: dark
 circle: 1
 range: ""
@@ -892,15 +863,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Darkness (dark 1 prayer)
-
 range: medium (5 meter radius)
 casting time: 3 (VS)
 duration: 3 turns + 1 turn / level
   This prayer creates utter darkness. Normal light sources do not function. Magical light and magical darkness in the same area cancel each other. The caster can end the darkness at any time by uttering a single word.
 
 ---
-name: ""
+name: "Deadwood"
 sphere: hunt
 circle: 7
 range: ""
@@ -912,8 +881,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Deadwood (hunt 7 prayer)
-
 range: caster (30 meter radius)
 casting time: 8 (VS)
 duration: 1 round / level
@@ -924,11 +891,11 @@ mechanics: special
   The prayer has no effect on living wood.
 
 ---
-name: ""
+name: "Defensive pact"
 sphere: war
 circle: 4
 range: ""
-area: ""
+area: "1 creature / 2 levels"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -936,8 +903,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Defensive pact (war 4 prayer)
-
 range: short (1 creature / 2 levels)
 casting time: 6 (VS)
 duration: 1 round / level
@@ -945,7 +910,7 @@ duration: 1 round / level
   The targets must be involved in the same battle. They are not consciously aware of their extra efforts, and they are unable to reproduce the effects later.
 
 ---
-name: ""
+name: "Delegate"
 sphere: all
 circle: 4
 range: "touch"
@@ -957,8 +922,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Delegate (all 4 prayer)
-
 range: touch (1 person)
 casting time: 1 turn (VSM)
 duration: permanent until discharged
@@ -972,7 +935,7 @@ duration: permanent until discharged
   The caster can cancel the prayer at will. This is an action with a speed of 5.
 
 ---
-name: ""
+name: "Detect evil"
 sphere: all
 circle: 1
 range: ""
@@ -984,8 +947,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Detect evil (all 1 prayer)
-
 range: caster (10 meter radius)
 casting time: 3 (VSF)
 duration: 1 turn
@@ -993,8 +954,8 @@ duration: 1 turn
   The caster merely senses evil intent. Only truly evil creatures are automatically revealed with this prayer. A cursed object or unholy water radiates evil, but a hidden trap will not. If poison is present, the caster can determine the exact type of poison on a successful healing-check, subject to DM discretion.
 
 ---
-name: ""
-sphere: 
+name: "Detect lie"
+sphere: law
 circle: 4
 range: ""
 area: ""
@@ -1005,15 +966,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Detect lie (law 4 prayer)
-
 range: caster (caster)
 casting time: 6 (VSM)
 duration: 1 round / level
   This prayer allows the caster to determine if anyone he can hear knowingly speaks a lie. It does not reveal the truth.
 
 ---
-name: ""
+name: "Detect magic"
 sphere: arcane
 circle: 1
 range: ""
@@ -1025,8 +984,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Detect magic (arcane 1 prayer)
-
 range: caster (caster)
 casting time: 1 round (VSF)
 duration: 1 turn
@@ -1035,7 +992,7 @@ duration: 1 turn
   This prayer never detects any form of invisibility magic or magic that enhances stealth. The focus is the caster's holy symbol.
 
 ---
-name: ""
+name: "Detect spirits"
 sphere: all
 circle: 3
 range: ""
@@ -1047,15 +1004,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Detect spirits (all 3 prayer)
-
 range: caster (caster)
 casting time: 5 (VSM)
 duration: 1 turn / level
   This prayer allows the caster to sense spirits of all types. Spirits are creatures that have died but whose essences have not yet passed on to another world. This can include poltergeists and tortured souls, but also venerated ancestors and spirits of nature. Any spirits in the area are revealed to the caster in their preferred form or appearance. He gains no ability to communicate with or attack them.
 
 ---
-name: ""
+name: "Disbelief"
 sphere: thought
 circle: 6
 range: ""
@@ -1067,8 +1022,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Disbelief (thought 6 prayer)
-
 range: caster (medium range)
 casting time: 8 (VS)
 duration: 1 round / level
@@ -1078,8 +1031,8 @@ mechanics: will confirms or negates
   Disbelief is not automatic. If the target is a group of creatures, they may save vs will to negate. If the target is an object, the caster must save vs will to confirm, using the same DC as the prayer.
 
 ---
-name: ""
-sphere: 
+name: "Dispel evil"
+sphere: law
 circle: 5
 range: ""
 area: ""
@@ -1090,8 +1043,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Dispel evil (law 5 prayer)
-
 range: caster (caster and short)
 casting time: 7 (VSM)
 duration: 1 round / level or until discharged
@@ -1100,7 +1051,7 @@ mechanics: fortitude negates
   Discharging the prayer is an action with a speed of 3 and range: short. The caster rolls a power-check using his priest level and his [wis]. This roll sets the target for a save vs fortitude by the target creature, or it must reach the DC of the curse (as written in the exorcism skill, on page 40).
 
 ---
-name: ""
+name: "Dispel magic"
 sphere: arcane
 circle: 3
 range: ""
@@ -1112,8 +1063,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Dispel magic (arcane 3 prayer)
-
 range: short (1 effect or 5 meter radius)
 casting time: 5 (VS)
 duration: instantaneous
@@ -1127,7 +1076,7 @@ mechanics: power-check
   Magic items are hard to dispel completely. Unless the caster's power-check exceeds the item DC by 10, the item will eventually regain its magic. Dispel magic attempts inside an active volcano gain a +12 circumstance modifier to the power-check.
 
 ---
-name: ""
+name: "Draw on holy might"
 sphere: all
 circle: 2
 range: ""
@@ -1139,8 +1088,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Draw on holy might (all 2 prayer)
-
 range: caster (caster)
 casting time: 4 (VSM)
 duration: 1 round / level
@@ -1148,7 +1095,7 @@ duration: 1 round / level
   When the spell ends, the energy abruptly leaves the caster, leaving him drained. He cannot use any magical abilities for 1 round per caster level.
 
 ---
-name: ""
+name: "Dust devil"
 sphere: storm
 circle: 2
 range: ""
@@ -1160,8 +1107,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Dust devil (storm 2 prayer)
-
 range: short (1 air devil)
 casting time: 1 round (VS)
 duration: 2 rounds / level
@@ -1171,7 +1116,7 @@ duration: 2 rounds / level
   The caster can use the air devil to increase the handling and speed of a ship by 1, to a maximum of 0.
 
 ---
-name: ""
+name: "Earthmaw"
 sphere: storm
 circle: 4
 range: ""
@@ -1183,8 +1128,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Earthmaw (storm 4 prayer)
-
 range: medium (2 meter radius)
 casting time: 6 (VSM)
 duration: 1 round
@@ -1195,7 +1138,7 @@ mechanics: reflex negates
   This prayer must be cast on a surface of earth or soil. It does not function on stone. After the effect, the area of the prayer resembles (and is) freshly tilled soil.
 
 ---
-name: ""
+name: "Earthquake"
 sphere: chaos
 circle: 7
 range: ""
@@ -1207,8 +1150,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Earthquake (chaos 7 prayer)
-
 range: long (50 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 round
@@ -1219,11 +1160,11 @@ mechanics: reflex negates
   Underground, this prayer can collapse caves in the area. This has a 50% chance; it either happens or it doesn't. 
 
 ---
-name: ""
+name: "Easy march"
 sphere: tribe
 circle: 5
 range: "touch"
-area: ""
+area: "1 creature / level"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1231,15 +1172,12 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Easy march (tribe 5 prayer)
-
-range: touch (1 creature / level)
 casting time: 1 turn (VSM)
 duration: 1 day / level
   This prayer lets the targets travel double their normal distance. They walk faster and more efficiently, and have more endurance. All targets suffer a -1 to hit for the duration of the prayer.
 
 ---
-name: ""
+name: "Eclipse"
 sphere: dark
 circle: 7
 range: ""
@@ -1251,8 +1189,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Eclipse (dark 7 prayer)
-
 range: caster (10 km radius)
 casting time: 1 turn (VSF)
 duration: 3 hours
@@ -1261,7 +1197,7 @@ duration: 3 hours
   The focus is a human heart or a moon.
 
 ---
-name: ""
+name: "Ecolocation"
 sphere: hunt
 circle: 1
 range: ""
@@ -1273,8 +1209,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Ecolocation (hunt 1 prayer)
-
 range: caster (1 km radius)
 casting time: 1 round (VSF)
 duration: 1 hour
@@ -1284,11 +1218,11 @@ mechanics: power-check with [wis]
   The focus is the caster's holy symbol.
 
 ---
-name: ""
+name: "Emotion control"
 sphere: all
 circle: 3
 range: ""
-area: ""
+area: "1 creature / 5 levels"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1296,8 +1230,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Emotion control (all 3 prayer)
-
 range: short (1 creature / 5 levels)
 casting time: 5 (VSM)
 duration: 1 round / level
@@ -1312,11 +1244,11 @@ mechanics: will negates
   All targets must be given the same emotion. Any magic that detects emotions will detect the emotion of the spell. During the effect, the caster gains a further +2 bonus to saving throws vs will.
 
 ---
-name: ""
+name: "Endure elements"
 sphere: all
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1324,19 +1256,16 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Endure elements (all 1 prayer)
-
-range: touch (1 creature)
 casting time: 2 rounds (VS)
 duration: 12 hours
   This prayer grants the target limited protection against one of the five damage types: acid, cold, fire, lightning or sound. Each round, it absorbs the first 3 points of damage the target would otherwise take from this type of damage. It protects the target's equipment as well.
 
 ---
-name: ""
+name: "Energy drain"
 sphere: dark
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1344,9 +1273,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Energy drain (dark 6 prayer)
-
-range: touch (1 creature)
 casting time: 2 rounds (VS)
 duration: instantaneous
 mechanics: fortitude negates
@@ -1355,8 +1281,8 @@ mechanics: fortitude negates
   The caster gains 1 hit point, casts prayers as if he were one level higher, and gains one point of intelligence, wisdom and charisma. These benefits remain until the next sunrise.
 
 ---
-name: ""
-sphere: 
+name: "Entangle"
+sphere: harvest
 circle: 1
 range: ""
 area: ""
@@ -1367,8 +1293,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Entangle (harvest 1 prayer)
-
 range: medium (10 meter radius)
 casting time: 3 (VSF)
 duration: 1 turn
@@ -1378,11 +1302,11 @@ mechanics: fortitude negates
   A creature caught by the plants can attempt a new saving throw to escape every round, but he suffers a cumulative -1 penalty to his roll.
 
 ---
-name: ""
+name: "Exhibitionism"
 sphere: thought
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1390,8 +1314,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Exhibitionism (thought 4 prayer)
-
 range: short (1 creature)
 casting time: 6 (VSM)
 duration: 1 turn + 1 round / level
@@ -1401,8 +1323,8 @@ mechanics: will negates
   The target must have an intelligence score of 1 or more to be affected. Thoughts can be received only by individuals with intelligence scores of 3 or better.
 
 ---
-name: ""
-sphere: 
+name: "Faerie fire"
+sphere: light
 circle: 1
 range: ""
 area: ""
@@ -1413,8 +1335,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Faerie fire (light 1 prayer)
-
 range: medium (10 meter radius)
 casting time: 3 (VM)
 duration: 1 turn
@@ -1425,11 +1345,11 @@ mechanics: possible attack roll
   A caster who wishes to 'catch' unseen creatures with this spell must roll an attack roll. If he hits AC 14 + the target's [dex], then he outlines his target. Characters without the alertness-skill face an additional -2 penalty on this attack.
 
 ---
-name: ""
+name: "Feast or fight"
 sphere: chaos
 circle: 2
 range: "touch"
-area: ""
+area: "a meal"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1437,9 +1357,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Feast or fight (chaos 2 prayer)
-
-range: touch (a meal)
 casting time: 2 turns (VS)
 duration: 1 hour + 1 turn / level
 mechanics: fortitude negates
@@ -1448,7 +1365,7 @@ mechanics: fortitude negates
   At the end of the duration, targets undergo the sensation of waking up. They are still angry, but they have no idea why they became so.
 
 ---
-name: ""
+name: "Feign death"
 sphere: dark
 circle: 3
 range: "touch"
@@ -1460,8 +1377,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Feign death (dark 3 prayer)
-
 range: touch (1 person)
 casting time: 5 (V)
 duration: 3 rounds / level
@@ -1470,11 +1385,11 @@ duration: 3 rounds / level
   The prayer offers no protection from causes of certain death; being crushed under a landslide, etc. The caster is able to end the prayer at any time, but it requires a full round for bodily functions to begin again.
 
 ---
-name: ""
+name: "Find the path"
 sphere: tribe
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1482,9 +1397,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Find the path (tribe 6 prayer)
-
-range: touch (1 creature)
 casting time: 3 rounds (VSM)
 duration: 6 hours
   This prayer grants the target knowledge of the shortest physical route to a destination set by the caster. The destination must be a place on the same plane, not a creature or an object. The knowledge lasts for 6 hours.
@@ -1492,7 +1404,7 @@ duration: 6 hours
   If the target follows the route, he gains a +8 bonus to any observation-checks to find traps, and to any saves vs those traps. The bonus also applies to saves vs any effects that try to make him lose his way, and he gains a save vs will at DC 20 against any such effects that normally don't grant a save.
 
 ---
-name: ""
+name: "Find traps"
 sphere: tribe
 circle: 1
 range: ""
@@ -1504,16 +1416,14 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Find traps (tribe 1 prayer)
-
 range: caster (caster)
 casting time: 1 round (VS)
 duration: 1 turn / level
   This prayer heightens the caster's senses, granting a bonus to his observation-check equal to 6 + [wis].
 
 ---
-name: ""
-sphere: 
+name: "Fire purge"
+sphere: law
 circle: 4
 range: ""
 area: ""
@@ -1524,15 +1434,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Fire purge (law 4 prayer)
-
 range: medium (10 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 turn / level
   This prayer protects an area against fire. Normal fires cannot burn there, and are extinguished upon the casting of the prayer. Magical fires cause only half of their normal damage. Additionally, creatures within the area of effect receive a +4 bonus to saving throws made vs fire attacks, regardless of whether the attacks originated inside or outside the warded area. The prayer has no direct effects on fire-based creatures in the area, but they must make a saving throw vs fortitude DC 14 to enter the warded area.
 
 ---
-name: ""
+name: "Fire trap"
 sphere: chaos
 circle: 2
 range: "touch"
@@ -1544,8 +1452,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Fire trap (chaos 2 prayer)
-
 range: touch (1 object)
 casting time: 1 turn (VSM)
 duration: permanent until discharged
@@ -1555,11 +1461,11 @@ mechanics: reflex halves
   The prayer is hard to spot, inflicting a -6 penalty to the observation-check. Failure to remove it triggers the detonation.
 
 ---
-name: ""
+name: "First aid"
 sphere: all
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1567,15 +1473,12 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-First aid (all 1 prayer)
-
-range: touch (1 creature)
 casting time: 4 (VS)
 duration: instantaneous
   This prayer heals 1 hit point of damage, and stabilises an unconscious target. It cannot affect creatures without physical bodies.
 
 ---
-name: ""
+name: "Flame blade"
 sphere: war
 circle: 2
 range: ""
@@ -1587,8 +1490,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Flame blade (war 2 prayer)
-
 range: caster (caster)
 casting time: 4 (VSM)
 duration: 1 round / level
@@ -1596,8 +1497,8 @@ duration: 1 round / level
   The blade can ignite combustible materials. The prayer doesn't function under water.
 
 ---
-name: ""
-sphere: 
+name: "Flame strike"
+sphere: light
 circle: 5
 range: ""
 area: ""
@@ -1608,8 +1509,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Flame strike (light 5 prayer)
-
 range: medium (2 meter radius)
 casting time: 7 (VSM)
 duration: instantaneous
@@ -1617,11 +1516,11 @@ mechanics: reflex halves
   This prayer creates a vertical column of fire 10 meters high roaring downward in the location called for by the caster. Any creatures within the area of effect sustain 6d8 points of fire damage.
 
 ---
-name: ""
-sphere: 
+name: "Flameward"
+sphere: healing
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1629,16 +1528,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Flameward (healing 2 prayer)
-
-range: touch (1 creature)
 casting time: 4 (VSM)
 duration: 1 turn / level
   This prayer protects the target from normal fire, halves magical heat damage, and gives a +4 bonus to saving throws vs fire effects.
   This prayer takes the place of endure or resist elements, it does not add to these effects.
 
 ---
-name: ""
+name: "Forbiddance"
 sphere: arcane
 circle: 6
 range: ""
@@ -1650,8 +1546,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Forbiddance (arcane 6 prayer)
-
 range: short (50 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 year
@@ -1660,7 +1554,7 @@ mechanics: fortitude negates
   The material components are rare incenses worth at least 1 annum.
 
 ---
-name: ""
+name: "Fortify"
 sphere: war
 circle: 3
 range: ""
@@ -1672,8 +1566,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Fortify (war 3 prayer)
-
 range: medium (1 meter / level radius)
 casting time: 1 turn (VSM)
 duration: instantaneous
@@ -1683,11 +1575,11 @@ duration: instantaneous
   The area holds approximately 2 people per caster level.
 
 ---
-name: ""
+name: "Free action"
 sphere: arcane
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1695,16 +1587,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Free action (arcane 4 prayer)
-
-range: touch (1 creature)
 casting time: 6 (VSM)
 duration: 1 turn / level
   This prayer negates all magic that impedes movement, and all effects of moving underwater. It also prevents such effects as long as the prayer lasts.
   This prayer does not remove physical objects constricting the target's movement, even if magically generated.
 
 ---
-name: ""
+name: "Glyph of warding"
 sphere: all
 circle: 3
 range: "touch"
@@ -1716,8 +1605,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Glyph of warding (all 3 prayer)
-
 range: touch (1 item or 3 meter radius)
 casting time: 1 turn (VSM)
 duration: permanent until discharged
@@ -1730,11 +1617,11 @@ mechanics: reflex halves or negates
   The area is visible as warded, as a glyph on the ground or item, but in darkness or torchlight an observation-check without penalty is needed to spot it. It can be removed by a lockpicking-check with a penalty equal to the caster level. A spellcraft-check with a penalty equal to the caster level can determine the type of glyph.
 
 ---
-name: ""
-sphere: 
+name: "Goodberry"
+sphere: harvest
 circle: 2
 range: "touch"
-area: ""
+area: "2d4 berries"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1742,9 +1629,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Goodberry (harvest 2 prayer)
-
-range: touch (2d4 berries)
 casting time: 1 round (VSF)
 duration: 1 day / level
   This prayer is cast upon a handful of freshly picked, edible berries, enchanting 2d4 of them. The caster (as well as anyone detecting magic) can discern which berries are affected.
@@ -1752,8 +1636,8 @@ duration: 1 day / level
   The prayer requires the caster's holy symbol to be passed over the berries to be enspelled.
 
 ---
-name: ""
-sphere: 
+name: "Grounding"
+sphere: light
 circle: 4
 range: ""
 area: ""
@@ -1764,15 +1648,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Grounding (light 4 prayer)
-
 range: medium (1 meter radius / level)
 casting time: 6 (VSM)
 duration: 1 turn / level
   This prayer protects an area from lightning damage. Natural lightning does not strike the area, and magical lightning causes half damage if a saving throw is failed (or if there is no save), and no damage if it is made. Creatures entering or leaving the area receive a small jolt of static energy.
 
 ---
-name: ""
+name: "Group mind"
 sphere: thought
 circle: 5
 range: "touch"
@@ -1784,8 +1666,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Group mind (thought 5 prayer)
-
 range: touch (caster + 3 creatures)
 casting time: 1 round (VS)
 duration: 2 rounds / level
@@ -1794,11 +1674,11 @@ duration: 2 rounds / level
   Telepathy is 34.3 times faster than talking. The targets can be a part of only one group mind at a time.
 
 ---
-name: ""
+name: "Guidance"
 sphere: arcane
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1806,8 +1686,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Guidance (arcane 4 prayer)
-
 range: medium (1 creature)
 casting time: 6 (VSM)
 duration: 1 round / level or until discharged
@@ -1815,8 +1693,8 @@ duration: 1 round / level or until discharged
   If the target attempts the stated action within the prayer duration, his chance of success is modified with 1 point per caster level. The caster decides if it's a bonus or a penalty.
 
 ---
-name: ""
-sphere: 
+name: "Healing circle"
+sphere: healing
 circle: 5
 range: ""
 area: ""
@@ -1827,8 +1705,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Healing circle (healing 5 prayer)
-
 range: short (5 meter radius)
 casting time: 7 (VS)
 duration: instantaneous
@@ -1836,11 +1712,11 @@ mechanics: fortitude negates
   This prayer channels positive energy to cure 1d8 points of damage +1 point per caster level in the targets.
 
 ---
-name: ""
+name: "Heart blight"
 sphere: dark
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1848,8 +1724,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Heart blight (dark 4 prayer)
-
 range: short (1 creature)
 casting time: 6 (VS)
 duration: up to 3 rounds
@@ -1860,7 +1734,7 @@ mechanics: fortitude negates three times
   The caster does not need to concentrate on the prayer, but if he does so, remaining in short range, the target suffers an additional -2 penalty to his second and third saving throw.
 
 ---
-name: ""
+name: "Heat metal"
 sphere: arcane
 circle: 2
 range: ""
@@ -1872,8 +1746,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Heat metal (arcane 2 prayer)
-
 range: medium (1 metal object)
 casting time: 4 (VSF)
 duration: 7 rounds
@@ -1884,8 +1756,8 @@ mechanics: fortitude negates
   Heated weapons cause 1 extra point of heat damage. Weapons with wooden handles don't inflict fire damage to the wielder, but if a natural 1 is rolled to hit, the shaft cracks and the weapon becomes improvised.
 
 ---
-name: ""
-sphere: 
+name: "Heroes' feast"
+sphere: light
 circle: 6
 range: ""
 area: ""
@@ -1896,8 +1768,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Heroes' feast (light 6 prayer)
-
 range: short (1 person / level)
 casting time: 1 hour (VSM)
 duration: instantaneous and 12 hours
@@ -1905,7 +1775,7 @@ duration: instantaneous and 12 hours
   Furthermore, they gain immunity to poison and fear effects, a +1 bonus to hit and +1 bonus to saving throws until the duration ends.
 
 ---
-name: ""
+name: "Hesitation"
 sphere: chaos
 circle: 2
 range: ""
@@ -1917,8 +1787,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hesitation (chaos 2 prayer)
-
 range: medium (5 meter radius)
 casting time: 4 (VSM)
 duration: 1 round / level
@@ -1926,11 +1794,11 @@ mechanics: will negates
   This prayer causes creatures in the area of effect to hesitate before acting on their intentions. They face a penalty of +4 to their initiative roll.
 
 ---
-name: ""
+name: "Hidden trail"
 sphere: hunt
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature / level"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1938,19 +1806,16 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Hidden trail (hunt 4 prayer)
-
-range: touch (1 creature / level)
 casting time: 1 round (VSM)
 duration: 1 hour / level
   This prayer makes the targets harder to find. Any alertness-, observation- or tracking-checks to find them face a -4 penalty. Furthermore, creatures with intelligence of 3 or less (such as animals and plants) do not remember anything the targets do during the duration.
 
 ---
-name: ""
+name: "Hideaway"
 sphere: arcane
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature or object"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -1958,15 +1823,12 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Hideaway (arcane 3 prayer)
-
-range: touch (1 creature or object)
 casting time: 5 (VSM)
 duration: 1 day / level
   This prayer makes the target harder to find through scrying. It increases the DC for finding the target by 10.
 
 ---
-name: ""
+name: "High road"
 sphere: tribe
 circle: 7
 range: ""
@@ -1978,8 +1840,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-High road (tribe 7 prayer)
-
 range: caster (20 meter radius)
 casting time: 1 round (VSM)
 duration: 1 hour
@@ -1988,7 +1848,7 @@ duration: 1 hour
   From outside the area, this prayer appears as a swiftly travelling cloud. Flying creatures may look down upon the area to see the travellers, but the cloud moves too fast for them to intercept it. The speed of the cloud does not in any way alter the travel time.
 
 ---
-name: ""
+name: "Hold animal"
 sphere: hunt
 circle: 3
 range: ""
@@ -2000,8 +1860,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hold animal (hunt 3 prayer)
-
 range: medium (5 meter radius)
 casting time: 5 (VS)
 duration: 2 rounds / level
@@ -2010,8 +1868,8 @@ mechanics: will negates
   Held animals cannot move, but they remain aware of events around them and can use abilities not requiring motion or speech. Any new damage breaks the hold, but continuing damage from earlier attacks, poison, disease or magic leaves the hold intact.
 
 ---
-name: ""
-sphere: 
+name: "Hold person"
+sphere: law
 circle: 2
 range: ""
 area: ""
@@ -2022,8 +1880,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hold person (law 2 prayer)
-
 range: medium (1 person)
 casting time: 4 (VSM)
 duration: 2 rounds / level
@@ -2031,8 +1887,8 @@ mechanics: will -2 negates
   This prayer holds rigid one person. The target cannot move, but he remains aware of events around him and can use abilities not requiring motion or speech. Any new damage breaks the hold, but continuing damage from earlier attacks, poison, disease or magic leaves the hold intact.
 
 ---
-name: ""
-sphere: 
+name: "Hold plant"
+sphere: harvest
 circle: 4
 range: ""
 area: ""
@@ -2043,8 +1899,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hold plant (harvest 4 prayer)
-
 range: medium (10 meter radius)
 casting time: 6 (VS)
 duration: 1 round / level
@@ -2054,7 +1908,7 @@ mechanics: fortitude negates
   If plant-based monsters are affected, any new damage breaks the hold, but continuing damage from earlier attacks, poison, disease or magic leaves the hold intact.
 
 ---
-name: ""
+name: "Holy ground"
 sphere: all
 circle: 4
 range: ""
@@ -2066,8 +1920,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Holy ground (all 4 prayer)
-
 range: short (30 meter radius)
 casting time: 3 hours (VSF)
 duration: a year and a day
@@ -2078,7 +1930,7 @@ mechanics: will DC 30 negates
   The focus for this prayer is a symbol or depiction of the deity, or an altar, worth at least 2 annum. The focus must remain on the site of the prayer, or it ends.
 
 ---
-name: ""
+name: "Holy vestment"
 sphere: war
 circle: 3
 range: ""
@@ -2090,8 +1942,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Holy vestment (war 3 prayer)
-
 range: caster (caster)
 casting time: 5 (VSF)
 duration: 5 rounds / level
@@ -2100,8 +1950,8 @@ duration: 5 rounds / level
   This prayer is not compatible with actual armour. When worn with other armour, only the armour with the best AC is effective.
 
 ---
-name: ""
-sphere: 
+name: "Holy word"
+sphere: law
 circle: 7
 range: ""
 area: ""
@@ -2112,8 +1962,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Holy word (law 7 prayer)
-
 range: caster (20 meter radius)
 casting time: 1 (V)
 duration: instantaneous
@@ -2123,8 +1971,8 @@ mechanics: will negates, special
   Every point of damage reduction vs sonic damage translates into a +1 bonus to the saving throws. A silence or deafness effect, or immunity to sonic damage, grants a +8 bonus.
 
 ---
-name: ""
-sphere: 
+name: "Hunger"
+sphere: harvest
 circle: 4
 range: ""
 area: ""
@@ -2135,8 +1983,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hunger (harvest 4 prayer)
-
 range: short (1 person)
 casting time: 6 (VSM)
 duration: 1 day / level
@@ -2146,7 +1992,7 @@ mechanics: fortitude negates
   In casting, the caster decides on a type of food that dispels the curse; by eating this food, the target dispels the curse. It must be a single, natural food but it can be exotic, and it must be something the caster has tasted himself. This prayer is a curse.
 
 ---
-name: ""
+name: "Hunter's arrow"
 sphere: hunt
 circle: 4
 range: "touch"
@@ -2158,8 +2004,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Hunter's arrow (hunt 4 prayer)
-
 range: touch (1 arrow or quarrel)
 casting time: 2 rounds (VSM)
 duration: 1 turn / level or until discharged
@@ -2169,7 +2013,7 @@ mechanics: to hit
   If the arrow hits another creature, it inflicts normal damage and 1 point of constitution damage.
 
 ---
-name: ""
+name: "Ice storm"
 sphere: war
 circle: 6
 range: ""
@@ -2181,8 +2025,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Ice storm (war 6 prayer)
-
 range: medium (10 meter radius)
 casting time: 1 round (VS)
 duration: 1 round / level
@@ -2191,11 +2033,11 @@ mechanics: fortitude halves
   No normal fire is possible in the area, and magical fire does only half damage. Acid damage is also halved, but lightning and sonic damage is increased by 1 point per die rolled. Cold damage (other than from the prayer itself) is doubled.
 
 ---
-name: ""
+name: "Immunity"
 sphere: all
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2203,19 +2045,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Immunity (all 4 prayer)
-
 range: touch (1 creature)
 casting time: 1 round (VSM)
 duration: 1 turn / level
   This prayer renders the target immune to the effects of a specified prayer or spell of 4th circle or lower, or to a specified warlock power. It can also protect against an innate ability, as long as this is equal to a known magic effect. It doesn't function against breath weapons or gaze attacks.
 
 ---
-name: ""
-sphere: 
+name: "Impose"
+sphere: healing
 circle: 5
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2223,19 +2063,17 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Impose (healing 5 prayer)
-
 range: medium (1 creature)
 casting time: 7 (VSM)
 duration: 1 round
   This prayer makes a target more vulnerable to priestly magic for a short while. The entire round after casting this prayer, he has a -10 penalty to his saving throw vs will.
 
 ---
-name: ""
+name: "Impulse"
 sphere: chaos
 circle: 1
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2243,8 +2081,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Impulse (chaos 1 prayer)
-
 range: short (1 creature)
 casting time: 3 (VS)
 duration: 1 round
@@ -2261,7 +2097,7 @@ mechanics: will negates
 8   attack the caster with melee or ranged weapons
 
 ---
-name: ""
+name: "Insect plague"
 sphere: war
 circle: 5
 range: ""
@@ -2273,8 +2109,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Insect plague (war 5 prayer)
-
 range: long (30 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 turn / level
@@ -2285,8 +2119,8 @@ duration: 1 turn / level
   In a place without insects, the prayer fails.
 
 ---
-name: ""
-sphere: 
+name: "Inspiration"
+sphere: light
 circle: 4
 range: ""
 area: ""
@@ -2297,8 +2131,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Inspiration (light 4 prayer)
-
 range: caster (10 meter radius)
 casting time: 6 (VSM)
 duration: 2 rounds / level
@@ -2306,11 +2138,11 @@ duration: 2 rounds / level
   If a creature chooses to save as the caster, then his items or protective magic don't assist in the roll.
 
 ---
-name: ""
+name: "Intervention"
 sphere: dark
 circle: 5
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2318,8 +2150,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Intervention (dark 5 prayer)
-
 range: medium (1 creature)
 casting time: 7 (VS)
 duration: 1 turn / level
@@ -2328,11 +2158,11 @@ mechanics: will negates
   The only actions exempt from the need for permission are actions such as breathing, maintaining balance and defending. This prayer can only be cast on a target that has the ability to communicate with the caster.
 
 ---
-name: ""
+name: "Inverted ethics"
 sphere: dark
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2340,8 +2170,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Inverted ethics (dark 4 prayer)
-
 range: medium (1 creature)
 casting time: 6 (VSM)
 duration: 1 turn
@@ -2349,7 +2177,7 @@ mechanics: will negates
   This prayer reverses the ethics of the target, making him behave in a manner opposite to the way he would normally. Effects of this are unpredictable, but usually very obvious. The target is not actively compelled to commit evil (or good) deeds, the prayer changes his underlying motives.
 
 ---
-name: ""
+name: "Invoke holy symbol"
 sphere: all
 circle: 2
 range: "touch"
@@ -2361,16 +2189,14 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Invoke holy symbol (all 2 prayer)
-
 range: touch (1 object)
 casting time: 2 hours (VF)
 duration: permanent
   This prayer imbues an item as a new holy symbol with a spiritual connection to the caster's deity, allowing it to be used as a prayer focus. The item must be specifically prepared for this, showing a symbol representing the deity. It must be at least the size of an amulet.
 
 ---
-name: ""
-sphere: 
+name: "Iron vigil"
+sphere: law
 circle: 2
 range: ""
 area: ""
@@ -2381,8 +2207,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Iron vigil (law 2 prayer)
-
 range: caster (caster)
 casting time: 1 turn (VS)
 duration: 1 day / level
@@ -2391,11 +2215,11 @@ duration: 1 day / level
   The caster also requires at least four hours of rest for each day that he did not eat, drink, or sleep during his vigil. He cannot use this prayer again until he is rested.
 
 ---
-name: ""
-sphere: 
+name: "Kingsfoil"
+sphere: healing
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2403,19 +2227,16 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Kingsfoil (healing 4 prayer)
-
-range: touch (1 creature)
 casting time: 4 (VS)
 duration: instantaneous
   This prayer heals hit 3d8+3 points of damage, or brings the target to 1 hit point, whichever is better. It does not affect creatures without physical bodies.
 
 ---
-name: ""
+name: "Know age"
 sphere: arcane
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature or object"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2423,19 +2244,16 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Know age (arcane 1 prayer)
-
-range: touch (1 creature or object)
 casting time: 3 (VSM)
 duration: instantaneous
   This prayer determines the age of a creature or object. The age is accurate enough for the personal reading prayer.
 
 ---
-name: ""
+name: "Know customs"
 sphere: tribe
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2443,8 +2261,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Know customs (tribe 3 prayer)
-
 range: medium (1 creature)
 casting time: 5 (VS)
 duration: 1 month
@@ -2453,7 +2269,7 @@ mechanics: will negates
   Typical information gained includes common courtesies and laws, important festivals and common passwords (such as a phrase necessary to pass a gate).
 
 ---
-name: ""
+name: "Knurl"
 sphere: tribe
 circle: 4
 range: ""
@@ -2465,8 +2281,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Knurl (tribe 4 prayer)
-
 range: medium (1 person)
 casting time: 6 (VSM)
 duration: 1 turn / level
@@ -2474,8 +2288,8 @@ mechanics: fortitude negates
   This prayer transforms one of the target's arms into a tree branch. The branch is covered in bark and twigs, and possesses no joints or hand. Held items are dropped. It remains attached to the shoulder. The caster chooses which arm to affect. The affected arm is treated as a (medium-sized, stone age) club.
 
 ---
-name: ""
-sphere: 
+name: "Law enforcement"
+sphere: law
 circle: 6
 range: ""
 area: ""
@@ -2486,8 +2300,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Law enforcement (law 6 prayer)
-
 range: short (1 person)
 casting time: 1 round (VS)
 duration: permanent
@@ -2497,8 +2309,8 @@ mechanics: will negates
   To cast this prayer, the caster must speak a language the target understands.
 
 ---
-name: ""
-sphere: 
+name: "Leafspeak"
+sphere: harvest
 circle: 4
 range: ""
 area: ""
@@ -2509,8 +2321,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Leafspeak (harvest 4 prayer)
-
 range: caster (caster)
 casting time: 6 (VSM)
 duration: 1 round / level
@@ -2519,11 +2329,11 @@ duration: 1 round / level
   The caster can also converse with plant-based monsters through this prayer, but he may have a harder time influencing them, subject to the DM's decision.
 
 ---
-name: ""
-sphere: 
+name: "Life shield"
+sphere: healing
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2531,16 +2341,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Life shield (healing 3 prayer)
-
-range: touch (1 creature)
 casting time: 1 round (VS)
 duration: 1 turn / level or until discharged
   This prayer attempts to shield the target from changes in his life force. This is defined as level or ability draining (other than by poison) or the application of curses. If such a change is attempted, the target receives a +10 to his saving throw. If the effect does not grant a saving throw, the character receives a saving throw vs fortitude with a DC of 20. This prayer only wards against the first attack.
   This prayer prevents the character from gaining levels and from becoming pregnant. It ends immediately if the target attempts to change the life force of another creature (other than by "normal" killing).
 
 ---
-name: ""
+name: "Light"
 sphere: all
 circle: 1
 range: ""
@@ -2552,8 +2359,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Light (all 1 prayer)
-
 range: medium (1 object or creature, or a 5 meter radius)
 casting time: 3 (VS)
 duration: 1 hour + 1 turn / level
@@ -2563,7 +2368,7 @@ mechanics: fortitude negates
   The caster can extinguish the light at any time by uttering a single word. Dweomers that create darkness cancel this prayer, and vice versa.
 
 ---
-name: ""
+name: "Lighten load"
 sphere: tribe
 circle: 2
 range: "touch"
@@ -2575,16 +2380,14 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Lighten load (tribe 2 prayer)
-
 range: touch (1 meter radius)
 casting time: 1 round (VSM)
 duration: 1 hour / level
   This prayer reduces the weight of objects in the area of effect by 50%. These objects can be used normally, they are just lighter to carry. The spell has no effect on magical items.
 
 ---
-name: ""
-sphere: 
+name: "Locate object"
+sphere: law
 circle: 2
 range: ""
 area: ""
@@ -2595,8 +2398,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Locate object (law 2 prayer)
-
 range: caster (1 km radius)
 casting time: 1 turn (VSM)
 duration: instantaneous
@@ -2605,7 +2406,7 @@ mechanics: power-check with [wis]
   If successful, and if such an object is in the area, the caster knows the direction and distance to it. He does not automatically see it.
 
 ---
-name: ""
+name: "Lodestone"
 sphere: storm
 circle: 1
 range: ""
@@ -2617,30 +2418,24 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Lodestone (storm 1 prayer)
-
 range: caster (caster)
 casting time: 3 (VSM)
 duration: instantaneous
   This prayer allows the caster to instantly know the direction of north. The spell is effective in any environment, whether underwater, underground, or in darkness.
 
 ---
-name: ""
+name: "Magical stone"
 sphere: war
 circle: 1
 range: "touch"
-area: ""
-casting_time: ""
+area: "3 pebbles"
+casting_time: "3"
 components: "VSM"
 duration: 
 mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Magical stone (war 1 prayer)
-
-range: touch (3 pebbles)
-casting time: 3 (VSM)
 duration: 3 turns or until discharged
   This prayer enchants three pebbles, that can then be thrown or slung. These are normal attacks.
   If thrown, the stones inflict 1d4 damage each, or 2d4 against undead. They can all be thrown in a single round, with weapon speeds of 2 each. Their range increment is 10 meters.
@@ -2648,11 +2443,11 @@ duration: 3 turns or until discharged
   The stones are considered +1 weapons for determining if a creature can be damaged, but they don't have an attack or damage bonus.
 
 ---
-name: ""
+name: "Memento"
 sphere: dark
 circle: 4
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2660,8 +2455,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Memento (dark 4 prayer)
-
 range: short (1 creature)
 casting time: 5 rounds (M)
 duration: permanent
@@ -2671,11 +2464,11 @@ mechanics: will negates
   Whatever the target remembers, this prayer cannot negate magic effects. It is a curse.
 
 ---
-name: ""
+name: "Memory wrack"
 sphere: thought
 circle: 5
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2683,8 +2476,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Memory wrack (thought 5 prayer)
-
 range: short (1 creature)
 casting time: 7 (VSM)
 duration: 2 rounds / level
@@ -2693,11 +2484,11 @@ mechanics: will negates
   At the end of the duration, the target forgets everything that happened while the prayer was in effect, and the casting of the memory wrack prayer itself.
 
 ---
-name: ""
+name: "Messenger"
 sphere: arcane
 circle: 2
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2705,15 +2496,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Messenger (arcane 2 prayer)
-
 range: medium (1 creature)
 casting time: 2 rounds (VS)
 duration: 1 day / level
   This prayer compels a tiny creature of animal intelligence to act as a messenger. The caster calls the animal to him using some food, and gives him simple directions to his destination. He can attach a note or small item to the animal. The animal will then travel to his destination and wait there until the prayer expires.
 
 ---
-name: ""
+name: "Metal to wood"
 sphere: hunt
 circle: 6
 range: ""
@@ -2725,8 +2514,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Metal to wood (hunt 6 prayer)
-
 range: medium (1 metal object)
 casting time: 1 round (VS)
 duration: permanent
@@ -2737,7 +2524,7 @@ mechanics: will negates
   Wooden items burn. And they float.
 
 ---
-name: ""
+name: "Mind fog"
 sphere: chaos
 circle: 5
 range: ""
@@ -2749,8 +2536,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Mind fog (chaos 5 prayer)
-
 range: medium (5 meter radius)
 casting time: 7 (VS)
 duration: 3 turns
@@ -2758,7 +2543,7 @@ mechanics: special
   This prayer creates a block of fog that confuses creatures in the area. These creatures suffer a -4 penalty to saving throws vs will. Furthermore, they can only leave the fog on a successful saving throw vs fortitude. This can be attempted once per round. The fog allows vision to a range of 1 meter.
 
 ---
-name: ""
+name: "Mind over body"
 sphere: thought
 circle: 6
 range: "touch"
@@ -2770,8 +2555,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Mind over body (thought 6 prayer)
-
 range: touch (1 person)
 casting time: 8 (VSM)
 duration: instantaneous
@@ -2779,11 +2562,11 @@ mechanics: fortitude negates
   This prayer heals the target of all physical wounds, at the cost of his mind. For every 20 hit points healed, or portion thereof, he loses 1d4 points of both wisdom and charisma. It also removes curses, diseases and spell effects, which count as 20 hit points each.
 
 ---
-name: ""
+name: "Miscast magic"
 sphere: chaos
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2791,8 +2574,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Miscast magic (chaos 3 prayer)
-
 range: medium (1 creature)
 casting time: 5 (VS)
 duration: 1 month or until discharged
@@ -2801,7 +2582,7 @@ mechanics: will negates
   When the target casts his next magic, he doesn't learn of the miscast magic until it takes effect. The miscast magic functions normally; it fades from the target's memory and its material components fade from the target's possessions (in addition to the components for the intended magic). The miscast magic still needs to conform to its maximum range and area; this might cause it to fizzle harmlessly. The target retains the capability to cast the intended magic.
 
 ---
-name: ""
+name: "Mistletoe"
 sphere: hunt
 circle: 2
 range: ""
@@ -2813,8 +2594,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Mistletoe (hunt 2 prayer)
-
 range: medium (1 wooden object)
 casting time: 4 (VS)
 duration: instantaneous
@@ -2827,7 +2606,7 @@ DC 20 log, tree or mast
   A warped melee weapon is treated as an improvised weapon and also suffers a -2 to hit. A warped missile weapon is useless. The structural effects of this prayer are decided by the DM, but are probably co-dependent on an applicable skill-check.
 
 ---
-name: ""
+name: "Moment"
 sphere: thought
 circle: 2
 range: ""
@@ -2839,8 +2618,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Moment (thought 2 prayer)
-
 range: caster (caster)
 casting time: 1 round (VSF)
 duration: 1 round / level
@@ -2850,11 +2627,11 @@ mechanics: special
   While concentrating on this prayer, the caster can take no other action.
 
 ---
-name: ""
+name: "Nap"
 sphere: thought
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature / level"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2862,20 +2639,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Nap (thought 2 prayer)
-
-range: touch (1 creature/ level)
 casting time: 4 (VSM)
 duration: 1 hour
   This prayer puts the affected creatures to sleep for one hour. They do not wake easily from this sleep before the hour has passed, it takes nudging. The prayer has no effect unless the targets can sleep for the full hour. Upon awakening, the targets are as refreshed as if they have slept for a full night. They have recovered lost hit points and can memorize spells and prayers as if real time had passed.
   Because the rest is so complete and rejuvenating, a character does not feel fatigued after waking. Attempts to use nap more than once a day are ineffective (the character simply is not sleepy).
 
 ---
-name: ""
+name: "Nature's veil"
 sphere: hunt
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature / level"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2883,19 +2657,16 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Nature's veil (hunt 1 prayer)
-
-range: touch (1 creature / level)
 casting time: 3 (SM)
 duration: 1 turn + 1 round / level
   This prayer makes the targets almost undetectable to normal animals. He gains a +20 bonus to his stealth-check with regard to animals. This assumes the target actively tries to use stealth, if he doesn't then the prayer has no effect. Any target who makes an attack while this prayer is in effect ends the prayer immediately (for himself only).
 
 ---
-name: ""
-sphere: 
+name: "Necrotic veil"
+sphere: light
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2903,9 +2674,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Necrotic veil (light 2 prayer)
-
-range: touch (1 creature)
 casting time: 4 (SF)
 duration: 3 turns
   This prayer makes the target almost undetectable to 'normal' undead. He gains a +20 bonus to his stealth-check with regard to undead. This assumes the target actively tries to use stealth, if he doesn't then the prayer has no effect.
@@ -2913,7 +2681,7 @@ duration: 3 turns
   Any target who makes an attack while this prayer is in effect, or attempts to use the banishment skill, ends the effect.
 
 ---
-name: ""
+name: "Obscurement"
 sphere: storm
 circle: 2
 range: ""
@@ -2925,8 +2693,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Obscurement (storm 2 prayer)
-
 range: caster (2 meter radius / level)
 casting time: 4 (VS)
 duration: 4 rounds / level
@@ -2934,8 +2700,8 @@ duration: 4 rounds / level
   The height of the effect is 3 meters. The fog stays in the area of effect, but a strong wind will double the vision range. Any magic summoning gusts of wind acts as a dispel magic vs the effect.
 
 ---
-name: ""
-sphere: 
+name: "Parselmouth"
+sphere: harvest
 circle: 2
 range: ""
 area: ""
@@ -2946,8 +2712,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Parselmouth (harvest 2 prayer)
-
 range: caster (caster)
 casting time: 4 (VS)
 duration: 2 rounds / level
@@ -2955,8 +2719,8 @@ duration: 2 rounds / level
   This prayer has no effect on monsters or magical animals.
 
 ---
-name: ""
-sphere: 
+name: "Pass plant"
+sphere: harvest
 circle: 5
 range: ""
 area: ""
@@ -2967,8 +2731,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Pass plant (harvest 5 prayer)
-
 range: caster (500 meter radius)
 casting time: 7 (VSM)
 duration: instantaneous or 1 round / level
@@ -2978,11 +2740,11 @@ mechanics: direction sense-checks
   If the occupied tree is chopped down or burned, the caster must save vs fortitude DC 20 or be slain. He does not automatically notice damage to the tree.
 
 ---
-name: ""
-sphere: 
+name: "Patience"
+sphere: healing
 circle: 7
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -2990,9 +2752,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Patience (healing 7 prayer)
-
-range: touch (1 creature)
 casting time: 1 day (VSM)
 duration: permanent
 mechanics: fortitude negates
@@ -3000,7 +2759,7 @@ mechanics: fortitude negates
   This prayer is treated as a curse.
 
 ---
-name: ""
+name: "Personal chart"
 sphere: thought
 circle: 1
 range: ""
@@ -3012,8 +2771,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Personal chart (thought 1 prayer)
-
 range: caster (1 person)
 casting time: 2 turns (VSF)
 duration: instantaneous
@@ -3022,11 +2779,11 @@ duration: instantaneous
   If this prayer is cast on a child before it has been named, it will reveal its information about the father (but does not provide the father's name). An alias or incorrect name will yield incorrect information. The prayer will fail on creatures that have no concept of a personal name.
 
 ---
-name: ""
-sphere: 
+name: "Placebo"
+sphere: healing
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3034,9 +2791,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Placebo (healing 6 prayer)
-
-range: touch (1 creature)
 casting time: 1 round (VS)
 duration: instantaneous
 mechanics: special
@@ -3045,11 +2799,11 @@ mechanics: special
   The prayer does not heal permanent ability damage or "self-inflicted" mental damage. It only affects living targets.
 
 ---
-name: ""
+name: "Plane shift"
 sphere: arcane
 circle: 5
 range: "touch"
-area: ""
+area: "up to 8 people"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3057,16 +2811,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Plane shift (arcane 5 prayer)
-
-range: touch (up to 8 people)
 casting time: 7 (VSM)
 duration: instantaneous
   This prayer moves the targets to another plane of existence, chosen by the caster. He has no control over his destination in that plane, unless he has been there, and even then it is common to arrive up to several days' travel away.
 
 ---
-name: ""
-sphere: 
+name: "Plant growth"
+sphere: harvest
 circle: 3
 range: ""
 area: ""
@@ -3077,8 +2828,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Plant growth (harvest 3 prayer)
-
 range: long (variable)
 casting time: 1 round (VSM)
 duration: instantaneous
@@ -3089,7 +2838,7 @@ mechanics: fortitude negates
   The last use for this prayer is in conjunction with the 'holy ground' prayer. In this version, the prayer enhances the yields of the harvests within 5 kilometers from the holy ground. This does not prevent disasters such as floods or droughts, but even in these cases the plants survive better than expected. This effect always ends in the midst of winter, whenever the prayer has been cast.
 
 ---
-name: ""
+name: "Prayer"
 sphere: war
 circle: 3
 range: ""
@@ -3101,15 +2850,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Prayer (war 3 prayer)
-
 range: caster (20 meter radius)
 casting time: 5 (VSM)
 duration: 1 round / level
   This prayer brings favour upon the caster and his friends and causes harm to his enemies. Those in the area at the instant the prayer is cast are affected for its duration. All to hit rolls, damage rolls and saving throws made by the caster's allies gain a +1 bonus, while those by his enemies suffer a -1 penalty.
 
 ---
-name: ""
+name: "Premonition"
 sphere: thought
 circle: 2
 range: ""
@@ -3121,8 +2868,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Premonition (thought 2 prayer)
-
 range: caster (caster)
 casting time: 4 (VS)
 duration: 1 turn / level
@@ -3131,7 +2876,7 @@ duration: 1 turn / level
   The prayer only works on actions undertaken by the caster himself. If his companion is about to pull a mysterious lever that will drop a 10-ton block of stone, there is no warning.
 
 ---
-name: ""
+name: "Produce fire"
 sphere: war
 circle: 4
 range: ""
@@ -3143,8 +2888,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Produce fire (war 4 prayer)
-
 range: medium (2 meter radius)
 casting time: 6 (VSM)
 duration: 1 round
@@ -3153,11 +2896,11 @@ mechanics: reflex negates some effects
   Living flesh is not set alight, but items carried or worn catch fire unless the targets save vs reflex. The targets take 1d6 damage before their next action, until they have used an action to put out the fire.
 
 ---
-name: ""
+name: "Protection from evil"
 sphere: all
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3165,9 +2908,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Protection from evil (all 1 prayer)
-
-range: touch (1 creature)
 casting time: 3 (VSM)
 duration: 3 rounds / level
   This prayer creates a protective barrier around the target. This barrier grants a +2 bonus to AC and saving throws. The bonus is +5 vs extraplanar or summoned creatures.
@@ -3175,11 +2915,11 @@ duration: 3 rounds / level
   This prayer protects the target from getting pregnant.
 
 ---
-name: ""
+name: "Quest"
 sphere: all
 circle: 5
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3187,8 +2927,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Quest (all 5 prayer)
-
 range: short (1 creature)
 casting time: 3 rounds (VSF)
 duration: 1 task
@@ -3199,8 +2937,8 @@ mechanics: will negates
   This prayer is treated as a curse.
 
 ---
-name: ""
-sphere: 
+name: "Raise dead"
+sphere: light
 circle: 5
 range: "touch"
 area: ""
@@ -3211,8 +2949,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Raise dead (light 5 prayer)
-
 range: touch (1 person)
 casting time: 1 turn (VS)
 duration: instantaneous
@@ -3222,11 +2958,11 @@ mechanics: constitution-check +4 to survive
   Note that the body of the target must be whole, or otherwise missing parts are still missing when he is brought back to life. Likewise, other ills, such as poison and disease, are not negated.
 
 ---
-name: ""
+name: "Rapport"
 sphere: thought
 circle: 4
 range: "touch"
-area: ""
+area: "1 creature / 3 levels"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3234,16 +2970,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Rapport (thought 4 prayer)
-
-range: touch (1 creature / 3 levels)
 casting time: 3 rounds (VS)
 duration: 1 hour + 1 turn / level
   This prayer allows the targets to benefit from each other's experiences. All skills known by any of the targets grant a +4 bonus to the skill-check for the other recipients. To power-checks it grants a +2.
   This bonus is cumulative, so that 3 people who have the stealth skill each gain a +8 bonus. Targets of this spell are unable to hide their skills from the others. This prayer doesn't allow targets to use new warlock powers, but they get a bonus if they already know them.
 
 ---
-name: ""
+name: "Reflecting pool"
 sphere: arcane
 circle: 4
 range: ""
@@ -3255,8 +2988,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Reflecting pool (arcane 4 prayer)
-
 range: caster (1 pool)
 casting time: 2 hours (VSM)
 duration: 1 round / level
@@ -3267,11 +2998,11 @@ mechanics: power-check with [wis]
   No magic can be cast through this prayer, but enhancement magic that improves the caster's powers of perception functions normally. Infravision likewise operates normally. The image is not clear enough to read script.
 
 ---
-name: ""
-sphere: 
+name: "Reincarnation"
+sphere: harvest
 circle: 6
 range: "touch"
-area: ""
+area: "1 human corpse"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3279,9 +3010,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Reincarnation (harvest 6 prayer)
-
-range: touch (1 human corpse)
 casting time: 1 turn (VS)
 duration: instantaneous
   This prayer brings the target back from death, in a new body that appears in 1d6 turns. It won't work on targets that have been dead for more than a week, or that died of old age.
@@ -3302,11 +3030,11 @@ duration: instantaneous
   In being revived, the target loses the last level he gained. His new body is a young adult, so any age modifiers are removed. Bonus ability points gained from every fourth level are also deleted. The target does recall most of his former life, though he may be fuzzy on the details for the first few days.
 
 ---
-name: ""
-sphere: 
+name: "Resist elements"
+sphere: light
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3314,20 +3042,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Resist elements (light 2 prayer)
-
-range: touch (1 creature)
 casting time: 4 (VSM)
 duration: 2 rounds / level
   This prayer grants the target limited protection against one of the five damage types: acid, cold, fire, lightning or sound. The caster chooses the protection type at the time of casting. Each round, the prayer absorbs the first 7 points of damage the target would otherwise take from this type of damage. It protects the target's equipment as well.
   This prayer does not stack with the endure elements prayer.
 
 ---
-name: ""
+name: "Restoration"
 sphere: all
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3335,19 +3060,16 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Restoration (all 2 prayer)
-
-range: touch (1 creature)
 casting time: 3 rounds (VS)
 duration: instantaneous
   This prayer restores temporary damage to the target's ability scores. It does not restore permanent ability drain. The target heals 1d4 points of a damaged ability. If more than one ability is damaged, the prayer heals the ability that is currently the lowest. If several damaged abilities have the same value, the caster can choose.
 
 ---
-name: ""
+name: "Restore youth"
 sphere: dark
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3355,9 +3077,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Restore youth (dark 6 prayer)
-
-range: touch (1 creature)
 casting time: 2 hours (VSF)
 duration: permanent
 mechanics: fortitude negates
@@ -3365,11 +3084,11 @@ mechanics: fortitude negates
   However, the focus used for the prayer ages in stead of the target. If the focus is destroyed, the prayer is nullified.
 
 ---
-name: ""
-sphere: 
+name: "Reverse time"
+sphere: healing
 circle: 6
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3377,8 +3096,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Reverse time (healing 6 prayer)
-
 range: short (1 creature)
 casting time: 1 round (VSM)
 duration: instantaneous
@@ -3387,11 +3104,11 @@ mechanics: fortitude negates
   The only actions undone are the actions of the target. He moves back to his earlier position, his attacks didn't happen (and noone has damage from them), and if he cast spells then he regains the ability to cast them. He might even be surprised all over again.
 
 ---
-name: ""
-sphere: 
+name: "Rigid thinking"
+sphere: law
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3399,8 +3116,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Rigid thinking (law 3 prayer)
-
 range: medium (1 creature)
 casting time: 5 (VS)
 duration: 1 round / level
@@ -3409,8 +3124,8 @@ mechanics: will negates
   For instance, a character fighting an ogre would continue to do so, ignoring the arrival of other enemies. Upon the defeat of the ogre, he would continue to focus on the ogre, perhaps searching him for loot.
 
 ---
-name: ""
-sphere: 
+name: "Rock to mud"
+sphere: law
 circle: 5
 range: ""
 area: ""
@@ -3421,8 +3136,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Rock to mud (law 5 prayer)
-
 range: medium (10 meter radius)
 casting time: 7 (VSM)
 duration: instantaneous
@@ -3432,11 +3145,11 @@ mechanics: reflex allows escape
   The prayer is automatically reversed by a dispel magic cast within 1 turn, but it does not restore the shape of former rock. Mud created by this prayer turns to normal dirt in a day.
 
 ---
-name: ""
-sphere: 
+name: "Sacred guardian"
+sphere: light
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3444,20 +3157,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Sacred guardian (light 1 prayer)
-
-range: touch (1 creature)
 casting time: 3 (VSM)
 duration: 1 day / level
   This prayer warns the caster of any danger to the target of the prayer. He receives a mental image of the target's situation. If he makes an alertness-check he can even take a single swift action before the danger strikes, such as pushing the target out of the way of an incoming arrow. This grants a +1 to any saving throws needed, or a +1 to AC. This applies only to the first round of combat, or if there's a significant new danger.
   At no time, however, does the caster know the target's location through the use of this prayer. The target may be on a different plane of existence than the caster.
 
 ---
-name: ""
-sphere: 
+name: "Sanctuary"
+sphere: healing
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3465,9 +3175,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sanctuary (healing 1 prayer)
-
-range: touch (1 creature)
 casting time: 3 (VSM)
 duration: 2 rounds + 1 round / level
 mechanics: special (will negates)
@@ -3476,11 +3183,11 @@ mechanics: special (will negates)
   The components of the spell include the priest's holy symbol and a small silver mirror.
 
 ---
-name: ""
+name: "Seance"
 sphere: all
 circle: 3
 range: ""
-area: ""
+area: "1 dead creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3488,8 +3195,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Seance (all 3 prayer)
-
 range: caster (1 dead creature)
 casting time: 1 turn (VSM)
 duration: 2 turns or until discharged
@@ -3497,11 +3202,11 @@ duration: 2 turns or until discharged
   The caster can ask one question per 3 levels. However, the dead are as evasive as possible when questioned. They tend to give extremely brief and limited answers, often cryptic, and to take questions literally.
 
 ---
-name: ""
-sphere: 
+name: "Seclusion"
+sphere: light
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3509,9 +3214,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Seclusion (light 6 prayer)
-
-range: touch (1 creature)
 casting time: 8 (VSF)
 duration: 2 rounds / level
 mechanics: fortitude negates
@@ -3520,8 +3222,8 @@ mechanics: fortitude negates
   When the prayer ends, all occupants are ejected back into the real world and suffer 1d6 blunt damage in the process.
 
 ---
-name: ""
-sphere: 
+name: "Shadow purge"
+sphere: light
 circle: 3
 range: ""
 area: ""
@@ -3532,8 +3234,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Shadow purge (light 3 prayer)
-
 range: short (5 meter radius)
 casting time: 1 round (VSM)
 duration: 1 turn + 1 round / level
@@ -3541,8 +3241,8 @@ duration: 1 turn + 1 round / level
   This prayer does not actually remove any effects, it merely suppresses them. A creature under an invisibility effect that leaves the area once again turns invisible.
 
 ---
-name: ""
-sphere: 
+name: "Sheep´s eye"
+sphere: harvest
 circle: 1
 range: ""
 area: ""
@@ -3553,8 +3253,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sheep´s eye (harvest 1 prayer)
-
 range: short (1 animal)
 casting time: 1 hour (VSM)
 duration: permanent
@@ -3566,7 +3264,7 @@ If the creature is left alone for more than a week, it will revert to its natura
   If the character's player uses this prayer with ulterior motives without admitting it, his character will never again be able to cast this prayer, or research another one in its place.
 
 ---
-name: ""
+name: "Shillelagh"
 sphere: war
 circle: 1
 range: "touch"
@@ -3578,15 +3276,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Shillelagh (war 1 prayer)
-
 range: touch (caster's club or staff)
 casting time: 1 round (VSM)
 duration: 2 rounds / level
   This prayer enables the caster to change his club or staff into a magical weapon that gains a +1 bonus to its attack roll and inflicts 2d4 points of damage. It inflicts no damage to the weapon. The caster must wield the shillelagh.
 
 ---
-name: ""
+name: "Silence"
 sphere: dark
 circle: 2
 range: ""
@@ -3598,15 +3294,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Silence (dark 2 prayer)
-
 range: medium (5 meter radius)
 casting time: 4 (VS)
 duration: 2 rounds / level
   This prayer stops all sound in the area of effect. Conversation is impossible, spells with verbal components cannot be cast, and no noise whatsoever issues from or enters the area. It confers a +10 bonus on stealth-skills, but total silence tends to alert people that something is happening. If in doubt, characters in the area receive an unmodified alertness-check to notice the effect. This prayer stops all sonic effects unless specifically noted.
 
 ---
-name: ""
+name: "Skip day"
 sphere: chaos
 circle: 6
 range: ""
@@ -3618,8 +3312,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Skip day (chaos 6 prayer)
-
 range: caster (3 meter radius)
 casting time: 1 round (VS)
 duration: instantaneous
@@ -3627,11 +3319,11 @@ mechanics: reflex negates
   This prayer transports all living targets in the area 1 day into the future. No time passes for them. Unaffected creatures see them vanish.
 
 ---
-name: ""
+name: "Slay living"
 sphere: dark
 circle: 5
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3639,8 +3331,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Slay living (dark 5 prayer)
-
 range: medium (1 creature)
 casting time: 1 round (VS)
 duration: instantaneous
@@ -3648,11 +3338,11 @@ mechanics: fortitude negates
   This prayer kills the target. If the target makes his saving throw, he sustains 3d8+3 points of damage. The somatic component of the spell is a pointed finger.
 
 ---
-name: ""
-sphere: 
+name: "Slow poison"
+sphere: healing
 circle: 2
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3660,16 +3350,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Slow poison (healing 2 prayer)
-
-range: touch (1 creature)
 casting time: 1 (VSM)
 duration: 1 hour / level
   This prayer slows the effects of poisons in the target. Any saving throws and effects are delayed for the duration of the prayer.
   Furthermore, any healing-checks made to identify the poison that afflicts the target or create a treatment gain a +2 bonus.
 
 ---
-name: ""
+name: "Snare"
 sphere: hunt
 circle: 3
 range: "touch"
@@ -3681,8 +3368,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Snare (hunt 3 prayer)
-
 range: touch (1 meter radius)
 casting time: 3 rounds (VSM)
 duration: permanent until discharged
@@ -3692,7 +3377,7 @@ mechanics: reflex negates
   Escaping the area requires a rope use-check with a -6 penalty, as the snare continues to bind the target. Every attempt to escape takes about half an hour, and even if failed, grants a +2 bonus to the next one. However, every attempt also causes one point of strength and constitution damage. If another creature helps the target escape, he is freed in 3 rounds.
 
 ---
-name: ""
+name: "Solipsism"
 sphere: thought
 circle: 4
 range: ""
@@ -3704,8 +3389,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Solipsism (thought 4 prayer)
-
 range: medium (20 meter radius)
 casting time: 1 round (VSM)
 duration: concentration
@@ -3715,11 +3398,11 @@ mechanics: special
   Solipsism can create only illusions external to the priest. Thus, the priest cannot create an illusion that he is the size of a giant, is unwounded, or has sprouted wings.
 
 ---
-name: ""
+name: "Soul mirror"
 sphere: chaos
 circle: 5
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3727,17 +3410,14 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Soul mirror (chaos 5 prayer)
-
-range: touch (1 creature)
 casting time: 7 (VSM)
 duration: 1 turn / level
   This prayer makes the target immune to magical commands. Any magic aimed at the target that forces him to roll a saving throw vs will categorically fails.
   In addition, the caster of this failed magic must now save vs will or obey his own magic.
 
 ---
-name: ""
-sphere: 
+name: "Spike growth"
+sphere: harvest
 circle: 3
 range: ""
 area: ""
@@ -3748,8 +3428,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Spike growth (harvest 3 prayer)
-
 range: long (5 meter radius)
 casting time: 5 (VSM)
 duration: 1 hour + 1 turn / level
@@ -3759,7 +3437,7 @@ mechanics: reflex partly negates
   This prayer can be detected with a successful observation-check.
 
 ---
-name: ""
+name: "Spiritual weapon"
 sphere: war
 circle: 2
 range: ""
@@ -3771,8 +3449,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Spiritual weapon (war 2 prayer)
-
 range: caster (short range)
 casting time: 4 (VSM)
 duration: 3 rounds + 1 round / level
@@ -3781,7 +3457,7 @@ duration: 3 rounds + 1 round / level
   Attacking with the weapon requires concentration. The caster can take no other action in the same round except walking.
 
 ---
-name: ""
+name: "Sprinkler"
 sphere: storm
 circle: 1
 range: ""
@@ -3793,8 +3469,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sprinkler (storm 1 prayer)
-
 range: medium (20 liter / level)
 casting time: 1 round (VSM)
 duration: instantaneous
@@ -3804,7 +3478,7 @@ mechanics: possible attack roll
   This prayer cannot create water within a creature.
 
 ---
-name: ""
+name: "Squeaking floors"
 sphere: thought
 circle: 3
 range: ""
@@ -3816,8 +3490,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Squeaking floors (thought 3 prayer)
-
 range: medium (3 meter radius)
 casting time: 5 (VSM)
 duration: 1 hour / level
@@ -3825,7 +3497,7 @@ duration: 1 hour / level
   A character searching for traps can identify the area of this prayer by making an observation-check with a -10 penalty.
 
 ---
-name: ""
+name: "Sticks to snakes"
 sphere: chaos
 circle: 4
 range: ""
@@ -3837,8 +3509,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sticks to snakes (chaos 4 prayer)
-
 range: short (5 meter radius)
 casting time: 6 (VSM)
 duration: 2 rounds / level
@@ -3848,7 +3518,7 @@ mechanics: fortitude may negate
   The snakes attack anyone nearby, or a single target as directed by the caster. Directing the snakes requires the caster's concentration every round.
 
 ---
-name: ""
+name: "Stone tell"
 sphere: arcane
 circle: 6
 range: "touch"
@@ -3860,15 +3530,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Stone tell (arcane 6 prayer)
-
 range: touch (3 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 turn
   This prayer allows the very stones to speak to the caster, revealing what has touched them or what is covered, concealed or simply behind them. They relate complete descriptions if asked, but are limited to sight. The stones are not creatures, and have no opinions or perspectives.
 
 ---
-name: ""
+name: "Stormcall"
 sphere: storm
 circle: 7
 range: ""
@@ -3880,8 +3548,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Stormcall (storm 7 prayer)
-
 range: caster (3 km radius)
 casting time: 1 turn (VS)
 duration: 1 turn / level
@@ -3899,7 +3565,7 @@ wet: All effects that inflict acid damage inflict 2 extra damage per damage die.
   Once the prayer has been cast, the weather cannot be dispelled by dispel magic.
 
 ---
-name: ""
+name: "Stray causality"
 sphere: chaos
 circle: 3
 range: ""
@@ -3911,8 +3577,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Stray causality (chaos 3 prayer)
-
 range: short (1 weapon)
 casting time: 5 (VSM)
 duration: 2 rounds / level
@@ -3920,8 +3584,8 @@ mechanics: fortitude negates
   This prayer causes the target weapon to inflict damage to a random person. Whenever the weapon strikes a creature, it does only 1 point of damage to that person. However, it also does its normal damage on the wielder or one of his allies, determined randomly.
 
 ---
-name: ""
-sphere: 
+name: "Strength of one"
+sphere: law
 circle: 3
 range: "touch"
 area: ""
@@ -3932,8 +3596,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Strength of one (law 3 prayer)
-
 range: touch (1 person / 2 levels)
 casting time: 5 (VS)
 duration: 1 turn
@@ -3941,11 +3603,11 @@ duration: 1 turn
   Only natural strength is considered, magical bonuses are not added. Targets must be of medium or smaller size. The keystone receives no bonus. If the keystone is killed or loses consciousness, the spell ends.
 
 ---
-name: ""
+name: "Summon insects"
 sphere: chaos
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3953,8 +3615,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Summon insects (chaos 3 prayer)
-
 range: medium (1 creature)
 casting time: 1 round (VSM)
 duration: 1 round / level
@@ -3963,8 +3623,8 @@ mechanics: reflex negates
   A target ignoring the prayer faces a -2 penalty to hit and to AC. Using magic in the swarm requires a successful saving throw vs reflex; a failed saving throw fizzles the magic. A target which spends a round escaping the prayer receives a new saving throw. A target jumping into water successfully escapes.
 
 ---
-name: ""
-sphere: 
+name: "Sunray"
+sphere: light
 circle: 7
 range: ""
 area: ""
@@ -3975,8 +3635,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sunray (light 7 prayer)
-
 range: long (10 meter radius)
 casting time: 1 round (VSM)
 duration: 3 rounds
@@ -3985,11 +3643,11 @@ mechanics: reflex negates
   Creatures in the beam suffer 5d6 heat damage, are blinded and become vulnerable to the sun, suffering 2d6 heat damage every round they are exposed to normal sunlight. This effect is permanent. Undead suffer 10d6 damage, and undead which are vulnerable to the sun are destroyed.
 
 ---
-name: ""
-sphere: 
+name: "Sunscorch"
+sphere: light
 circle: 2
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -3997,8 +3655,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Sunscorch (light 2 prayer)
-
 range: medium (1 creature)
 casting time: 4 (VS)
 duration: instantaneous
@@ -4007,11 +3663,11 @@ mechanics: reflex negates
   The sun must be in the sky when sunscorch is cast, or the spell fails entirely. It cannot be cast underground, indoors, or in hours of darkness, although routine overcasts do not hinder the sunscorch.
 
 ---
-name: ""
+name: "Telepathy"
 sphere: thought
 circle: 3
 range: ""
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4019,8 +3675,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Telepathy (thought 3 prayer)
-
 range: medium (1 creature)
 casting time: 5 (VS)
 duration: 1 turn + 1 round / level
@@ -4030,7 +3684,7 @@ mechanics: will negates
   Multiple castings of this prayer do not create a network. The caster can "target" a thought to the correct individual.
 
 ---
-name: ""
+name: "Thought capture"
 sphere: thought
 circle: 1
 range: ""
@@ -4042,8 +3696,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Thought capture (thought 1 prayer)
-
 range: caster (caster)
 casting time: 3 (VS)
 duration: instantaneous
@@ -4051,11 +3703,11 @@ duration: instantaneous
   The caster gains one thought object per casting of the spell. The spell may be cast a number of times in the same locale, but he will gain a different thought object each time. A locale contains a finite number of thoughts, however.
 
 ---
-name: ""
-sphere: 
+name: "Timelessness"
+sphere: law
 circle: 6
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4063,9 +3715,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Timelessness (law 6 prayer)
-
-range: touch (1 creature)
 casting time: 8 (VSM)
 duration: up to 1 day / level
 mechanics: fortitude negates
@@ -4075,7 +3724,7 @@ mechanics: fortitude negates
   Casting this prayer puts a significant strain on the caster. He must make a constitution-check +4 or lose 1 point of constitution permanently.
 
 ---
-name: ""
+name: "Tongues"
 sphere: tribe
 circle: 4
 range: ""
@@ -4087,15 +3736,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Tongues (tribe 4 prayer)
-
 range: caster (short range)
 casting time: 6 (VS)
 duration: 1 hour
   This prayer allows the caster to communicate with all creatures in the area, allowing him to speak and understand additional languages and dialects. Animals and mindless creatures do not speak languages; this prayer does not work on them.
 
 ---
-name: ""
+name: "Totemcall"
 sphere: hunt
 circle: 6
 range: ""
@@ -4107,8 +3754,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Totemcall (hunt 6 prayer)
-
 range: short (1 person / 3 levels)
 casting time: 8 (VS)
 duration: 1 hour / level
@@ -4122,11 +3767,11 @@ swallow: the targets' arms grow into wings, allowing them to fly. Unfortunately,
   The caster can end the spell at will, an action which takes 1 round of concentration.
 
 ---
-name: ""
+name: "Tracelessness"
 sphere: tribe
 circle: 1
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4134,15 +3779,12 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Tracelessness (tribe 1 prayer)
-
-range: touch (1 creature)
 casting time: 1 round (VSM)
 duration: 1 turn / level
   This prayer allows the target to leave neither tracks nor scent. Anyone tracking him suffers a -12 penalty to his check. The area that is passed over radiates magic for 1 turn after the target passes.
 
 ---
-name: ""
+name: "Tree"
 sphere: hunt
 circle: 3
 range: ""
@@ -4154,8 +3796,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Tree (hunt 3 prayer)
-
 range: caster (caster)
 casting time: 5 (VSM)
 duration: 1 hour + 1 turn / level
@@ -4163,7 +3803,7 @@ duration: 1 hour + 1 turn / level
   The caster keeps his own AC and hit points. He can see normally. His gear and clothing change with him. He can cancel the effect at any given time. The initiative modifier for changing back is +2.
 
 ---
-name: ""
+name: "Tree steed"
 sphere: hunt
 circle: 4
 range: "touch"
@@ -4175,8 +3815,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Tree steed (hunt 4 prayer)
-
 range: touch (large wooden object)
 casting time: 2 rounds (VSM)
 duration: 1 hour / level
@@ -4184,11 +3822,11 @@ duration: 1 hour / level
   The steed moves at a speed equivalent to that of a normal horse, it has no penalties in the dark and it can move over water. The steed has all the properties of normal wood. It has AC 12 and 20 hit points. It has no attacks.
 
 ---
-name: ""
+name: "True seeing"
 sphere: arcane
 circle: 5
 range: "touch"
-area: ""
+area: "1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4196,16 +3834,13 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-True seeing (arcane 5 prayer)
-
-range: touch (1 creature)
 casting time: 7 (VSM)
 duration: 2 rounds / level
   This prayer enhances the target's vision. He can see through darkness and fog as if it wasn't there, and he automatically gains a saving throw to disbelieve illusions with visual components. The exact location of displaced things is obvious, invisibility no longer works and the caster can see into the border of the ursuppe. If the target focuses his vision, he can detect magical auras for a round.
   The target's vision can not penetrate solid objects, not even clothing. It does grant a +4 to alertness and observation.
 
 ---
-name: ""
+name: "Undeep"
 sphere: storm
 circle: 6
 range: ""
@@ -4217,8 +3852,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Undeep (storm 6 prayer)
-
 range: caster (50 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 turn / level
@@ -4227,8 +3860,8 @@ duration: 1 turn / level
   Areas with permanent magic effects are immune to this prayer. If the caster tries to force the undeep prayer into such an area, the prayer collapses. If such an area appears in the area of the undeep prayer, both effects remain.
 
 ---
-name: ""
-sphere: 
+name: "Unearthly choir"
+sphere: light
 circle: 3
 range: ""
 area: ""
@@ -4239,8 +3872,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Unearthly choir (light 3 prayer)
-
 range: caster (special)
 casting time: 5 (V)
 duration: instantaneous
@@ -4251,8 +3882,8 @@ mechanics: will halves
   At the time of casting, the casters must be within 3 meters of each other. The DM may ask the casters to use a single initiative roll. The DC for the saving throw is determined by the caster with the highest priest level.
 
 ---
-name: ""
-sphere: 
+name: "Unwilling wood"
+sphere: harvest
 circle: 7
 range: ""
 area: ""
@@ -4263,8 +3894,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Unwilling wood (harvest 7 prayer)
-
 range: long (20 meter radius)
 casting time: 1 round (VSM)
 duration: permanent
@@ -4275,7 +3904,7 @@ mechanics: fortitude negates
   This enchantment is a curse.
 
 ---
-name: ""
+name: "Uplift"
 sphere: tribe
 circle: 4
 range: ""
@@ -4287,8 +3916,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Uplift (tribe 4 prayer)
-
 range: caster (caster)
 casting time: 12 hours (VM)
 duration: 1 turn
@@ -4297,7 +3924,7 @@ duration: 1 turn
   This prayer causes a severe drain on both the participants. They both lose 1 point from every ability score when the prayer expires.
 
 ---
-name: ""
+name: "Ursuppe"
 sphere: all
 circle: 4
 range: "touch"
@@ -4309,8 +3936,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Ursuppe (all 4 prayer)
-
 range: touch (caster + 1 creature / 2 levels)
 casting time: 5 (VS)
 duration: 1 turn + 1 round / level
@@ -4320,8 +3945,8 @@ mechanics: fortitude negates
   The caster can choose to end the spell at any time, causing all the targets to materialize in the physical world. This action has a speed of 3. Targets that occupy a solid object at the end of the prayer are hurled into the depths of the ursuppe.
 
 ---
-name: ""
-sphere: 
+name: "Urwal"
+sphere: healing
 circle: 3
 range: ""
 area: ""
@@ -4332,8 +3957,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Urwal (healing 3 prayer)
-
 range: short (3 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 turn / level
@@ -4341,8 +3964,8 @@ mechanics: fortitude partly negates
   This prayer protects the area of effect from extradimensional travel, either through the ursuppe or through teleporting magic. Also, it prevents summoned or extradimensional creatures from entering. Dimensional travel is fully blocked. Creatures receive a saving throw to force themselves through the barrier. They can roll to force the barrier only once.
 
 ---
-name: ""
-sphere: 
+name: "Vermin barrier"
+sphere: harvest
 circle: 2
 range: ""
 area: ""
@@ -4353,15 +3976,13 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Vermin barrier (harvest 2 prayer)
-
 range: medium (3 meter radius / level)
 casting time: 4 (VSM)
 duration: 1 hour / level
   This prayer prevents vermin, defined as tiny creatures that have 4 hit points or less, from entering the area of effect. Any vermin within the area when the prayer is cast are not affected; however, when they exit the area, they cannot return.
 
 ---
-name: ""
+name: "Wall of fire"
 sphere: war
 circle: 5
 range: ""
@@ -4373,8 +3994,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Wall of fire (war 5 prayer)
-
 range: medium (10 meter line or 4 meter radius)
 casting time: 7 (VSM)
 duration: 1 round / level
@@ -4383,8 +4002,8 @@ mechanics: none or reflex negates
   The prayer inflicts 4d4 points of fire damage plus 1 point per caster level. When the prayer first takes effect, creatures in the area can roll a saving throw vs reflex to avoid it.
 
 ---
-name: ""
-sphere: 
+name: "Wall of thorns"
+sphere: harvest
 circle: 6
 range: ""
 area: ""
@@ -4395,8 +4014,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Wall of thorns (harvest 6 prayer)
-
 range: medium (4 meter / level line)
 casting time: 8 (VS)
 duration: 1 turn / level
@@ -4406,11 +4023,11 @@ mechanics: reflex negates
   The caster can dismiss the barrier by concentrating for 1 round, after which the barrier withers and dies.
 
 ---
-name: ""
+name: "Water walk"
 sphere: storm
 circle: 3
 range: "touch"
-area: ""
+area: "1 creature / 2 levels"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4418,20 +4035,17 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Water walk (storm 3 prayer)
-
-range: touch (1 creature / 2 levels)
 casting time: 5 (VSM)
 duration: 1 turn / level
   This prayer empowers the targets to tread upon any liquid as if it were firm ground; this includes mud, quicksand, oil, running water, snow, and of course lava. The targets' feet do not touch the surface of the liquid, but oval depressions of their appropriate foot size are left in mud or snow. Their rates of movement remain normal.
   If a target is in the water, this prayer grants him a +10 to his swimming-check. If a lying or swimming character under the influence of this prayer wants to stand up on the surface, he must succeed at a tumbling-check.
 
 ---
-name: ""
+name: "Waterbreath"
 sphere: storm
 circle: 3
 range: "touch"
-area: ""
+area: "at least 1 creature"
 casting_time: ""
 components: "VSM"
 duration: 
@@ -4439,15 +4053,12 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Waterbreath (storm 3 prayer)
-
-range: touch (at least 1 creature)
 casting time: 5 (VS)
 duration: 1 hour / level
   This prayer allows the targets to breathe underwater. The caster can divide the base duration between multiple characters. Thus, an 8th-level caster can confer this ability to two characters for four hours, four for two hours, eight for one hour, etc.
 
 ---
-name: ""
+name: "Watery fist"
 sphere: storm
 circle: 2
 range: ""
@@ -4459,8 +4070,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Watery fist (storm 2 prayer)
-
 range: medium (5 meter radius)
 casting time: 4 (VSM)
 duration: 1 round / level
@@ -4470,7 +4079,7 @@ duration: 1 round / level
   The watery fist is immediately released when the caster stops concentrating on it. The water then resumes its normal state.
 
 ---
-name: ""
+name: "Weather stasis"
 sphere: storm
 circle: 4
 range: ""
@@ -4482,8 +4091,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Weather stasis (storm 4 prayer)
-
 range: caster (100 meter radius)
 casting time: 1 turn (VSM)
 duration: 1 hour / level
@@ -4492,7 +4099,7 @@ duration: 1 hour / level
   Night and day pass normally in the protected area, although temperature variations associated with night and day do not occur.
 
 ---
-name: ""
+name: "Weighty chest"
 sphere: tribe
 circle: 2
 range: "touch"
@@ -4504,8 +4111,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Weighty chest (tribe 2 prayer)
-
 range: touch (1 object)
 casting time: 4 (VSM)
 duration: 1 day / level
@@ -4514,27 +4119,22 @@ duration: 1 day / level
   An affected weapon can be wielded, but it has a -20 penalty to hit. Also, the wielder is helpless between attacks; he has a -10 to AC and is always vulnerable to flanking attacks. If he is actually attacked by more enemies, he can be backstabbed.
 
 ---
-name: ""
+name: "Willowbark"
 sphere: all/ healing
 circle: 2/ 1
 range: "touch"
-area: ""
-casting_time: ""
-components: "VSM"
-duration: 
+area: "1 creature"
+casting_time: "4"
+components: "VS"
+duration: instantaneous
 mechanics: !!null
 ability_cost: !!null
 description: |
-  </p>
-Willowbark (all 2 / healing 1 prayer)
-
-range: touch (1 creature)
-casting time: 4 (VS)
-duration: instantaneous
-  This prayer heals 1d8 points of damage, or brings the target to 1 hit point, whichever is better. It cannot affect creatures without physical bodies.
+(all 2 / healing 1 prayer)
+  <p>This prayer heals 1d8 points of damage, or brings the target to 1 hit point, whichever is better. It cannot affect creatures without physical bodies.</p>
 
 ---
-name: ""
+name: "Wind walk"
 sphere: storm
 circle: 6
 range: "touch"
@@ -4546,8 +4146,6 @@ mechanics: willing
 ability_cost: !!null
 description: |
   </p>
-Wind walk (storm 6 prayer)
-
 range: touch (caster + 8 persons)
 casting time: 1 round (VSM)
 duration: 1 hour / level
@@ -4556,7 +4154,7 @@ duration: 1 hour / level
   The caster can switch between physical and vaporous form as desired. Each change requires 2 full rounds, and can affect the caster and any targets of the prayer he touches.
 
 ---
-name: ""
+name: "Withdraw"
 sphere: dark
 circle: 2
 range: ""
@@ -4568,8 +4166,6 @@ mechanics: !!null
 ability_cost: !!null
 description: |
   </p>
-Withdraw (dark 2 prayer)
-
 range: caster (caster)
 casting time: 4 (VS)
 duration: special
@@ -4577,7 +4173,7 @@ duration: special
   The prayer takes effect in the round following the casting. The caster rolls normal initiative, adding nothing, takes his action at initiative, and after that he gets another round every 3 segments. The DM is encouraged to treat the rounds as normal, asking for intentions and handling the actions three segments later.
 
 ---
-name: ""
+name: "Wyvern watch"
 sphere: dark
 circle: 2
 range: ""
@@ -4589,8 +4185,6 @@ mechanics:
 ability_cost: !!null
 description: |
   </p>
-Wyvern watch (dark 2 prayer)
-
 range: medium (3 meter radius)
 casting time: 4 (VSF)
 duration: 8 hours or until discharged
