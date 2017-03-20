@@ -1,34 +1,1502 @@
 ---
 name: Alcance
 group: magic
-skill_check: []
+skill_check: !!null
+power_check: !!null
 specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
-    <p>This skill allows the character to change the
-    range of his wizard spells and warlock powers
-    from short to medium, or from medium to
-    long. It cannot upgrade range from short to
-    long.</p>
-    <p>Wizards use up one circle of their reserve to
-    do this. Therefore, they cannot do this to a
-    spell of their highest circle.</p>
-    <p>When warlocks use alcance, they face a -4
-    penalty to the power-check.</p>
+  <p>This skill allows the character to change the range of his wizard spells and warlock powers from short to medium, or from medium to long. It cannot upgrade range from short to long.</p>
+  <p>Wizards use up one circle of their reserve to do this. Therefore, they cannot do this to a spell of their highest circle.</p>
+  <p>When warlocks use alcance, they face a -4 penalty to the power-check.</p>
 ---
 name: Alertness
 group: all
 skill_check: [perception]
+power_check: !!null
 specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
-    <p>This skill teaches the character to be alert 
-    for the unexpected. It helps him to notice thieves, 
-    or to react swiftly when standing guard.</p>
-    <p>Altertness is the opposing skill for stealth,
-    sleight of hand and quickdraw. It also often 
-    determines surprise.</p>
+  <p>This skill teaches the character to be alert for the unexpected. It helps him to notice thieves, or to react swiftly when standing guard. Altertness is the opposing skill for stealth, sleight of hand and quickdraw. It also often determines surprise.</p>
 ---
+name: Ambidexterity
+group: specialist
+skill_check: !!null
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  <p>This skill negates the -2 to hit penalty for attacks made with the off-hand. Also, ambidextrous characters can designate either hand as their main hand. They can use a medium weapon in their off-hand.</p>
+---
+name: Animal handling
+group: all
+skill_check: [wisdom - 1]
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+  </p>This skill reflects the character's rapport with animals. He can herd domestic animals and lead pack animals or work animals.</p>
+  </p>This skill is also used to train animals to do tricks. It must be specified to apply to one of three groups of animals: pets (dogs or cats), birds (falcons or pigeons) or mounts (including cattle).</p>
+  </p>An animal is automatically taught one trick, depending on its type, and one other chosen by the trainer. Pets automatically learn to guard, birds learn to come to the lure, and mounts learn to carry a rider.</p>
+  </p>It takes approximately 1 week for the animal to learn its automatic trick, and 1 month to learn its second trick. Both tricks require a skill-check. If the skill-check is failed, the training must begin anew, with a cumulative -4 modifier. Tricks are as follows.</p>
+  <p>attack: the animal attacks the same target as its master does. Treat this as an extra attack.</p>
+  <p>battle-mount: the rider doesn't have to roll a riding-check if the mount takes damage.</p>
+  <p>carry a rider: the animal allows an appropriately-sized rider on its back.</p>
+  <p>come to the lure: the animal comes to its master when food is offered.</p>
+  <p>expert mount: the animal has a +3 handling if used as a mount.</p>
+  <p>go home: the animal will go to a location specified during training.</p>
+  <p>guard: the animal gains the alertness skill and watches for approaching strangers.</p>
+  <p>hunt: the animal flushes or attacks prey, granting the master a +4 to craft (hunter) for a predator pet or bird, +1 otherwise.</p>
+  <p>sheep dog: the animal grants its master a +2 to animal handling (+4 for a dog or pig).</p>
+  <p>track: the animal grants its master a +4 to tracking, provided it has appropriate senses.</p>
+  <p>wagon-trained: the animal can pull a cart, chariot, plough or sled, and be part of a team.</p>
+---
+name: Appraising
+group: specialist
+skill_check: [intelligence + [perception]]
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  <p>This skill teaches the character to know the value of objects. He can estimate the value on the open market, and determine the best market to sell it. This skill is concerned only with monetary value, not with artistic, religious or legal matters. It requires the character to study the object. It is also one of the opposing skills for forgery.</p>
+---
+name: Artistic ability
+group: all
+skill_check: [wisdom]
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  <p>This skill allows the character to create drawings and paintings of professional quality. Other forms of art require a synergy with other skills. Sculpture requires this skill and craft (stonemason), woodwork needs craft (carpenter) and creating flags and banners requires heraldry. This list is not complete, let the DM decide.</p>
+  <p>Skill in the arts does not guarantee success. Even the best painting in the wrong style receives nothing but approving nods. This is why artists often travel.</p>
+  <p>Payment for art is erratic. Also, payment is often not in money. The DM decides.</p>
+---
+name: Astrology
+group: magic-user
+skill_check: [intelligence]
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  <p>This skill teaches the character to read the patterns in the stars, and learn from them. He can 'draw a chart' about a person and learn several facts about him. On a successful check, the character learns the target's highest ability, starting class, and several tidbits that help form a general view about the target. This check has a -8 penalty if the character doesn't know the target's name, and a -8 penalty if he doesn't know the target's date of birth.</p>
+  <p>Alternatively, this skill can be used to foretell the future. However, as often as not predicting what will come attracts the anger of gods and demons. Trying this without the DM's approval is suicidal. At best.</p>
+---
+name: Backstab
+group: specialist
+skill_check: !!null
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  <p>This skill allows the character to do 1d6 extra damage when backstabbing. Furthermore, specialists can invest SP to do even more damage. For every 5 SP they invest, another 1d6 extra damage is gained. A backstab can be achieved through the use of the stealth-skill, the tumbling-skill, or the quickdraw-skill.</p>
+  <p>A backstab still requires a to hit roll, but the attack has a +4 bonus.</p>
+  <p>The backstab-skill is also useful in regular combat. When a character with this skill attacks an enemy that is also being attacked by another character, a so-called flanking attack, he gains a +1 to hit and does 1 extra point of damage, plus 1 point for every 5 SP invested.</p>
+  <p>A character with this skill and a ranged weapon can gain a flanking attack through the use of the stealth skill.</p>
+---
+name: Banishment
+group: magic-user
+skill_check: !!null
+power_check: priest + [charisma]
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
 
+power-check
+
+  This skill allows the character to keep a single spirit or undead at bay. This is resolved by a power-check, using the character's priest level and his [cha]. The power-check determines the DC of the undead's saving throw vs will. The speed of this action is 3.
+  Banishment works against a single target in short range. The character must concentrate on the attempt, so he can take no other actions. If the target fails the save, he cannot attack the priest and may even flee (depending on the DM). Once the target has failed his save, the character can maintain the effect as long as he concentrates, as if it was a spell or prayer with "duration: concentration".
+  Banishment requires a holy symbol.
+  This skill may also work on demons, halflings and other unnatural creatures. Check with your DM.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Blind-fighting
+-
+
+  This skill allows the character to negate penalties caused by being unable to sense his opponent. The penalty to attacks, ability-checks, skill-checks, saving throws and AC are 2 less than for other characters. If the character has other effects that negate these penalties, then all effects apply, potentially reducing the penalty to 0.
+  As an added benefit, this skill grants a +1 bonus to saves vs reflex. This bonus increases by 1 for every 4 skill points invested.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Boating
+wis + [int]
+
+  This skill allows the character to maneuver ships and boats with superior skill. He can handle all types of water vehicle, but he faces a -6 penalty to the check the first day he handles an unfamiliar ship.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Chakra ritual
+per - 3
+
+  This skill allows a character to harmonise himself with a another person's chakra, and attempt to balance it by placing the client into contact with mystical crystals. This takes one hour, after which the client gains a +1 bonus to saving throws. This bonus lasts until a sunrise and a sunset have passed.
+  This skill requires the use of a set of various crystals, with a combined worth of 1 mensis. These crystals must be washed and recharged in sunlight after every use. This takes 1 hour. 
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Charging
+-
+
+  This skill allows the character to do more damage from a charge. Instead of inflicting 1 extra point of damage, he does double weapon damage. Other bonuses, such as from strength, weapon specialisation or the magic on the weapon, are not doubled; only the weapon damage is rolled twice. Furthermore, every 3 SP invested in the skill grant another +1 to damage when charging.
+  A charge requires a space of 10 meters, but characters with skill focus (charging) require only 5 meters.
+  A character with the riding skill can use the charging skill on horseback, inflicting triple weapon damage. A mounted charge requires at least 20 meters of space. If the stirrup is invented, then the rider can use a large spear to inflict 1d6 extra damage from the momentum of the horse in addition to the normal charging bonus, always attacking before his target can attack in melee, unless his target also uses a large weapon.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Charioteering
+wis + [str]
+
+  This skill allows the character to drive a cart, wagon, chariot or sled with superior skill. He can drive all types of animal-driven vehicle, but he faces a -6 penalty to the check the first day he drives an unfamiliar vehicle.
+  A charioteering-check allows the character to retain control of the vehicle if the animals take damage. Also, the AC of the vehicle becomes equal to his current skill-check.
+  On a successful skill-check, the character can perform special maneuvers. For instance, he can jump obstacles or attack using his vehicle as a weapon. The DM may assign a modifier for the more insane maneuvers.
+  Trampling an enemy is done by riding over him, rolling a charioteering-check. Anyone in the path must roll a save vs reflex with a DC of 10, plus 2 for every horse 'wide'. Failure of this save inflicts 2d8 blunt damage.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Climbing
+str
+
+  This skill is used for climbing. First, the difficulty of the task is calculated, and then a skill-check is rolled. For the difficulty, the applicable modifiers are added:
+ - a -1 for every meter beyond the character's height. 
+ - a modifier for the difficulty of the surface.
+  If the check is failed, the character fails to climb up. This may have dire consequences, such as falling. Since these things are highly situational, they are left to the DM's judgment.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Cooking
+int - 3
+
+  This skill lets the character create meals of superior quality. On a successful skill-check, he can create an evening meal that grants up to 6 people a +1 constitution bonus the next day.
+  A meal that gives such benefits requires ingredients worth at least 1 dies per person, or double the normal amount. Inadequate ingredients translate into at least a -10 penalty to the check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft
+
+  This group of skills is used for crafting items, and for gaining a steady income. The character must choose a specific craft.
+  A craft can provide the character with an income. This is described in the chapter on equipment, on page 58.
+  Crafting an item requires tools, and, if the DM so rules, a workshop. Repairing items, or improvising them, can be done 'in the field'.
+  When crafting an item, there is a chance the quality turns out better or worse. If the skill-check fails, the product turns out improvised. If the check is made with 20 or more, it is masterwork. If it is made with 30 or more, it becomes magical, equivalent to a +1 enchantment. The DM decides specifics.
+  If the craftsman sets out to make a superior item, he faces a mere -12 penalty for masterwork, and a -20 for magical quality, but failure of the check automatically ruins the product. Not even a natural 1 can guarantee the production of a superior item.
+  Unless noted, or the DM rules otherwise, the time needed to make an item is one day for every 3 dies it is worth. The other two thirds of the item cost consists of materials. If the character sets out to make a masterwork item, the crafting time is one day per dies. The material costs remain the same.
+  There are many crafts not listed here. If the character wishes to become something else, such as an alabasterer, arkwright, beekeeper, besom, bonecarver, brazier, bricker, canvasser, cartwright, chandler, cobbler, cooper, cutler, cheesemaker, delver, dyer, fewtrer, gilder, girdler, grinder, hitler, ivorist, luthier, nedeller, perukier, pointer, potter, rectifier, roper, salter, shingler, thatcher, tiler, vintner, weaver or wheelwright, then the DM should be able to provide the necessary skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (armourer)
+con + [int]
+
+  This skill allows the character to create shields and light and heavy armour, as listed on page 53.
+  If the character produces a masterwork item accidentally, the [dex]-limit and the damage reduction are increased by 1. If he wishes for a different effect, he must always set out to make the item masterwork in advance.
+  An armourer knows how to maintain and use armour better than others. He receives a +1 bonus to AC when wearing heavy armour that he maintains himself.
+  Craft (blacksmith) is a prerequisite for this skill. An armourer requires a workshop which includes a smithy.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (blacksmith)
+con + [str]
+
+  This skill allows the character to work metal, creating tools, common items and even improvised weapons and armour. Arrowheads and points for crossbow bolts are also possible. A blacksmith requires a smithy.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (bowyer)
+con + [dex]
+
+  This skill allows the character to make bows and crossbows, bolts and quarrels. Crafting times for these are standard, but a bowyer can make only 1d6 arrows a day. Metal points for arrows and bolts require the work of a smith.
+  Bows and crossbows have several characteristics. They inflict a set amount of piercing damage, and their attacks have a set weapon speed and range.
+  If a craftsman produces a masterwork item accidentally, its speed is reduced by 1 and its damage is increased by 1. If the craftsman wishes for a different effect, he must set out to make the weapon masterwork in advance.
+  A bowyer knows how to maintain and use bows and crossbows better than others. He receives a +1 bonus to damage when using bows or crossbows that he maintains himself.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (brewer)
+con + [int]
+
+  This skill allows the character to manufacture alcoholic beverages. This usually requires an installation of some sort, and can take quite some time. The character has some knowledge of the right ingredients and processes.
+  A brewer can also make potions that hold magical spells or prayers. Potions can only hold magic with a range of "caster (caster)", "touch (1 person)" or "touch (1 creature)".
+  He needs access to the magic and 2 mensis of supplies to create the potion. The brewing takes only one day, but the potion needs to rest for a week before it's ready. Then, the character rolls a skill-check with a -2 penalty per spell or prayer circle of the effect.
+  If a wizard spell is given additional effects, treat it as if the extra effects increase its circle. The supplies are consumed by the attempt.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (carpenter)
+con + [str]
+
+  This skill allows the character to work wood. He can make furniture, household items and even houses themselves. He can also create stone age spears and staves.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (farmer)
+con + [wis]
+
+  This skill allows the character to run a farm. If the farm grows a crop that the farmer is not used to, he faces a -4 penalty to the skill-check until the first harvest.
+  Farms barely make any money, but they feed the farmer's family. The proceeds of selling their produce is offset by the purchases of seeds and tools, regular upkeep and taxes.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (fisherman)
+con + [wis]
+
+  This skill allows the character to make a living catching fish or other seafood. This can be done with a fishing rod, with nets or by harvesting tidal plains. Nets bring in the highest gain, but they require a substantial industry to support them. Boats, likewise, increase the catch, but require more people for support.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (herbalist)
+con + [int]
+
+  This skill represents the character's knowledge of plants and herbs. It allows him to manufacture semi-magical herbal philters and poisons.
+  To create philters or poisons, the herbalist first chooses which ability to affect. Then, he spends half a day finding the correct herbs, and half a day brewing.
+ The character creates one philter, or one dose of poison, and an extra product of the same type for every 5 points with which the skill-check is made.
+  Skill-checks for this skill have a +1 bonus on the night of a full moon. Because of their ability to create poison, herbalists are often regarded with suspicion by the authorities.
+  The effects of philters and poisons are covered in the equipment chapter.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (hunter)
+con + [wis]
+
+  This skill allows the character to catch game. He can either set traps or hunt. He knows how to find animals, and the rudiments of leatherworking and tracking.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (jeweler)
+con + [per]
+
+  This skill allows the character to cut rough gems and incorporate them into jewelry. This is a job of the utmost precision, where the tiniest mistake can cost a great deal of money.
+  Cutting gems technically does not require more than a small tool set, but a quiet place to work greatly decreases the margin for error.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (leatherworker)
+con + [int]
+
+  This skill allows the character to turn animal skins into leather items such as boots, clothes, vellum and light armour.
+  If the character produces a masterwork light armour accidentally, the [dex]-limit and the damage reduction are increased by 1. If he wishes for a different effect, he must always set out to make the item masterwork in advance. Masterwork clothing and boots are more comfortable and durable, granting a +1 bonus to the wearer's skill-checks for endurance. The effects of other items are adjudicated by the DM.
+  A character with this skill knows how to maintain and use leather better than others. He receives a +1 bonus to AC when wearing light armour that he maintains himself.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (miner)
+con + [wis]
+
+  This skill allows the character to mine precious ores and gems. This includes not only the actual digging, but also prospecting a site, maintaining an actual mine, and smelting ore.
+  On a successful skill-check, the character can prospect an area for ores. This process takes many days, depending on a variety of circumstances. However, even a successful check doesn't guarantee anything to mine. And where the availability of ores can be predicted, gems are impossible to find this way.
+  The character can also safely build tunnels. A skill-check can tell him if tunnels are safe. This skill may also, at the DM's discretion, grant a +1 bonus to observation-checks to search for traps in tunnels.
+  Smelting ore into metal depends on the technology level of the setting. As a general rule, cutting edge metal (bronze in the bronze age, iron in the iron age) takes a long time to make, about 10 days per metal bar, or clump. Older metal can be produced faster, at a rate of around 1 day per bar.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (spellmonger)
+con + [wis]
+
+  This skill allows the character to select and cleanse ordinary materials to serve as material components for prayers and spells. These components are described in chapter 1, on page 63. Spellmongers sort through the finest examples of these substances to find the ones suitable for spellcasting.
+  The components for magic of the first and second circles can be easily selected by the casters themselves. Higher magic circles require the components cleansed by this skill.
+  Components fall into two groups. Materials from the spheres dark, harvest, healing, hunt, storm, thought and war can be created by mostly gathering and selecting, whereas components from the spheres all, arcane, chaos, law, light and tribe require actual crafting.
+  The corpses of dangerous creatures can yield some materials, but these still need to be cleaned before they can be used. A typical creature might yield 1d6 dies worth of hides, teeth and bones, a load which could require most of a week to properly prepare.
+  A character without the ability to use prayers or spells faces a -4 penalty to the skill-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (stonemason)
+con + [str]
+
+  This skill allows the character to work stone, from building walls to creating sculpture. Be aware that this skill covers merely the technique, not the artistic expression.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (tailor)
+con + [dex]
+
+  This skill allows the character to work cloth, needle and thread in order to create and mend clothes. This includes weaving and dyework.
+  If the character produces a masterwork item accidentally, it grants a +1 bonus to the wearer's skill-checks for etiquette. If he wishes for a different effect, he must always set out to make the item masterwork in advance. Examples of this are found in the clothing section on page 52.
+  A character with this skill knows how to maintain clothes better than others. When wearing masterwork clothes, the bonus he gains from his clothing increases by 1.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Craft (weaponsmith)
+con + [int]
+
+  This skill allows the character to create weapons, as listed in the equipment lists. They can create all types of melee weapons.
+  Weapons have several characteristics. They inflict a set amount of damage of a set type, and their attacks have a set weapon speed.
+  If a craftsman produces a masterwork item accidentally, the damage is increased by 1, and the weapon speed is reduced by 1. If the craftsman wishes for a different effect, he must always set out to make the weapon masterwork in advance.
+  Metal is traded in standard bars, known as clumps. One of these clumps is enough to make a small-sized sword, sabre or axe. A medium weapon requires two clumps, and a large weapon three clumps. The amount of metal needed for other weapon types is half the amount required for a sword, sabre or axe of the same size.
+  A weaponsmith knows how to maintain and use melee weapons better than others. He receives a +1 bonus to damage when using such weapons that he maintains himself.
+  Craft (blacksmith) is a prerequisite for this skill. A weaponsmith requires a smithy.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Dharana
+-
+
+  This skill allows the character to increase his focus in power-checks. He can gain a bonus of up to half his relevant class level, by sacrificing the same amount of points from the power-check's relevant ability. He must declare the bonus before rolling the power-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Direction sense
+wis - 1
+
+  This skill allows the character to find his way. He can find north, and keep his bearing in different terrain types.
+  A character searching a destination can attempt a skill-check. He faces a -2 penalty for every day's march the destination is from the last location he is familiar with (usually the last town). If the instruction to the destination is unclear, the check may have more penalties.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Disguise
+cha - 1
+
+  This skill allows the character to disguise himself as another person and blend into a new role. This is always an opposed skill-check, the opposing skill is observation.
+  While most deceptions are simple, more elaborate disguises face penalties. The DM may rule that some of them are not possible without magical support.
+-disguise as another human race-2
+-disguise as a non-human race-8
+-assume a larger size-8 or more
+-assume a smaller size-12 or more
+-disguise as the other sex-4
+-disguise as a specific person-8
+-insufficient materials or clothes-1 to -4
+-disguise wounds-half damage
+-fake a skill-6
+  These penalties are cumulative.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Double weapon style
+-
+
+  This skill decreases all attack penalties for fighting with two weapons by 2. Instead of -2 and -4 to hit, the character suffers no penalty for attacks with his primary weapon, and only a -2 penalty with his off-hand.
+  A character attacking in this way rolls initiative normally for his main attack. Then, he adds the weapon speed for his off-hand attack to find the time his second attack takes place.
+  A character who uses his off-hand to attack with his shield doesn't receive the shield's AC-bonus during that round.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Endurance
+con
+
+  This skill represents the toughness of the character. He doesn't have to roll the first check to see if he gets tired, and can stay awake for a night without rolling a skill-check. Rolls that determine whether the character stays awake, or can continue exerting himself, are endurance-checks.
+  As an added benefit, this skill grants a +1 bonus to saving throws vs fortitude. This bonus is increased by 1 for every 4 skill points invested in the skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Engineering
+con + [int]
+
+  This skill allows the character to draw up plans for complicated projects such as building ships, fortresses, siege weaponry or city walls. The actual creation of such projects requires other crafting skills, but they need an engineer to oversee them.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Etiquette
+cha
+
+  This skill represents the character's ability to act appropriately in polite company. The skill-check has a penalty of up to -6 if the character is unaware of local customs, an extra -6 if the character doesn't speak the language, and a -4 if the character's appearance is too poor. These penalties are cumulative.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Exorcism
+power-check
+
+  This skill allows the character to remove curses from creatures or items. This is resolved by a power-check, using the exorcist's priest level and his wisdom. The DC for the curse is the same as the original spell save. If an attempt to remove a curse fails, the DC to remove the curse is increased by 2.
+  An attempt to remove a curse costs at the very least 1 dies of supplies, and 1 hour, and it may cost substantially more, depending on the DM.
+  A curse can only be treated if it is known to the exorcist. Only one curse, chosen by the exorcist, is treated at a time.
+  Having a curse removed is often a traumatic moment. The DM may devise more specific rules for the situation. It must be noted that different exorcists exercise this skill in wildly varying ways. This may seem ridiculous, but the evidence suggests that targets who make fun of the exorcist automatically ruin the attempt.
+  If in doubt, curses can be defined as magic affecting a person with a permanent duration.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Fast-talking
+cha
+
+  This skill is a special case. It represents the character's ability to talk his way out of an embarrassing, or even dangerous, situation. It is always an opposed skill-check, but there is no opposing skill (the target is assumed to have it, but to have spent no skill points in it).
+  A successful skill-check allows the character to confuse the target for one round. Additional targets make this a group check.
+  The DM is encouraged to roleplay the encounter, but some characters are more charismatic than their players, or sometimes there just isn't time in the storyline. If that is the case, then a fast-talking-check is in order.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Fire building
+wis + 2
+
+  This skill allows the character to start a fire. For this he requires materials to burn and a way to generate heat or a spark.
+  A character without a tinderbox or flint and steel faces a -4 penalty to the skill-check, and the circumstances (availability of fuel and humidity) can apply a modifier from -4 to +4. For a character carrying a smouldering ember, lighting a fire is automatic (given fuel), but keeping the ember alight during the day also requires a skill-check.
+  The DM is free to rule that the situation makes fire impossible. The east pole springs to mind.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Forgery
+dex - 1
+
+  This skill allows the character to copy documents and works of art. If he has no original to work from, he faces a -8 penalty. If he hasn't even seen an original, the penalty is increased to -20. The character needs proper tools of the appropriate craft or face another -4 penalty at the very least.
+  Forging a document takes half a day, just as copying a seal. Paintings and other works of art can take considerably longer. Forging a document while unable to read doubles the time required, but grants a +1 to the check.
+  Forgery is opposed by appraising (for artwork) or by observation (for documents).
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Gaming
+cha
+
+  This skill represents the character's ability in games of skill, not chance, commonly know as gambling. In these games, the character can hold his own.
+  Most forms of gambling are in favour of the bank or house. A successful skill-check allows the character to negate this house advantage. In games between gamblers, without a bank, gaming is opposed by gaming.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Healing
+wis
+
+  This skill allows the character to help the wounded, the poisoned and the sick. It also grants knowledge of plants that aid in healing.
+  A successful skill-check stabilizes a dying creature (one in negative hit points). This is an action with a speed of 3.
+  If a healer tends to a wounded creature, he doubles its natural rate of healing on a successful skill-check, making it 4 hp and 2 ability points per night of rest, and 2 hp per day. This requires a group check, but the first patient is ignored when calculating the penalty. When taking care of patients during the night, the healer doesn't rest enough to regain magic, hit points or ability points himself.
+  A healer can also attempt to treat a poisoned creature. This takes one turn, after which a successful healing-check allows the target a new saving throw to resist the poison. Every extra turn spent to refine the treatment confers no bonuses to the healing-check, but grants a +1 to the target's saving throw. Once a save is rolled, the bonus resets to 0.
+  Diseases can also be treated, but this is a slower process. The healer spends a day or a night tending his patient, after which he rolls a power-check using his priest level and his [wis]. The DC is 5 plus the total number of ability points that the patient is below his normal scores. If the check is a success, then the patient is cured, but he retains any ability damage. If the check fails, the patient suffers 1d3 points of constitution-damage. The DM may rule that specific diseases have their own effects, and set their own DCs.
+  On a successful healing-check taking one round, the character can see how many hit points of damage the target has sustained. He does not know the target's maximum health.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Heraldry
+int
+
+  This skill represents the character's knowledge of the flags, shields and symbols of heroes, cities and noble families (among others). Not only can he (on a successful skill-check) identify many flags, he can also explain the meaning and allegiances behind symbols on them.
+  The character also has knowledge of common laws. The first time he is in an area he suffers a -6 penalty, but he picks up the customs in a few days.
+  Knowledge of the law makes the character qualified, though not necessarily permitted, to represent a side in a court of law.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+History
+int - 2
+
+  This skill reflects the character's knowledge about a certain period of history. Most of this is based on stories and rumours, but a character who knows how to read gains a +2 bonus to the skill-check.
+  There are many periods of history in the world, among which:
+- the ancient empire of Esyll
+- the empire of the three kings
+- the legacy of the black prophet
+- the realms of the last legion
+- the story of the city Omelas
+- the settlement of Valeria
+- the Zallian war against the black prophet
+- the troll wars
+- the trading history of the Shahr
+  The DM may require that the specific subject of the character's skill must be at least rumoured of in the area where he lives.
+  Knowing about history has no practical use. Whatsoever. At all.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Hypnosis
+cha - 2
+
+  This skill allows the character to hypnotise people. Only willing people can be affected. The act of hypnotizing takes about 5 minutes.
+  Hypnosis can have several effects:
+- the target can be induced to remember things by reliving an event. This can grant an intelligence-check to remember details that were forgotten.
+- the target can be made calm and unafraid in the face of a specific situation that he has been prepared for. This grants a +1 bonus to saves vs will for that event.
+- the target can be granted a +2 bonus to disguise by thoroughly adopting someone's personality.
+  Hypnosis cannot be used to increase a character's attributes, give him powers or abilities he does not naturally possess, let him do things that are beyond his capabilities, or give him information that he couldn't possibly know.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Info gathering
+int + [cha]
+
+  This skill allows the character to gather more rumours and other information than characters without this skill can. Furthermore, on a successful check he can do this without making it obvious to the people around him.
+  It is assumed that the character is buying people drinks and such. Also, gathering rumours takes time. Gathering rumours costs at least 1 dies, and 2 hours.
+  The character can also create rumours. This is possible with a successful skill-check, with the same costs in money and time.
+  This skill works best if noone takes notice of the character. The character suffers a -4 penalty to the check in towns where most people know each other (arbitrary limit: 500 people or less).
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Intimidation
+cha + [str]
+
+  This skill inspires fear, or at least a healthy respect, in the character's enemies. It has uses in both social situations and combat.
+  In combat, the character can taunt, an action with a speed of 2. It requires a power-check with the character's fighter level and his charisma. He can target either a single target, or all enemies in short range.
+ Any targets that fail a saving throw vs will, must focus their action for the next round on the intimidating character. Normally, they will attack or run away. If there is only a single target, then the character may attack this target at the end of the round in which he taunts (if the target is in melee range).
+  Outside of combat, a successful intimidation-check convinces the target that the character is a serious threat. This may cause him to run away, or tell him what he wants to hear, or face him down; it's hard to predict.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Itemcraft
+int - 7
+
+  This skill allows the character to create magical items. To do so, he needs an item to enchant, and access to the magic he wants to imbue into the item.
+  The item to enchant can be anything, but using a masterwork item grants a +4 bonus to the skill-check.
+  Access to the magic is easiest if the character is a magic-user himself, but a vellum, or even another item, can function as well. If such is the case, the character faces a -4 to the skill-check.
+  It takes a day, the item, the magic and 1 annum of supplies to enchant the item. Then the character rolls a skill-check. The supplies are consumed by the attempt.
+  Magic that gives a passive modifier is the easiest. The item gains a +1 modifier, and a +1 for every 5 points with which the check is made. This works for spells such as imbuement or cloak, for prayers such as battlefate or endure elements, and for warlock powers such as iron will.
+  If the duration of the magic is instantaneous, only one charge per session is imbued into the item. The caster level of the effect is the minimum needed to use the magic.
+  The creation of more complicated items must be adjudicated by the DM.
+  The DM can inflict a penalty to the skill-check if the item is incompatible with the effect. Crowns do not generally help stealth, and swords do not boost etiquette.
+  Learning this skill requires the spellcraft skill. It requires its own crafting tools.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Language
+int
+
+  This skill allows the character to speak an additional language. He still has a noticeable accent, unless he learns skill focus in the language.
+  There are many languages in the world, some of which are: Nervian, Zallian, Narydian, Valerian and Samarian.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Large weapon style
+-
+
+  This skill improves the character's combat skill when fighting with a large weapon. Every round, he gets a free parry attempt vs a melee attack. This parry has a -4 penalty to hit.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Lockpicking
+per - 4
+
+  This skill allows a character to open locks, and defuse traps. It is not used to detect traps, that is done with observation. Lockpicking is also useful for getting out of shackles, stocks and manacles.
+  Many traps and locks inflict a penalty on the character trying to get past them. If a trap or lock is magical, but the description doesn't list a penalty to the skill-check, then the penalty is twice the prayer circle or twice the highest spell circle the caster has achieved. A character without the spellcraft-skill faces another -4 penalty when disabling a magical effect.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Meditation
+wis - 2
+
+  This skill allows the character to increase one ability at the expense of all others. He meditates for 6 hours and then rolls a skill-check. If the check is successful, he can increase one ability by 3, while all the others decrease by 1. These effects last for 12 hours.
+  A meditating character faces a -4 penalty to all ability- and skill-checks and attack rolls, but not saving throws.
+  As an added benefit, this skill grants a +1 bonus to saving throws vs will. This bonus is increased by 1 for every 4 skill points invested in the skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Navigation
+int - 2
+
+  This skill allows the character to direct a ship to the right place. Using the sun, the moon and the stars, the winds and the currents as guides, a successful check allows him to steer a course towards a location he knows.
+  Knowledge of foreign coasts is often written down in ships' logs and journals, but reading is not strictly necessary to have this skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Observation
+per
+
+  This skill reflects the character's powers of observation. A successful skill-check allows him to find traps or secret doors, see through disguises and even read lips.
+  Detecting traps often includes a penalty, especially if there's magic involved. Penetrating disguises is an opposed skill-check. Reading lips is a skill-check with a -12 penalty.
+  Observation also grants a +1 to the character's tracking-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Perform
+
+  This group of skills allows the character to make a living performing for an audience. A performance can range from a song in a village square to a play in a theater. The character must choose the form of art he is proficient in.
+  A performance can elevate those present. On a successful skill-check for a performance lasting at least one hour, all those present (including the performer) gain 1 point of intelligence. This bonus lasts until a sunrise and a sunset have passed. This requires an audience of at least 10.
+  Payment for performances varies widely. A performance in a village square may yield a few dies, where a performance in an inn may grant free drinks as well. Performances in groups and theaters yield a more steady income, but have more costs too, as well as people with whom to divide the profit.
+  Assume that a street artist makes 4d8 oros per day. Good artists may be invited to perform in an inn, where they can make up to 2d3 dies.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Perform (acrobatics)
+cha + [dex]
+
+  This skill is the art of performing as an acrobat. It is not tumbling, but it grants a +1 to the tumbling-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Perform (acting)
+cha -2
+
+  This skill is the art of performing as a storyteller, a comedian, or an actor in a play. It is not etiquette, but it grants a +1 to the etiquette-check.
+  This skill may also be useful to communicate basic meaning to people who speak a different language, if circumstances permit and the DM allows.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Perform (dance)
+cha + [dex]
+
+  This skill is the art of performing as a dancer. It grants a +1 to the ritual of fertility-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Perform (music)
+cha
+
+  This skill is the art of performing as a musician. It allows the character to play all musical instruments he knows of, and learn others with a little practice. It includes the art of singing.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Planar theory
+wis - 3
+
+  This skill represents knowledge of how physical and magical laws interact, and how varying such laws will affect magic. On a successful check, the character can predict how magic will work on another plane. It also lowers the power-check DC for scrying across planar barriers by 5. A successful skill-check lets the character identify the plane.
+  The material world is adjacent to two different planes. On the one side is the ursuppe, the place where all the matter and energy in the world originates. On the other side is the spirit world, the place where spirits reside. In the ursuppe are the planes of acid, cold, heat, lightning and sound. The spirit world holds the different realms of the spirits.
+  In general, the side of the ursuppe tends more towards instantaneous effects and raw energy. The spirit world tends more towards the long-lasting infusion of the magic's target. All realms, however, have their own specific laws.
+  Spellcraft is a prerequisite for this skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Quickdraw
+dex - 5
+
+  This skill allows the character to draw and sheathe weapons and switch them between hands very fast. These actions do not delay his initiative as they do for others.
+  Out of combat, quickdraw can be used to create an opportunity for a backstab, as per the backstab skill. To do this, the character rolls a skill-check at a speed of 1, opposed by alertness. A small weapon has no penalty to the skill-check, a medium weapon -4 and a large weapon a -8. If the check succeeds, then the character can attempt a backstab, delayed by his weapon speed. If the check fails, he can still attack normally, but he faces a -2 to hit.
+  Once combat has been joined, quickdraw is less useful. Instead of gaining a backstab, the character merely gains a flanking attack, as explained in the backstab skill. On a failed check, he can still attack normally.
+  A character without the backstab skill who uses quickdraw gains no bonuses to his attacks. A character without the ambidexterity skill faces an additional -2 penalty to flanking attacks created using this skill. Be aware that it is only small-sized weapons that can be used by humans in either hand.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Reading
+int + 1
+
+  This skill allows the character to read and write a language he can speak. People without this skill can only read numbers, and that only if the DM so decides.
+  The character can read one language. If several languages use the same script, then the DM can rule that the character can read those too (provided he can speak them).
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Religion
+wis
+
+  This skill represents the character's knowledge of religious ceremonies and symbols. He knows of the common cults worshipped in the area, and can identify priests and rites from less known cults on a successful skill-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Riding
+wis + [dex]
+
+  This skill allows the character to ride a mount with superior skill. He can ride all types of land-based mounts, but he faces a -6 penalty to the check the first day he rides an unfamiliar mount.
+  On a successful skill-check, the character can perform special maneuvers. For instance, he can jump obstacles, guide the mount without hands, or hang on its side, using the mount as cover, gaining a +4 bonus to AC. The DM may assign modifiers for more insane maneuvers.
+  A mounted character with this skill increases his +1 bonus to hit and to AC by 1, to a +2. He can also choose to make the AC of his mount equal to his current skill-check.
+  A character with both the charging and riding skills can charge on horseback.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Ritual of fertility
+cha + [wis]
+
+  This skill allows the character to engage in a 'fertility ritual' with a client. This can be done once a day, and takes two to three hours. After the ritual, the character and the client gain a +1 bonus to charisma, and the client also gains a +1 bonus to saving throws. This bonus lasts until a sunrise and a sunset have passed.
+  If the character is a priest using this skill on holy ground, the bonus to the client increases to a +1 to hit, a +1 to charisma and +2 to saving throws.
+  This skill can use a group check, but the first client is ignored when calculating the penalty. The components for the ritual cost 1 dies.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Rope use
+dex
+
+  This skill allows the character to tie and undo knots, maintain ropes and cables, and tie up people. It is also useful for escaping.
+  A bound character can attempt to free himself with a successful skill-check, opposed by the rope use of the creature that tied him up. This takes 1 turn. Every turn spent beforehand to loosen the knots grants a +1 to the skill-check. Once a check is rolled, the bonus resets to 0.
+  Getting out of shackles and other restraints is handled with lockpicking.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Scribe
+int - 4
+
+  This skill allows the character to infuse vellum with magical spells or prayers that have a duration of "instantaneous". To do this, he requires a blank vellum, made by a leatherworker, and ink made from the material component of the magic, vellum and ink coming to a total of 1 mensis, plus 1 semanis per circle of the magic. He must also have access to the spell or prayer.
+  The scribe then spends a day inscribing the magic and rolls a skill-check. Let it dry for a night and it's done.
+  The skill-check suffers a -1 penalty per circle of the magic. Also, longer casting times are hard to compress. The check suffers a -1 penalty for every full round that the magic takes to cast. A casting time of less than 1 round inflicts no penalty.
+  If a spell is given additional effects, treat it as if the extra effects increase its circle. A failed skill-check ruins the materials.
+  Reading is the prerequisite for this skill. It requires tools equal to those of crafting skills. Using vellums is covered in the equipment chapter.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Shield wall
+-
+
+  This skill grants a +1 AC to people on either side of the character, if he wields a shield. Skill focus increases the bonus to +2.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Single weapon style
+-
+
+  This skill grants the character a +1 bonus to AC when fighting with one 1-handed weapon while leaving the other hand free. Skill focus increases the bonus to +2. The bonus applies only to his AC vs melee attacks.
+
+---
+name: 
+group: 
+skill_check: []
+
+specification: known skill
+prerequisite: 
+
+penalties_from_armour: !!null
+description: |
+  </p>
+Skill focus
+
+  This skill is similar to investing 3 skill points in a specified skill that the character knows. It grants a +3 to the skill-check and/ or a +1 to the power-check. For a specialist, it counts towards the skill points in a skill he can have in total, but not towards the maximum of 3 skill points per level.
+  Obviously, the character must have learned the skill-to-be-focused first.
+
+---
+name: 
+group: 
+skill_check: []
+
+specification: known skill + skill focus
+prerequisite: !!null
+
+penalties_from_armour: !!null
+description: |
+  </p>
+Skill mastery
+
+  This skill is the upgrade of skill focus, which is its prerequisite. It grants a +3 to the skill-check or a +1 to the power-check. This skill cannot be taken at first level, it must be learned from a master.
+  Mastery grants extra perks for many skills.
+alertness: The character has no -6 penalty to the skill-check while sleeping.
+animal handling: Animals gain a third trick.
+appraising: The character has a 10% discount on purchases.
+astrology: On a successful nightly skill-check after an hour's study, the character gains a +1 to skill-checks and to hit for the next day.
+backstab: Backstab-damage is rolled in d8s.
+banishment: The character is well-known among demons.
+boating: The character gains a +2 bonus to intimidation-checks (+1 to power-checks).
+chakra ritual: The bonus increases by 1.
+charging: A charge inflicts triple instead of double damage.
+cooking: The bonus from a meal increases by 1.
+craft (any): A 20 no longer automatically fails.
+direction sense: The character knows it if he's lost.
+disguise: Power-checks to scry the character add +5 to the DC. And good luck finding a teacher.
+endurance: When bleeding to death, the character also stabilizes when rolling a 2.
+etiquette: The character is well-known as an honourable man.
+forgery: The opposing skill becomes forgery.
+history: The character can make skill-checks about all periods with a -6.
+observation: The penalties from traps and magic are halved.
+perform (any): Income is doubled. Costs are tripled.
+riding: The character can communicate with his mount and faces a -1 penalty to etiquette-checks.
+ritual of fertility: The bonuses increase by 1.
+sleight of hand: The character ignores all costs for meals, drinks and lodging.
+stealth: Stealth is no longer opposed by alertness, but by observation.
+swimming: The character has no penalties in underwater combat.
+tracking: The character can track on normal speed.
+weapon training: The character rolls his damage with the next bigger die (d6 becomes d8 becomes d10 becomes d12 becomes 2d8).
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Sleight of hand
+dex - 6
+
+  This skill involves pickpocketing. It can be used to supplement the character's income, or attempt specific actions.
+  On a successful check, the character can gain extra income by shortchanging people, etc.. It is assumed that the thief is not taking any large risks. This use of the skill takes at least 3 or 4 hours, with failure meaning that he has drawn the attention of the guard, and can 'earn' no more that day. On a natural 20, roll another check; if that second check fails, he is caught in the act.
+  The take depends on the thief's surroundings.
+ - 1d4 dies on a normal day in a village.
+ - 2d4 dies on a normal day in a town or city.
+ - 3d6 dies on a market day.
+ - 5d6 dies on a festival day in a city.
+  If the character tries to pick the pocket of a specific target, the skill-check is opposed by alertness.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Spellcraft
+int - 2
+
+  This skill grants the character familiarity with the different forms and rites of spellcasting. If he observes and overhears someone who is casting a spell or prayer, or if he examines the material components used, he can attempt to identify the magic. A skill-check must be rolled to make a correct identification. Note that since the spellcaster must be observed until the very instant of casting, the spellcraft skill does not grant an advantage against observed spells.
+  This skill can also research new prayers and spells. These must be approved by the DM, and the research takes time and money. A skill-check determines its success or failure.
+  The cost of the magic is the magic's circle squared. The character pays this price with time and money. The unit for time is the week, and the unit for money is 100 dies. Price = time x money. The minimum time is one week. The minimum money is 100 dies.
+  For instance, a 5th circle spell costs 25. If the wizard wants to research the spell in 3 weeks, he pays 834 dies. If he wants to minimize the money, he can spend 100 dies and 25 weeks instead. At the DM's discretion, the wizard can research spells without any money at all. In this case, the weeks change to years.
+  With all this, the wizard has earned a spellcraft-check to finish the spell. The check has a penalty equal to the spell's circle. If the check is passed, the spell is researched and the character has learned how to cast it.
+  If the check is failed, the wizard can gain another check by spending more time and money, equal to 10% for every point with which the check is failed. The minimum time is one week, the minimum money is 100 dies.
+  If this skill is used to research a prayer, the new prayer replaces an old prayer that the priest removes from his prayer list.
+  Repeated failures can bring interesting results. On a natural 20, the character is incompatible with the spell.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Stealth
+dex - 4
+
+  This skill allows the character to sneak past, or up to, a target. It is therefore always used against a target. This skill can set up a target for a backstab. Stealth is opposed by alertness.
+  If there are more targets, every additional target imparts a -2 penalty to the skill-check.
+  Surroundings are also a factor. Sneaking through darkness is easier, and getting through a castle gate is hard. Underbrush can grant up to a +4 bonus. In heavier underbrush it may be easier to remain unseen, but it's often harder to remain unheard, so more than a +4 is very rare.
+  Distance is also a modifier. For every 3 meters distance to his target, the character gains a +1 bonus to stealth.
+  Carrying a source of light makes stealth very difficult. For every -1 penalty to vision that is negated by the light, a -4 penalty is inflicted on the stealth-check.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Survival
+int
+
+  This skill teaches the character to survive in the wild, of a sort. It enables him to find water, shelter and a meagre amount of edible plants and other food. It does not include hunting, tracking or trapping, or anything that is covered in another skill, such as fire-building, but on a successful skill-check the character can stay alive in the wilderness.
+  A human needs at least 2 liters of water every day, but he can survive for weeks without food. A person without food loses 1 point of constitution per 3 days, but a person who has gone 2 days without water loses 1 point of constitution every 3 hours.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Swimming
+str
+
+  This skill allows the character to swim. This is a highly useful skill that many learn too late.
+  Most of the time, characters with swimming automatically succeed on their skill-check. Other characters must still roll. A skilled swimmer can help another, but this requires a group-check. Swimming in wild water or swimming underwater requires a skill-check from even the most experienced swimmer.
+  Combat while swimming is extremely hazardous. A character who knows swimming has a -3 to hit and AC, and has a +3 penalty to initiative. A character without swimming doubles those penalties.
+  A character can hold his breath underwater for one round per 3 points of constitution. If he is still underwater after that, he is reduced to -1 hit points and starts dying.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Teaching
+wis
+
+  This skill signifies that the character is a better than average teacher. Teaching time, if applicable, is reduced by a third. It does not mean his students like him.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Tracking
+wis
+
+  This skill allows a character to follow and hide tracks. In both cases, the check is opposed by tracking. A creature using this skill moves at half his normal speed.
+  The following modifiers apply to the tracker, to be reversed if the character is being tracked:
+soft or muddy ground+4
+thick brush, vines or reeds+3
+occasional signs of passage, dust+2
+normal ground, wood floor0
+rocky ground or shallow water-10
+every 2 creatures in the lead group+1
+every 12 hours lead-1
+every hour of rain, snow or sleet-5
+poor lighting (moon or starlight)-6
+  Craft (hunter) is the prerequisite for this skill.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Tumbling
+dex
+
+  This skill allows the character to perform various acrobatic maneuvers. The character can walk ledges, do flips and spins, and jump farther. He can even walk a tightrope on a check with a -10 penalty. A successful skill-check allows him to stand up with a speed of 1 instead of 5.
+  A character may roll a tumbling-check when he's falling. If successful, he reduces the falling damage by 1d6.
+  Running on water requires a skill-check with a -20 penalty, with a -5 for every step beyond the first.
+  The character can also use this skill to avoid attacks. To do this, he rolls a skill-check with a speed of 1. If successful, he then gains a +1 bonus to AC, with an added +1 for every 3 points with which he makes the check. This bonus lasts until his action in the next round. If he wishes to continue this action, he must roll a new check every round. While avoiding, he can take no other actions.
+  Tumbling can also be used, in combination with the backstab skill, to attack a target for extra damage. To do this, the character rolls a tumbling-check at a speed of 1. This check grants the character the regular bonus to AC, but only against his specified target. If the skill-check succeeds by as many points as the target has AC, or more, then the character can make an attack. This attack is normally a backstab, but if the target has seen the character use a tumbling attack (within a reasonable amount of time, DM's decision) then the attack is a flanking attack instead. The attack is of course delayed by weapon speed.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Weapon specialist
+-
+
+  This skill enables the character to choose a single weapon and specialise in its use. This can be any weapon that the character has weapon training in. However, where the weapon training skill allows the character to use an entire category of weapons, a weapon specialist applies his bonus only to one size of one category (for instance large swords, or medium sabres).
+  The character gains a +1 bonus to hit and a +2 bonus to damage when attacking with the weapon type in question. If the character has at least one fighter level, he also gains an extra attack every second round. This extra attack takes place at the end of the round.
+  A character cannot specialise in more than one weapon. However, he can switch. To do this, he trains the second specialisation, gaining its benefits and losing the benefits of his first specialisation. One level later he regains the now vacant skill slot of his first specialisation.
+  For the purpose of skill mastery, weapon specialist is regarded as the skill focus for weapon training.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Weapon training
+-
+
+  This skill reflects the character's knowledge of how to properly use a weapon. When using it, he does not suffer any class penalty for lack of training.
+  There are several broad categories of weapons: maces, axes, spears, swords and sabres. A character who trains in their use is proficient in all weapons in that category. Bows and crossbows together form a sixth category. A character who trains in a weapon outside of these categories has learned to use only that weapon.
+  An untrained character faces a -4 to hit, unless he has at least one level in the fighter class, in which case he faces only a -2 to hit.
+  Statistics for weapons are given on page 54.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Whirlwind
+-
+
+  This skill gives the character the opportunity to have multiple attacks in the same round. For every additional attack the character wants, he faces a -3 penalty to hit on all attacks. The first attack takes place at the usual time in the initiative order. For every additional attack, add the weapon speed to the initiative (minimum increase of 2).
+  The character can only accept a penalty equal to the to hit bonus he gains from his classes. For example, it would take a 6th level fighter, or a 12th level priest, to gain 2 additional attacks.
+
+---
+name: 
+group: 
+skill_check: []
+power_check: !!null
+specification: !!null
+prerequisite: !!null
+penalties_from_armour: !!null
+description: |
+  </p>
+Yoda
+str
+
+  This skill allows the character to strengthen spells, prayers and powers that have no somatic components. He adds somatic components to the magic, and rolls a skill-check. If the check is successful, then the magic is treated as if his caster level  was one level higher.
+  The skill-check is rolled before the ability cost from warlock powers is applied.
