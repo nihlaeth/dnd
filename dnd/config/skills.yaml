@@ -1,5 +1,3 @@
-!!! IN PROGRESS !!!
-
 ---
 name: Alcance
 group: magic
@@ -35,7 +33,7 @@ description: |
 ---
 name: Animal handling
 group: all
-skill_check: [wisdom - 1]
+skill_check: [wisdom, -1]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -61,7 +59,7 @@ description: |
 ---
 name: Appraising
 group: specialist
-skill_check: [intelligence + perception_modifier]
+skill_check: [intelligence, perception_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -108,7 +106,7 @@ description: |
 name: Banishment
 group: magic-user
 skill_check: !!null
-power_check: priest_level + charisma_modifier
+power_check: [priest, charisma_modifier]
 specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
@@ -131,7 +129,7 @@ description: |
 ---
 name: Boating
 group: all
-skill_check: [wisdom + intelligence_modifier]
+skill_check: [wisdom, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -141,7 +139,7 @@ description: |
 ---
 name: Chakra ritual
 group: magic-user
-skill_check: [perception - 3]
+skill_check: [perception, -3]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -164,7 +162,7 @@ description: |
 ---
 name: Charioteering
 group: all
-skill_check: [wisdom + strength_modifier]
+skill_check: [wisdom, strength_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -192,7 +190,7 @@ description: |
 ---
 name: Cooking
 group: all
-skill_check: [intelligence - 3]
+skill_check: [intelligence, -3]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -204,7 +202,7 @@ description: |
 
 name: Craft (armourer)
 group: all
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: Craft (blacksmith)
@@ -219,7 +217,7 @@ description: |
 ---
 name: Craft (blacksmith)
 group: all
-skill_check: [constitution + strength_modifier]
+skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -229,7 +227,7 @@ description: |
 ---
 name: Craft (bowyer)
 group: all
-skill_check: [constitution + dexterity_modifier]
+skill_check: [constitution, dexterity_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -242,7 +240,7 @@ description: |
 ---
 name: Craft (brewer)
 group: all
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -255,7 +253,7 @@ description: |
 ---
 name: Craft (carpenter)
 group: all
-skill_check: [constitution + strength_modifier]
+skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -265,7 +263,7 @@ description: |
 ---
 name: Craft (farmer)
 group: all
-skill_check: [constitution + wisdom_modifier]
+skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -276,7 +274,7 @@ description: |
 ---
 name: Craft (fisherman)
 group: all
-skill_check: [constitution + wisdom_modifier]
+skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -286,7 +284,7 @@ description: |
 ---
 name: Craft (herbalist)
 group: all
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -300,7 +298,7 @@ description: |
 ---
 name: Craft (hunter)
 group: all
-skill_check: [constitution + wisdom_modifier]
+skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -310,7 +308,7 @@ description: |
 ---
 name: Craft (jeweler)
 group: specialist
-skill_check: [constitution + perception_modifier]
+skill_check: [constitution, perception_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -321,7 +319,7 @@ description: |
 ---
 name: Craft (leatherworker)
 group: all
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -333,7 +331,7 @@ description: |
 ---
 name: Craft (miner)
 group: all
-skill_check: [constitution + wisdom_modifier]
+skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -346,7 +344,7 @@ description: |
 ---
 name: Craft (spellmonger)
 group: all
-skill_check: [constitution + wisdom_modifier]
+skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -360,7 +358,7 @@ description: |
 ---
 name: Craft (stonemason)
 group: all
-skill_check: [constitution + strength_modifier]
+skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -370,7 +368,7 @@ description: |
 ---
 name: Craft (tailor)
 group: all
-skill_check: [constitution + dexterity_modifier]
+skill_check: [constitution, dexterity_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -383,7 +381,7 @@ description: |
 
 name: Craft (weaponsmith)
 group: fighter
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: Craft (blacksmith)
@@ -410,7 +408,7 @@ description: |
 ---
 name: Direction sense
 group: all
-skill_check: [wisdom - 1]
+skill_check: [wisdom, -1]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -421,7 +419,7 @@ description: |
 ---
 name: Disguise
 group: specialist
-skill_check: [charisma - 1]
+skill_check: [charisma, -1]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -466,7 +464,7 @@ description: |
 ---
 name: Engineering
 group: magic-user
-skill_check: [constitution + intelligence_modifier]
+skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -487,7 +485,7 @@ description: |
 name: Exorcism
 group: magic-user
 skill_check: !!null
-power_check: priest_level + wisdom_modifier
+power_check: [priest, wisdom_modifier]
 specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
@@ -512,7 +510,7 @@ description: |
 ---
 name: Fire building
 group: all
-skill_check: [wisdom + 2]
+skill_check: [wisdom, 2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -524,7 +522,7 @@ description: |
 ---
 name: Forgery
 group: specialist
-skill_check: [dexterity - 1]
+skill_check: [dexterity, -1]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -574,7 +572,7 @@ description: |
 ---
 name: History
 group: all
-skill_check: [intelligence - 2]
+skill_check: [intelligence, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -598,7 +596,7 @@ description: |
 ---
 name: Hypnosis
 group: magic-user
-skill_check: [charisma - 2]
+skill_check: [charisma, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -615,7 +613,7 @@ description: |
 ---
 name: Info gathering
 group: specialist
-skill_check: [intelligence + charisma_modifier]
+skill_check: [intelligence, charisma_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -626,13 +624,10 @@ description: |
   <p>The character can also create rumours. This is possible with a successful skill-check, with the same costs in money and time.</p>
   <p>This skill works best if noone takes notice of the character. The character suffers a -4 penalty to the check in towns where most people know each other (arbitrary limit: 500 people or less).</p>
 ---
-
 name: Intimidation
 group: fighter
-skill_check: [charisma + strength_modifier]
-
-power_check: fighter_level + charisma_modifier
-
+skill_check: [charisma, strength_modifier]
+power_check: [fighter, charisma_modifier]
 specification: !!null
 prerequisite: !!null
 penalties_from_armour: !!null
@@ -644,7 +639,7 @@ description: |
 ---
 name: Itemcraft
 group: magic-user
-skill_check: [intelligence - 7]
+skill_check: [intelligence, -7]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -683,7 +678,7 @@ description: |
 ---
 name: Lockpicking
 group: specialist
-skill_check: [perception - 4]
+skill_check: [perception, -4]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -694,7 +689,7 @@ description: |
 ---
 name: Meditation
 group: magic-user
-skill_check: [wisdom - 2]
+skill_check: [wisdom, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -706,7 +701,7 @@ description: |
 ---
 name: Navigation
 group: all
-skill_check: [intelligence - 2]
+skill_check: [intelligence, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -729,7 +724,7 @@ description: |
 ---
 name: Perform (acrobatics)
 group: all
-skill_check: [charisma + dexterity_modifier]
+skill_check: [charisma, dexterity_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -739,7 +734,7 @@ description: |
 ---
 name: Perform (acting)
 group: all
-skill_check: [charisma - 2]
+skill_check: [charisma, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -750,7 +745,7 @@ description: |
 ---
 name: Perform (dance)
 group: all
-skill_check: [charisma + dexterity_modifier]
+skill_check: [charisma, dexterity_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -770,7 +765,7 @@ description: |
 ---
 name: Planar theory
 group: magic-user
-skill_check: [wisdom - 3]
+skill_check: [wisdom, -3]
 power_check: !!null
 specification: !!null
 prerequisite: Spellcraft
@@ -783,7 +778,7 @@ description: |
 ---
 name: Quickdraw
 group: specialist
-skill_check: [dexterity - 5]
+skill_check: [dexterity, -5]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -796,7 +791,7 @@ description: |
 ---
 name: Reading
 group: magic-user
-skill_check: [intelligence + 1]
+skill_check: [intelligence, 1]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -817,7 +812,7 @@ description: |
 ---
 name: Riding
 group: all
-skill_check: [wisdom + dexterity_modifier]
+skill_check: [wisdom, dexterity_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -830,7 +825,7 @@ description: |
 ---
 name: Ritual of fertility
 group: specialist
-skill_check: [charisma + wisdom_modifier]
+skill_check: [charisma, wisdom_modifier]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -854,7 +849,7 @@ description: |
 ---
 name: Scribe
 group: magic-user
-skill_check: [intelligence - 4]
+skill_check: [intelligence, -4]
 power_check: !!null
 specification: !!null
 prerequisite: Reading
@@ -942,7 +937,7 @@ description: |
 ---
 name: Sleight of hand
 group: specialist
-skill_check: [dexterity - 6]
+skill_check: [dexterity, -6]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -961,7 +956,7 @@ description: |
 ---
 name: Spellcraft
 group: magic-user
-skill_check: [intelligence - 2]
+skill_check: [intelligence, -2]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
@@ -978,7 +973,7 @@ description: |
 ---
 name: Stealth
 group: specialist
-skill_check: [dexterity - 4]
+skill_check: [dexterity, -4]
 power_check: !!null
 specification: !!null
 prerequisite: !!null
