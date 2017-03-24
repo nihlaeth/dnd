@@ -14,6 +14,7 @@ from aiohttp_login.motor_storage import MotorStorage
 
 from user_config import (
     Config, Section, StringOption, IntegerOption, BooleanOption)
+from roman import toRoman
 
 from dnd.views.index import index_handler, new_character_data_handler
 from dnd.views.character import character_handler, data_handler
@@ -204,6 +205,7 @@ def start():
     aiohttp_session.setup(app, EncryptedCookieStorage(
         config.server.session_secret,
         max_age=config.server.session_max_age))
+    aiohttp_jinja2.get_env(app).filters['to_roman'] = toRoman
     app.middlewares.append(aiohttp_login.flash.middleware)
 
     app['db_client'] = AsyncIOMotorClient()

@@ -22,7 +22,7 @@ Spell slots: <span id='spell-slots'>{% include 'character_spell_slots.html' %}</
       </div>
     </form>
     <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell|replace(' ', '-') }}-collapse">{{ spell|capitalize }}</a> <span class="label label-default">{{ spells[spell].circle }}</span>
+        <a data-toggle="collapse" data-parent="#spell-accordion" href="#{{ spell|replace(' ', '-') }}-collapse">{{ spell|capitalize }}</a> <span class="label label-default">{{ spells[spell].circle|to_roman }}</span>
     </h4>
 
   </div>
@@ -32,7 +32,7 @@ Spell slots: <span id='spell-slots'>{% include 'character_spell_slots.html' %}</
         <tr>
           <td>Circle:</td>
           <td>
-            {{ character['spells'][spell]['circle'] }}
+            {{ character['spells'][spell]['circle']|to_roman }}
           </td>
         </tr>
         <tr>

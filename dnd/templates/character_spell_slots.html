@@ -1,7 +1,7 @@
 <table class="table">
 {% for slots in character['spell_slots'] %}
 <tr {% if character['leftover_spell_slots'][loop.index0] < 0 %}class="danger"{% endif %}>
-  <td>{{ loop.index }}</td>
+  <td>{{ loop.index|to_roman }}</td>
   <td>
     <div class="progress">
       <div

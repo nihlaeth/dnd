@@ -15,7 +15,7 @@
       </form>
       </td></tr></table>
     </div>
-    {{ spell|capitalize }} <span class="label label-default">{{ spells[spell].circle }}</span><br /><br />
+    {{ spell|capitalize }} <span class="label label-default">{{ spells[spell].circle|to_roman }}</span><br /><br />
     <div class="progress">
       <div
           class="progress-bar progress-bar-striped progress-bar-{% if character['prepared_spells'][spell]['cast'] >= character['prepared_spells'][spell]['prepared'] %}warning{% else %}success{% endif %}"

@@ -22,7 +22,8 @@ setup(
         'aiodns',
         'aiohttp-login',
         'pyyaml',
-        'uvloop'],
+        'uvloop',
+        'roman'],
     entry_points={
         'console_scripts': ['dnd = dnd:start']},
     package_data={'dnd': ['static/*', 'templates/*', 'config/*']},
