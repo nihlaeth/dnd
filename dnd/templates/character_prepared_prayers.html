@@ -1,0 +1,35 @@
+<ul class="list-group">
+  {% for circle in range(1, 8)|reverse %}
+  {% for prayer in character['prepared_prayers'] if character['prepared_prayers'][prayer]['prepared'] > 0 and character['prayers'][prayer]['circle'] == circle %}
+  <li class="list-group-item">
+    <div class="pull-right">
+      <table><tr>{% if character['prepared_prayers'][prayer]['cast'] < character['prepared_prayers'][prayer]['prepared'] %}<td>
+      <form data-async data-target="#prepared-prayers-errors" action="/api/{{ character['_id'] }}/prepare_prayer/cast/" method="POST" class="form-inline">
+        <input type="hidden" name="name" value="{{ prayer }}">
+        <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-screenshot"></span></button>
+      </form>
+      </td>{% endif %}<td>
+      <form data-async data-target="#prepared-prayers-errors" action="/api/{{ character['_id'] }}/prepare_prayer/forget/" method="POST" class="form-inline">
+        <input type="hidden" name="name" value="{{ prayer }}">
+        <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-remove"></span></button>
+      </form>
+      </td></tr></table>
+    </div>
+    {{ prayer|capitalize }} <span class="label label-default">{{ prayers[prayer].circle|to_roman }}</span><br /><br />
+    <div class="progress">
+      <div
+          class="progress-bar progress-bar-striped progress-bar-{% if character['prepared_prayers'][prayer]['cast'] >= character['prepared_prayers'][prayer]['prepared'] %}warning{% else %}success{% endif %}"
+          class="progress-bar progress-bar-striped progress-bar-success"
+          role="progressbar"
+          aria-valuenow="{{ character['prepared_prayers'][prayer]['prepared'] - character['prepared_prayers'][prayer]['cast'] }}"
+          aria-valuemin="0"
+          aria-valuemax="{{ character['prepared_prayers'][prayer]['prepared'] }}"
+          style="width:{{ (character['prepared_prayers'][prayer]['prepared'] - character['prepared_prayers'][prayer]['cast']) / character['prepared_prayers'][prayer]['prepared'] * 100 }}%; min-width: 20%">
+        {{ character['prepared_prayers'][prayer]['prepared'] - character['prepared_prayers'][prayer]['cast'] }}
+        ({{ character['prepared_prayers'][prayer]['prepared'] }})
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+  {% endfor %}
+</ul>

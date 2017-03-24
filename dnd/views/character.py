@@ -8,7 +8,15 @@ from markupsafe import escape
 from aiohttp_jinja2 import get_env
 from dnd.decorators import login_required
 from dnd.common import format_errors
-from dnd.character import ABILITIES, RACES, SKILLS, SPELLS, CLASSES, calculate_stats
+from dnd.character import (
+    ABILITIES,
+    RACES,
+    SKILLS,
+    SPELLS,
+    PRAYERS,
+    PRAYER_SPHERES,
+    CLASSES,
+    calculate_stats)
 
 async def get_character(request):
     """Fetch character from database."""
@@ -32,6 +40,8 @@ async def character_handler(request):
     errors, editing_privileges, character = await get_character(request)
     return {
         'spells': SPELLS,
+        'prayers': PRAYERS,
+        'prayer_spheres': PRAYER_SPHERES,
         'skills': SKILLS,
         'classes': CLASSES,
         'races': RACES,
@@ -66,6 +76,8 @@ async def data_handler(request):
         'skill': (_skill_validator, _skill_response_factory),
         'spell': (_spell_validator, _spell_response_factory),
         'prepare_spell': (_prepare_spell_validator, _prepare_spell_response_factory),
+        'prayer': (_prayer_validator, _prayer_response_factory),
+        'prepare_prayer': (_prepare_prayer_validator, _prepare_prayer_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
     }
@@ -142,6 +154,7 @@ def _ability_response_factory(response, character, app):
         'removeClass': ["label-danger"] if character[
             'unspent_ability_points'] >= 0 else ["label-default"]}
     _skill_response_factory(response, character, app)
+    _prayer_response_factory(response, character, app)
 
 def _xp_validator(request, errors):
     try:
@@ -212,6 +225,7 @@ def _class_response_factory(response, character, app):
         'collapse': "show" if character['warlock'] > 0 else "hide"}
     _skill_response_factory(response, character, app)
     _spell_response_factory(response, character, app)
+    _prayer_response_factory(response, character, app)
 
 def _hp_validator(request, errors):
     try:
@@ -343,6 +357,78 @@ def _prepare_spell_response_factory(response, character, app):
     response['#spell-slots'] = {
         'data': get_env(app).get_template(
             'character_spell_slots.html').render(character=character)}
+
+def _prayer_validator(request, _):
+    prayers = []
+    for prayer in SPELLS:
+        if prayer in request.POST:
+            prayers.append(prayer)
+    return {'prayer_names': prayers}
+
+def _prayer_response_factory(response, character, app):
+    response['#prayer-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_prayers_display.html').render(
+                prayers=SPELLS, character=character),
+        'activateTooltip': True}
+    response['#prayer-slots'] = {
+        'data': get_env(app).get_template(
+            'character_prayer_slots.html').render(character=character)}
+
+async def _prepare_prayer_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['prepare', 'cast', 'forget', 'rest']:
+        errors.append("invalid action")
+        return {}
+    if action != 'rest':
+        try:
+            name = request.POST['name']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if len(errors) != 0:
+        return {}
+    if action == 'prepare':
+        if name not in character['prayers']:
+            errors.append('{} is unknown to character'.format(name))
+        else:
+            if name not in character['prepared_prayers']:
+                character['prepared_prayers'][name] = {'prepared': 0, 'cast': 0}
+            character['prepared_prayers'][name]['prepared'] += 1
+    elif action == 'cast':
+        if name not in character['prepared_prayers']:
+            errors.append('{} is not a prepared prayer'.format(name))
+        elif character['prepared_prayers'][name]['cast'] + 1 > \
+                character['prepared_prayers'][name]['prepared']:
+            errors.append('not enough prayers prepared')
+        else:
+            character['prepared_prayers'][name]['cast'] += 1
+    elif action == 'forget':
+        if name not in character['prepared_prayers']:
+            errors.append('{} is not a prepared prayer'.format(name))
+        else:
+            character['prepared_prayers'][name]['prepared'] -= 1
+            if character['prepared_prayers'][name]['cast'] > \
+                    character['prepared_prayers'][name]['prepared']:
+                character['prepared_prayers'][name]['cast'] = \
+                        character['prepared_prayers'][name]['prepared']
+            if character['prepared_prayers'][name]['prepared'] == 0:
+                del character['prepared_prayers'][name]
+    elif action == 'rest':
+        for prayer in character['prepared_prayers']:
+            character['prepared_prayers'][prayer]['cast'] = 0
+    return {'prepared_prayers': character['prepared_prayers']}
+
+def _prepare_prayer_response_factory(response, character, app):
+    response['close'] = False
+    response['#prepared-prayers'] = {
+        'data': get_env(app).get_template(
+            'character_prepared_prayers.html').render(
+                prayers=SPELLS, character=character)}
+    response['#prayer-slots'] = {
+        'data': get_env(app).get_template(
+            'character_prayer_slots.html').render(character=character)}
 
 async def _name_validator(request, errors):
     try:

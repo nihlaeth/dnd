@@ -22,6 +22,12 @@ SPELLS = {spell['name'].lower(): spell for spell in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/spells.yaml'),
     Loader=Loader) if spell is not None}
 
+PRAYERS = {prayer['name'].lower(): prayer for prayer in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/prayers.yaml'),
+    Loader=Loader) if prayer is not None}
+
+PRAYER_SPHERES = {prayer['sphere'] for prayer in PRAYERS}
+
 ABILITIES = [
     'strength',
     'dexterity',
@@ -45,6 +51,7 @@ def calculate_stats(character):
     _character_hit_points(character)
     _character_background(character)
     _character_spells(character)
+    _character_prayers(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -194,6 +201,66 @@ def _character_spells(character):
     for debt in debt_stack:
         leftover_spell_slots[debt[0]] = debt[1]
     character['leftover_spell_slots'] = leftover_spell_slots
+
+def _character_prayers(character):
+    prayer_names = character.get('prayer_names', [])
+    character['prayers'] = {}
+    for prayer in prayer_names:
+        prayer = prayer.lower()
+        if prayer in PRAYERS:
+            character['prayers'][prayer] = copy.deepcopy(PRAYERS[prayer])
+    prayer_slots = (
+        tuple(),
+        (1,),
+        (2,),
+        (2, 1),
+        (2, 2),
+        (3, 3),
+        (3, 3, 1),
+        (4, 3, 2),
+        (4, 3, 2, 1),
+        (4, 4, 2, 2),
+        (5, 4, 3, 3),
+        (5, 4, 3, 3, 1),
+        (5, 4, 4, 3, 2),
+        (5, 5, 4, 3, 2, 1),
+        (5, 5, 4, 4, 2, 2),
+        (5, 5, 5, 4, 3, 3),
+        (5, 5, 5, 4, 3, 3, 1),
+        (5, 5, 5, 4, 4, 3, 1),
+        (5, 5, 5, 5, 4, 3, 1),
+        (5, 5, 5, 5, 5, 4, 1),
+        (5, 5, 5, 5, 5, 5, 2))
+    character['prayer_slots'] = list(prayer_slots[character['priest']])
+    if character['priest'] > 0:
+        character['prayer_slots'][-1] += character['wisdom_modifier']
+    character['invalid_prepared_prayers'] = character.get(
+        'invalid_prepared_prayers', 0)
+    leftover_prayer_slots = copy.copy(character['prayer_slots'])
+    prepared_prayers = character.get('prepared_prayers', {})
+    character['prepared_prayers'] = prepared_prayers
+    for prayer in prepared_prayers:
+        if SPELLS[prayer]['circle'] > len(leftover_prayer_slots):
+            character['invalid_prepared_prayers'] += prepared_prayers[prayer]['prepared']
+            continue
+        leftover_prayer_slots[SPELLS[prayer]['circle'] - 1] -= prepared_prayers[prayer]['prepared']
+    debt_stack = []
+    for i in range(len(leftover_prayer_slots)):
+        if leftover_prayer_slots[i] < 0:
+            debt_stack.append([i, leftover_prayer_slots[i]])
+        elif leftover_prayer_slots[i] > 0 and len(debt_stack) > 0:
+            overflow_room = leftover_prayer_slots[i]
+            for debt in debt_stack:
+                if abs(debt[1]) >= overflow_room:
+                    debt[1] += overflow_room
+                    leftover_prayer_slots[i] = 0
+                    break
+                else:
+                    leftover_prayer_slots[i] += debt[1]
+                    debt[1] = 0
+    for debt in debt_stack:
+        leftover_prayer_slots[debt[0]] = debt[1]
+    character['leftover_prayer_slots'] = leftover_prayer_slots
 
 def _character_hit_points(character):
     max_hp = character.get('max_hp', 1)

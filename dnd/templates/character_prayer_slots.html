@@ -1,0 +1,27 @@
+<table class="table">
+{% for slots in character['prayer_slots'] %}
+<tr {% if character['leftover_prayer_slots'][loop.index0] < 0 %}class="danger"{% endif %}>
+  <td>{{ loop.index|to_roman }}</td>
+  <td>
+    <div class="progress">
+      <div
+          class="progress-bar progress-bar-striped progress-bar-{% if character['leftover_prayer_slots'][loop.index0] > 0 %}info{% elif character['leftover_prayer_slots'][loop.index0] < 0 %}danger{% else %}warning{% endif %}"
+          role="progressbar"
+          aria-valuenow="{% if character['leftover_prayer_slots'][loop.index0] < 0 %}0{% else %}{{ character['leftover_prayer_slots'][loop.index0] }}{% endif %}"
+          aria-valuemin="0"
+          aria-valuemax="{{ slots }}"
+          style="width:{% if character['leftover_prayer_slots'][loop.index0] < 0 %}0{% else %}{{ character['leftover_prayer_slots'][loop.index0] / slots * 100 }}{% endif %}%; min-width: 20%">
+        {{ character['leftover_prayer_slots'][loop.index0] }} ({{ slots }})
+      </div>
+    </div>
+  </td>
+</tr>
+{% endfor %}
+{% if character['invalid_prepared_prayers'] > 0 %}
+<tr class="danger">
+  <td colspan="2">
+    You have <span class="label label-default" id="invalid-prepared-prayers">{{ character['invalid_prepared_prayers'] }}</span> prayers prepared in circles higher than you have access to!
+  </td>
+</tr>
+{% endif %}
+</table>
