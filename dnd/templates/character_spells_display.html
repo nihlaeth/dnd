@@ -8,6 +8,9 @@
 <div class="well" id="prepared-spells">
   {% include "character_prepared_spells.html" %}
 </div>
+
+Spell slots: <span id='spell-slots'>{% include 'character_spell_slots.html' %}</span>
+
 {% for circle in range(1, 7)|reverse %}
 {% for spell in character['spells'] if character['spells'][spell]['circle'] == circle %}
 <div class="panel panel-default">
@@ -82,4 +85,5 @@
   </div>
 </div>
 {% endfor %}
+<hr />
 {% endfor %}
