@@ -17,4 +17,11 @@
   </td>
 </tr>
 {% endfor %}
+{% if character['invalid_prepared_spells'] > 0 %}
+<tr class="danger">
+  <td colspan="2">
+    You have <span class="label label-default" id="invalid-prepared-spells">{{ character['invalid_prepared_spells'] }}</span> spells prepared in circles higher than you have access to!
+  </td>
+</tr>
+{% endif %}
 </table>

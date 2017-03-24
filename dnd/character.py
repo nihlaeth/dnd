@@ -167,11 +167,14 @@ def _character_spells(character):
         (6, 5, 4, 3, 2),
         (6, 5, 4, 3, 2, 1))
     character['spell_slots'] = spell_slots[character['wizard']]
+    character['invalid_prepared_spells'] = character.get(
+        'invalid_prepared_spells', 0)
     leftover_spell_slots = list(character['spell_slots'])
     prepared_spells = character.get('prepared_spells', {})
     character['prepared_spells'] = prepared_spells
     for spell in prepared_spells:
         if SPELLS[spell]['circle'] > len(leftover_spell_slots):
+            character['invalid_prepared_spells'] += prepared_spells[spell]['prepared']
             continue
         leftover_spell_slots[SPELLS[spell]['circle'] - 1] -= prepared_spells[spell]['prepared']
     debt_stack = []
