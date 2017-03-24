@@ -1,4 +1,5 @@
 """Character page."""
+import time
 from inspect import iscoroutinefunction
 from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
@@ -20,7 +21,7 @@ async def get_character(request):
         errors.append('character {} does not exist'.format(
             request.match_info['id']))
     else:
-        if request['user'] == character['user']:
+        if request['user']['_id'] == character['user_id']:
             editing_privileges = True
         calculate_stats(character)
     return (errors, editing_privileges, character)
@@ -45,6 +46,16 @@ async def data_handler(request):
     errors, editing_privileges, character = await get_character(request)
     if not editing_privileges:
         errors.append("you don't have the required privileges to alter this character")
+    user = await request.app['db'].users.find_one(
+        {'_id': ObjectId(request['user']['_id'])})
+    if 'last_action' in user and abs(user['last_action'] - time.perf_counter()) < 0.125:
+        return json_response({})
+    result = await request.app['db'].users.update_one(
+        {'_id': ObjectId(user['_id'])},
+        {'$set': {'last_action': time.perf_counter()}})
+    if not result.acknowledged:
+        errors.append("database error")
+
     attribute = request.match_info['attribute']
     attribute_functions = {
         'ability': (_ability_validator, _ability_response_factory),
@@ -343,7 +354,7 @@ async def _name_validator(request, errors):
     if len(errors) == 0:
         characters = request.app['db'].characters
         if await characters.find_one(
-                {'user': request['user'], 'name': name}) is not None:
+                {'user_id': request['user']['_id'], 'name': name}) is not None:
             errors.append("you already have a character with this name")
     return {'name': name}
 

@@ -16,13 +16,21 @@ def login_required(template_file):
         async def inner_decorator(request):
             result = await handler(request)
             characters = request.app['db'].characters
+            invalid_characters = await characters.find(
+                {'user._id': request['user']['_id']}).to_list(length=100)
+            for character in invalid_characters:
+                await characters.update_one(
+                    {'_id': character['_id']},
+                    {
+                        '$set': {'user_id': request['user']['_id']},
+                        '$unset': {'user': True}})
             result['characters'] = await characters.find(
-                {'user': request['user']}).to_list(length=100)
+                {'user_id': request['user']['_id']}).to_list(length=100)
             for character in result['characters']:
                 calculate_stats(character)
             campaigns = request.app['db'].campaigns
             result['campaigns'] = await campaigns.find(
-                {'user': request['user']}).to_list(length=100)
+                {'user_id': request['user']['_id']}).to_list(length=100)
             return result
         return inner_decorator
     return decorator
