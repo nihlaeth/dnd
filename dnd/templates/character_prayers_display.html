@@ -22,11 +22,11 @@ Spell slots: <span id='prayer-slots'>{% include 'character_prayer_slots.html' %}
       </div>
     </form>
     <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#prayer-accordion" href="#{{ prayer|replace(' ', '-') }}-collapse">{{ prayer|capitalize }}</a> <span class="label label-default">{{ prayers[prayer].circle|to_roman }}</span>
+        <a data-toggle="collapse" data-parent="#prayer-accordion" href="#{{ prayer|replace(' ', '-')|replace("'", '') }}-collapse">{{ prayer|capitalize }}</a> <span class="label label-default">{{ prayers[prayer].circle|to_roman }}</span>
     </h4>
 
   </div>
-  <div id="{{ prayer|replace(' ', '-') }}-collapse" class="panel-collapse collapse">
+  <div id="{{ prayer|replace(' ', '-')|replace("'", '') }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">
       <table class="table">
         <tr>
