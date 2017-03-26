@@ -1,0 +1,45 @@
+<form data-async data-target="#hp-errors" action="/api/{{ character['_id'] }}/hp/" method="POST" class="form-horizontal">
+  <div id="hp-errors"></div>
+  {% for level in range(1, character['level'] + 1) %}
+  <div class="form-group">
+    <label for="hp-level-{{ level }}">
+      {{ level }}
+      (1d{{ classes[character['classes'][level - 1]]['hitdie'] }})
+    </label>
+    {% if level == 1 %}
+    <span class="label label-default">{{ classes[character['classes'][level - 1]]['hitdie'] }}</span>
+    <input
+        type="hidden"
+        id="hp-level-{{ level }}"
+        name="{{ level }}"
+        value="{{ classes[character['classes'][level - 1]]['hitdie'] }}" />
+    {% else %}
+    <input
+        type="number"
+        class="form-control"
+        id="hp-level-{{ level }}"
+        name="{{ level }}"
+        value="{{ character['hitpoints_per_level'][level - 1] }}"
+        min="1"
+        max="{{ classes[character['classes'][level - 1]]['hitdie'] }}" />
+    {% endif %}
+  </div>
+  {% endfor %}
+  <div class="form-group">
+    <label for="temp-hp">
+      <a href="#" data-toggle="tooltip" title="temporary changes from spell effects">
+        Temporary:
+      </a>
+    </label>
+    <input type="number" class="form-control" id="temp-hp" name="temp-hp" value="{{ character['temp_hp'] }}">
+  </div>
+  <div class="form-group">
+    <label for="damage">
+      <a href="#" data-toggle="tooltip" title="current damage">
+        Damage:
+      </a>
+    </label>
+    <input type="number" class="form-control" id="damage" name="damage" value="{{ character['damage'] }}" min="0">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

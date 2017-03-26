@@ -275,7 +275,8 @@ def _character_prayers(character):
 def _character_hit_points(character):
     per_level = character.get(
         'hitpoints_per_level',
-        [CLASSES[character['classes'][0]]['hitdie']])
+        [0])
+    per_level[0] = CLASSES[character['classes'][0]]['hitdie']
     missing = character['level'] - len(per_level)
     if missing > 0:
         per_level.extend([1] * missing)

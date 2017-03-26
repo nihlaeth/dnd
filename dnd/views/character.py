@@ -170,6 +170,7 @@ def _xp_response_factory(response, character, app):
     response['#level-value'] = {'data': character['level']}
     _skill_response_factory(response, character, app)
     _class_response_factory(response, character, app)
+    _hp_response_factory(response, character, app)
 
 def _race_validator(request, errors):
     try:
@@ -252,7 +253,7 @@ def _hp_validator(request, errors):
         'temp_hp': temp_hp,
         'damage': damage}
 
-def _hp_response_factory(response, character, _):
+def _hp_response_factory(response, character, app):
     add_classes = []
     remove_classes = []
     if character['damage'] > 0:
@@ -272,6 +273,11 @@ def _hp_response_factory(response, character, _):
         remove_classes.append('danger')
         remove_classes.append('warning')
     rest_in_peace = "" if character['hp'] > -10 else "<span class=\"badge\">R.I.P</span>"
+    response['#hp-form-content'] = {
+        'data': get_env(app).get_template(
+            'character_hp_form.html').render(
+                character=character, classes=CLASSES),
+        'activateTooltip': True}
     response['#hp-value'] = {'data': character['hp']}
     response['#alive'] = {'data': rest_in_peace}
     response['#hp-row'] = {
