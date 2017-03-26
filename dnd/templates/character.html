@@ -81,7 +81,7 @@
       <div class="panel-body">
         {% include 'character_skills.html' %}
       </div>
-      <div class="panel-footer">Unspent skill points: <span class="label {% if character['unspent_skill_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="skill-points">{{ character['unspent_skill_points'] }}</span></div>
+      <div class="panel-footer">Unspent skill slots: <span class="label {% if character['unspent_skill_slots'] < 0 %}label-danger{% else %}label-default{% endif %}" id="skill-slots">{{ character['unspent_skill_slots'] }}</span></div>
     </div>
   </div>
 </div>

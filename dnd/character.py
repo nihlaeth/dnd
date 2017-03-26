@@ -113,27 +113,27 @@ def _character_abilities(character):
 
 def _character_skills(character):
     skill_names = character.get('skill_names', [])
-    class_skill_points = 0
+    class_skill_slots = 0
     for class_ in CLASSES:
-        class_skill_points += CLASSES[class_]['skill_slots'] * character[class_]
-    skill_points = 5 + class_skill_points + character['intelligence_modifier']
+        class_skill_slots += CLASSES[class_]['skill_slots'] * character[class_]
+    skill_slots = 5 + class_skill_slots + character['intelligence_modifier']
     character['skills'] = {}
     if 'skills' in character['race']['bonus']:
-        skill_points += character['race']['bonus']['skills']
+        skill_slots += character['race']['bonus']['skills']
     for skill in skill_names:
         skill = skill.lower()
         group = SKILLS[skill]['group']
         if group == 'all':
-            skill_points -= 1
+            skill_slots -= 1
         elif group in character and character[group] > 0:
-            skill_points -= 1
+            skill_slots -= 1
         elif group == 'magic' and (
                 character['warlock'] > 0 or
                 character['priest'] > 0 or
                 character['wizard'] > 0):
-            skill_points -= 1
+            skill_slots -= 1
         else:
-            skill_points -= 2
+            skill_slots -= 2
         if skill in SKILLS:
             character['skills'][skill] = copy.deepcopy(SKILLS[skill])
             character['skills'][skill]['skill_check_text'] = ' + '.join([
@@ -142,7 +142,7 @@ def _character_skills(character):
                         element[0:-9]) for element in SKILLS[skill]['skill_check']])
             character['skills'][skill]['skill_check_value'] = sum([
                 character[element] for element in SKILLS[skill]['skill_check']])
-    character['unspent_skill_points'] = skill_points
+    character['unspent_skill_slots'] = skill_slots
 
 def _character_spells(character):
     spell_names = character.get('spell_names', [])

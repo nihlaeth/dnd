@@ -279,12 +279,12 @@ def _skill_response_factory(response, character, app):
         'data': get_env(app).get_template(
             'character_skills_display.html').render(character=character),
         'activateTooltip': True}
-    response['#skill-points'] = {
-        'data': character['unspent_skill_points'],
+    response['#skill-slots'] = {
+        'data': character['unspent_skill_slots'],
         'addClass': ["label-danger"] if character[
-            'unspent_skill_points'] < 0 else ["label-default"],
+            'unspent_skill_slots'] < 0 else ["label-default"],
         'removeClass': ["label-danger"] if character[
-            'unspent_skill_points'] >= 0 else ["label-default"]}
+            'unspent_skill_slots'] >= 0 else ["label-default"]}
 
 def _spell_validator(request, _):
     spells = []
