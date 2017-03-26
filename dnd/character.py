@@ -280,6 +280,8 @@ def _character_hit_points(character):
     missing = character['level'] - len(per_level)
     if missing > 0:
         per_level.extend([1] * missing)
+    elif missing < 0:
+        per_level = per_level[:character['level']]
     character['hitpoints_per_level'] = per_level
     max_hp = sum(per_level)
     character['max_hp'] = max_hp
