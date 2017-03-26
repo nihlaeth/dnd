@@ -285,7 +285,7 @@ def _character_hit_points(character):
     elif missing < 0:
         per_level = per_level[:character['level']]
     character['hitpoints_per_level'] = per_level
-    max_hp = sum(per_level)
+    max_hp = sum(per_level) + character['constitution_modifier'] * character['level']
     character['max_hp'] = max_hp
     temp_hp = character.get('temp_hp', 0)
     character['temp_hp'] = temp_hp
