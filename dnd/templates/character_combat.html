@@ -1,0 +1,54 @@
+<table class="table">
+  <tbody>
+    <tr id="hp-row"
+       {% if character['damage'] > 0 %}
+       class="danger"
+       {% elif character['temp_hp'] < 0 %}
+       class="warning"
+       {% elif character['temp_hp'] > 0 %}
+       class="success"
+       {% endif %}
+    >
+      <td>Hit points:</td>
+      {% if editing_privileges %}
+      <td><a href="#" class="btn btn-default" role="button" data-toggle="collapse" data-parent="#form-group" data-target="#hp-form" id="hp-value">{{ character['hp'] }}</a></td>
+      {% else %}
+      <td>{{ character['hp'] }}</td>
+      {% endif %}
+    </tr>
+    {% if editing_privileges %}
+    <tr id="hp-form" class="collapse">
+      <td colspan="3">
+        <form data-async data-target="#hp-errors" action="/api/{{ character['_id'] }}/hp/" method="POST" class="form-horizontal">
+          <div id="hp-errors"></div>
+          <div class="form-group">
+            <label for="max-hp">
+              <a href="#" data-toggle="tooltip" title="maximum hit points adjusted to your level">
+                Max hp:
+              </a>
+            </label>
+            <input type="number" class="form-control" id="max-hp" name="max-hp" value="{{ character['max_hp'] }}" min="1">
+          </div>
+          <div class="form-group">
+            <label for="temp-hp">
+              <a href="#" data-toggle="tooltip" title="temporary changes from spell effects">
+                Temporary:
+              </a>
+            </label>
+            <input type="number" class="form-control" id="temp-hp" name="temp-hp" value="{{ character['temp_hp'] }}">
+          </div>
+          <div class="form-group">
+            <label for="damage">
+              <a href="#" data-toggle="tooltip" title="current damage">
+                Damage:
+              </a>
+            </label>
+            <input type="number" class="form-control" id="damage" name="damage" value="{{ character['damage'] }}" min="0">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
