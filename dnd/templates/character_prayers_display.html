@@ -12,7 +12,7 @@
 Spell slots: <span id='prayer-slots'>{% include 'character_prayer_slots.html' %}</span>
 
 {% for circle in range(1, 7)|reverse %}
-{% for prayer in character['prayers'] if character['prayers'][prayer]['circle'] == circle %}
+{% for prayer in character['prayers']|sort if character['prayers'][prayer]['circle'] == circle %}
 <div class="panel panel-default">
   <div class="panel-heading">
     <form data-async data-target="#prepared-prayers-errors" action="/api/{{ character['_id'] }}/prepare_prayer/prepare/" method="POST" class="form-inline">

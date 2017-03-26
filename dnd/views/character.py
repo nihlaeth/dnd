@@ -358,18 +358,24 @@ def _prepare_spell_response_factory(response, character, app):
         'data': get_env(app).get_template(
             'character_spell_slots.html').render(character=character)}
 
-def _prayer_validator(request, _):
-    prayers = []
-    for prayer in SPELLS:
-        if prayer in request.POST:
-            prayers.append(prayer)
-    return {'prayer_names': prayers}
+def _prayer_validator(request, errors):
+    spheres = {'all'}
+    for number in range(1, 4):
+        try:
+            sphere = request.POST[str(number)]
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+        if sphere not in PRAYER_SPHERES:
+            errors.append("{} is not a valid prayer sphere".format(sphere))
+        else:
+            spheres.add(sphere)
+    return {'prayer_spheres': list(spheres)}
 
 def _prayer_response_factory(response, character, app):
     response['#prayer-accordion'] = {
         'data': get_env(app).get_template(
             'character_prayers_display.html').render(
-                prayers=SPELLS, character=character),
+                prayers=PRAYERS, character=character),
         'activateTooltip': True}
     response['#prayer-slots'] = {
         'data': get_env(app).get_template(
@@ -425,7 +431,7 @@ def _prepare_prayer_response_factory(response, character, app):
     response['#prepared-prayers'] = {
         'data': get_env(app).get_template(
             'character_prepared_prayers.html').render(
-                prayers=SPELLS, character=character)}
+                prayers=PRAYERS, character=character)}
     response['#prayer-slots'] = {
         'data': get_env(app).get_template(
             'character_prayer_slots.html').render(character=character)}

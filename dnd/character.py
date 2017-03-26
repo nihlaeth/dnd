@@ -26,7 +26,7 @@ PRAYERS = {prayer['name'].lower(): prayer for prayer in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/prayers.yaml'),
     Loader=Loader) if prayer is not None}
 
-PRAYER_SPHERES = {prayer['sphere'] for prayer in PRAYERS}
+PRAYER_SPHERES = {PRAYERS[prayer]['sphere'] for prayer in PRAYERS}
 
 ABILITIES = [
     'strength',
@@ -203,12 +203,8 @@ def _character_spells(character):
     character['leftover_spell_slots'] = leftover_spell_slots
 
 def _character_prayers(character):
-    prayer_names = character.get('prayer_names', [])
-    character['prayers'] = {}
-    for prayer in prayer_names:
-        prayer = prayer.lower()
-        if prayer in PRAYERS:
-            character['prayers'][prayer] = copy.deepcopy(PRAYERS[prayer])
+    prayer_names = set(character.get('prayer_names', []))
+    spheres = set(character.get('prayer_spheres', {'all'}))
     prayer_slots = (
         tuple(),
         (1,),
@@ -234,16 +230,25 @@ def _character_prayers(character):
     character['prayer_slots'] = list(prayer_slots[character['priest']])
     if character['priest'] > 0:
         character['prayer_slots'][-1] += character['wisdom_modifier']
+    for prayer in PRAYERS:
+        if PRAYERS[prayer]['sphere'] in spheres and \
+                PRAYERS[prayer]['circle'] <= len(character['prayer_slots']):
+            prayer_names.add(prayer)
+    character['prayers'] = {}
+    for prayer in prayer_names:
+        prayer = prayer.lower()
+        if prayer in PRAYERS:
+            character['prayers'][prayer] = copy.deepcopy(PRAYERS[prayer])
     character['invalid_prepared_prayers'] = character.get(
         'invalid_prepared_prayers', 0)
     leftover_prayer_slots = copy.copy(character['prayer_slots'])
     prepared_prayers = character.get('prepared_prayers', {})
     character['prepared_prayers'] = prepared_prayers
     for prayer in prepared_prayers:
-        if SPELLS[prayer]['circle'] > len(leftover_prayer_slots):
+        if PRAYERS[prayer]['circle'] > len(leftover_prayer_slots):
             character['invalid_prepared_prayers'] += prepared_prayers[prayer]['prepared']
             continue
-        leftover_prayer_slots[SPELLS[prayer]['circle'] - 1] -= prepared_prayers[prayer]['prepared']
+        leftover_prayer_slots[PRAYERS[prayer]['circle'] - 1] -= prepared_prayers[prayer]['prepared']
     debt_stack = []
     for i in range(len(leftover_prayer_slots)):
         if leftover_prayer_slots[i] < 0:

@@ -7,91 +7,16 @@
 <div id="prayers-form" class="collapse well">
   <form data-async data-target="#prayers-errors" action="/api/{{ character['_id'] }}/prayer/" method="POST" class="form-horizontal">
     <div id="prayers-errors"></div>
+    {% for number in range(1, 4) %}
     <div class="form-group">
-      <div class="panel-group" id="prayers-form-accordion">
-        {% for circle in range(1, 8) %}
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#prayers-form-accordion" href="#circle-{{ circle }}">Circle: {{ circle }}</a>
-            </h4>
-          </div>
-          <div id="circle-{{ circle }}" class="panel-collapse collapse">
-            <div class="panel-body">
-              {% for prayer in prayers if prayers[prayer]['circle'] == circle %}
-              <div class="checkbox">
-                <label>
-                  <input
-                    type="checkbox"
-                    name="{{ prayer }}"
-                    value="selected"
-                    {% if prayer in character['prayers'] %}checked{% endif %}>
-                  {{ prayer|capitalize }}
-                </label>
-                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#prayer-info-{{ prayer|replace(' ', '-') }}">?</button>
-              </div>
-              <div id="prayer-info-{{ prayer|replace(' ', '-') }}" class="collapse well">
-                <table class="table">
-                  <tr>
-                    <td>Circle:</td>
-                    <td>
-                      {{ prayers[prayer]['circle']|to_roman }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Sphere:</td>
-                    <td>
-                      {{ prayers[prayer]['sphere'] }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Range:</td>
-                    <td>
-                      {{ prayers[prayer]['range'] }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Area:</td>
-                    <td>
-                      {{ prayers[prayer]['area'] }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Casting time:</td>
-                    <td>
-                      {{ prayers[prayer]['casting_time'] }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Components:</td>
-                    <td>
-                      {{ prayers[prayer]['components'] }}
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>Duration:</td>
-                    <td>
-                      {{ prayers[prayer]['duration'] }}
-                    </td>
-                  </tr>
-                  {% if prayers[prayer]['mechanics'] is not none %}
-                  <tr>
-                    <td>Mechanics:</td>
-                    <td>
-                      {{ prayers[prayer]['mechanics'] }}
-                    </td>
-                  </tr>
-                  {% endif %}
-                </table>
-                {{ prayers[prayer]['description'] }}
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-        </div>
+      <label for="sphere-{{ number }}">Sphere {{ number }}:</label>
+      <select class="form-control" name="{{ number }}" id="sphere-{{ number }}">
+        {% for sphere in prayer_spheres|sort if sphere != "all" %}
+        <option value="{{ sphere }}" {% if sphere in character['prayer_spheres'] %}selected{% endif %}>{{ sphere }}</option>
         {% endfor %}
-      </div>
+      </select>
     </div>
+    {% endfor %}
     <button class="btn btn-default" type="submit">Submit</button>
   </form>
 </div>
