@@ -155,6 +155,7 @@ def _ability_response_factory(response, character, app):
             'unspent_ability_points'] >= 0 else ["label-default"]}
     _skill_response_factory(response, character, app)
     _prayer_response_factory(response, character, app)
+    _hp_response_factory(response, character, app)
 
 def _xp_validator(request, errors):
     try:
