@@ -5,7 +5,7 @@
     <label for="level-{{ level }}">{{ level }}</label>
     <select class="form-control" name="{{ level }}" id="level-{{ level }}">
       {% for class_ in classes %}
-        <option value="{{ class_ }}" {% if character['classes'][level] == class_ %}selected{% endif %}>{{ class_|capitalize }}</option>
+        <option value="{{ class_ }}" {% if character['classes'][level - 1] == class_ %}selected{% endif %}>{{ class_|capitalize }}</option>
       {% endfor %}
     </select>
   </div>
