@@ -29,11 +29,11 @@ async def new_character_data_handler(request):
     if len(errors) == 0:
         characters = request.app['db'].characters
         if await characters.find_one(
-                {'user': request['user'], 'name': name}) is not None:
+                {'user_id': request['user']['_id'], 'name': name}) is not None:
             errors.append("you already have a character with this name")
         else:
             result = await characters.insert_one({
-                'user': request['user'],
+                'user_id': request['user']['_id'],
                 'name': name,
                 'xp': 0,
                 'hp': 0,
