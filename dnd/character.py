@@ -273,9 +273,14 @@ def _character_prayers(character):
     character['leftover_prayer_slots'] = leftover_prayer_slots
 
 def _character_hit_points(character):
-    max_hp = character.get('max_hp', 1)
-    if max_hp < 1:
-        max_hp = 1
+    per_level = character.get(
+        'hitpoints_per_level',
+        [CLASSES[character['classes'][0]]['hitdie']])
+    missing = character['level'] - len(per_level)
+    if missing > 0:
+        per_level.extend([1] * missing)
+    character['hitpoints_per_level'] = per_level
+    max_hp = sum(per_level)
     character['max_hp'] = max_hp
     temp_hp = character.get('temp_hp', 0)
     character['temp_hp'] = temp_hp

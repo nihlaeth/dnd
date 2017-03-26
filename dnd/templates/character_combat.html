@@ -21,14 +21,31 @@
       <td colspan="3">
         <form data-async data-target="#hp-errors" action="/api/{{ character['_id'] }}/hp/" method="POST" class="form-horizontal">
           <div id="hp-errors"></div>
+          {% for level in range(1, character['level'] + 1) %}
           <div class="form-group">
-            <label for="max-hp">
-              <a href="#" data-toggle="tooltip" title="maximum hit points adjusted to your level">
-                Max hp:
-              </a>
+            <label for="hp-level-{{ level }}">
+              {{ level }}
+              (1d{{ classes[character['classes'][level - 1]]['hitdie'] }})
             </label>
-            <input type="number" class="form-control" id="max-hp" name="max-hp" value="{{ character['max_hp'] }}" min="1">
+            {% if level == 1 %}
+            <span class="label label-default">{{ classes[character['classes'][level - 1]]['hitdie'] }}</span>
+            <input
+                type="hidden"
+                id="hp-level-{{ level }}"
+                name="{{ level }}"
+                value="{{ classes[character['classes'][level - 1]]['hitdie'] }}" />
+            {% else %}
+            <input
+                type="number"
+                class="form-control"
+                id="hp-level-{{ level }}"
+                name="{{ level }}"
+                value="{{ character['hitpoints_per_level'][level - 1] }}"
+                min="1"
+                max="{{ classes[character['classes'][level - 1]]['hitdie'] }}" />
+            {% endif %}
           </div>
+          {% endfor %}
           <div class="form-group">
             <label for="temp-hp">
               <a href="#" data-toggle="tooltip" title="temporary changes from spell effects">

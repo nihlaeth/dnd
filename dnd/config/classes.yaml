@@ -1,6 +1,6 @@
 ---
 name: fighter
-hitpoints: 1d10
+hitdie: 10
 to_hit: 1
 to_hit_untrained: -2
 skill_slots: 1
@@ -14,7 +14,7 @@ description: |
     <p>A character that starts as a fighter gets no extra benefits.</p>
 ---
 name: specialist
-hitpoints: 1d6
+hitdie: 6
 to_hit: .5
 to_hit_untrained: -4
 skill_slots: 1
@@ -38,7 +38,7 @@ description: |
     first level.</p>
 ---
 name: wizard
-hitpoints: 1d6
+hitdie: 6
 to_hit: .5
 to_hit_untrained: -4
 skill_slots: 1
@@ -87,7 +87,7 @@ description: |
     he learns one spell of that circle automatically.</p>
 ---
 name: priest
-hitpoints: 1d6
+hitdie: 6
 to_hit: .5
 to_hit_untrained: -4
 skill_slots: 1
@@ -133,7 +133,7 @@ description: |
     before he can take a priest-level.</p>
 ---
 name: warlock
-hitpoints: 1d6
+hitdie: 6
 to_hit: .5
 to_hit_untrained: -4
 skill_slots: 2

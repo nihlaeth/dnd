@@ -224,10 +224,23 @@ def _class_response_factory(response, character, app):
     _skill_response_factory(response, character, app)
     _spell_response_factory(response, character, app)
     _prayer_response_factory(response, character, app)
+    _hp_response_factory(response, character, app)
 
 def _hp_validator(request, errors):
+    per_level = []
+    i = 1
     try:
-        max_hp = int(request.POST['max-hp'])
+        while True:
+            try:
+                hit_level = int(request.POST[str(i)])
+            except ValueError:
+                errors.append("invalid value: {} (expected integer)".format(hit_level))
+            else:
+                per_level.append(hit_level)
+            i += 1
+    except KeyError:
+        pass
+    try:
         temp_hp = int(request.POST['temp-hp'])
         damage = int(request.POST['damage'])
     except ValueError:
@@ -235,7 +248,7 @@ def _hp_validator(request, errors):
     except KeyError as error:
         errors.append("missing value: {}".format(error))
     return {
-        'max_hp': max_hp,
+        'hitpoints_per_level': per_level,
         'temp_hp': temp_hp,
         'damage': damage}
 
