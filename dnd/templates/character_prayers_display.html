@@ -11,7 +11,7 @@
 
 Spell slots: <span id='prayer-slots'>{% include 'character_prayer_slots.html' %}</span>
 
-{% for circle in range(1, 7)|reverse %}
+{% for circle in range(1, 8)|reverse %}
 {% for prayer in character['prayers']|sort if character['prayers'][prayer]['circle'] == circle %}
 <div class="panel panel-default">
   <div class="panel-heading">
