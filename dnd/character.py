@@ -71,6 +71,8 @@ def _character_classes(character):
     default_class = 'fighter' if len(classes) == 0 else classes[0]
     if missing > 0:
         classes.extend([default_class] * missing)
+    elif missing < 0:
+        classes = classes[:character['level']]
     character['classes'] = classes
     for i, class_ in enumerate(classes):
         if i < character['level']:
