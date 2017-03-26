@@ -1,6 +1,6 @@
 <ul class="list-group">
   {% for circle in range(1, 8)|reverse %}
-  {% for prayer in character['prepared_prayers'] if character['prepared_prayers'][prayer]['prepared'] > 0 and character['prayers'][prayer]['circle'] == circle %}
+  {% for prayer in character['prepared_prayers'] if character['prepared_prayers'][prayer]['prepared'] > 0 and prayers[prayer]['circle'] == circle %}
   <li class="list-group-item">
     <div class="pull-right">
       <table><tr>{% if character['prepared_prayers'][prayer]['cast'] < character['prepared_prayers'][prayer]['prepared'] %}<td>
