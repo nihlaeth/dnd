@@ -1,0 +1,14 @@
+<form data-async data-target="#class-errors" action="/api/{{ character['_id'] }}/class/" method="POST" class="form-horizontal">
+  <div id="class-errors"></div>
+  {% for level in range(1, character['level'] + 1) %}
+  <div class="form-group">
+    <label for="level-{{ level }}">{{ level }}</label>
+    <select class="form-control" name="{{ level }}" id="level-{{ level }}">
+      {% for class_ in classes %}
+        <option value="{{ class_ }}" {% if character['classes'][level] == class_ %}selected{% endif %}>{{ class_|capitalize }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  {% endfor %}
+  <button class="btn btn-default" type="submit">Submit</button>
+</form>

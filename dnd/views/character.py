@@ -222,6 +222,11 @@ def _class_response_factory(response, character, app):
         'collapse': "show" if character['wizard'] > 0 else "hide"}
     response['#powers-section'] = {
         'collapse': "show" if character['warlock'] > 0 else "hide"}
+    response['#class-form-content'] = {
+        'data': get_env(app).get_template(
+            'character_class_form.html').render(
+                character=character, classes=CLASSES),
+        'activateTooltip': True}
     _skill_response_factory(response, character, app)
     _spell_response_factory(response, character, app)
     _prayer_response_factory(response, character, app)
