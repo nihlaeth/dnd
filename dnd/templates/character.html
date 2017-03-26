@@ -53,16 +53,8 @@
         {% include 'character_abilities.html' %}
       </div>
       <div class="panel-footer">
-        <ul class="list-group">
-          <li class="list-group-item">
-            Unspent class points:
-            <span class="label {% if character['unspent_class_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="class-points">{{ character['unspent_class_points'] }}</span>
-          </li>
-          <li class="list-group-item">
-            Unspent ability points:
-            <span class="label {% if character['unspent_ability_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="ability-points">{{ character['unspent_ability_points'] }}</span>
-          </li>
-        </ul>
+        Unspent ability points:
+        <span class="label {% if character['unspent_ability_points'] < 0 %}label-danger{% else %}label-default{% endif %}" id="ability-points">{{ character['unspent_ability_points'] }}</span>
       </div>
     </div>
   </div>

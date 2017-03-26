@@ -189,15 +189,19 @@ def _race_response_factory(response, character, app):
     _skill_response_factory(response, character, app)
 
 def _class_validator(request, errors):
+    classes = []
+    i = 1
     try:
-        classes = {}
-        for class_ in CLASSES:
-            classes[class_] = int(request.POST[class_])
-    except ValueError:
-        errors.append("invalid value: only integers allowed")
-    except KeyError as error:
-        errors.append("missing value: {}".format(error))
-    return {class_: classes[class_] for class_ in CLASSES}
+        while True:
+            class_ = request.POST[str(i)]
+            if class_ not in CLASSES:
+                errors.append("invalid class: {}".format(class_))
+            else:
+                classes.append(class_)
+            i += 1
+    except KeyError:
+        pass
+    return {'classes': classes}
 
 def _class_response_factory(response, character, app):
     class_list = "\n".join(["""
@@ -211,12 +215,6 @@ def _class_response_factory(response, character, app):
             class_,
             class_) for class_ in CLASSES if character[class_] > 0])
     response['#class-value'] = {'data': class_list}
-    response['#class-points'] = {
-        'data': character['unspent_class_points'],
-        'addClass': ["label-danger"] if character[
-            'unspent_class_points'] < 0 else ["label-default"],
-        'removeClass': ["label-danger"] if character[
-            'unspent_class_points'] >= 0 else ["label-default"]}
     response['#prayer-section'] = {
         'collapse': "show" if character['priest'] > 0 else "hide"}
     response['#spells-section'] = {

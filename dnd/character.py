@@ -64,12 +64,13 @@ def _character_level(character):
     character['level'] = level
 
 def _character_classes(character):
-    unspent_class_points = character['level']
     for class_ in CLASSES:
-        value = character.get(class_, 0)
-        unspent_class_points -= value
-        character[class_] = value
-    character['unspent_class_points'] = unspent_class_points
+        character[class_] = 0
+    classes = character.get('classes', [])
+    character['classes'] = classes
+    for i, class_ in enumerate(classes):
+        if i < character['level']:
+            character[class_] += 1
 
 def _character_race(character):
     race_name = character.get('race_name', 'Truman')
