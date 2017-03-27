@@ -118,7 +118,7 @@ description: |
 ---
 name: Blind-fighting
 group: specialist
-skill_check: !null
+skill_check: !!null
 power_check: !!null
 specification: !!null
 prerequisite: !!null
