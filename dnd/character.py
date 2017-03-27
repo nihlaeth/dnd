@@ -1,5 +1,6 @@
 """Character tools."""
 import copy
+from collections import OrderedDict
 from pkg_resources import resource_stream, Requirement
 from markupsafe import escape
 from markdown import markdown
@@ -37,9 +38,34 @@ ABILITIES = [
     'charisma',
     'perception']
 
+COINS = OrderedDict([
+    ('oros', 1),
+    ('dies', 24),
+    ('semanis', 24 * 6),
+    ('mensis', 24 * 6 * 5),
+    ('annum', 24 * 6 * 5 * 12)])
+
 CLASSES = {class_['name'].lower(): class_ for class_ in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/classes.yaml'),
     Loader=Loader) if class_ is not None}
+
+def convert_coins(coins):
+    """
+    Convert oros into higher coins, or a dictionary of higher coins into oros.
+    """
+    if isinstance(coins, int):
+        result = {coin: 0 for coin in COINS}
+        for coin in reversed(COINS):
+            rest = coins % COINS[coin]
+            if rest != coins:
+                result[coin] = int((coins - rest) / COINS[coin])
+                coins = rest
+        return result
+    elif isinstance(coins, dict):
+        oros = 0
+        for coin in coins:
+            oros += COINS[coin] * coins[coin]
+        return int(oros)
 
 def calculate_stats(character):
     """Calculate and set characters statistics."""
@@ -52,6 +78,7 @@ def calculate_stats(character):
     _character_background(character)
     _character_spells(character)
     _character_prayers(character)
+    _character_money(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -292,6 +319,10 @@ def _character_hit_points(character):
     damage = character.get('damage', 0)
     character['damage'] = damage
     character['hp'] = max_hp + temp_hp - damage
+
+def _character_money(character):
+    character['oros'] = character.get('oros', 0)
+    character['coins'] = convert_coins(character['oros'])
 
 def _character_background(character):
     character['appearance_safe'] = markdown(escape(

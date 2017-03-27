@@ -1,0 +1,44 @@
+<h4>Coins</h4>
+<table class="table">
+  <tr>
+    {% for coin in coins %}
+    <td>
+      <a
+          href="#"
+          data-toggle="tooltip"
+          title="{{ coin|capitalize }}"
+          id="{{ coin }}-tooltip">
+        {{ coin[0]|capitalize }}
+      </a>:
+      {{ character['coins'][coin]|int }}
+    </td>
+    {% endfor %}
+    <td>
+      <button class="btn btn-default btn-xs" data-toggle="collapse" data-target="#add-coins">
+        <span class="glyphicon glyphicon-plus"></span>
+      </button>
+    </td>
+  </tr>
+</table>
+<div class="well collapse" id="add-coins">
+  <form data-async data-target="#coin-errors" action="/api/{{ character['_id'] }}/coin/" method="POST" class="form-horizontal">
+    <div id="coin-errors"></div>
+    Add coins to your stash (use negative numbers to spend).
+    {% for coin in coins %}
+    <div class="input-group">
+      <label for="#{{ coin }}">
+        {{ coin|capitalize }}:
+      </label>
+      <input
+          type="number"
+          class="form-control"
+          id="{{ coin }}"
+          name="{{ coin }}"
+          value="0">
+    </div>
+    {% endfor %}
+    <button class="btn btn-default" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

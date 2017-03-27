@@ -16,6 +16,8 @@ from dnd.character import (
     PRAYERS,
     PRAYER_SPHERES,
     CLASSES,
+    COINS,
+    convert_coins,
     calculate_stats)
 
 async def get_character(request):
@@ -46,6 +48,7 @@ async def character_handler(request):
         'classes': CLASSES,
         'races': RACES,
         'abilities': ABILITIES,
+        'coins': COINS,
         'editing_privileges': editing_privileges,
         'character': character,
         'errors': errors}
@@ -80,6 +83,7 @@ async def data_handler(request):
         'prepare_prayer': (_prepare_prayer_validator, _prepare_prayer_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
+        'coin': (_coin_validator, _coin_response_factory),
     }
     if attribute not in attribute_functions:
         errors.append("unknown attribute")
@@ -458,6 +462,29 @@ def _prepare_prayer_response_factory(response, character, app):
     response['#prayer-slots'] = {
         'data': get_env(app).get_template(
             'character_prayer_slots.html').render(character=character)}
+
+async def _coin_validator(request, errors):
+    coins = {}
+    try:
+        for coin in COINS:
+            coins[coin] = int(request.POST[coin])
+    except ValueError:
+        errors.append("invalid value: only integers allowed")
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    oros = convert_coins(coins)
+    if character['oros'] + oros < 0:
+        errors.append("you can't spend money you don't have")
+    return {'oros': character['oros'] + oros}
+
+def _coin_response_factory(response, character, app):
+    for coin in COINS:
+        response['#{}-tooltip'.format(coin)] = {'activateTooltip': True}
+    response['#coins'] = {
+        'data': get_env(app).get_template(
+            'character_coins.html').render(character=character, coins=COINS)}
 
 async def _name_validator(request, errors):
     try:
