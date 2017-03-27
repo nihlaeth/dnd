@@ -2,13 +2,17 @@
 <table class="table">
   <tr>
     {% for coin in coins %}
+    {% if loop.index0 != 0 %}
+    {% set less_than_dictionary = coins|cutoff_dict(coins[coin]) %}
+    {% set smaller_coin = less_than_dictionary|max(key=less_than_dictionary.get) %}
+    {% endif %}
     <td>
       <a
           href="#"
           data-toggle="tooltip"
-          title="{{ coin|capitalize }}"
+          title="{{ coin|capitalize }}{% if smaller_coin is defined %}: worth {{ (coins[coin] / coins[smaller_coin])|int }} {{ smaller_coin|capitalize }}{% endif %}"
           id="{{ coin }}-tooltip">
-        {{ coin[0]|capitalize }}
+          {{ coin[0]|capitalize }}
       </a>:
       {{ character['coins'][coin]|int }}
     </td>

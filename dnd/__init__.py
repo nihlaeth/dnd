@@ -191,6 +191,10 @@ class DndConfiguration(Config):
 
     authentication = AuthenticationSection()
 
+def _cutoff_dict_filter(dictionary, cutoff):
+    return {
+        key: dictionary[key] for key in dictionary if dictionary[key] < cutoff}
+
 def start():
     """Start Web server."""
     config = DndConfiguration()
@@ -206,6 +210,8 @@ def start():
         config.server.session_secret,
         max_age=config.server.session_max_age))
     aiohttp_jinja2.get_env(app).filters['to_roman'] = toRoman
+    aiohttp_jinja2.get_env(app).filters['max'] = max
+    aiohttp_jinja2.get_env(app).filters['cutoff_dict'] = _cutoff_dict_filter
     app.middlewares.append(aiohttp_login.flash.middleware)
 
     app['db_client'] = AsyncIOMotorClient()
