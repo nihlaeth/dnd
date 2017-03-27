@@ -2,13 +2,13 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#skill-accordion" href="#{{ skill|replace(' ', '-') }}-collapse">{{ skill|capitalize }}</a>
+        <a data-toggle="collapse" data-parent="#skill-accordion" href="#{{ skill|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">{{ skill|capitalize }}</a>
     </h4>
   </div>
-  <div id="{{ skill|replace(' ', '-') }}-collapse" class="panel-collapse collapse">
+  <div id="{{ skill|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">
       <table class="table">
-        {% if character['skills'][skill]['skill_check']|length > 0 %}
+        {% if character['skills'][skill]['skill_check'] is not none %}
         <tr>
           <td>Skill check:</td>
           <td>

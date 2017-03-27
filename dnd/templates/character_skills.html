@@ -28,11 +28,11 @@
                     {% if skill in character['skills'] %}checked{% endif %}>
                   {{ skill|capitalize }}
                 </label>
-                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#skill-info-{{ skill|replace(' ', '-') }}">?</button>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#skill-info-{{ skill|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}">?</button>
               </div>
-              <div id="skill-info-{{ skill|replace(' ', '-') }}" class="collapse well">
+              <div id="skill-info-{{ skill|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}" class="collapse well">
                 <table class="table">
-                  {% if skills[skill]['skill_check']|length > 0 %}
+                  {% if skills[skill]['skill_check'] is not none %}
                   <tr>
                     <td>Skill check:</td>
                     <td>

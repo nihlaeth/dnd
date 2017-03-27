@@ -170,6 +170,10 @@ def _character_skills(character):
             skill_slots -= 2
         if skill in SKILLS:
             character['skills'][skill] = copy.deepcopy(SKILLS[skill])
+            if SKILLS[skill]['skill_check'] is None:
+                character['skills'][skill]['skill_check_text'] = '-'
+                character['skills'][skill]['skill_check_value'] = None
+                continue
             character['skills'][skill]['skill_check_text'] = ' + '.join([
                 element if not element.endswith(
                     '_modifier') else "[{}]".format(
