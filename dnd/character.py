@@ -175,11 +175,13 @@ def _character_skills(character):
                 character['skills'][skill]['skill_check_value'] = None
                 continue
             character['skills'][skill]['skill_check_text'] = ' + '.join([
-                element if not element.endswith(
+                str(element) if not str(element).endswith(
                     '_modifier') else "[{}]".format(
                         element[0:-9]) for element in SKILLS[skill]['skill_check']])
             character['skills'][skill]['skill_check_value'] = sum([
-                character[element] for element in SKILLS[skill]['skill_check']])
+                character[element]  if isinstance(
+                    element,
+                    str) else element for element in SKILLS[skill]['skill_check']])
     character['unspent_skill_slots'] = skill_slots
 
 def _character_spells(character):
