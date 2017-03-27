@@ -574,7 +574,7 @@ name: History
 group: all
 skill_check: [intelligence, -2]
 power_check: !!null
-specification: !!null
+specification: period
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
@@ -659,7 +659,7 @@ name: Language
 group: all
 skill_check: [intelligence]
 power_check: !!null
-specification: !!null
+specification: language
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
@@ -793,8 +793,8 @@ name: Reading
 group: magic-user
 skill_check: [intelligence, 1]
 power_check: !!null
-specification: !!null
-prerequisite: !!null
+specification: Language
+prerequisite: Language
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to read and write a language he can speak. People without this skill can only read numbers, and that only if the DM so decides.</p>
@@ -885,10 +885,8 @@ description: |
 name: Skill focus
 group: all
 skill_check: !!null
-
 specification: known skill
 prerequisite: known skill
-
 penalties_from_armour: !!null
 description: |
   <p>This skill is similar to investing 3 skill points in a specified skill that the character knows. It grants a +3 to the skill-check and/ or a +1 to the power-check. For a specialist, it counts towards the skill points in a skill he can have in total, but not towards the maximum of 3 skill points per level.</p>
@@ -898,10 +896,8 @@ description: |
 name: Skill mastery
 group: all
 skill_check: !!null
-
 specification: known skill + skill focus
 prerequisite: known skill + skill focus
-
 penalties_from_armour: !!null
 description: |
   </p>This skill is the upgrade of skill focus, which is its prerequisite. It grants a +3 to the skill-check or a +1 to the power-check. This skill cannot be taken at first level, it must be learned from a master.</p>
@@ -1056,14 +1052,11 @@ description: |
   <p>The character can also use this skill to avoid attacks. To do this, he rolls a skill-check with a speed of 1. If successful, he then gains a +1 bonus to AC, with an added +1 for every 3 points with which he makes the check. This bonus lasts until his action in the next round. If he wishes to continue this action, he must roll a new check every round. While avoiding, he can take no other actions.</p>
   <p>Tumbling can also be used, in combination with the backstab skill, to attack a target for extra damage. To do this, the character rolls a tumbling-check at a speed of 1. This check grants the character the regular bonus to AC, but only against his specified target. If the skill-check succeeds by as many points as the target has AC, or more, then the character can make an attack. This attack is normally a backstab, but if the target has seen the character use a tumbling attack (within a reasonable amount of time, DM's decision) then the attack is a flanking attack instead. The attack is of course delayed by weapon speed.</p>
 ---
-
 name: Weapon specialist
 group: fighter
 skill_check: !!null
 power_check: !!null
-
 specification: weapon size + weapon type
-
 prerequisite: Weapon training
 penalties_from_armour: !!null
 description: |
@@ -1073,14 +1066,11 @@ description: |
   <p>For the purpose of skill mastery, weapon specialist is regarded as the skill focus for weapon training.</p>
 
 ---
-
 name: Weapon training
 group: all
 skill_check: !!null
 power_check: !!null
-
-specification: weapon type
-
+specification: weapon_category
 prerequisite: !!null
 penalties_from_armour: !!null
 description: |
