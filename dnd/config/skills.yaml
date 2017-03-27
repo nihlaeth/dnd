@@ -80,7 +80,7 @@ description: |
   <p>Payment for art is erratic. Also, payment is often not in money. The DM decides.</p>
 ---
 name: Astrology
-group: magic-user
+group: magic
 skill_check: [intelligence]
 power_check: !!null
 specification: !!null
@@ -104,7 +104,7 @@ description: |
   <p>A character with this skill and a ranged weapon can gain a flanking attack through the use of the stealth skill.</p>
 ---
 name: Banishment
-group: magic-user
+group: magic
 skill_check: !!null
 power_check: [priest, charisma_modifier]
 specification: !!null
@@ -138,7 +138,7 @@ description: |
   <p>This skill allows the character to maneuver ships and boats with superior skill. He can handle all types of water vehicle, but he faces a -6 penalty to the check the first day he handles an unfamiliar ship.</p>
 ---
 name: Chakra ritual
-group: magic-user
+group: magic
 skill_check: [perception, -3]
 power_check: !!null
 specification: !!null
@@ -397,7 +397,7 @@ description: |
 
 ---
 name: Dharana
-group: magic-user
+group: magic
 skill_check: !!null
 power_check: !!null
 specification: !!null
@@ -463,7 +463,7 @@ description: |
   <p>As an added benefit, this skill grants a +1 bonus to saving throws vs fortitude. This bonus is increased by 1 for every 4 skill points invested in the skill.</p>
 ---
 name: Engineering
-group: magic-user
+group: magic
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: !!null
@@ -483,7 +483,7 @@ description: |
   <p>This skill represents the character's ability to act appropriately in polite company. The skill-check has a penalty of up to -6 if the character is unaware of local customs, an extra -6 if the character doesn't speak the language, and a -4 if the character's appearance is too poor. These penalties are cumulative.</p>
 ---
 name: Exorcism
-group: magic-user
+group: magic
 skill_check: !!null
 power_check: [priest, wisdom_modifier]
 specification: !!null
@@ -544,7 +544,7 @@ description: |
   <p>Most forms of gambling are in favour of the bank or house. A successful skill-check allows the character to negate this house advantage. In games between gamblers, without a bank, gaming is opposed by gaming.</p>
 ---
 name: Healing
-group: magic-user
+group: magic
 skill_check: [wisdom]
 power_check: !!null
 specification: !!null
@@ -595,7 +595,7 @@ description: |
   <p>Knowing about history has no practical use. Whatsoever. At all.</p>
 ---
 name: Hypnosis
-group: magic-user
+group: magic
 skill_check: [charisma, -2]
 power_check: !!null
 specification: !!null
@@ -638,7 +638,7 @@ description: |
   <p>Outside of combat, a successful intimidation-check convinces the target that the character is a serious threat. This may cause him to run away, or tell him what he wants to hear, or face him down; it's hard to predict.</p>
 ---
 name: Itemcraft
-group: magic-user
+group: magic
 skill_check: [intelligence, -7]
 power_check: !!null
 specification: !!null
@@ -647,7 +647,7 @@ penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to create magical items. To do so, he needs an item to enchant, and access to the magic he wants to imbue into the item.</p>
   <p>The item to enchant can be anything, but using a masterwork item grants a +4 bonus to the skill-check.</p>
-  <p>Access to the magic is easiest if the character is a magic-user himself, but a vellum, or even another item, can function as well. If such is the case, the character faces a -4 to the skill-check.</p>
+  <p>Access to the magic is easiest if the character is a magic himself, but a vellum, or even another item, can function as well. If such is the case, the character faces a -4 to the skill-check.</p>
   <p>It takes a day, the item, the magic and 1 annum of supplies to enchant the item. Then the character rolls a skill-check. The supplies are consumed by the attempt.</p>
   <p>Magic that gives a passive modifier is the easiest. The item gains a +1 modifier, and a +1 for every 5 points with which the check is made. This works for spells such as imbuement or cloak, for prayers such as battlefate or endure elements, and for warlock powers such as iron will.</p>
   <p>If the duration of the magic is instantaneous, only one charge per session is imbued into the item. The caster level of the effect is the minimum needed to use the magic.</p>
@@ -688,7 +688,7 @@ description: |
   <p>Many traps and locks inflict a penalty on the character trying to get past them. If a trap or lock is magical, but the description doesn't list a penalty to the skill-check, then the penalty is twice the prayer circle or twice the highest spell circle the caster has achieved. A character without the spellcraft-skill faces another -4 penalty when disabling a magical effect.</p>
 ---
 name: Meditation
-group: magic-user
+group: magic
 skill_check: [wisdom, -2]
 power_check: !!null
 specification: !!null
@@ -764,7 +764,7 @@ description: |
   <p>This skill is the art of performing as a musician. It allows the character to play all musical instruments he knows of, and learn others with a little practice. It includes the art of singing.</p>
 ---
 name: Planar theory
-group: magic-user
+group: magic
 skill_check: [wisdom, -3]
 power_check: !!null
 specification: !!null
@@ -790,7 +790,7 @@ description: |
   <p>A character without the backstab skill who uses quickdraw gains no bonuses to his attacks. A character without the ambidexterity skill faces an additional -2 penalty to flanking attacks created using this skill. Be aware that it is only small-sized weapons that can be used by humans in either hand.</p>
 ---
 name: Reading
-group: magic-user
+group: magic
 skill_check: [intelligence, 1]
 power_check: !!null
 specification: Language
@@ -801,7 +801,7 @@ description: |
   <p>The character can read one language. If several languages use the same script, then the DM can rule that the character can read those too (provided he can speak them).</p>
 ---
 name: Religion
-group: magic-user
+group: magic
 skill_check: [wisdom]
 power_check: !!null
 specification: !!null
@@ -848,7 +848,7 @@ description: |
   <p>Getting out of shackles and other restraints is handled with lockpicking.</p>
 ---
 name: Scribe
-group: magic-user
+group: magic
 skill_check: [intelligence, -4]
 power_check: !!null
 specification: !!null
@@ -951,7 +951,7 @@ description: |
   <p>If the character tries to pick the pocket of a specific target, the skill-check is opposed by alertness.</p>
 ---
 name: Spellcraft
-group: magic-user
+group: magic
 skill_check: [intelligence, -2]
 power_check: !!null
 specification: !!null
@@ -1091,7 +1091,7 @@ description: |
   <p>The character can only accept a penalty equal to the to hit bonus he gains from his classes. For example, it would take a 6th level fighter, or a 12th level priest, to gain 2 additional attacks.</p>
 ---
 name: Yoda
-group: magic-user
+group: magic
 skill_check: [strength]
 power_check: !!null
 specification: !!null
