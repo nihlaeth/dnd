@@ -84,6 +84,7 @@ async def data_handler(request):
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
         'coin': (_coin_validator, _coin_response_factory),
+        'rest': (_rest_validator, _rest_response_factory),
     }
     if attribute not in attribute_functions:
         errors.append("unknown attribute")
@@ -332,14 +333,13 @@ def _spell_response_factory(response, character, app):
 
 async def _prepare_spell_validator(request, errors):
     action = request.match_info['extra']
-    if action not in ['prepare', 'cast', 'forget', 'rest']:
+    if action not in ['prepare', 'cast', 'forget']:
         errors.append("invalid action")
         return {}
-    if action != 'rest':
-        try:
-            name = request.POST['name']
-        except KeyError as error:
-            errors.append("missing value: {}".format(error))
+    try:
+        name = request.POST['name']
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
     more_errors, _, character = await get_character(request)
     errors.extend(more_errors)
     if len(errors) != 0:
@@ -370,9 +370,6 @@ async def _prepare_spell_validator(request, errors):
                         character['prepared_spells'][name]['prepared']
             if character['prepared_spells'][name]['prepared'] == 0:
                 del character['prepared_spells'][name]
-    elif action == 'rest':
-        for spell in character['prepared_spells']:
-            character['prepared_spells'][spell]['cast'] = 0
     return {'prepared_spells': character['prepared_spells']}
 
 def _prepare_spell_response_factory(response, character, app):
@@ -410,14 +407,13 @@ def _prayer_response_factory(response, character, app):
 
 async def _prepare_prayer_validator(request, errors):
     action = request.match_info['extra']
-    if action not in ['prepare', 'cast', 'forget', 'rest']:
+    if action not in ['prepare', 'cast', 'forget']:
         errors.append("invalid action")
         return {}
-    if action != 'rest':
-        try:
-            name = request.POST['name']
-        except KeyError as error:
-            errors.append("missing value: {}".format(error))
+    try:
+        name = request.POST['name']
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
     more_errors, _, character = await get_character(request)
     errors.extend(more_errors)
     if len(errors) != 0:
@@ -448,9 +444,6 @@ async def _prepare_prayer_validator(request, errors):
                         character['prepared_prayers'][name]['prepared']
             if character['prepared_prayers'][name]['prepared'] == 0:
                 del character['prepared_prayers'][name]
-    elif action == 'rest':
-        for prayer in character['prepared_prayers']:
-            character['prepared_prayers'][prayer]['cast'] = 0
     return {'prepared_prayers': character['prepared_prayers']}
 
 def _prepare_prayer_response_factory(response, character, app):
@@ -503,6 +496,24 @@ async def _name_validator(request, errors):
 def _name_response_factory(response, character, _):
     response['#name-value'] = {'data': character['name']}
     response['title'] = {'data': "Dnd | {}".format(character['name'])}
+
+async def _rest_validator(request, errors):
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if len(errors) != 0:
+        return {}
+    for prayer in character['prepared_prayers']:
+        character['prepared_prayers'][prayer]['cast'] = 0
+    for spell in character['prepared_spells']:
+        character['prepared_spells'][spell]['cast'] = 0
+    return {
+        'prepared_prayers': character['prepared_prayers'],
+        'prepared_spells': character['prepared_spells']}
+
+def _rest_response_factory(response, character, app):
+    response['close'] = False
+    _prepare_spell_response_factory(response, character, app)
+    _prepare_prayer_response_factory(response, character, app)
 
 def _background_validator(request, errors):
     field = request.match_info['extra']
