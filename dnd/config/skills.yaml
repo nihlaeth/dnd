@@ -134,7 +134,7 @@ skill_check: [wisdom, intelligence_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to maneuver ships and boats with superior skill. He can handle all types of water vehicle, but he faces a -6 penalty to the check the first day he handles an unfamiliar ship.</p>
 ---
@@ -167,7 +167,7 @@ skill_check: [wisdom, strength_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to drive a cart, wagon, chariot or sled with superior skill. He can drive all types of animal-driven vehicle, but he faces a -6 penalty to the check the first day he drives an unfamiliar vehicle.</p>
   <p>A charioteering-check allows the character to retain control of the vehicle if the animals take damage. Also, the AC of the vehicle becomes equal to his current skill-check.</p>
@@ -180,7 +180,7 @@ skill_check: [strength]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   </p>This skill is used for climbing. First, the difficulty of the task is calculated, and then a skill-check is rolled. For the difficulty, the applicable modifiers are added:
   <ul>
@@ -208,7 +208,7 @@ power_check: !!null
 specification: 
 prerequisite: 
   skill: craft (blacksmith)
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to create shields and light and heavy armour.</p>
   <p>If the character produces a masterwork item accidentally, the [dex]-limit and the damage reduction are increased by 1. If he wishes for a different effect, he must always set out to make the item masterwork in advance.</p>
@@ -223,7 +223,7 @@ skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to work metal, creating tools, common items and even improvised weapons and armour. Arrowheads and points for crossbow bolts are also possible. A blacksmith requires a smithy.</p>
 ---
@@ -233,7 +233,7 @@ skill_check: [constitution, dexterity_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to make bows and crossbows, bolts and quarrels. Crafting times for these are standard, but a bowyer can make only 1d6 arrows a day. Metal points for arrows and bolts require the work of a smith.</p>
   <p>Bows and crossbows have several characteristics. They inflict a set amount of piercing damage, and their attacks have a set weapon speed and range.</p>
@@ -246,7 +246,7 @@ skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to manufacture alcoholic beverages. This usually requires an installation of some sort, and can take quite some time. The character has some knowledge of the right ingredients and processes.</p>
   <p>A brewer can also make potions that hold magical spells or prayers. Potions can only hold magic with a range of "caster (caster)", "touch (1 person)" or "touch (1 creature)".</p>
@@ -259,7 +259,7 @@ skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to work wood. He can make furniture, household items and even houses themselves. He can also create stone age spears and maces.</p>
 ---
@@ -269,7 +269,7 @@ skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to run a farm. If the farm grows a crop that the farmer is not used to, he faces a -4 penalty to the skill-check until the first harvest.</p>
   <p>Farms barely make any money, but they feed the farmer's family. The proceeds of selling their produce is offset by the purchases of seeds and tools, regular upkeep and taxes.</p>
@@ -280,7 +280,7 @@ skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to make a living catching fish or other seafood. This can be done with a fishing rod, with nets or by harvesting tidal plains. Nets bring in the highest gain, but they require a substantial industry to support them. Boats, likewise, increase the catch, but require more people for support.</p>
 ---
@@ -290,7 +290,7 @@ skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill represents the character's knowledge of plants and herbs. It allows him to manufacture semi-magical herbal philters and poisons.</p>
   <p>To create philters or poisons, the herbalist first chooses which ability to affect. Then, he spends half a day finding the correct herbs, and half a day brewing.</p>
@@ -304,7 +304,7 @@ skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to catch game. He can either set traps or hunt. He knows how to find animals, and the rudiments of leatherworking and tracking.</p>
 ---
@@ -314,7 +314,7 @@ skill_check: [constitution, perception_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to cut rough gems and incorporate them into jewelry. This is a job of the utmost precision, where the tiniest mistake can cost a great deal of money.</p>
   <p>Cutting gems technically does not require more than a small tool set, but a quiet place to work greatly decreases the margin for error.</p>
@@ -325,7 +325,7 @@ skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to turn animal skins into leather items such as boots, clothes, vellum and light armour.</p>
   <p>If the character produces a masterwork light armour accidentally, the [dex]-limit and the damage reduction are increased by 1. If he wishes for a different effect, he must always set out to make the item masterwork in advance. Masterwork clothing and boots are more comfortable and durable, granting a +1 bonus to the wearer's skill-checks for endurance. The effects of other items are adjudicated by the DM.</p>
@@ -337,7 +337,7 @@ skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to mine precious ores and gems. This includes not only the actual digging, but also prospecting a site, maintaining an actual mine, and smelting ore.</p>
   <p>On a successful skill-check, the character can prospect an area for ores. This process takes many days, depending on a variety of circumstances. However, even a successful check doesn't guarantee anything to mine. And where the availability of ores can be predicted, gems are impossible to find this way.</p>
@@ -350,7 +350,7 @@ skill_check: [constitution, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to select and cleanse ordinary materials to serve as material components for prayers and spells. These components are described in chapter 1, on page 63. Spellmongers sort through the finest examples of these substances to find the ones suitable for spellcasting.</p>
   <p>The components for magic of the first and second circles can be easily selected by the casters themselves. Higher magic circles require the components cleansed by this skill.</p>
@@ -364,7 +364,7 @@ skill_check: [constitution, strength_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to work stone, from building walls to creating sculpture. Be aware that this skill covers merely the technique, not the artistic expression.</p>
 ---
@@ -374,7 +374,7 @@ skill_check: [constitution, dexterity_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to work cloth, needle and thread in order to create and mend clothes. This includes weaving and dyework.</p>
   <p>If the character produces a masterwork item accidentally, it grants a +1 bonus to the wearer's skill-checks for etiquette. If he wishes for a different effect, he must always set out to make the item masterwork in advance. Examples of this are found in the clothing section on page 52.</p>
@@ -388,7 +388,7 @@ power_check: !!null
 specification: 
 prerequisite: 
   skill: craft (blacksmith)
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to create weapons, as listed in the equipment lists. They can create all types of melee weapons.</p>
   <p>Weapons have several characteristics. They inflict a set amount of damage of a set type, and their attacks have a set weapon speed.</p>
@@ -424,7 +424,7 @@ skill_check: [charisma, -1]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to disguise himself as another person and blend into a new role. This is always an opposed skill-check, the opposing skill is observation.</p>
   <p>While most deceptions are simple, more elaborate disguises face penalties. The DM may rule that some of them are not possible without magical support. Penalties are cumulative.</p>
@@ -458,7 +458,7 @@ skill_check: [constitution]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill represents the toughness of the character. He doesn't have to roll the first check to see if he gets tired, and can stay awake for a night without rolling a skill-check. Rolls that determine whether the character stays awake, or can continue exerting himself, are endurance-checks.</p>
   <p>As an added benefit, this skill grants a +1 bonus to saving throws vs fortitude. This bonus is increased by 1 for every 4 skill points invested in the skill.</p>
@@ -469,7 +469,7 @@ skill_check: [constitution, intelligence_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to draw up plans for complicated projects such as building ships, fortresses, siege weaponry or city walls. The actual creation of such projects requires other crafting skills, but they need an engineer to oversee them.</p>
 ---
@@ -527,7 +527,7 @@ skill_check: [dexterity, -1]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to copy documents and works of art. If he has no original to work from, he faces a -8 penalty. If he hasn't even seen an original, the penalty is increased to -20. The character needs proper tools of the appropriate craft or face another -4 penalty at the very least.</p>
   <p>Forging a document takes half a day, just as copying a seal. Paintings and other works of art can take considerably longer. Forging a document while unable to read doubles the time required, but grants a +1 to the check.</p>
@@ -685,7 +685,7 @@ skill_check: [perception, -4]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows a character to open locks, and defuse traps. It is not used to detect traps, that is done with observation. Lockpicking is also useful for getting out of shackles, stocks and manacles.</p>
   <p>Many traps and locks inflict a penalty on the character trying to get past them. If a trap or lock is magical, but the description doesn't list a penalty to the skill-check, then the penalty is twice the prayer circle or twice the highest spell circle the caster has achieved. A character without the spellcraft-skill faces another -4 penalty when disabling a magical effect.</p>
@@ -731,7 +731,7 @@ skill_check: [charisma, dexterity_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as an acrobat. It is not tumbling, but it grants a +1 to the tumbling-check.</p>
 ---
@@ -741,7 +741,7 @@ skill_check: [charisma, -2]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a storyteller, a comedian, or an actor in a play. It is not etiquette, but it grants a +1 to the etiquette-check.</p>
   <p>This skill may also be useful to communicate basic meaning to people who speak a different language, if circumstances permit and the DM allows.</p>
@@ -752,7 +752,7 @@ skill_check: [charisma, dexterity_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a dancer. It grants a +1 to the ritual of fertility-check.</p>
 ---
@@ -762,7 +762,7 @@ skill_check: [charisma]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a musician. It allows the character to play all musical instruments he knows of, and learn others with a little practice. It includes the art of singing.</p>
 ---
@@ -822,7 +822,7 @@ skill_check: [wisdom, dexterity_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to ride a mount with superior skill. He can ride all types of land-based mounts, but he faces a -6 penalty to the check the first day he rides an unfamiliar mount.</p>
   <p>On a successful skill-check, the character can perform special maneuvers. For instance, he can jump obstacles, guide the mount without hands, or hang on its side, using the mount as cover, gaining a +4 bonus to AC. The DM may assign modifiers for more insane maneuvers.</p>
@@ -835,7 +835,7 @@ skill_check: [charisma, wisdom_modifier]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to engage in a 'fertility ritual' with a client. This can be done once a day, and takes two to three hours. After the ritual, the character and the client gain a +1 bonus to charisma, and the client also gains a +1 bonus to saving throws. This bonus lasts until a sunrise and a sunset have passed.</p>
   <p>If the character is a priest using this skill on holy ground, the bonus to the client increases to a +1 to hit, a +1 to charisma and +2 to saving throws.</p>
@@ -860,7 +860,7 @@ power_check: !!null
 specification: 
 prerequisite: 
   skill: reading
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to infuse vellum with magical spells or prayers that have a duration of "instantaneous". To do this, he requires a blank vellum, made by a leatherworker, and ink made from the material component of the magic, vellum and ink coming to a total of 1 mensis, plus 1 semanis per circle of the magic. He must also have access to the spell or prayer.</p>
   <p>The scribe then spends a day inscribing the magic and rolls a skill-check. Let it dry for a night and it's done.</p>
@@ -945,7 +945,7 @@ skill_check: [dexterity, -6]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   </p>This skill involves pickpocketing. It can be used to supplement the character's income, or attempt specific actions.</p>
   </p>On a successful check, the character can gain extra income by shortchanging people, etc.. It is assumed that the thief is not taking any large risks. This use of the skill takes at least 3 or 4 hours, with failure meaning that he has drawn the attention of the guard, and can 'earn' no more that day. On a natural 20, roll another check; if that second check fails, he is caught in the act.</p>
@@ -981,7 +981,7 @@ skill_check: [dexterity, -4]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to sneak past, or up to, a target. It is therefore always used against a target. This skill can set up a target for a backstab. Stealth is opposed by alertness.</p>
   <p>If there are more targets, every additional target imparts a -2 penalty to the skill-check.</p>
@@ -1006,7 +1006,7 @@ skill_check: [strength]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to swim. This is a highly useful skill that many learn too late.</p>
   <p>Most of the time, characters with swimming automatically succeed on their skill-check. Other characters must still roll. A skilled swimmer can help another, but this requires a group-check. Swimming in wild water or swimming underwater requires a skill-check from even the most experienced swimmer.</p>
@@ -1053,7 +1053,7 @@ skill_check: [dexterity]
 power_check: !!null
 specification: 
 prerequisite: 
-penalties_from_armour: !!null
+penalties_from_armour: true
 description: |
   <p>This skill allows the character to perform various acrobatic maneuvers. The character can walk ledges, do flips and spins, and jump farther. He can even walk a tightrope on a check with a -10 penalty. A successful skill-check allows him to stand up with a speed of 1 instead of 5.</p>
   <p>A character may roll a tumbling-check when he's falling. If successful, he reduces the falling damage by 1d6.</p>
