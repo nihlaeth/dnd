@@ -18,16 +18,6 @@
           </td>
         </tr>
         {% endif %}
-        {% if character['skills'][skill]['power_check'] is not none %}
-        <tr>
-          <td>Power check:</td>
-          <td>
-            <a href="#" data-toggle="tooltip" title="{{ character['skills'][skill]['power_check_text'] }}">
-              {{ character['skills'][skill]['power_check_value'] }}
-            </a>
-          </td>
-        </tr>
-        {% endif %}
       </table>
       {{ character['skills'][skill]['description'] }}
     </div>
