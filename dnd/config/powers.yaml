@@ -1,7 +1,6 @@
 ---
 name: "Adaptation"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3"
@@ -24,7 +23,6 @@ description: |
 ---
 name: "Atrophy"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 person"
 casting_time: "3"
@@ -46,7 +44,6 @@ description: |
 ---
 name: "Cleansing"
 sphere: !!null
-circle: !!null
 range: "touch"
 area: "1 creature"
 casting_time: "3 rounds"
@@ -60,7 +57,6 @@ description: |
 ---
 name: "Death field"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "10 meter radius"
 casting_time: "3"
@@ -83,7 +79,6 @@ description: |
 ---
 name: "Deepsight"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 person"
 casting_time: "3"
@@ -98,7 +93,6 @@ description: |
 ---
 name: "Dream travel"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "special"
 casting_time: "8 hours"
@@ -122,7 +116,6 @@ description: |
 ---
 name: "Dyson"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 magic effect"
 casting_time: "3"
@@ -148,7 +141,6 @@ description: |
 ---
 name: "Ego whip"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 creature"
 casting_time: "3"
@@ -162,7 +154,6 @@ description: |
 ---
 name: "Farsight"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3"
@@ -183,7 +174,6 @@ description: |
 ---
 name: "Fear"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 creature"
 casting_time: "3"
@@ -196,7 +186,6 @@ description: |
 ---
 name: "Insight"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 target or 3 meter radius"
 casting_time: "3"
@@ -213,7 +202,6 @@ description: |
 ---
 name: "Iron will"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "5 meter radius"
 casting_time: "3"
@@ -236,7 +224,6 @@ description: |
 ---
 name: "Kimagure"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3"
@@ -257,7 +244,6 @@ description: |
 ---
 name: "Leeching"
 sphere: !!null
-circle: !!null
 range: "touch"
 area: "1 person"
 casting_time: "3"
@@ -279,7 +265,6 @@ description: |
 ---
 name: "Lifegift"
 sphere: !!null
-circle: !!null
 range: "touch"
 area: "1 creature"
 casting_time: "3"
@@ -300,7 +285,6 @@ description: |
 ---
 name: "Locus"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3 rounds"
@@ -323,7 +307,6 @@ description: |
 ---
 name: "Mantra"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3"
@@ -348,7 +331,6 @@ description: |
 ---
 name: "Mind over matter"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 object"
 casting_time: "3"
@@ -377,7 +359,6 @@ description: |
 ---
 name: "Mind thrust"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 person"
 casting_time: "3"
@@ -403,7 +384,6 @@ description: |
 ---
 name: "Mindlink"
 sphere: !!null
-circle: !!null
 range: "special"
 area: "1 person"
 casting_time: "3"
@@ -425,7 +405,6 @@ description: |
 ---
 name: "Paimei"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "1 round"
@@ -445,7 +424,6 @@ description: |
 ---
 name: "Paper tiger"
 sphere: arcane
-circle: !!null
 range: "short"
 area: "1 person"
 casting_time: "1 round"
@@ -469,7 +447,6 @@ description: |
 ---
 name: "Psionic blast"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 creature"
 casting_time: "3"
@@ -492,7 +469,6 @@ description: |
 ---
 name: "Psychic crush"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 creature"
 casting_time: "3"
@@ -506,7 +482,6 @@ description: |
 ---
 name: "Suggestion"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "1 creature"
 casting_time: "3"
@@ -521,7 +496,6 @@ description: |
 ---
 name: "Telekinesis"
 sphere: !!null
-circle: !!null
 range: "short"
 area: "at least 1 object"
 casting_time: "3"
@@ -543,7 +517,6 @@ description: |
 ---
 name: "Trollhide"
 sphere: !!null
-circle: !!null
 range: "caster"
 area: "caster"
 casting_time: "3"
