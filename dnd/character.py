@@ -29,6 +29,10 @@ PRAYERS = {prayer['name'].lower(): prayer for prayer in load_all(
 
 PRAYER_SPHERES = {PRAYERS[prayer]['sphere'] for prayer in PRAYERS}
 
+POWERS = {power['name'].lower(): power for power in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/powers.yaml'),
+    Loader=Loader) if power is not None}
+
 ABILITIES = [
     'strength',
     'dexterity',
@@ -73,6 +77,7 @@ def calculate_stats(character):
     _character_classes(character)
     _character_race(character)
     _character_abilities(character)
+    _character_powers(character)
     _character_skills(character)
     _character_hit_points(character)
     _character_background(character)
@@ -145,6 +150,15 @@ def _character_abilities(character):
         character[modifier_stat] = modifier
     character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
 
+def _character_powers(character):
+    power_names = character.get('power_names', [])
+    character['powers'] = {}
+    character['power_skill_slots'] = 0
+    for power in power_names:
+        character['power_skill_slots'] += 2
+        if power in POWERS:
+            character['powers'][power] = copy.deepcopy(POWERS[power])
+
 def _character_skill_check(character, skill):
     if character['skills'][skill]['skill_check'] is None:
         character['skills'][skill]['skill_check_text'] = '-'
@@ -164,6 +178,7 @@ def _character_skill_slots(character):
     for class_ in CLASSES:
         class_skill_slots += CLASSES[class_]['skill_slots'] * character[class_]
     skill_slots = 5 + class_skill_slots + character['intelligence_modifier']
+    skill_slots -= character['power_skill_slots']
     if character['classes'][0] == "warlock":
         skill_slots += 1
     if 'skills' in character['race']['bonus']:
