@@ -83,6 +83,7 @@ async def data_handler(request):
         'prepare_spell': (_prepare_spell_validator, _prepare_spell_response_factory),
         'prayer': (_prayer_validator, _prayer_response_factory),
         'prepare_prayer': (_prepare_prayer_validator, _prepare_prayer_response_factory),
+        'power': (_power_validator, _power_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
         'coin': (_coin_validator, _coin_response_factory),
@@ -457,6 +458,21 @@ def _prepare_prayer_response_factory(response, character, app):
     response['#prayer-slots'] = {
         'data': get_env(app).get_template(
             'character_prayer_slots.html').render(character=character)}
+
+def _power_validator(request, _):
+    powers = []
+    for power in POWERS:
+        if power in request.POST:
+            powers.append(power)
+    return {'power_names': powers}
+
+def _power_response_factory(response, character, app):
+    response['#power-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_powers_display.html').render(
+                character=character, powers=POWERS),
+        'activateTooltip': True}
+    _skill_response_factory(response, character, app)
 
 async def _coin_validator(request, errors):
     coins = {}
