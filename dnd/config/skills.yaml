@@ -3,8 +3,8 @@ name: Alcance
 group: magic
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to change the range of his wizard spells and warlock powers from short to medium, or from medium to long. It cannot upgrade range from short to long.</p>
@@ -15,8 +15,8 @@ name: Alertness
 group: all
 skill_check: [perception]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill teaches the character to be alert for the unexpected. It helps him to notice thieves, or to react swiftly when standing guard. Altertness is the opposing skill for stealth, sleight of hand and quickdraw. It also often determines surprise.</p>
@@ -25,8 +25,8 @@ name: Ambidexterity
 group: specialist
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill negates the -2 to hit penalty for attacks made with the off-hand. Also, ambidextrous characters can designate either hand as their main hand. They can use a medium weapon in their off-hand.</p>
@@ -35,9 +35,9 @@ name: Animal handling
 group: all
 skill_check: [wisdom, -1]
 power_check: !!null
-specification: 
+specification:
   literal: [birds, pets, mounts]
-prerequisite: 
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill reflects the character's rapport with animals. He can herd domestic animals and lead pack animals or work animals.</p>
@@ -62,8 +62,8 @@ name: Appraising
 group: specialist
 skill_check: [intelligence, perception_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill teaches the character to know the value of objects. He can estimate the value on the open market, and determine the best market to sell it. This skill is concerned only with monetary value, not with artistic, religious or legal matters. It requires the character to study the object. It is also one of the opposing skills for forgery.</p>
@@ -72,8 +72,8 @@ name: Artistic ability
 group: all
 skill_check: [wisdom]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to create drawings and paintings of professional quality. Other forms of art require a synergy with other skills. Sculpture requires this skill and craft (stonemason), woodwork needs craft (carpenter) and creating flags and banners requires heraldry. This list is not complete, let the DM decide.</p>
@@ -84,8 +84,8 @@ name: Astrology
 group: magic
 skill_check: [intelligence]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill teaches the character to read the patterns in the stars, and learn from them. He can 'draw a chart' about a person and learn several facts about him. On a successful check, the character learns the target's highest ability, starting class, and several tidbits that help form a general view about the target. This check has a -8 penalty if the character doesn't know the target's name, and a -8 penalty if he doesn't know the target's date of birth.</p>
@@ -95,8 +95,8 @@ name: Backstab
 group: specialist
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to do 1d6 extra damage when backstabbing. Furthermore, specialists can invest SP to do even more damage. For every 5 SP they invest, another 1d6 extra damage is gained. A backstab can be achieved through the use of the stealth-skill, the tumbling-skill, or the quickdraw-skill.</p>
@@ -108,8 +108,8 @@ name: Banishment
 group: magic
 skill_check: !!null
 power_check: [priest, charisma_modifier]
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to keep a single spirit or undead at bay. This is resolved by a power-check, using the character's priest level and his [cha]. The power-check determines the DC of the undead's saving throw vs will. The speed of this action is 3.</p>
@@ -121,8 +121,8 @@ name: Blind-fighting
 group: specialist
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to negate penalties caused by being unable to sense his opponent. The penalty to attacks, ability-checks, skill-checks, saving throws and AC are 2 less than for other characters. If the character has other effects that negate these penalties, then all effects apply, potentially reducing the penalty to 0.</p>
@@ -132,8 +132,8 @@ name: Boating
 group: all
 skill_check: [wisdom, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to maneuver ships and boats with superior skill. He can handle all types of water vehicle, but he faces a -6 penalty to the check the first day he handles an unfamiliar ship.</p>
@@ -142,8 +142,8 @@ name: Chakra ritual
 group: magic
 skill_check: [perception, -3]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows a character to harmonise himself with a another person's chakra, and attempt to balance it by placing the client into contact with mystical crystals. This takes one hour, after which the client gains a +1 bonus to saving throws. This bonus lasts until a sunrise and a sunset have passed.</p>
@@ -153,8 +153,8 @@ name: Charging
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to do more damage from a charge. Instead of inflicting 1 extra point of damage, he does double weapon damage. Other bonuses, such as from strength, weapon specialisation or the magic on the weapon, are not doubled; only the weapon damage is rolled twice. Furthermore, every 3 SP invested in the skill grant another +1 to damage when charging.</p>
@@ -165,8 +165,8 @@ name: Charioteering
 group: all
 skill_check: [wisdom, strength_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to drive a cart, wagon, chariot or sled with superior skill. He can drive all types of animal-driven vehicle, but he faces a -6 penalty to the check the first day he drives an unfamiliar vehicle.</p>
@@ -178,8 +178,8 @@ name: Climbing
 group: all
 skill_check: [strength]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   </p>This skill is used for climbing. First, the difficulty of the task is calculated, and then a skill-check is rolled. For the difficulty, the applicable modifiers are added:
@@ -193,8 +193,8 @@ name: Cooking
 group: all
 skill_check: [intelligence, -3]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill lets the character create meals of superior quality. On a successful skill-check, he can create an evening meal that grants up to 6 people a +1 constitution bonus the next day.</p>
@@ -205,8 +205,8 @@ name: Craft (armourer)
 group: all
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: craft (blacksmith)
 penalties_from_armour: true
 description: |
@@ -221,8 +221,8 @@ name: Craft (blacksmith)
 group: all
 skill_check: [constitution, strength_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to work metal, creating tools, common items and even improvised weapons and armour. Arrowheads and points for crossbow bolts are also possible. A blacksmith requires a smithy.</p>
@@ -231,8 +231,8 @@ name: Craft (bowyer)
 group: all
 skill_check: [constitution, dexterity_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to make bows and crossbows, bolts and quarrels. Crafting times for these are standard, but a bowyer can make only 1d6 arrows a day. Metal points for arrows and bolts require the work of a smith.</p>
@@ -244,8 +244,8 @@ name: Craft (brewer)
 group: all
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to manufacture alcoholic beverages. This usually requires an installation of some sort, and can take quite some time. The character has some knowledge of the right ingredients and processes.</p>
@@ -257,8 +257,8 @@ name: Craft (carpenter)
 group: all
 skill_check: [constitution, strength_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to work wood. He can make furniture, household items and even houses themselves. He can also create stone age spears and maces.</p>
@@ -267,8 +267,8 @@ name: Craft (farmer)
 group: all
 skill_check: [constitution, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to run a farm. If the farm grows a crop that the farmer is not used to, he faces a -4 penalty to the skill-check until the first harvest.</p>
@@ -278,8 +278,8 @@ name: Craft (fisherman)
 group: all
 skill_check: [constitution, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to make a living catching fish or other seafood. This can be done with a fishing rod, with nets or by harvesting tidal plains. Nets bring in the highest gain, but they require a substantial industry to support them. Boats, likewise, increase the catch, but require more people for support.</p>
@@ -288,8 +288,8 @@ name: Craft (herbalist)
 group: all
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill represents the character's knowledge of plants and herbs. It allows him to manufacture semi-magical herbal philters and poisons.</p>
@@ -302,8 +302,8 @@ name: Craft (hunter)
 group: all
 skill_check: [constitution, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to catch game. He can either set traps or hunt. He knows how to find animals, and the rudiments of leatherworking and tracking.</p>
@@ -312,8 +312,8 @@ name: Craft (jeweler)
 group: specialist
 skill_check: [constitution, perception_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to cut rough gems and incorporate them into jewelry. This is a job of the utmost precision, where the tiniest mistake can cost a great deal of money.</p>
@@ -323,8 +323,8 @@ name: Craft (leatherworker)
 group: all
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to turn animal skins into leather items such as boots, clothes, vellum and light armour.</p>
@@ -335,8 +335,8 @@ name: Craft (miner)
 group: all
 skill_check: [constitution, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to mine precious ores and gems. This includes not only the actual digging, but also prospecting a site, maintaining an actual mine, and smelting ore.</p>
@@ -348,8 +348,8 @@ name: Craft (spellmonger)
 group: all
 skill_check: [constitution, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to select and cleanse ordinary materials to serve as material components for prayers and spells. These components are described in chapter 1, on page 63. Spellmongers sort through the finest examples of these substances to find the ones suitable for spellcasting.</p>
@@ -362,8 +362,8 @@ name: Craft (stonemason)
 group: all
 skill_check: [constitution, strength_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to work stone, from building walls to creating sculpture. Be aware that this skill covers merely the technique, not the artistic expression.</p>
@@ -372,8 +372,8 @@ name: Craft (tailor)
 group: all
 skill_check: [constitution, dexterity_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to work cloth, needle and thread in order to create and mend clothes. This includes weaving and dyework.</p>
@@ -385,8 +385,8 @@ name: Craft (weaponsmith)
 group: fighter
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: craft (blacksmith)
 penalties_from_armour: true
 description: |
@@ -401,8 +401,8 @@ name: Dharana
 group: magic
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to increase his focus in power-checks. He can gain a bonus of up to half his relevant class level, by sacrificing the same amount of points from the power-check's relevant ability. He must declare the bonus before rolling the power-check.</p>
@@ -411,8 +411,8 @@ name: Direction sense
 group: all
 skill_check: [wisdom, -1]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to find his way. He can find north, and keep his bearing in different terrain types.</p>
@@ -422,8 +422,8 @@ name: Disguise
 group: specialist
 skill_check: [charisma, -1]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to disguise himself as another person and blend into a new role. This is always an opposed skill-check, the opposing skill is observation.</p>
@@ -444,8 +444,8 @@ name: Double weapon style
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill decreases all attack penalties for fighting with two weapons by 2. Instead of -2 and -4 to hit, the character suffers no penalty for attacks with his primary weapon, and only a -2 penalty with his off-hand.</p>
@@ -456,8 +456,8 @@ name: Endurance
 group: fighter
 skill_check: [constitution]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill represents the toughness of the character. He doesn't have to roll the first check to see if he gets tired, and can stay awake for a night without rolling a skill-check. Rolls that determine whether the character stays awake, or can continue exerting himself, are endurance-checks.</p>
@@ -467,8 +467,8 @@ name: Engineering
 group: magic
 skill_check: [constitution, intelligence_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to draw up plans for complicated projects such as building ships, fortresses, siege weaponry or city walls. The actual creation of such projects requires other crafting skills, but they need an engineer to oversee them.</p>
@@ -477,8 +477,8 @@ name: Etiquette
 group: all
 skill_check: [charisma]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill represents the character's ability to act appropriately in polite company. The skill-check has a penalty of up to -6 if the character is unaware of local customs, an extra -6 if the character doesn't speak the language, and a -4 if the character's appearance is too poor. These penalties are cumulative.</p>
@@ -487,8 +487,8 @@ name: Exorcism
 group: magic
 skill_check: !!null
 power_check: [priest, wisdom_modifier]
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to remove curses from creatures or items. This is resolved by a power-check, using the exorcist's priest level and his wisdom. The DC for the curse is the same as the original spell save. If an attempt to remove a curse fails, the DC to remove the curse is increased by 2.</p>
@@ -501,8 +501,8 @@ name: Fast-talking
 group: specialist
 skill_check: [charisma]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill is a special case. It represents the character's ability to talk his way out of an embarrassing, or even dangerous, situation. It is always an opposed skill-check, but there is no opposing skill (the target is assumed to have it, but to have spent no skill points in it).</p>
@@ -513,8 +513,8 @@ name: Fire building
 group: all
 skill_check: [wisdom, 2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to start a fire. For this he requires materials to burn and a way to generate heat or a spark.</p>
@@ -525,8 +525,8 @@ name: Forgery
 group: specialist
 skill_check: [dexterity, -1]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to copy documents and works of art. If he has no original to work from, he faces a -8 penalty. If he hasn't even seen an original, the penalty is increased to -20. The character needs proper tools of the appropriate craft or face another -4 penalty at the very least.</p>
@@ -537,8 +537,8 @@ name: Gaming
 group: specialist
 skill_check: [charisma]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill represents the character's ability in games of skill, not chance, commonly know as gambling. In these games, the character can hold his own.</p>
@@ -548,8 +548,8 @@ name: Healing
 group: magic
 skill_check: [wisdom]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to help the wounded, the poisoned and the sick. It also grants knowledge of plants that aid in healing.</p>
@@ -563,8 +563,8 @@ name: Heraldry
 group: all
 skill_check: [intelligence]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill represents the character's knowledge of the flags, shields and symbols of heroes, cities and noble families (among others). Not only can he (on a successful skill-check) identify many flags, he can also explain the meaning and allegiances behind symbols on them.</p>
@@ -575,9 +575,9 @@ name: History
 group: all
 skill_check: [intelligence, -2]
 power_check: !!null
-specification: 
+specification:
   custom: true
-prerequisite: 
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill reflects the character's knowledge about a certain period of history. Most of this is based on stories and rumours, but a character who knows how to read gains a +2 bonus to the skill-check.</p>
@@ -600,8 +600,8 @@ name: Hypnosis
 group: magic
 skill_check: [charisma, -2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   </p>This skill allows the character to hypnotise people. Only willing people can be affected. The act of hypnotizing takes about 5 minutes.</p>
@@ -617,8 +617,8 @@ name: Info gathering
 group: specialist
 skill_check: [intelligence, charisma_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to gather more rumours and other information than characters without this skill can. Furthermore, on a successful check he can do this without making it obvious to the people around him.</p>
@@ -630,8 +630,8 @@ name: Intimidation
 group: fighter
 skill_check: [charisma, strength_modifier]
 power_check: [fighter, charisma_modifier]
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill inspires fear, or at least a healthy respect, in the character's enemies. It has uses in both social situations and combat.</p>
@@ -643,8 +643,8 @@ name: Itemcraft
 group: magic
 skill_check: [intelligence, -7]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to create magical items. To do so, he needs an item to enchant, and access to the magic he wants to imbue into the item.</p>
@@ -661,9 +661,9 @@ name: Language
 group: all
 skill_check: [intelligence]
 power_check: !!null
-specification: 
+specification:
   custom: true
-prerequisite: 
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to speak an additional language. He still has a noticeable accent, unless he learns skill focus in the language.</p>
@@ -673,8 +673,8 @@ name: Large weapon style
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill improves the character's combat skill when fighting with a large weapon. Every round, he gets a free parry attempt vs a melee attack. This parry has a -4 penalty to hit.</p>
@@ -683,8 +683,8 @@ name: Lockpicking
 group: specialist
 skill_check: [perception, -4]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows a character to open locks, and defuse traps. It is not used to detect traps, that is done with observation. Lockpicking is also useful for getting out of shackles, stocks and manacles.</p>
@@ -694,8 +694,8 @@ name: Meditation
 group: magic
 skill_check: [wisdom, -2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to increase one ability at the expense of all others. He meditates for 6 hours and then rolls a skill-check. If the check is successful, he can increase one ability by 3, while all the others decrease by 1. These effects last for 12 hours.</p>
@@ -706,8 +706,8 @@ name: Navigation
 group: all
 skill_check: [intelligence, -2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to direct a ship to the right place. Using the sun, the moon and the stars, the winds and the currents as guides, a successful check allows him to steer a course towards a location he knows.</p>
@@ -717,8 +717,8 @@ name: Observation
 group: all
 skill_check: [perception]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill reflects the character's powers of observation. A successful skill-check allows him to find traps or secret doors, see through disguises and even read lips.</p>
@@ -729,8 +729,8 @@ name: Perform (acrobatics)
 group: all
 skill_check: [charisma, dexterity_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as an acrobat. It is not tumbling, but it grants a +1 to the tumbling-check.</p>
@@ -739,8 +739,8 @@ name: Perform (acting)
 group: all
 skill_check: [charisma, -2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a storyteller, a comedian, or an actor in a play. It is not etiquette, but it grants a +1 to the etiquette-check.</p>
@@ -750,8 +750,8 @@ name: Perform (dance)
 group: all
 skill_check: [charisma, dexterity_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a dancer. It grants a +1 to the ritual of fertility-check.</p>
@@ -760,8 +760,8 @@ name: Perform (music)
 group: all
 skill_check: [charisma]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill is the art of performing as a musician. It allows the character to play all musical instruments he knows of, and learn others with a little practice. It includes the art of singing.</p>
@@ -770,8 +770,8 @@ name: Planar theory
 group: magic
 skill_check: [wisdom, -3]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: spellcraft
 penalties_from_armour: !!null
 description: |
@@ -784,8 +784,8 @@ name: Quickdraw
 group: specialist
 skill_check: [dexterity, -5]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to draw and sheathe weapons and switch them between hands very fast. These actions do not delay his initiative as they do for others.</p>
@@ -797,9 +797,9 @@ name: Reading
 group: magic
 skill_check: [intelligence, 1]
 power_check: !!null
-specification: 
+specification:
   specification: language
-prerequisite: 
+prerequisite:
   specification: language
 penalties_from_armour: !!null
 description: |
@@ -810,8 +810,8 @@ name: Religion
 group: magic
 skill_check: [wisdom]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill represents the character's knowledge of religious ceremonies and symbols. He knows of the common cults worshipped in the area, and can identify priests and rites from less known cults on a successful skill-check.</p>
@@ -820,8 +820,8 @@ name: Riding
 group: all
 skill_check: [wisdom, dexterity_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to ride a mount with superior skill. He can ride all types of land-based mounts, but he faces a -6 penalty to the check the first day he rides an unfamiliar mount.</p>
@@ -833,8 +833,8 @@ name: Ritual of fertility
 group: specialist
 skill_check: [charisma, wisdom_modifier]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to engage in a 'fertility ritual' with a client. This can be done once a day, and takes two to three hours. After the ritual, the character and the client gain a +1 bonus to charisma, and the client also gains a +1 bonus to saving throws. This bonus lasts until a sunrise and a sunset have passed.</p>
@@ -845,8 +845,8 @@ name: Rope use
 group: all
 skill_check: [dexterity]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to tie and undo knots, maintain ropes and cables, and tie up people. It is also useful for escaping.</p>
@@ -857,8 +857,8 @@ name: Scribe
 group: magic
 skill_check: [intelligence, -4]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: reading
 penalties_from_armour: true
 description: |
@@ -872,8 +872,8 @@ name: Shield wall
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill grants a +1 AC to people on either side of the character, if he wields a shield. Skill focus increases the bonus to +2.</p>
@@ -882,8 +882,8 @@ name: Single weapon style
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill grants the character a +1 bonus to AC when fighting with one 1-handed weapon while leaving the other hand free. Skill focus increases the bonus to +2. The bonus applies only to his AC vs melee attacks.</p>
@@ -891,9 +891,9 @@ description: |
 name: Skill focus
 group: all
 skill_check: !!null
-specification: 
+specification:
   any_skill: true
-prerequisite: 
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill is similar to investing 3 skill points in a specified skill that the character knows. It grants a +3 to the skill-check and/ or a +1 to the power-check. For a specialist, it counts towards the skill points in a skill he can have in total, but not towards the maximum of 3 skill points per level.</p>
@@ -902,8 +902,8 @@ description: |
 name: Skill mastery
 group: all
 skill_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: skill focus
   specification: skill focus
 penalties_from_armour: !!null
@@ -943,8 +943,8 @@ name: Sleight of hand
 group: specialist
 skill_check: [dexterity, -6]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   </p>This skill involves pickpocketing. It can be used to supplement the character's income, or attempt specific actions.</p>
@@ -962,8 +962,8 @@ name: Spellcraft
 group: magic
 skill_check: [intelligence, -2]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill grants the character familiarity with the different forms and rites of spellcasting. If he observes and overhears someone who is casting a spell or prayer, or if he examines the material components used, he can attempt to identify the magic. A skill-check must be rolled to make a correct identification. Note that since the spellcaster must be observed until the very instant of casting, the spellcraft skill does not grant an advantage against observed spells.</p>
@@ -979,8 +979,8 @@ name: Stealth
 group: specialist
 skill_check: [dexterity, -4]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to sneak past, or up to, a target. It is therefore always used against a target. This skill can set up a target for a backstab. Stealth is opposed by alertness.</p>
@@ -993,8 +993,8 @@ name: Survival
 group: fighter
 skill_check: [intelligence]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill teaches the character to survive in the wild, of a sort. It enables him to find water, shelter and a meagre amount of edible plants and other food. It does not include hunting, tracking or trapping, or anything that is covered in another skill, such as fire-building, but on a successful skill-check the character can stay alive in the wilderness.</p>
@@ -1004,8 +1004,8 @@ name: Swimming
 group: all
 skill_check: [strength]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to swim. This is a highly useful skill that many learn too late.</p>
@@ -1017,8 +1017,8 @@ name: Teaching
 group: all
 skill_check: [wisdom]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill signifies that the character is a better than average teacher. Teaching time, if applicable, is reduced by a third. It does not mean his students like him.</p>
@@ -1027,8 +1027,8 @@ name: Tracking
 group: fighter
 skill_check: [wisdom]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite:
   skill: craft (hunter)
 penalties_from_armour: !!null
 description: |
@@ -1051,8 +1051,8 @@ name: Tumbling
 group: specialist
 skill_check: [dexterity]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: true
 description: |
   <p>This skill allows the character to perform various acrobatic maneuvers. The character can walk ledges, do flips and spins, and jump farther. He can even walk a tightrope on a check with a -10 penalty. A successful skill-check allows him to stand up with a speed of 1 instead of 5.</p>
@@ -1065,10 +1065,10 @@ name: Weapon specialist
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
+specification:
   specification: weapon training
   catalog: WEAPON_SIZE
-prerequisite: Weapon training
+prerequisite:
   specification: weapon training
 penalties_from_armour: !!null
 description: |
@@ -1082,9 +1082,9 @@ name: Weapon training
 group: all
 skill_check: !!null
 power_check: !!null
-specification: 
+specification:
   catalog: WEAPON_CATEGORY
-prerequisite: 
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill reflects the character's knowledge of how to properly use a weapon. When using it, he does not suffer any class penalty for lack of training.</p>
@@ -1096,8 +1096,8 @@ name: Whirlwind
 group: fighter
 skill_check: !!null
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill gives the character the opportunity to have multiple attacks in the same round. For every additional attack the character wants, he faces a -3 penalty to hit on all attacks. The first attack takes place at the usual time in the initiative order. For every additional attack, add the weapon speed to the initiative (minimum increase of 2).</p>
@@ -1107,8 +1107,8 @@ name: Yoda
 group: magic
 skill_check: [strength]
 power_check: !!null
-specification: 
-prerequisite: 
+specification: !!null
+prerequisite: !!null
 penalties_from_armour: !!null
 description: |
   <p>This skill allows the character to strengthen spells, prayers and powers that have no somatic components. He adds somatic components to the magic, and rolls a skill-check. If the check is successful, then the magic is treated as if his caster level  was one level higher.</p>
