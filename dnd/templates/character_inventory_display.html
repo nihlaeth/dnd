@@ -1,0 +1,24 @@
+{% for item in character['inventory'] %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#inventory-accordion" href="#{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">
+        <table>
+          <tr>
+            <td>{{ character['inventory'][item]['amount'] }}</td>
+            <td>{{ character['inventory'][item]['name'] }}</td>
+            <td>{{ character['inventory'][item]['extra'] }}</td>
+          </tr>
+        </table>
+      </a>
+    </h4>
+  </div>
+  <div id="{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse" class="panel-collapse collapse">
+    <div class="panel-body">
+      </table>
+      {{ character['inventory'][item]['description'] }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+

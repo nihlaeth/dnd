@@ -173,8 +173,8 @@
       </h4>
     </div>
     <div id="equipment-panel" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-body"></div>
+      <div class="panel-footer"></div>
     </div>
   </div>
 </div>
@@ -187,13 +187,16 @@
       </h4>
     </div>
     <div id="inventory-panel" class="panel-collapse collapse">
-      <div class="panel-body">Panel Body</div>
+      <div class="panel-body">
+        {% include 'character_inventory.html' %}
+      </div>
       <div class="panel-footer" id="coins">
         {% include "character_coins.html" %}
       </div>
     </div>
   </div>
 </div>
+
 <div class="panel-group">
   <div class="panel panel-default">
     <div class="panel-heading">
@@ -205,10 +208,11 @@
       <div class="panel-body">
         {% include 'character_background.html' %}
       </div>
-      <div class="panel-footer">Panel Footer</div>
+      <div class="panel-footer"></div>
     </div>
   </div>
 </div>
+
     </div>
   </div>
 </div>

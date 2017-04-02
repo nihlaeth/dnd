@@ -1,0 +1,28 @@
+<div class="panel-group" id="inventory-accordion">
+  {% include 'character_inventory_display.html' %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#inventory-form">Add</button>
+
+<div id="inventory-form" class="collapse well">
+  <form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/add/" method="POST" class="form-horizontal">
+    <div id="inventory-errors"></div>
+    <div class="form-group">
+      <label for="inv-amount">Amount:</label>
+      <input type="number" class="form-control" id="inv-amount" name="amount" value="1" min="0">
+    </div>
+    <div class="form-group">
+      <label for="inv-name">Name:</label>
+      <input type="text" class="form-control" id="inv-name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="inv-extra">Extra:</label>
+      <input type="text" class="form-control" id="inv-extra" name="extra">
+    </div>
+    <div class="form-group">
+      <label for="inv-description">Description:</label>
+      <textarea class="form-control" rows="5" id="inv-description" name="description"></textarea>
+    </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+  </form>
+</div>
