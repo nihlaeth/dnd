@@ -1,0 +1,69 @@
+{% for power in character['powers'] %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#power-accordion" href="#{{ power|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">{{ power|capitalize }}</a>
+    </h4>
+  </div>
+  <div id="{{ power|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse" class="panel-collapse collapse">
+    <div class="panel-body">
+      <table class="table">
+        {% if character['powers'][power]['sphere'] is not none %}
+        <tr>
+          <td>Sphere:</td>
+          <td>
+            {{ character['powers'][power]['sphere'] }}
+          </td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td>Range:</td>
+          <td>
+            {{ character['powers'][power]['range'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Area:</td>
+          <td>
+            {{ character['powers'][power]['area'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Casting time:</td>
+          <td>
+            {{ character['powers'][power]['casting_time'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Components:</td>
+          <td>
+            {{ character['powers'][power]['components'] }}
+          </td>
+        </tr>
+        <tr>
+          <td>Duration:</td>
+          <td>
+            {{ character['powers'][power]['duration'] }}
+          </td>
+        </tr>
+        {% if character['powers'][power]['mechanics'] is not none %}
+        <tr>
+          <td>Mechanics:</td>
+          <td>
+            {{ character['powers'][power]['mechanics'] }}
+          </td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td>Ability cost:</td>
+          <td>
+            {{ character['powers'][power]['ability_cost'] }}
+          </td>
+        </tr>
+      </table>
+      {{ character['powers'][power]['description'] }}
+    </div>
+  </div>
+</div>
+{% endfor %}
+

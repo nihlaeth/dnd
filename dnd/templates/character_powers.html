@@ -1,0 +1,100 @@
+<div class="panel-group" id="power-accordion">
+  {% include 'character_powers_display.html' %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#powers-form">Edit</button>
+
+<div id="powers-form" class="collapse well">
+  <form data-async data-target="#powers-errors" action="/api/{{ character['_id'] }}/power/" method="POST" class="form-horizontal">
+    <div id="powers-errors"></div>
+    <div class="form-group">
+      <div class="panel-group" id="powers-form-accordion">
+        {% for group in abilities %}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" data-parent="#powers-form-accordion" href="#{{ group }}-group">{{ group|capitalize }}</a>
+            </h4>
+          </div>
+          <div id="{{ group }}-group" class="panel-collapse collapse">
+            <div class="panel-body">
+              {% for power in powers if group in powers[power]['ability_cost'] %}
+              <div class="checkbox">
+                <label>
+                  <input
+                    type="checkbox"
+                    name="{{ power }}"
+                    value="selected"
+                    {% if power in character['powers'] %}checked{% endif %}>
+                  {{ power|capitalize }}
+                </label>
+                <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target="#power-info-{{ power|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}">?</button>
+              </div>
+              <div id="power-info-{{ power|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}" class="collapse well">
+                <table class="table">
+                  {% if powers[power]['sphere'] is not none %}
+                  <tr>
+                    <td>Sphere:</td>
+                    <td>
+                      {{ powers[power]['sphere'] }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <td>Range:</td>
+                    <td>
+                      {{ powers[power]['range'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Area:</td>
+                    <td>
+                      {{ powers[power]['area'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Casting time:</td>
+                    <td>
+                      {{ powers[power]['casting_time'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Components:</td>
+                    <td>
+                      {{ powers[power]['components'] }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Duration:</td>
+                    <td>
+                      {{ powers[power]['duration'] }}
+                    </td>
+                  </tr>
+                  {% if powers[power]['mechanics'] is not none %}
+                  <tr>
+                    <td>Mechanics:</td>
+                    <td>
+                      {{ powers[power]['mechanics'] }}
+                    </td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <td>Ability cost:</td>
+                    <td>
+                      {{ powers[power]['ability_cost'] }}
+                    </td>
+                  </tr>
+                </table>
+                {{ powers[power]['description'] }}
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+  </form>
+</div>
+
