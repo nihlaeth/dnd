@@ -507,7 +507,7 @@ async def _inventory_validator(request, errors):
     return {'inventory': character['inventory']}
 
 def _inventory_response_factory(response, character, app):
-    response['#power-accordion'] = {
+    response['#inventory-accordion'] = {
         'data': get_env(app).get_template(
             'character_inventory_display.html').render(character=character)}
 

@@ -3,11 +3,13 @@
   <div class="panel-heading">
     <h4 class="panel-title">
       <a data-toggle="collapse" data-parent="#inventory-accordion" href="#{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">
-        <table>
+        <table style="width:100%">
           <tr>
-            <td>{{ character['inventory'][item]['amount'] }}</td>
-            <td>{{ character['inventory'][item]['name'] }}</td>
-            <td>{{ character['inventory'][item]['extra'] }}</td>
+            <td style="width:10%">
+              {{ character['inventory'][item]['amount'] }}
+            </td>
+            <td style="width:60%">{{ item }}</td>
+            <td style="width:30%">{{ character['inventory'][item]['extra'] }}</td>
           </tr>
         </table>
       </a>
