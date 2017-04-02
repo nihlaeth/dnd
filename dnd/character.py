@@ -84,6 +84,7 @@ def calculate_stats(character):
     _character_spells(character)
     _character_prayers(character)
     _character_money(character)
+    _character_inventory(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -352,6 +353,12 @@ def _character_hit_points(character):
 def _character_money(character):
     character['oros'] = character.get('oros', 0)
     character['coins'] = convert_coins(character['oros'])
+
+def _character_inventory(character):
+    character['inventory'] = character.get('inventory', {})
+    for item in character['inventory']:
+        character['inventory'][item]['description'] = markdown(escape(
+            character['inventory'][item]['description_unsafe']))
 
 def _character_background(character):
     character['appearance_safe'] = markdown(escape(
