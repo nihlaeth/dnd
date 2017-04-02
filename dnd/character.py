@@ -164,6 +164,8 @@ def _character_skill_slots(character):
     for class_ in CLASSES:
         class_skill_slots += CLASSES[class_]['skill_slots'] * character[class_]
     skill_slots = 5 + class_skill_slots + character['intelligence_modifier']
+    if character['classes'][0] == "warlock":
+        skill_slots += 1
     if 'skills' in character['race']['bonus']:
         skill_slots += character['race']['bonus']['skills']
     for skill in character['skills']:
