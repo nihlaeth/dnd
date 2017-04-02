@@ -145,18 +145,29 @@ def _character_abilities(character):
         character[modifier_stat] = modifier
     character['unspent_ability_points'] = ability_points_to_spend - spent_ability_points
 
-def _character_skills(character):
-    skill_names = character.get('skill_names', [])
+def _character_skill_check(character, skill):
+    if character['skills'][skill]['skill_check'] is None:
+        character['skills'][skill]['skill_check_text'] = '-'
+        character['skills'][skill]['skill_check_value'] = None
+        return
+    character['skills'][skill]['skill_check_text'] = ' + '.join([
+        str(element) if not str(element).endswith(
+            '_modifier') else "[{}]".format(
+                element[0:-9]) for element in character['skills'][skill]['skill_check']])
+    character['skills'][skill]['skill_check_value'] = sum([
+        character[element]  if isinstance(
+            element,
+            str) else element for element in character['skills'][skill]['skill_check']])
+
+def _character_skill_slots(character):
     class_skill_slots = 0
     for class_ in CLASSES:
         class_skill_slots += CLASSES[class_]['skill_slots'] * character[class_]
     skill_slots = 5 + class_skill_slots + character['intelligence_modifier']
-    character['skills'] = {}
     if 'skills' in character['race']['bonus']:
         skill_slots += character['race']['bonus']['skills']
-    for skill in skill_names:
-        skill = skill.lower()
-        group = SKILLS[skill]['group']
+    for skill in character['skills']:
+        group = character['skills'][skill]['group']
         if group == 'all':
             skill_slots -= 1
         elif group in character and character[group] > 0:
@@ -168,21 +179,16 @@ def _character_skills(character):
             skill_slots -= 1
         else:
             skill_slots -= 2
+    character['unspent_skill_slots'] = skill_slots
+
+def _character_skills(character):
+    skill_names = character.get('skill_names', [])
+    character['skills'] = {}
+    for skill in skill_names:
         if skill in SKILLS:
             character['skills'][skill] = copy.deepcopy(SKILLS[skill])
-            if SKILLS[skill]['skill_check'] is None:
-                character['skills'][skill]['skill_check_text'] = '-'
-                character['skills'][skill]['skill_check_value'] = None
-                continue
-            character['skills'][skill]['skill_check_text'] = ' + '.join([
-                str(element) if not str(element).endswith(
-                    '_modifier') else "[{}]".format(
-                        element[0:-9]) for element in SKILLS[skill]['skill_check']])
-            character['skills'][skill]['skill_check_value'] = sum([
-                character[element]  if isinstance(
-                    element,
-                    str) else element for element in SKILLS[skill]['skill_check']])
-    character['unspent_skill_slots'] = skill_slots
+            _character_skill_check(character, skill)
+    _character_skill_slots(character)
 
 def _character_spells(character):
     spell_names = character.get('spell_names', [])
