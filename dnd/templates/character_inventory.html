@@ -5,8 +5,8 @@
 <button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#inventory-form">Add</button>
 
 <div id="inventory-form" class="collapse well">
-  <form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/add/" method="POST" class="form-horizontal">
-    <div id="inventory-errors"></div>
+  <form data-async data-target="#add-inventory-errors" action="/api/{{ character['_id'] }}/inventory/add/" method="POST" class="form-horizontal">
+    <div id="add-inventory-errors"></div>
     <div class="form-group">
       <label for="inv-amount">Amount:</label>
       <input type="number" class="form-control" id="inv-amount" name="amount" value="1" min="0">

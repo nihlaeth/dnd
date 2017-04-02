@@ -1,19 +1,50 @@
+<div id="inventory-errors"></div>
 {% for item in character['inventory']|sort %}
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#inventory-accordion" href="#{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">
-        <table style="width:100%">
-          <tr>
-            <td style="width:10%">
-              {{ character['inventory'][item]['amount'] }}
+    <table style="width:100%">
+      <tr>
+        <td>
+          <table><tr>
+            <td>
+              <span class="label label-default">
+                {{ character['inventory'][item]['amount'] }}
+              </span>
             </td>
-            <td style="width:60%">{{ item }}</td>
-            <td style="width:30%">{{ character['inventory'][item]['extra'] }}</td>
-          </tr>
-        </table>
-      </a>
-    </h4>
+            <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/increment/" method="POST" class="form-inline">
+              <input type="hidden" name="name" value="{{ item }}">
+              <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+            </form></td>
+            <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/decrement/" method="POST" class="form-inline">
+              <input type="hidden" name="name" value="{{ item }}">
+              <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-minus"></span></button>
+            </form></td>
+          </tr></table>
+        </td>
+        <td>
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#inventory-accordion" class="btn btn-link btn-block" href="#{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse">
+              {{ item }}
+              <span class="badge">
+                {{ character['inventory'][item]['extra'] }}
+              </span>
+            </a>
+          </h4>
+        </td>
+        <td style="text-align:right">
+          <table><tr>
+            <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/edit/" method="POST" class="form-inline">
+              <input type="hidden" name="name" value="{{ item }}">
+              <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-pencil"></span></button>
+            </form></td>
+            <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/remove/" method="POST" class="form-inline">
+              <input type="hidden" name="name" value="{{ item }}">
+              <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-remove"></span></button>
+            </form></td>
+          </tr></table>
+        </td>
+      </tr>
+    </table>
   </div>
   <div id="{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse" class="panel-collapse collapse">
     <div class="panel-body">
