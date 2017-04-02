@@ -1,5 +1,6 @@
 """Character page."""
 import time
+import re
 from inspect import iscoroutinefunction
 from bson import ObjectId
 from aiohttp_login.decorators import restricted_api
@@ -86,6 +87,7 @@ async def data_handler(request):
         'power': (_power_validator, _power_response_factory),
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
+        'inventory': (_inventory_validator, _inventory_response_factory),
         'coin': (_coin_validator, _coin_response_factory),
         'rest': (_rest_validator, _rest_response_factory),
     }
@@ -473,6 +475,41 @@ def _power_response_factory(response, character, app):
                 character=character, powers=POWERS),
         'activateTooltip': True}
     _skill_response_factory(response, character, app)
+
+async def _inventory_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['add', 'edit', 'increment', 'decrement', 'remove']:
+        errors.append("invalid action")
+        return {}
+    try:
+        name = ''.join(
+            re.findall("[a-zA-Z0-9-_ ()]*", request.POST['name']))
+        amount = int(request.POST['amount'])
+        extra = ''.join(
+            re.findall("[a-zA-Z0-9-_ ()]*", request.POST['extra']))
+        description = request.POST['description']
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    except ValueError:
+        errors.append("invalid value: only integers allowed")
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if len(errors) != 0:
+        return {}
+    if action == 'add':
+        if name in character['inventory']:
+            errors.append("inventory item with that name already exists")
+        else:
+            character['inventory'][name] = {
+                'amount': amount,
+                'extra': extra,
+                'description_unsafe': description}
+    return {'inventory': character['inventory']}
+
+def _inventory_response_factory(response, character, app):
+    response['#power-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_inventory_display.html').render(character=character)}
 
 async def _coin_validator(request, errors):
     coins = {}
