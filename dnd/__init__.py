@@ -2,7 +2,7 @@
 from pathlib import Path
 import asyncio
 from pkg_resources import resource_filename, Requirement, cleanup_resources
-# import uvloop
+import uvloop
 from aiohttp import web
 import aiohttp_jinja2
 import jinja2
@@ -198,7 +198,7 @@ def _cutoff_dict_filter(dictionary, cutoff):
 def start():
     """Start Web server."""
     config = DndConfiguration()
-    # asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
+    asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
     app = web.Application(debug=config.server.debug)
     aiohttp_jinja2.setup(
         app,
