@@ -484,10 +484,11 @@ async def _inventory_validator(request, errors):
     try:
         name = ''.join(
             re.findall("[a-zA-Z0-9-_ ()]*", request.POST['name']))
-        amount = int(request.POST['amount'])
-        extra = ''.join(
-            re.findall("[a-zA-Z0-9-_ ()]*", request.POST['extra']))
-        description = request.POST['description']
+        if action in ['add', 'edit']:
+            amount = int(request.POST['amount'])
+            extra = ''.join(
+                re.findall("[a-zA-Z0-9-_ ()]*", request.POST['extra']))
+            description = request.POST['description']
     except KeyError as error:
         errors.append("missing value: {}".format(error))
     except ValueError:
@@ -496,18 +497,31 @@ async def _inventory_validator(request, errors):
     errors.extend(more_errors)
     if len(errors) != 0:
         return {}
+    if action == 'add' and name in character['inventory']:
+        errors.append("inventory item with that name already exists")
+    elif name not in character['inventory']:
+        errors.append("no inventory item with name {}".format(name))
+    if len(errors) != 0:
+        return {}
     if action == 'add':
-        if name in character['inventory']:
-            errors.append("inventory item with that name already exists")
+        character['inventory'][name] = {
+            'amount': amount,
+            'extra': extra,
+            'description_unsafe': description}
+    elif action == 'increment':
+        character['inventory'][name]['amount'] += 1
+    elif action == 'decrement':
+        if character['inventory'][name]['amount'] < 1:
+            errors.append("you cannot have less then zero items")
         else:
-            character['inventory'][name] = {
-                'amount': amount,
-                'extra': extra,
-                'description_unsafe': description}
+            character['inventory'][name]['amount'] -= 1
+    elif action == 'remove':
+        del character['inventory'][name]
     return {'inventory': character['inventory']}
 
 def _inventory_response_factory(response, character, app):
     response['#inventory-accordion'] = {
+        'close': False,
         'data': get_env(app).get_template(
             'character_inventory_display.html').render(character=character)}
 
