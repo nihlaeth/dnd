@@ -502,7 +502,7 @@ async def _inventory_validator(request, errors):
         return {}
     if action == 'add' and name in character['inventory']:
         errors.append("inventory item with that name already exists")
-    elif name not in character['inventory']:
+    elif action != 'add' and name not in character['inventory']:
         errors.append("no inventory item with name {}".format(name))
     if len(errors) != 0:
         return {}
