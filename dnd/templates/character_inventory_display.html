@@ -13,10 +13,12 @@
             </td>
             <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/increment/" method="POST" class="form-inline">
               <input type="hidden" name="name" value="{{ item }}">
+              <input type="hidden" name="type" value="action">
               <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
             </form></td>
             <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/decrement/" method="POST" class="form-inline">
               <input type="hidden" name="name" value="{{ item }}">
+              <input type="hidden" name="type" value="action">
               <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-minus"></span></button>
             </form></td>
           </tr></table>
@@ -39,6 +41,7 @@
             </form></td>
             <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/remove/" method="POST" class="form-inline">
               <input type="hidden" name="name" value="{{ item }}">
+              <input type="hidden" name="type" value="action">
               <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-remove"></span></button>
             </form></td>
           </tr></table>

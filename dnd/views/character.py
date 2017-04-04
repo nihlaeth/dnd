@@ -113,7 +113,10 @@ async def data_handler(request):
     character = await characters.find_one(
         {'_id': ObjectId(request.match_info['id'])})
     calculate_stats(character)
-    response = {'close': True}
+    if 'type' in request.POST and request.POST['type'] == 'action':
+        response = {'close': False}
+    else:
+        response = {'close': True}
     if iscoroutinefunction(response_factory):
         await response_factory(response, character, request.app)
     else:
@@ -521,7 +524,6 @@ async def _inventory_validator(request, errors):
 
 def _inventory_response_factory(response, character, app):
     response['#inventory-accordion'] = {
-        'close': False,
         'data': get_env(app).get_template(
             'character_inventory_display.html').render(character=character)}
 
