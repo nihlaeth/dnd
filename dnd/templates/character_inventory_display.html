@@ -35,10 +35,9 @@
         </td>
         <td style="text-align:right">
           <table><tr>
-            <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/edit/" method="POST" class="form-inline">
-              <input type="hidden" name="name" value="{{ item }}">
-              <button class="btn btn-success btn-xs" type="submit"><span class="glyphicon glyphicon-pencil"></span></button>
-            </form></td>
+            <td>
+              <button data-toggle="collapse" data-parent="#inventory-accordion" class="btn btn-default btn-xs" data-target="#edit-{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse"><span class="glyphicon glyphicon-pencil"></span></button>
+            </td>
             <td><form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/remove/" method="POST" class="form-inline">
               <input type="hidden" name="name" value="{{ item }}">
               <input type="hidden" name="type" value="action">
@@ -55,6 +54,29 @@
       {{ character['inventory'][item]['description'] }}
     </div>
   </div>
+</div>
+<div id="edit-{{ item|replace(' ', '-')|replace('(', '-')|replace(')', '-') }}-collapse" class="well collapse">
+  <form data-async data-target="#inventory-errors" action="/api/{{ character['_id'] }}/inventory/edit/" method="POST" class="form-inline">
+    <input type="hidden" name="name" value="{{ item }}">
+    <div id="add-inventory-errors"></div>
+    <div class="form-group">
+      <label for="inv-amount">Amount:</label>
+      <input type="number" class="form-control" id="inv-amount" name="amount" value="{{ character['inventory'][item]['amount'] }}" min="0">
+    </div>
+    <div class="form-group">
+      <label for="inv-name">Name:</label>
+      <input type="text" class="form-control" id="inv-name" name="new-name" value="{{ item }}" >
+    </div>
+    <div class="form-group">
+      <label for="inv-extra">Extra:</label>
+      <input type="text" class="form-control" id="inv-extra" name="extra" value="{{ character['inventory'][item]['extra'] }}" >
+    </div>
+    <div class="form-group">
+      <label for="inv-description">Description:</label>
+      <textarea class="form-control" rows="5" id="inv-description" name="description">{{ character['inventory'][item]['description_unsafe'] }}</textarea>
+    </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+  </form>
 </div>
 {% endfor %}
 

@@ -492,6 +492,9 @@ async def _inventory_validator(request, errors):
             extra = ''.join(
                 re.findall("[a-zA-Z0-9-_ ()]*", request.POST['extra']))
             description = request.POST['description']
+        if action == 'edit':
+            new_name = ''.join(
+                re.findall("[a-zA-Z0-9-_ ()]*", request.POST['new-name']))
     except KeyError as error:
         errors.append("missing value: {}".format(error))
     except ValueError:
@@ -520,6 +523,12 @@ async def _inventory_validator(request, errors):
             character['inventory'][name]['amount'] -= 1
     elif action == 'remove':
         del character['inventory'][name]
+    elif action == 'edit':
+        del character['inventory'][name]
+        character['inventory'][new_name] = {
+            'amount': amount,
+            'extra': extra,
+            'description_unsafe': description}
     return {'inventory': character['inventory']}
 
 def _inventory_response_factory(response, character, app):
