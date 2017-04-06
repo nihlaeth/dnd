@@ -1,0 +1,51 @@
+{% for item in character['armour'] %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#armour-accordion" href="#{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-armour">{{ item['name']|capitalize }}</a>
+    </h4>
+  </div>
+  <div id="{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-armour" class="panel-collapse collapse">
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <td>Time period:</td>
+          <td>{{ item['time_period']|replace('_', ' ') }}</td>
+        </tr>
+        <tr>
+          <td>Armour class:</td>
+          <td>{{ item['armour_class'] }}</td>
+        </tr>
+        <tr>
+          <td>Max dexterity:</td>
+          <td>{{ item['maxdex'] }}</td>
+        </tr>
+        <tr>
+          <td>Damage reduction piercing:</td>
+          <td>{{ item['dr_piercing'] }}</td>
+        </tr>
+        <tr>
+          <td>Damage reduction slashing:</td>
+          <td>{{ item['dr_slashing'] }}</td>
+        </tr>
+        <tr>
+          <td>Damage reduction bashing:</td>
+          <td>{{ item['dr_bashing'] }}</td>
+        </tr>
+        <tr>
+          <td>Skill penalty:</td>
+          <td>{{ item['skillpenalty'] }}</td>
+        </tr>
+        <tr>
+          <td rowspan="2">
+            <form data-async data-target="#add-armour-errors" action="/api/{{ character['_id'] }}/armour/remove/" method="POST" class="form-horizontal">
+              <input type="hidden" name="id" value="{{ item['id'] }}">
+              <button class="btn btn-default" type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+{% endfor %}
