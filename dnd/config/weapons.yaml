@@ -1,331 +1,431 @@
 ---
-name: small_axe
+name: axe
 weapon_category: axe
-size: small
-price: 6
-damage_type: slashing
-range: !!null
-stone_speed: 3
-stone_damage: 1d2
-bronze_speed: 6
-bronze_damage: 2d2
-iron_speed: 4
-iron_damage: 2d2
-steel_speed: 4
-steel_damage: 2d2
+size:
+  small:
+    price: 6
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 3
+        damage: 1d2
+      bronze_age:
+        speed: 6
+        damage: 2d2
+      iron_age:
+        speed: 4
+        damage: 2d2
+      steel_age:
+        speed: 4
+        damage: 2d2
+  medium:
+    price: 18
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 4
+        damage: 1d4
+      bronze_age:
+        speed: 8
+        damage: 2d3
+      iron_age:
+        speed: 5
+        damage: 2d3
+      steel_age:
+        speed: 5
+        damage: 2d4
+  large:
+    price: 48
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 5
+        damage: 1d6
+      bronze_age:
+        speed: 10
+        damage: 2d4
+      iron_age:
+        speed: 8
+        damage: 2d4
+      steel_age:
+        speed: 8
+        damage: 2d6
 ---
-name: medium_axe
-weapon_category: axe
-size: medium
-price: 18
-damage_type: slashing
-range: !!null
-stone_speed: 4
-stone_damage: 1d4
-bronze_speed: 8
-bronze_damage: 2d3
-iron_speed: 5
-iron_damage: 2d3
-steel_speed: 5
-steel_damage: 2d4
----
-name: large_axe
-weapon_category: axe
-size: large
-price: 48
-damage_type: slashing
-range: !!null
-stone_speed: 5
-stone_damage: 1d6
-bronze_speed: 10
-bronze_damage: 2d4
-iron_speed: 8
-iron_damage: 2d4
-steel_speed: 8
-steel_damage: 2d6
----
-name: small_mace
+name: mace
 weapon_category: mace
-size: small
-price: 4
-damage_type: bashing
-range: !!null
-stone_speed: 3
-stone_damage: 1d2
-bronze_speed: 6
-bronze_damage: 1d3
-iron_speed: 4
-iron_damage: 1d3
-steel_speed: 4
-steel_damage: 1d4
+size:
+  small:
+    price: 4
+    damage_type: bashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 3
+        damage: 1d2
+      bronze_age:
+        speed: 6
+        damage: 1d3
+      iron_age:
+        speed: 4
+        damage: 1d3
+      steel_age:
+        speed: 4
+        damage: 1d4
+  medium:
+    price: 15
+    damage_type: bashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 4
+        damage: 1d4
+      bronze_age:
+        speed: 8
+        damage: 1d6
+      iron_age:
+        speed: 5
+        damage: 1d6
+      steel_age:
+        speed: 5
+        damage: 1d8
+  large:
+    price: 42
+    damage_type: bashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 5
+        damage: 1d6
+      bronze_age:
+        speed: 10
+        damage: 1d8
+      iron_age:
+        speed: 8
+        damage: 1d10
+      steel_age:
+        speed: 8
+        damage: 1d12
 ---
-name: medium_mace
-weapon_category: mace
-size: medium
-price: 15
-damage_type: bashing
-range: !!null
-stone_speed: 4
-stone_damage: 1d4
-bronze_speed: 8
-bronze_damage: 1d6
-iron_speed: 5
-iron_damage: 1d6
-steel_speed: 5
-steel_damage: 1d8
----
-name: large_mace
-weapon_category: mace
-size: large
-price: 42
-damage_type: bashing
-range: !!null
-stone_speed: 5
-stone_damage: 1d6
-bronze_speed: 10
-bronze_damage: 1d8
-iron_speed: 8
-iron_damage: 1d10
-steel_speed: 8
-steel_damage: 1d12
----
-name: small_sabre
+name: sabre
 weapon_category: sabre
-size: small
-price: 30
-damage_type: slashing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: 5
-bronze_damage: 1d6
-iron_speed: 4
-iron_damage: 1d4+1
-steel_speed: 4
-steel_damage: 1d4+2
+size:
+  small:
+    price: 30
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: 5
+        damage: 1d6
+      iron_age:
+        speed: 4
+        damage: 1d4+1
+      steel_age:
+        speed: 4
+        damage: 1d4+2
 ---
-name: medium_sabre
+name: sabre
 weapon_category: sabre
-size: medium
-price: 90
-damage_type: slashing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: 7
-bronze_damage: 1d8
-iron_speed: 5
-iron_damage: 1d6+1
-steel_speed: 5
-steel_damage: 1d6+2
+size:
+  medium:
+    price: 90
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: 7
+        damage: 1d8
+      iron_age:
+        speed: 5
+        damage: 1d6+1
+      steel_age:
+        speed: 5
+        damage: 1d6+2
+  large:
+    price: 150
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: 9
+        damage: 1d10
+      iron_age:
+        speed: 7
+        damage: 1d8+1
+      steel_age:
+        speed: 6
+        damage: 1d8+2
 ---
-name: large_sabre
-weapon_category: sabre
-size: large
-price: 150
-damage_type: slashing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: 9
-bronze_damage: 1d10
-iron_speed: 7
-iron_damage: 1d8+1
-steel_speed: 6
-steel_damage: 1d8+2
----
-name: medium_spear
+name: spear
 weapon_category: spear
-size: medium
-price: 8
-damage_type: piercing
-range: medium
-stone_speed: 5
-stone_damage: 1d4
-bronze_speed: 6
-bronze_damage: 1d6
-iron_speed: 6
-iron_damage: 1d6
-steel_speed: 6
-steel_damage: 1d6
+size:
+  medium:
+    price: 8
+    damage_type: piercing
+    range: medium
+    time_period:
+      stone_age:
+        speed: 5
+        damage: 1d4
+      bronze_age:
+        speed: 6
+        damage: 1d6
+      iron_age:
+        speed: 6
+        damage: 1d6
+      steel_age:
+        speed: 6
+        damage: 1d6
+  large:
+    price: 8
+    damage_type: piercing
+    range: short
+    time_period:
+      stone_age:
+        speed: 5
+        damage: 1d6
+      bronze_age:
+        speed: 6
+        damage: 1d8
+      iron_age:
+        speed: 6
+        damage: 1d8
+      steel_age:
+        speed: 6
+        damage: 1d8
 ---
-name: large_spear
-weapon_category: spear
-size: large
-price: 8
-damage_type: piercing
-range: short
-stone_speed: 5
-stone_damage: 1d6
-bronze_speed: 6
-bronze_damage: 1d8
-iron_speed: 6
-iron_damage: 1d8
-steel_speed: 6
-steel_damage: 1d8
----
-name: small_sword
+name: sword
 weapon_category: sword
-size: small
-price: 30
-damage_type: piercing
-range: !!null
-stone_speed: 3
-stone_damage: 1d2
-bronze_speed: 4
-bronze_damage: 1d4
-iron_speed: 3
-iron_damage: 1d6
-steel_speed: 3
-steel_damage: 1d6
----
-name: medium_sword
-weapon_category: sword
-size: medium
-price: 72
-damage_type: slashing
-range: !!null
-stone_speed: 4
-stone_damage: 1d4
-bronze_speed: 5
-bronze_damage: 1d6
-iron_speed: 4
-iron_damage: 1d8
-steel_speed: 4
-steel_damage: 1d8
----
-name: large_sword
-weapon_category: sword
-size: large
-price: 120
-damage_type: slashing
-range: !!null
-stone_speed: 5
-stone_damage: 1d6
-bronze_speed: 7
-bronze_damage: 1d8
-iron_speed: 6
-iron_damage: 1d10
-steel_speed: 6
-steel_damage: 1d10
+size:
+  small:
+    price: 30
+    damage_type: piercing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 3
+        damage: 1d2
+      bronze_age:
+        speed: 4
+        damage: 1d4
+      iron_age:
+        speed: 3
+        damage: 1d6
+      steel_age:
+        speed: 3
+        damage: 1d6
+  medium:
+    price: 72
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 4
+        damage: 1d4
+      bronze_age:
+        speed: 5
+        damage: 1d6
+      iron_age:
+        speed: 4
+        damage: 1d8
+      steel_age:
+        speed: 4
+        damage: 1d8
+  large:
+    price: 120
+    damage_type: slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 5
+        damage: 1d6
+      bronze_age:
+        speed: 7
+        damage: 1d8
+      iron_age:
+        speed: 6
+        damage: 1d10
+      steel_age:
+        speed: 6
+        damage: 1d10
 ---
 name: bow
 weapon_category: bow
-size: large
-price: 60
-damage_type: piercing
-range: medium
-stone_speed: 7
-stone_damage: 1d3
-bronze_speed: 7
-bronze_damage: 1d4
-iron_speed: 7
-iron_damage: 1d6
-steel_speed: 6
-steel_damage: 1d8
+size:
+  large:
+    price: 60
+    damage_type: piercing
+    range: medium
+    time_period:
+      stone_age:
+        speed: 7
+        damage: 1d3
+      bronze_age:
+        speed: 7
+        damage: 1d4
+      iron_age:
+        speed: 7
+        damage: 1d6
+      steel_age:
+        speed: 6
+        damage: 1d8
 ---
 name: crossbow
 weapon_category: bow
-size: large
-price: 90
-damage_type: piercing
-range: short
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: 10
-bronze_damage: 1d4
-iron_speed: 9
-iron_damage: 2d4
-steel_speed: 8
-steel_damage: 3d4
+size:
+  large:
+    price: 90
+    damage_type: piercing
+    range: short
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: 10
+        damage: 1d4
+      iron_age:
+        speed: 9
+        damage: 2d4
+      steel_age:
+        speed: 8
+        damage: 3d4
 ---
 name: halberd
 weapon_category: halberd
-size: large
-price: 120
-damage_type: piercing/slashing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: !!null
-bronze_damage: !!null
-iron_speed: !!null
-iron_damage: !!null
-steel_speed: 10
-steel_damage: 2d8
+size:
+  large:
+    price: 120
+    damage_type: piercing/slashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: !!null
+        damage: !!null
+      iron_age:
+        speed: !!null
+        damage: !!null
+      steel_age:
+        speed: 10
+        damage: 2d8
 ---
 name: knife
 weapon_category: knife
-size: small
-price: 2
-damage_type: slashing
-range: short
-stone_speed: 2
-stone_damage: 1d2
-bronze_speed: 2
-bronze_damage: 1d3
-iron_speed: 1
-iron_damage: 1d3
-steel_speed: 1
-steel_damage: 1d3
+size:
+  small:
+    price: 2
+    damage_type: slashing
+    range: short
+    time_period:
+      stone_age:
+        speed: 2
+        damage: 1d2
+      bronze_age:
+        speed: 2
+        damage: 1d3
+      iron_age:
+        speed: 1
+        damage: 1d3
+      steel_age:
+        speed: 1
+        damage: 1d3
 ---
-name: morning star
+name: morning
 weapon_category: morning star
-size: medium
-price: 120
-damage_type: bashing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: !!null
-bronze_damage: !!null
-iron_speed: 7
-iron_damage: 2d4+1
-steel_speed: 7
-steel_damage: 2d4+2
+size:
+  medium:
+    price: 120
+    damage_type: bashing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: !!null
+        damage: !!null
+      iron_age:
+        speed: 7
+        damage: 2d4+1
+      steel_age:
+        speed: 7
+        damage: 2d4+2
 ---
 name: sling
 weapon_category: sling
-size: medium
-price: 1
-damage_type: bashing
-range: medium
-stone_speed: 7
-stone_damage: 1d2
-bronze_speed: 7
-bronze_damage: 1d3
-iron_speed: 7
-iron_damage: 1d3
-steel_speed: 7
-steel_damage: 1d3
+size:
+  medium:
+    price: 1
+    damage_type: bashing
+    range: medium
+    time_period:
+      stone_age:
+        speed: 7
+        damage: 1d2
+      bronze_age:
+        speed: 7
+        damage: 1d3
+      iron_age:
+        speed: 7
+        damage: 1d3
+      steel_age:
+        speed: 7
+        damage: 1d3
 ---
 name: trident
 weapon_category: trident
-size: large
-price: 72
-damage_type: piercing
-range: !!null
-stone_speed: !!null
-stone_damage: !!null
-bronze_speed: 12
-bronze_damage: 3d3
-iron_speed: 11
-iron_damage: 3d4
-steel_speed: 10
-steel_damage: 3d4
+size:
+  large:
+    price: 72
+    damage_type: piercing
+    range: !!null
+    time_period:
+      stone_age:
+        speed: !!null
+        damage: !!null
+      bronze_age:
+        speed: 12
+        damage: 3d3
+      iron_age:
+        speed: 11
+        damage: 3d4
+      steel_age:
+        speed: 10
+        damage: 3d4
 ---
 name: whip
 weapon_category: whip
-size: medium
-price: 4
-damage_type: !!null
-range: !!null
-stone_speed: 6
-stone_damage: 1d2
-bronze_speed: 6
-bronze_damage: 1d2
-iron_speed: 6
-iron_damage: 1d2
-steel_speed: 6
-steel_damage: 1d2
+size:
+  medium:
+    price: 4
+    damage_type: !!null
+    range: !!null
+    time_period:
+      stone_age:
+        speed: 6
+        damage: 1d2
+      bronze_age:
+        speed: 6
+        damage: 1d2
+      iron_age:
+        speed: 6
+        damage: 1d2
+      steel_age:
+        speed: 6
+        damage: 1d2
 ---
