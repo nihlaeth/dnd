@@ -47,7 +47,7 @@
             <tr>
               <td rowspan="2">
                 <form data-async data-target="#add-armour-errors" action="/api/{{ character['_id'] }}/armour/add/" method="POST" class="form-horizontal">
-                  <input type="hidden" name="weapon" value="{{ item }}">
+                  <input type="hidden" name="name" value="{{ item }}">
                   <input type="hidden" name="time_period" value="{{ time_period }}">
                   <button class="btn btn-default" type="submit">Add</button>
                 </form>
