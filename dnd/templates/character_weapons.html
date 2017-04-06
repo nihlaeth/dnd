@@ -1,0 +1,71 @@
+<h4>Weapons</h4>
+<div class="panel-group" id="weapons-accordion">
+  {% include 'character_weapons_display.html' %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#weapons-form">Add</button>
+
+<div id="weapons-form" class="collapse well">
+  <div id="add-weapons-errors"></div>
+  <div class="panel-group" id="weapons-form-accordion">
+    {% for category in weapon_categories %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#weapons-form-accordion" href="#{{ category|replace(' ', '-') }}-category">{{ category|capitalize }}</a>
+        </h4>
+      </div>
+      <div id="{{ category|replace(' ', '-') }}-category" class="panel-collapse collapse">
+        <div class="panel-body">
+          {% for weapon in weapons if weapons[weapon]['weapon_category'] == category %}
+          <h4>{{ weapon|capitalize }}</h4>
+          {% for size in weapons[weapon]['size'] %}
+          <h5>{{ size|capitalize }}</h5>
+          <table class="table">
+            <tr>
+              <td>Price:</td>
+              <td>{{ weapons[weapon]['size'][size]['price'] }} dies</td>
+            </tr>
+            <tr>
+              <td>Damage type:</td>
+              <td>{{ weapons[weapon]['size'][size]['damage_type'] }}</td>
+            </tr>
+            {% if weapons[weapon]['size'][size]['range'] is not none %}
+            <tr>
+              <td>Range:</td>
+              <td>{{ weapons[weapon]['size'][size]['range'] }}</td>
+            </tr>
+            {% endif %}
+          </table>
+          <table class="table">
+            <thead>
+              <td>Age</td>
+              <td>Speed</td>
+              <td>Damage</td>
+              <td>Action</td>
+            </thead>
+            {% for time_period in weapons[weapon]['size'][size]['time_period'] %}
+            <tr>
+              <td>{{ time_period[0:-4]|capitalize }}</td>
+              <td>{{ weapons[weapon]['size'][size]['time_period'][time_period]['speed'] }}</td>
+              <td>{{ weapons[weapon]['size'][size]['time_period'][time_period]['damage'] }}</td>
+              <td>
+                <form data-async data-target="#add-weapons-errors" action="/api/{{ character['_id'] }}/weapon/add/" method="POST" class="form-horizontal">
+                  <input type="hidden" name="weapon" value="{{ weapon }}">
+                  <input type="hidden" name="size" value="{{ size }}">
+                  <input type="hidden" name="time_period" value="{{ time_period }}">
+                  <button class="btn btn-default" type="submit">Add</button>
+                </form>
+              </td>
+            </tr>
+            {% endfor %}
+          </table>
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+

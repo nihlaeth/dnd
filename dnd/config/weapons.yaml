@@ -117,9 +117,6 @@ size:
     damage_type: slashing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
       bronze_age:
         speed: 5
         damage: 1d6
@@ -138,9 +135,6 @@ size:
     damage_type: slashing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
       bronze_age:
         speed: 7
         damage: 1d8
@@ -155,9 +149,6 @@ size:
     damage_type: slashing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
       bronze_age:
         speed: 9
         damage: 1d10
@@ -290,9 +281,6 @@ size:
     damage_type: piercing
     range: short
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
       bronze_age:
         speed: 10
         damage: 1d4
@@ -311,15 +299,6 @@ size:
     damage_type: piercing/slashing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
-      bronze_age:
-        speed: !!null
-        damage: !!null
-      iron_age:
-        speed: !!null
-        damage: !!null
       steel_age:
         speed: 10
         damage: 2d8
@@ -345,7 +324,7 @@ size:
         speed: 1
         damage: 1d3
 ---
-name: morning
+name: morning star
 weapon_category: morning star
 size:
   medium:
@@ -353,12 +332,6 @@ size:
     damage_type: bashing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
-      bronze_age:
-        speed: !!null
-        damage: !!null
       iron_age:
         speed: 7
         damage: 2d4+1
@@ -395,9 +368,6 @@ size:
     damage_type: piercing
     range: !!null
     time_period:
-      stone_age:
-        speed: !!null
-        damage: !!null
       bronze_age:
         speed: 12
         damage: 3d3
