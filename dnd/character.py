@@ -14,7 +14,6 @@ RACES = {race['name']: race for race in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/races.yaml'),
     Loader=Loader) if race is not None}
 
-
 SKILLS = {skill['name'].lower(): skill for skill in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/skills.yaml'),
     Loader=Loader) if skill is not None}
@@ -28,6 +27,25 @@ PRAYERS = {prayer['name'].lower(): prayer for prayer in load_all(
     Loader=Loader) if prayer is not None}
 
 PRAYER_SPHERES = {PRAYERS[prayer]['sphere'] for prayer in PRAYERS}
+
+WEAPONS = {weapon['name'].lower(): weapon for weapon in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/weapons.yaml'),
+    Loader=Loader) if weapon is not None}
+
+WEAPON_CATEGORIES = {WEAPONS[weapon]['weapon_category'] for weapon in WEAPONS}
+
+WEAPON_SIZES = {size for weapon in WEAPONS for size in WEAPONS[weapon]['size']}
+
+WEAPON_AGES = {
+    age for weapon in WEAPONS \
+    for size in WEAPONS[weapon]['size'] \
+    for age in WEAPONS[weapon]['size'][size]['time_period']}
+
+ARMOUR = {armour['name'].lower(): armour for armour in load_all(
+    resource_stream(Requirement.parse('dnd'), 'dnd/config/armour.yaml'),
+    Loader=Loader) if armour is not None}
+
+ARMOUR_AGES = {age for armour in ARMOUR for age in ARMOUR[armour]['time_period']}
 
 POWERS = {power['name'].lower(): power for power in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/powers.yaml'),
@@ -85,6 +103,7 @@ def calculate_stats(character):
     _character_prayers(character)
     _character_money(character)
     _character_inventory(character)
+    _character_equipment(character)
 
 def _character_level(character):
     xp = character.get('xp', 0)
@@ -359,6 +378,10 @@ def _character_inventory(character):
     for item in character['inventory']:
         character['inventory'][item]['description'] = markdown(escape(
             character['inventory'][item]['description_unsafe']))
+
+def _character_equipment(character):
+    character['weapons'] = character.get('weapons', [])
+    character['armour'] = character.get('armour', [])
 
 def _character_background(character):
     character['appearance_safe'] = markdown(escape(

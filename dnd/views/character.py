@@ -19,6 +19,12 @@ from dnd.character import (
     POWERS,
     CLASSES,
     COINS,
+    WEAPONS,
+    WEAPON_CATEGORIES,
+    WEAPON_SIZES,
+    WEAPON_AGES,
+    ARMOUR,
+    ARMOUR_AGES,
     convert_coins,
     calculate_stats)
 
@@ -52,6 +58,12 @@ async def character_handler(request):
         'races': RACES,
         'abilities': ABILITIES,
         'coins': COINS,
+        'weapons': WEAPONS,
+        'weapon_categories': WEAPON_CATEGORIES,
+        'weapon_sizes': WEAPON_SIZES,
+        'weapon_ages': WEAPON_AGES,
+        'armour': ARMOUR,
+        'armour_ages': ARMOUR_AGES,
         'editing_privileges': editing_privileges,
         'character': character,
         'errors': errors}
