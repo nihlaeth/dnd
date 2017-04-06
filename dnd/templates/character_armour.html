@@ -1,0 +1,64 @@
+<h4>Armour</h4>
+<div class="panel-group" id="armour-accordion">
+  {% include 'character_armour_display.html' %}
+</div>
+
+<button type="button" class="btn btn-default btn-block" data-toggle="collapse" data-target="#armour-form">Add</button>
+
+<div id="armour-form" class="collapse well">
+  <div id="add-armour-errors"></div>
+  <div class="panel-group" id="armour-form-accordion">
+    {% for item in armour %}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#armour-form-accordion" href="#{{ item|replace(' ', '-') }}-armour">{{ item|capitalize }}</a>
+        </h4>
+      </div>
+      <div id="{{ item|replace(' ', '-') }}-armour" class="panel-collapse collapse">
+        <div class="panel-body">
+          {% for time_period in armour[item]['time_period'] %}
+          <h4>{{ time_period|replace('_', ' ')|capitalize }}</h4>
+          <table class="table">
+            <tr>
+              <td>Armour class:</td>
+              <td>{{ armour[item]['time_period'][time_period]['armour_class'] }}</td>
+            </tr>
+            <tr>
+              <td>Max dexterity:</td>
+              <td>{{ armour[item]['time_period'][time_period]['maxdex'] }}</td>
+            </tr>
+            <tr>
+              <td>Damage reduction piercing:</td>
+              <td>{{ armour[item]['time_period'][time_period]['dr_piercing'] }}</td>
+            </tr>
+            <tr>
+              <td>Damage reduction slashing:</td>
+              <td>{{ armour[item]['time_period'][time_period]['dr_slashing'] }}</td>
+            </tr>
+            <tr>
+              <td>Damage reduction bashing:</td>
+              <td>{{ armour[item]['time_period'][time_period]['dr_bashing'] }}</td>
+            </tr>
+            <tr>
+              <td>Skill penalty:</td>
+              <td>{{ armour[item]['time_period'][time_period]['skillpenalty'] }}</td>
+            </tr>
+            <tr>
+              <td rowspan="2">
+                <form data-async data-target="#add-armour-errors" action="/api/{{ character['_id'] }}/armour/add/" method="POST" class="form-horizontal">
+                  <input type="hidden" name="weapon" value="{{ item }}">
+                  <input type="hidden" name="time_period" value="{{ time_period }}">
+                  <button class="btn btn-default" type="submit">Add</button>
+                </form>
+              </td>
+            </tr>
+          </table>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
