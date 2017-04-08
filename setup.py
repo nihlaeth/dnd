@@ -12,6 +12,7 @@ setup(
     install_requires=[
         'user_config',
         'aiohttp',
+        'aiosmtplib>=1.0.1',
         'markupsafe',
         'markdown',
         'aiohttp_session[secure]',
