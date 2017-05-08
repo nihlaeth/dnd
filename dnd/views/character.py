@@ -499,20 +499,26 @@ async def _armour_validator(request, errors):
     if action not in ['add', 'equip', 'unequip', 'remove']:
         errors.append("invalid action")
         return {}
-    try:
-        name = request.POST['name']
-        time_period = request.POST['time_period']
-    except KeyError as error:
-        errors.append("missing value: {}".format(error))
-    if len(errors) != 0:
-        return {}
-    if name not in ARMOUR:
-        errors.append("{} not in ARMOUR".format(name))
-    if time_period not in ARMOUR[name]['time_period']:
-        errors.append("{} is not a time period that {} was made in".format(
-            time_period, name))
+    if action == "add":
+        try:
+            name = request.POST['name']
+            time_period = request.POST['time_period']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+        if len(errors) != 0:
+            return {}
+        if name not in ARMOUR:
+            errors.append("{} not in ARMOUR".format(name))
+        if time_period not in ARMOUR[name]['time_period']:
+            errors.append("{} is not a time period that {} was made in".format(
+                time_period, name))
     more_errors, _, character = await get_character(request)
     errors.extend(more_errors)
+    if action != "add":
+        try:
+            id_ = request.POST['id']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
     if len(errors) != 0:
         return {}
     if action == "add":
@@ -524,6 +530,20 @@ async def _armour_validator(request, errors):
             'equipped': False}
         armour.update(ARMOUR[name]['time_period'][time_period])
         character['armour'].append(armour)
+    else:
+        match_index = None
+        for i, armour in enumerate(character['armour']):
+            if str(armour['id']) == id_:
+                match_index = i
+        if match_index is None:
+            errors.append(
+                "no armour with ID {} in your inventory".format(id_))
+        elif action == "equip":
+            character['armour'][match_index]['equipped'] = True
+        elif action == "unequip":
+            character['armour'][match_index]['equipped'] = False
+        elif action == "remove":
+            del character['armour'][match_index]
     return {'armour': character['armour']}
 
 def _armour_response_factory(response, character, app):
@@ -538,24 +558,30 @@ async def _weapon_validator(request, errors):
     if action not in ['add', 'equip', 'unequip', 'remove']:
         errors.append("invalid action")
         return {}
-    try:
-        name = request.POST['name']
-        time_period = request.POST['time_period']
-        size = request.POST['size']
-    except KeyError as error:
-        errors.append("missing value: {}".format(error))
-    if len(errors) != 0:
-        return {}
-    if name not in WEAPONS:
-        errors.append("{} not in WEAPONS".format(name))
-    if size not in WEAPONS[name]['size']:
-        errors.append("{} is not a size that {} is made in".format(
-            size, name))
-    elif time_period not in WEAPONS[name]['size'][size]['time_period']:
-        errors.append("{} is not a time period that {} was made in".format(
-            time_period, name))
+    if action == "add":
+        try:
+            name = request.POST['name']
+            time_period = request.POST['time_period']
+            size = request.POST['size']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+        if len(errors) != 0:
+            return {}
+        if name not in WEAPONS:
+            errors.append("{} not in WEAPONS".format(name))
+        if size not in WEAPONS[name]['size']:
+            errors.append("{} is not a size that {} is made in".format(
+                size, name))
+        elif time_period not in WEAPONS[name]['size'][size]['time_period']:
+            errors.append("{} is not a time period that {} was made in".format(
+                time_period, name))
     more_errors, _, character = await get_character(request)
     errors.extend(more_errors)
+    if action != "add":
+        try:
+            id_ = request.POST['id']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
     if len(errors) != 0:
         return {}
     if action == "add":
@@ -572,6 +598,20 @@ async def _weapon_validator(request, errors):
         weapon.update(
             WEAPONS[name]['size'][size]['time_period'][time_period])
         character['weapons'].append(weapon)
+    else:
+        match_index = None
+        for i, weapon in enumerate(character['weapons']):
+            if str(weapon['id']) == id_:
+                match_index = i
+        if match_index is None:
+            errors.append(
+                "no weapon with ID {} in your inventory".format(id_))
+        elif action == "equip":
+            character['weapons'][match_index]['equipped'] = True
+        elif action == "unequip":
+            character['weapons'][match_index]['equipped'] = False
+        elif action == "remove":
+            del character['weapons'][match_index]
     return {'weapons': character['weapons']}
 
 def _weapon_response_factory(response, character, app):
