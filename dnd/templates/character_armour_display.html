@@ -37,7 +37,7 @@
           <td>{{ item['skillpenalty'] }}</td>
         </tr>
         <tr>
-          <td rowspan="2">
+          <td colspan="2">
             <form data-async data-target="#add-armour-errors" action="/api/{{ character['_id'] }}/armour/remove/" method="POST" class="form-horizontal">
               <input type="hidden" name="id" value="{{ item['id'] }}">
               <button class="btn btn-default" type="submit">Remove</button>

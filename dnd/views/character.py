@@ -102,6 +102,7 @@ async def data_handler(request):
         'background': (_background_validator, _background_response_factory),
         'inventory': (_inventory_validator, _inventory_response_factory),
         'armour': (_armour_validator, _armour_response_factory),
+        'weapon': (_weapon_validator, _weapon_response_factory),
         'coin': (_coin_validator, _coin_response_factory),
         'rest': (_rest_validator, _rest_response_factory),
     }
@@ -529,6 +530,54 @@ def _armour_response_factory(response, character, app):
     response['#armour-accordion'] = {
         'data': get_env(app).get_template(
             'character_armour_display.html').render(
+                character=character,),
+        'activateTooltip': True}
+
+async def _weapon_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['add', 'equip', 'unequip', 'remove']:
+        errors.append("invalid action")
+        return {}
+    try:
+        name = request.POST['name']
+        time_period = request.POST['time_period']
+        size = request.POST['size']
+    except KeyError as error:
+        errors.append("missing value: {}".format(error))
+    if len(errors) != 0:
+        return {}
+    if name not in WEAPONS:
+        errors.append("{} not in WEAPONS".format(name))
+    if size not in WEAPONS[name]['size']:
+        errors.append("{} is not a size that {} is made in".format(
+            size, name))
+    elif time_period not in WEAPONS[name]['size'][size]['time_period']:
+        errors.append("{} is not a time period that {} was made in".format(
+            time_period, name))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if len(errors) != 0:
+        return {}
+    if action == "add":
+        weapon = {
+            'id': datetime.datetime.now(),
+            'name': name,
+            'size': size,
+            'weapon_category': WEAPONS[name]['weapon_category'],
+            'price': WEAPONS[name]['size'][size]['price'],
+            'damage_type': WEAPONS[name]['size'][size]['damage_type'],
+            'range': WEAPONS[name]['size'][size]['range'],
+            'time_period': time_period,
+            'equipped': False}
+        weapon.update(
+            WEAPONS[name]['size'][size]['time_period'][time_period])
+        character['weapons'].append(weapon)
+    return {'weapons': character['weapons']}
+
+def _weapon_response_factory(response, character, app):
+    response['#weapons-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_weapons_display.html').render(
                 character=character,),
         'activateTooltip': True}
 
