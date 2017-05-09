@@ -1,0 +1,63 @@
+{% for item in character['weapons'] %}
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#weapons-accordion" href="#{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-weapon">
+        {{ item['name']|capitalize }}
+        {% if item['equipped'] %}<span class="badge">equipped</span>{% endif %}
+      </a>
+    </h4>
+  </div>
+  <div id="{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-weapon" class="panel-collapse collapse">
+    <div class="panel-body">
+      <table class="table">
+        <tr>
+          <td>Weapon category:</td>
+          <td>{{ item['weapon_category'] }}</td>
+        </tr>
+        <tr>
+          <td>Time period:</td>
+          <td>{{ item['time_period']|replace('_', ' ') }}</td>
+        </tr>
+        <tr>
+          <td>Size:</td>
+          <td>{{ item['size'] }}</td>
+        </tr>
+        <tr>
+          <td>Speed:</td>
+          <td>{{ item['speed'] }}</td>
+        </tr>
+        <tr>
+          <td>Damage:</td>
+          <td>{{ item['damage'] }}</td>
+        </tr>
+        <tr>
+          <td>Damage type:</td>
+          <td>{{ item['damage_type'] }}</td>
+        </tr>
+        {% if item['range'] is not none %}
+        <tr>
+          <td>Range:</td>
+          <td>{{ item['range'] }}</td>
+        </tr>
+        {% endif %}
+        <tr>
+          <td>
+            <form data-async data-target="#add-weapon-errors" action="/api/{{ character['_id'] }}/weapon/{% if item['equipped'] %}un{% endif %}equip/" method="POST" class="form-horizontal">
+              <input type="hidden" name="id" value="{{ item['id'] }}">
+              <button class="btn btn-default" type="submit">{% if item['equipped'] %}Unequip{% else %}Equip{% endif %}</button>
+            </form>
+          </td>
+          <td>
+            <form data-async data-target="#add-weapon-errors" action="/api/{{ character['_id'] }}/weapon/remove/" method="POST" class="form-horizontal">
+              <input type="hidden" name="id" value="{{ item['id'] }}">
+              <button class="btn btn-default" type="submit">Remove</button>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+{% endfor %}
+

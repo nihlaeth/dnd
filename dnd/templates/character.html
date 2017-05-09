@@ -169,25 +169,13 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#equipment-panel">Equipment</a>
-      </h4>
-    </div>
-    <div id="equipment-panel" class="panel-collapse collapse">
-      <div class="panel-body"></div>
-      <div class="panel-footer"></div>
-    </div>
-  </div>
-</div>
-
-<div class="panel-group">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h4 class="panel-title">
         <a data-toggle="collapse" class="btn btn-link btn-block" role="button" href="#inventory-panel">Inventory</a>
       </h4>
     </div>
     <div id="inventory-panel" class="panel-collapse collapse">
       <div class="panel-body">
+        {% include 'character_weapons.html' %}
+        {% include 'character_armour.html' %}
         {% include 'character_inventory.html' %}
       </div>
       <div class="panel-footer" id="coins">

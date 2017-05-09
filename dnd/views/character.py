@@ -1,5 +1,6 @@
 """Character page."""
 import time
+import datetime
 import re
 from inspect import iscoroutinefunction
 from bson import ObjectId
@@ -19,6 +20,12 @@ from dnd.character import (
     POWERS,
     CLASSES,
     COINS,
+    WEAPONS,
+    WEAPON_CATEGORIES,
+    WEAPON_SIZES,
+    WEAPON_AGES,
+    ARMOUR,
+    ARMOUR_AGES,
     convert_coins,
     calculate_stats)
 
@@ -52,6 +59,12 @@ async def character_handler(request):
         'races': RACES,
         'abilities': ABILITIES,
         'coins': COINS,
+        'weapons': WEAPONS,
+        'weapon_categories': WEAPON_CATEGORIES,
+        'weapon_sizes': WEAPON_SIZES,
+        'weapon_ages': WEAPON_AGES,
+        'armour': ARMOUR,
+        'armour_ages': ARMOUR_AGES,
         'editing_privileges': editing_privileges,
         'character': character,
         'errors': errors}
@@ -88,6 +101,8 @@ async def data_handler(request):
         'name': (_name_validator, _name_response_factory),
         'background': (_background_validator, _background_response_factory),
         'inventory': (_inventory_validator, _inventory_response_factory),
+        'armour': (_armour_validator, _armour_response_factory),
+        'weapon': (_weapon_validator, _weapon_response_factory),
         'coin': (_coin_validator, _coin_response_factory),
         'rest': (_rest_validator, _rest_response_factory),
     }
@@ -478,6 +493,133 @@ def _power_response_factory(response, character, app):
                 character=character, powers=POWERS),
         'activateTooltip': True}
     _skill_response_factory(response, character, app)
+
+async def _armour_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['add', 'equip', 'unequip', 'remove']:
+        errors.append("invalid action")
+        return {}
+    if action == "add":
+        try:
+            name = request.POST['name']
+            time_period = request.POST['time_period']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+        if len(errors) != 0:
+            return {}
+        if name not in ARMOUR:
+            errors.append("{} not in ARMOUR".format(name))
+        if time_period not in ARMOUR[name]['time_period']:
+            errors.append("{} is not a time period that {} was made in".format(
+                time_period, name))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if action != "add":
+        try:
+            id_ = request.POST['id']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+    if len(errors) != 0:
+        return {}
+    if action == "add":
+        armour = {
+            'id': datetime.datetime.now(),
+            'name': name,
+            'price': ARMOUR[name]['price'],
+            'time_period': time_period,
+            'equipped': False}
+        armour.update(ARMOUR[name]['time_period'][time_period])
+        character['armour'].append(armour)
+    else:
+        match_index = None
+        for i, armour in enumerate(character['armour']):
+            if str(armour['id']) == id_:
+                match_index = i
+        if match_index is None:
+            errors.append(
+                "no armour with ID {} in your inventory".format(id_))
+        elif action == "equip":
+            character['armour'][match_index]['equipped'] = True
+        elif action == "unequip":
+            character['armour'][match_index]['equipped'] = False
+        elif action == "remove":
+            del character['armour'][match_index]
+    return {'armour': character['armour']}
+
+def _armour_response_factory(response, character, app):
+    response['#armour-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_armour_display.html').render(
+                character=character,),
+        'activateTooltip': True}
+
+async def _weapon_validator(request, errors):
+    action = request.match_info['extra']
+    if action not in ['add', 'equip', 'unequip', 'remove']:
+        errors.append("invalid action")
+        return {}
+    if action == "add":
+        try:
+            name = request.POST['name']
+            time_period = request.POST['time_period']
+            size = request.POST['size']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+        if len(errors) != 0:
+            return {}
+        if name not in WEAPONS:
+            errors.append("{} not in WEAPONS".format(name))
+        if size not in WEAPONS[name]['size']:
+            errors.append("{} is not a size that {} is made in".format(
+                size, name))
+        elif time_period not in WEAPONS[name]['size'][size]['time_period']:
+            errors.append("{} is not a time period that {} was made in".format(
+                time_period, name))
+    more_errors, _, character = await get_character(request)
+    errors.extend(more_errors)
+    if action != "add":
+        try:
+            id_ = request.POST['id']
+        except KeyError as error:
+            errors.append("missing value: {}".format(error))
+    if len(errors) != 0:
+        return {}
+    if action == "add":
+        weapon = {
+            'id': datetime.datetime.now(),
+            'name': name,
+            'size': size,
+            'weapon_category': WEAPONS[name]['weapon_category'],
+            'price': WEAPONS[name]['size'][size]['price'],
+            'damage_type': WEAPONS[name]['size'][size]['damage_type'],
+            'range': WEAPONS[name]['size'][size]['range'],
+            'time_period': time_period,
+            'equipped': False}
+        weapon.update(
+            WEAPONS[name]['size'][size]['time_period'][time_period])
+        character['weapons'].append(weapon)
+    else:
+        match_index = None
+        for i, weapon in enumerate(character['weapons']):
+            if str(weapon['id']) == id_:
+                match_index = i
+        if match_index is None:
+            errors.append(
+                "no weapon with ID {} in your inventory".format(id_))
+        elif action == "equip":
+            character['weapons'][match_index]['equipped'] = True
+        elif action == "unequip":
+            character['weapons'][match_index]['equipped'] = False
+        elif action == "remove":
+            del character['weapons'][match_index]
+    return {'weapons': character['weapons']}
+
+def _weapon_response_factory(response, character, app):
+    response['#weapons-accordion'] = {
+        'data': get_env(app).get_template(
+            'character_weapons_display.html').render(
+                character=character,),
+        'activateTooltip': True}
 
 async def _inventory_validator(request, errors):
     action = request.match_info['extra']
