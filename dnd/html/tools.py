@@ -22,5 +22,5 @@ def remove_class(tag, class_):
     return tag
 
 def sanitise_id(text):
-    """Make any string a valid HTML id."""
+    """Make any string with at least one valid character a valid HTML id."""
     return "-".join(re.findall("[a-zA-Z0-9\\-_]*", text))
