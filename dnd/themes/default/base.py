@@ -10,6 +10,7 @@ from dnd.html.tools import add_class, sanitise_id
 from dnd.html.bootstrap import fluid_container, navigation
 
 def base(
+        characters: list,
         page_title: str,
         body_title: Optional[list]=None,
         content: Optional[list]=None) -> html:
