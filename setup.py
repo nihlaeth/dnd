@@ -24,6 +24,7 @@ setup(
         'aiohttp-login',
         'pyyaml',
         'uvloop',
+        'pyhtml',
         'roman'],
     entry_points={
         'console_scripts': ['dnd = dnd:start']},
