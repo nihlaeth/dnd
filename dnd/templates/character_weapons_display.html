@@ -2,7 +2,10 @@
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#weapons-accordion" href="#{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-weapon">{{ item['name']|capitalize }}</a>
+      <a data-toggle="collapse" data-parent="#weapons-accordion" href="#{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-weapon">
+        {{ item['name']|capitalize }}
+        {% if item['equipped'] %}<span class="badge">equipped</span>{% endif %}
+      </a>
     </h4>
   </div>
   <div id="{{ item['id']|replace(' ', '-')|replace(':', '-')|replace('.', '-') }}-weapon" class="panel-collapse collapse">
@@ -39,7 +42,13 @@
         </tr>
         {% endif %}
         <tr>
-          <td colspan="2">
+          <td>
+            <form data-async data-target="#add-weapon-errors" action="/api/{{ character['_id'] }}/weapon/{% if item['equipped'] %}un{% endif %}equip/" method="POST" class="form-horizontal">
+              <input type="hidden" name="id" value="{{ item['id'] }}">
+              <button class="btn btn-default" type="submit">{% if item['equipped'] %}Unequip{% else %}Equip{% endif %}</button>
+            </form>
+          </td>
+          <td>
             <form data-async data-target="#add-weapon-errors" action="/api/{{ character['_id'] }}/weapon/remove/" method="POST" class="form-horizontal">
               <input type="hidden" name="id" value="{{ item['id'] }}">
               <button class="btn btn-default" type="submit">Remove</button>
