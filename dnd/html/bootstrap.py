@@ -279,3 +279,21 @@ def b_table(
     if responsive:
         tag = div(class_="table-responsive")(tag)
     return tag
+
+def grid(*columns) -> div:
+    """
+    Bootstrap grid row.
+
+    Example
+    =======
+    grid(
+        {'width': 4, 'content': []},
+        {'width': 5, 'content': [b("Hello")]},
+        {'width': 3, 'content': [i("world")]})
+
+    """
+    cells = []
+    for column in columns:
+        cells.append(
+            div(class_=f"col-sm-{column['width']}")(*column['content']))
+    return div(class_="row")(*cells)

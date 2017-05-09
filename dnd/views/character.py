@@ -4,11 +4,10 @@ import datetime
 import re
 from inspect import iscoroutinefunction
 from bson import ObjectId
-from aiohttp_login.decorators import restricted_api
-from aiohttp.web import json_response
+from aiohttp_login.decorators import restricted_api, login_required
+from aiohttp.web import json_response, Response
 from markupsafe import escape
 from aiohttp_jinja2 import get_env
-from dnd.decorators import login_required
 from dnd.common import format_errors
 from dnd.character import (
     ABILITIES,
@@ -28,6 +27,7 @@ from dnd.character import (
     ARMOUR_AGES,
     convert_coins,
     calculate_stats)
+from dnd.themes.default.character.character import character_
 
 async def get_character(request):
     """Fetch character from database."""
@@ -45,10 +45,27 @@ async def get_character(request):
         calculate_stats(character)
     return (errors, editing_privileges, character)
 
-@login_required(template_file='character.html')
+@login_required
 async def character_handler(request):
     """Character page."""
+    characters_collection = request.app['db'].characters
+    invalid_characters = await characters_collection.find(
+        {'user._id': request['user']['_id']}).to_list(length=100)
+    for character in invalid_characters:
+        await characters_collection.update_one(
+            {'_id': character['_id']},
+            {
+                '$set': {'user_id': request['user']['_id']},
+                '$unset': {'user': True}})
+    characters = await characters_collection.find(
+        {'user_id': request['user']['_id']}).to_list(length=100)
+    for character in characters:
+        calculate_stats(character)
     errors, editing_privileges, character = await get_character(request)
+    return Response(text=character_(
+        characters,
+        editing_privileges,
+        character).render(), content_type='text/html')
     return {
         'spells': SPELLS,
         'prayers': PRAYERS,
