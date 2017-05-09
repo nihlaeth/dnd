@@ -2,7 +2,7 @@
 from typing import Optional, Union
 from enum import Enum
 from pyhtml import (
-    table, tr, thread as thead, tbody, td,
+    table, tr, thead, th, tbody, td,
     ul, li,
     span, div, nav,
     a, button,
@@ -176,6 +176,7 @@ def async_form(
                     input_group[0],
                     "control-label col-sm-{}".format(horizontal[0]))
         input_group.append(input_(**item))
+        add_class(input_group[-1], "form-control")
         if horizontal is not None:
             add_class(input_group[0], "col-sm-{}".format(horizontal[1]))
         contents.append(div(class_="form-group")(*input_group))
@@ -262,7 +263,7 @@ def b_table(
     """
     content = []
     if header_visibility:
-        content.append(thead(tr(*[td(text) for text in header])))
+        content.append(thead(tr(*[th(text) for text in header])))
     if body is not None:
         content.append(tbody(*[_table_row(header, row) for row in body]))
     tag = table(class_="table")(*content)
