@@ -3,10 +3,9 @@ from typing import Optional
 
 from pyhtml import (
     html, head, title, meta, link, script, style, body,
-    h1, div
+    h1, div, br,
 )
 
-from dnd.html.tools import add_class, sanitise_id
 from dnd.html.bootstrap import fluid_container, navigation
 
 def base(
@@ -46,7 +45,7 @@ def base(
             "Characters",
             [
                 [character["name"], "/{}/{}/".format(
-                    character['_id'], character.name)]
+                    character['_id'], character['name'])]
                 for character in characters if character['hp'] > -10
             ]
         ]
@@ -63,6 +62,7 @@ def base(
             title_link="/",
             menu=left_menu,
             menu_right=right_menu),
+        br,
         div(class_="page-header")(h1(*body_title)),
         *content))
     return html(header, page_body)

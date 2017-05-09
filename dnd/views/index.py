@@ -1,19 +1,29 @@
 """Index page."""
 from datetime  import datetime
 from markupsafe import escape
-from aiohttp_login.decorators import restricted_api
-from aiohttp.web import json_response
-from dnd.decorators import login_required
+from aiohttp_login.decorators import restricted_api, login_required
+from aiohttp.web import json_response, Response
 from dnd.common import format_errors
+from dnd.character import calculate_stats
+from dnd.themes.default.index import index
 
-@login_required(template_file='index.html')
+@login_required
 async def index_handler(request):
     """Index page."""
-    successes = []
-    errors = []
-    return {
-        'successes': successes,
-        'errors': errors}
+    characters_collection = request.app['db'].characters
+    invalid_characters = await characters_collection.find(
+        {'user._id': request['user']['_id']}).to_list(length=100)
+    for character in invalid_characters:
+        await characters_collection.update_one(
+            {'_id': character['_id']},
+            {
+                '$set': {'user_id': request['user']['_id']},
+                '$unset': {'user': True}})
+    characters = await characters_collection.find(
+        {'user_id': request['user']['_id']}).to_list(length=100)
+    for character in characters:
+        calculate_stats(character)
+    return Response(text=index(characters).render(), content_type='text/html')
 
 @restricted_api
 async def new_character_data_handler(request):
@@ -26,7 +36,7 @@ async def new_character_data_handler(request):
         errors.append("missing value: {}".format(error))
     if name is not None and (len(name) < 1 or len(name) > 50):
         errors.append("length should be between one and fifty characters")
-    if len(errors) == 0:
+    if not errors:
         characters = request.app['db'].characters
         if await characters.find_one(
                 {'user_id': request['user']['_id'], 'name': name}) is not None:
@@ -35,8 +45,6 @@ async def new_character_data_handler(request):
             result = await characters.insert_one({
                 'user_id': request['user']['_id'],
                 'name': name,
-                'xp': 0,
-                'hp': 0,
                 'created_at': datetime.now()})
             if result.acknowledged:
                 character = await characters.find_one({
@@ -47,16 +55,14 @@ async def new_character_data_handler(request):
         <a href="/{}/{}/" class="btn btn-default" role="button">{}</a>
     </td>
     <td>{}</td>
-    <td>{}</td>
 </tr>""".format(character['_id'],
                 character['name'],
                 character['name'],
-                character['created_at'].date(),
-                "")
+                character['created_at'].date())
                 return json_response({
                     'close': True,
                     '#character-table': {'appendTable': table_row}})
             else:
                 errors.append("computer says no")
-    if len(errors) > 0:
+    if errors:
         return json_response({'errors': format_errors(errors)})

@@ -30,7 +30,7 @@ def index(characters):
         row = {
             "Name": [a_button(
                 character['name'],
-                url=f"/{character['_id']}/{character.name}/")],
+                url=f"/{character['_id']}/{character['name']}/")],
             "Date created": [character['created_at'].date()]}
         if character['hp'] < -9:
             row['Name'].append(badge("R.I.P."))

@@ -2,7 +2,7 @@
 from typing import Optional, Union
 from enum import Enum
 from pyhtml import (
-    table, tr, thead, tbody, td,
+    table, tr, thread as thead, tbody, td,
     ul, li,
     span, div, nav,
     a, button,
@@ -97,13 +97,14 @@ def navigation(
         menu = []
     if menu_right is None:
         menu_right = []
-    navigation_header = div(class_="navbar-header")(button(
-        type_="button",
-        class_="navbar-toggle",
-        data_toggle="collapse",
-        data_target="#navigation-body")(
-            *[span(class_="icon-bar") for _ in range(3)],
-            a(class_="navbar-brand", href=title_link)(title)))
+    navigation_header = div(class_="navbar-header")(
+        button(
+            type_="button",
+            class_="navbar-toggle",
+            data_toggle="collapse",
+            data_target="#navigation-body")(
+                *[span(class_="icon-bar") for _ in range(3)]),
+        a(class_="navbar-brand", href=title_link)(title))
     navigation_links = []
     for item in menu:
         navigation_links.append(_navigation_item(item))
@@ -125,7 +126,7 @@ def collapse(collapsible, trigger=None):
     if trigger is not None:
         trigger.attributes.update({
             "data-toggle": "collapse",
-            "data-target": "#{}".format(collapsible.attributes['id'])})
+            "data-target": "#{}".format(collapsible.attributes['id_'])})
 
 def async_form(
         form_name: str,
