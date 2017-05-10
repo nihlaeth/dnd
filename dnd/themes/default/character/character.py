@@ -1,6 +1,7 @@
 """Character page."""
 from pyhtml import div, br, span
 from dnd.themes.default.base import base
+from dnd.themes.default.character.actions import actions
 from dnd.html.bootstrap import (
     Style, b_button, badge, collapse, async_form, grid)
 
@@ -18,7 +19,7 @@ def character_(characters, editing_privileges, character):
             async_form(
                 form_name="edit-name",
                 action=f"/api/{character['_id']}/name/",
-                submit_text="Edit",
+                submit_button="Edit",
                 inputs=[{
                     'label': ['Name:'],
                     'type': "input",
@@ -31,7 +32,7 @@ def character_(characters, editing_privileges, character):
         content.append(edit_name_form)
     content.append(br())
     content.append(div(id_="edit-accordion")(grid(
-        {'width': 4, 'content': []},
+        {'width': 4, 'content': [actions(character)]},
         {'width': 4, 'content': []},
         {'width': 4, 'content': []})))
     return base(

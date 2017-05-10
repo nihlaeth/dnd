@@ -36,11 +36,14 @@ def alert(*content, style: Style=Style.SUCCESS) -> div:
 def a_button(
         *content,
         url: str,
-        style: Style=Style.DEFAULT) -> a:
+        style: Style=Style.DEFAULT,
+        block: bool=False) -> a:
     """Bootstrap button style a."""
     tag = a(class_=f"btn", href=url, role="button")(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
+    if block:
+        add_class(tag, "btn-block")
     return tag
 
 def b_button(
@@ -140,11 +143,12 @@ def collapse(
 def async_form(
         form_name: str,
         action: str,
-        submit_text: str="Submit",
+        submit_button: Union[str, button]="Submit",
         inputs: Optional[list]=None,
         method: str="POST",
         inline: bool=False,
-        horizontal: Optional[list]=None) -> form:
+        horizontal: Optional[list]=None,
+        error_id: Optional[str]=None) -> form:
     """
     Simple asynchronous form.
 
@@ -171,7 +175,10 @@ def async_form(
     textareas
     """
     id_base = sanitise_id(form_name)
-    contents = [div(id_=f"{id_base}-errors")]
+    contents = []
+    if error_id is not None:
+        error_id = f"{id_base}-errors"
+        contents.append(div(id_=error_id))
     for item in inputs:
         if item['type'] == "hidden":
             contents.append(input_(**item))
@@ -189,14 +196,17 @@ def async_form(
         if horizontal is not None:
             add_class(input_group[0], "col-sm-{}".format(horizontal[1]))
         contents.append(div(class_="form-group")(*input_group))
-    contents.append(b_button(submit_text, action="submit"))
+    if isinstance(submit_button, str):
+        contents.append(b_button(submit_button, action="submit"))
+    elif isinstance(submit_button, button):
+        contents.append(submit_button)
     if horizontal is not None:
         contents[-1] = div(class_="form-group")(
             div(class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(
                 contents[-1]))
     tag = form(
         data_async="true",
-        data_target=f"#{id_base}-errors",
+        data_target=f"#{error_id}",
         action=action,
         method=method)(*contents)
     if inline:
@@ -204,6 +214,51 @@ def async_form(
     if horizontal is not None:
         add_class(tag, "form-horizontal")
     return tag
+
+def async_button(
+        form_name: str,
+        action: str,
+        error_id: str,
+        submit_button: Union[str, button]="Submit",
+        hidden_data: Optional[dict]=None) -> form:
+    """
+    Button that works in the background.
+
+    This is actually an asynchronous form with exclusively hidden input
+    and only a single button as visible element.
+
+    Parameters
+    ----------
+    form_name
+        TODO
+    action
+        TODO
+    error_id
+        TODO
+    submit_button: optional
+        TODO, defaults to "Submit"
+    hidden_data: optional
+        dictionary with keyvalue pairs that are included in the form
+        defaults to None
+
+    Examples
+    --------
+    ..doctest::
+
+        >>> TODO
+    """
+    if hidden_data is None:
+        hidden_data = {}
+    return async_form(
+        form_name=form_name,
+        action=action,
+        submit_button=submit_button,
+        inputs=[{
+            'name': name,
+            'type': 'hidden',
+            'value': hidden_data[name]} for name in hidden_data],
+        error_id=error_id,
+        inline=True)
 
 def _table_row(header, row) -> tr:
     cells = []

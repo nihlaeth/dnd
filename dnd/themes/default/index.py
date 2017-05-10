@@ -12,7 +12,7 @@ def index(characters):
         async_form(
             form_name="add-character",
             action="/api/new-character/",
-            submit_text="Create",
+            submit_button="Create",
             inputs=[{
                 'label': ['Name:'],
                 'type': "input",
