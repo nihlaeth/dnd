@@ -3,30 +3,16 @@ from pyhtml import div, h4
 from dnd.html.bootstrap import Style, a_button, b_button, async_button, panel
 from dnd.html.tools import add_class
 
-def actions(character: dict):
+def actions(character: dict) -> div:
     """
-    TODO
+    Actions panel for character page
 
-    TODO
+    Buttons that automate series of small changes that occur frequently.
 
     Parameters
     ----------
     character
-        TODO
-
-    Raises
-    ------
-    TODO
-
-    Returns
-    -------
-    TODO
-
-    Examples
-    --------
-    ..doctest::
-
-        >>> TODO
+        character data
     """
     trigger = a_button("Actions", url="#", style=Style.LINK, block=True)
     rest_button = b_button("Rest", style=Style.SUCCESS, action="submit")
