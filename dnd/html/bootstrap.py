@@ -1,9 +1,11 @@
 """Bootstrap elements."""
 from typing import Optional, Union
 from enum import Enum
+import uuid
 from pyhtml import (
+    Tag,
     table, tr, thead, th, tbody, td,
-    ul, li,
+    ul, ol, li,
     span, div, nav,
     a, button,
     form, input_, label,
@@ -120,13 +122,20 @@ def navigation(
             navigation_header,
             navigation_body))
 
-def collapse(collapsible, trigger=None):
+def collapse(
+        collapsible: Optional[Tag],
+        trigger: Optional[Tag]=None,
+        accordion_id: Optional[str]=None) -> None:
     """Have one element collapse the other."""
     add_class(collapsible, "collapse")
+    if 'id_' not in collapsible.attributes:
+        collapsible.attributes['id_'] = uuid.uuid4().hex
     if trigger is not None:
         trigger.attributes.update({
             "data-toggle": "collapse",
             "data-target": "#{}".format(collapsible.attributes['id_'])})
+        if accordion_id is not None:
+            trigger.attributes['data-parent'] = f"#{accordion_id}"
 
 def async_form(
         form_name: str,
@@ -297,3 +306,65 @@ def grid(*columns) -> div:
         cells.append(
             div(class_=f"col-sm-{column['width']}")(*column['content']))
     return div(class_="row")(*cells)
+
+def panel(
+        header: Optional[list]=None,
+        body: Optional[Union[list, ul, ol]]=None,
+        footer: Optional[list]=None,
+        style: Style=Style.DEFAULT,
+        trigger: Optional[Tag]=None,
+        accordion_id: Optional[str]=None) -> div:
+    """
+    Bootstrap panel generation.
+
+    Parameters
+    ----------
+    header: optional
+        Contents of header block, defaults to None
+    body: optional
+        Contents of body block, defaults to None
+    footer: optional
+        Contents of footer block, defaults to None
+    style: optional
+        context class of panel, defaults to Style.DEFAULT
+    trigger: optional
+        make panel collapsible by this trigger. User is responsible
+        for placing trigger, preferably in the header though. Defaults to None
+    accordion_id: optional
+        TODO, defaults to None
+
+    Raises
+    ------
+    TODO
+
+    Returns
+    -------
+    TODO
+
+    Examples
+    --------
+    ..doctest::
+
+        >>> TODO
+    """
+    panel_content = []
+    if header is not None:
+        panel_content.append(div(class_="panel-heading")(*header))
+    panel_body = []
+    if body is not None:
+        if isinstance(body, (ul, ol)):
+            panel_body.append(body)
+        else:
+            panel_body.append(div(class_="panel-body")(*body))
+    if footer is not None:
+        panel_body.append(div(class_="panel-footer")(*footer))
+    if trigger is not None:
+        panel_content.append(div(class_="panel-collapse", id_=None)(*panel_body))
+        collapse(panel_content[-1], trigger, accordion_id)
+    else:
+        panel_content.extend(panel_body)
+
+    tag = div(class_="panel")(*panel_content)
+    if style.value is not None:
+        add_class(tag, f"panel-{style.value}")
+    return tag
