@@ -334,7 +334,7 @@ def b_table(
         bordered: bool=False,
         striped: bool=False,
         hover: bool=False,
-        responsive: bool=True) -> Union[div, table]:
+        responsive: bool=False) -> Union[div, table]:
     """
     Bootstrap table.
 
