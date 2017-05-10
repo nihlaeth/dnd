@@ -65,7 +65,8 @@ async def character_handler(request):
     return Response(text=character_(
         characters,
         editing_privileges,
-        character).render(), content_type='text/html')
+        character,
+        ABILITIES).render(), content_type='text/html')
     return {
         'spells': SPELLS,
         'prayers': PRAYERS,

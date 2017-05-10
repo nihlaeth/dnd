@@ -37,34 +37,53 @@ def a_button(
         *content,
         url: str,
         style: Style=Style.DEFAULT,
-        block: bool=False) -> a:
+        block: bool=False,
+        id_: str=None) -> a:
     """Bootstrap button style a."""
     tag = a(class_=f"btn", href=url, role="button")(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
     if block:
         add_class(tag, "btn-block")
+    if id_ is not None:
+        tag.attributes['id_'] = id_
     return tag
 
 def b_button(
         *content,
         style: Style=Style.DEFAULT,
-        action: Optional[str]=None) -> button:
+        action: Optional[str]=None,
+        id_: str=None) -> button:
     """Bootstrap button."""
     tag = button(class_=f"btn")(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
     if action is not None:
         tag.attributes['action'] = action
+    if id_ is not None:
+        tag.attributes['id_'] = id_
     return tag
 
-def b_label(*content, style: Style=Style.DEFAULT) -> span:
+def b_label(
+        *content,
+        style: Style=Style.DEFAULT,
+        id_: Optional[str]=None) -> span:
     """Bootstrap label."""
-    return span(class_=f"label label-{style.value}")(*content)
+    tag = span(class_=f"label label-{style.value}")(*content)
+    if id_ is not None:
+        tag.attributes['id_'] = id_
+    return tag
 
-def badge(*content) -> span:
+def badge(*content, id_: str=None) -> span:
     """Bootstrap badge."""
-    return span(class_="badge")(*content)
+    tag = span(class_="badge")(*content)
+    if id_ is not None:
+        tag.attributes['id_'] = id_
+    return tag
+
+def tooltip(*content, title) -> a:
+    """Bootstrap tooltip."""
+    return a(data_toggle="tooltip", href="#", title=title)(*content)
 
 def fluid_container(*content) -> div:
     """A div tag with class container-fluid."""
@@ -126,17 +145,19 @@ def navigation(
             navigation_body))
 
 def collapse(
-        collapsible: Optional[Tag],
+        collapsible: Optional[Union[Tag, str]],
         trigger: Optional[Tag]=None,
         accordion_id: Optional[str]=None) -> None:
     """Have one element collapse the other."""
-    add_class(collapsible, "collapse")
-    if 'id_' not in collapsible.attributes:
-        collapsible.attributes['id_'] = uuid.uuid4().hex
+    if isinstance(collapsible, Tag):
+        add_class(collapsible, "collapse")
+        if 'id_' not in collapsible.attributes:
+            collapsible.attributes['id_'] = uuid.uuid4().hex
+        collapsible = collapsible.attributes['id_']
     if trigger is not None:
         trigger.attributes.update({
             "data-toggle": "collapse",
-            "data-target": "#{}".format(collapsible.attributes['id_'])})
+            "data-target": f"#{collapsible}"})
         if accordion_id is not None:
             trigger.attributes['data-parent'] = f"#{accordion_id}"
 
@@ -194,7 +215,8 @@ def async_form(
         input_group.append(input_(**item))
         add_class(input_group[-1], "form-control")
         if horizontal is not None:
-            add_class(input_group[0], "col-sm-{}".format(horizontal[1]))
+            input_group[-1] = div(class_=f"col-sm-{horizontal[1]}")(
+                input_group[-1])
         contents.append(div(class_="form-group")(*input_group))
     if isinstance(submit_button, str):
         contents.append(b_button(submit_button, action="submit"))
@@ -414,7 +436,7 @@ def panel(
     if footer is not None:
         panel_body.append(div(class_="panel-footer")(*footer))
     if trigger is not None:
-        panel_content.append(div(class_="panel-collapse", id_=None)(*panel_body))
+        panel_content.append(div(class_="panel-collapse")(*panel_body))
         collapse(panel_content[-1], trigger, accordion_id)
     else:
         panel_content.extend(panel_body)
