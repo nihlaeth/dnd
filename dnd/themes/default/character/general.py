@@ -44,6 +44,7 @@ def _ability_edit_form(character, ability) -> form:
 
 def _ability_row(character, editing_privileges, ability):
     display = {
+        '_id': f"{ability}-row",
         'ability': [ability.capitalize()],
         'value': [character[ability]],
         'modifier': [badge(
