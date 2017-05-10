@@ -1,13 +1,78 @@
 """Character general panel."""
 import copy
 from pyhtml import div, h4, form
+from dnd.html.tools import sanitise_id, add_class
 from dnd.html.bootstrap import (
     Style, collapse,
     a_button, b_button, b_label, badge, tooltip,
     panel, b_table, async_form)
 
-def _general_table(character):
-    pass
+def _race_input(character: dict, race: dict) -> dict:
+    info_button = b_button('?', style=Style.INFO)
+    add_class(info_button, "btn-xs")
+    info_well = div(
+        class_="well",
+        id_=f"race-info-{sanitise_id(race['name'])}")(
+            race['description'], _safe=True)
+    collapse(info_well, info_button)
+    result = {
+        'type': "radio",
+        'name': "race",
+        'value': race['name'],
+        'label': [race['name'], info_button],
+        'after': [info_well]}
+    if race['name'] == character['race']['name']:
+        result['checked'] = 'true'
+    return result
+
+def _race(character, editing_privileges, races):
+    value = character['race']['name']
+    if editing_privileges:
+        value = a_button(value, url="#", id_="race-value")
+    info_button = b_button('?', style=Style.INFO)
+
+    display = {
+        'name': ['Race:'],
+        'value': [div(class_="btn-group")(value, info_button)]}
+
+    info_row = {
+        'name': [div(class_="well", id_="inner-race-info")(
+            character['race']['description'], _safe=True)],
+        '_id': "race-info",
+        '_collapse': True}
+    collapse("race-info", info_button)
+
+    if not editing_privileges:
+        return (display, info_row)
+
+    edit_race = {
+        'name': [async_form(
+            form_name="race-form",
+            action=f"/api/{character['_id']}/race/",
+            inputs=[_race_input(character, races[race]) for race in races])],
+        '_id': "race-form",
+        '_collapse': True}
+    collapse("race-form", value, accordion_id="edit-accordion")
+
+    return (display, info_row, edit_race)
+
+def _experience(character, editing_privileges):
+    return {}
+
+def _class(character, editing_privileges, classes):
+    return {}
+
+def _general_table(character, editing_privileges, *, races, classes):
+    return b_table(
+        ['name', 'value'],
+        header_visibility=False,
+        body=[
+            *_race(character, editing_privileges, races),
+            {
+                'name': ['Level:'],
+                'value': [div(id_="level-value")(character['level'])]},
+            *_experience(character, editing_privileges),
+            *_class(character, editing_privileges, classes)])
 
 def _ability_edit_form(character, ability) -> form:
     common = {'type': 'number', 'min': -25, 'max': 25}
@@ -76,7 +141,13 @@ def _abilities_table(character, editing_privileges, abilities):
             editing_privileges,
             ability)])
 
-def general(character: dict, editing_privileges: bool, abilities: list) -> div:
+def general(
+        character: dict,
+        editing_privileges: bool,
+        *,
+        abilities: list,
+        classes: dict,
+        races: dict) -> div:
     """
     General panel for character page
 
@@ -94,7 +165,11 @@ def general(character: dict, editing_privileges: bool, abilities: list) -> div:
     return panel(
         [h4(class_="panel-title")(trigger)],
         [
-            _general_table(character),
+            _general_table(
+                character,
+                editing_privileges,
+                races=races,
+                classes=classes),
             h4("Abilities"),
             _abilities_table(character, editing_privileges, abilities)],
         [

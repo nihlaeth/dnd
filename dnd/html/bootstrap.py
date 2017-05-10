@@ -35,7 +35,7 @@ def alert(*content, style: Style=Style.SUCCESS) -> div:
 
 def a_button(
         *content,
-        url: str,
+        url: str="#",
         style: Style=Style.DEFAULT,
         block: bool=False,
         id_: str=None) -> a:
@@ -161,6 +161,45 @@ def collapse(
         if accordion_id is not None:
             trigger.attributes['data-parent'] = f"#{accordion_id}"
 
+def _form_input(item: dict, horizontal: Optional[list]=None):
+    if item['type'] == "hidden":
+        return (input_(**item),)
+
+    before = [] if 'before' not in item else item.pop('before')
+    after = [] if 'after' not in item else item.pop('after')
+
+
+    if item['type'] in ['radio', 'checkbox']:
+        label_content = item.pop('label')
+        form_input = input_(**item)
+        input_label = div(class_=item['type'])(
+            label(form_input, *label_content))
+        if horizontal is not None:
+            input_label = div(
+                class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(
+                    input_label)
+        return (*before, input_label, *after)
+
+    input_label = label(for_=item['id'])(
+        *item.pop('label')) if 'label' in item else ''
+    if horizontal is not None:
+        add_class(
+            input_label,
+            "control-label col-sm-{}".format(horizontal[0]))
+
+    form_input = input_(**item)
+    add_class(form_input, "form-control")
+    if horizontal is not None:
+        form_input = div(class_=f"col-sm-{horizontal[1]}")(
+            form_input)
+        if input_label == '':
+            add_class(form_input, f"col-sm-offset-{horizontal[0]}")
+
+    return (
+        *before,
+        div(class_="form-group")(input_label, form_input),
+        *after)
+
 def async_form(
         form_name: str,
         action: str,
@@ -192,32 +231,15 @@ def async_form(
     horizontal: is form horizontal? if None: no, otherwise supply list of
     small column widths for label and input ex: [2, 10]
 
-    no support yet for check buttons, radio buttons, option menus and
-    textareas
+    no support yet for option menus and textareas
     """
     id_base = sanitise_id(form_name)
     contents = []
-    if error_id is not None:
+    if error_id is None:
         error_id = f"{id_base}-errors"
         contents.append(div(id_=error_id))
     for item in inputs:
-        if item['type'] == "hidden":
-            contents.append(input_(**item))
-            continue
-        input_group = []
-        if 'label' in item:
-            input_group.append(
-                label(for_=item['id'])(*item.pop('label')))
-            if horizontal is not None:
-                add_class(
-                    input_group[0],
-                    "control-label col-sm-{}".format(horizontal[0]))
-        input_group.append(input_(**item))
-        add_class(input_group[-1], "form-control")
-        if horizontal is not None:
-            input_group[-1] = div(class_=f"col-sm-{horizontal[1]}")(
-                input_group[-1])
-        contents.append(div(class_="form-group")(*input_group))
+        contents.extend(_form_input(item, horizontal))
     if isinstance(submit_button, str):
         contents.append(b_button(submit_button, action="submit"))
     elif isinstance(submit_button, button):

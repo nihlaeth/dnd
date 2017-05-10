@@ -6,7 +6,14 @@ from dnd.themes.default.character.general import general
 from dnd.html.bootstrap import (
     Style, b_button, badge, collapse, async_form, grid)
 
-def character_(characters, editing_privileges, character, abilities):
+def character_(
+        characters,
+        editing_privileges,
+        character,
+        *,
+        abilities,
+        races,
+        classes):
     """Character page."""
     edit_name_button = b_button(
         "Edit", style=Style.INFO) if editing_privileges else ''
@@ -36,6 +43,11 @@ def character_(characters, editing_privileges, character, abilities):
             div(id_="edit-accordion")(grid(
                 {'width': 4, 'content': [div(class_="panel-group")(
                     actions(character),
-                    general(character, editing_privileges, abilities))]},
+                    general(
+                        character,
+                        editing_privileges,
+                        abilities=abilities,
+                        races=races,
+                        classes=classes))]},
                 {'width': 4, 'content': []},
                 {'width': 4, 'content': []}))])
