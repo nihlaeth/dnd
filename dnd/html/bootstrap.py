@@ -167,13 +167,14 @@ def _form_input(item: dict, horizontal: Optional[list]=None):
 
     before = [] if 'before' not in item else item.pop('before')
     after = [] if 'after' not in item else item.pop('after')
+    after_label = [] if 'after_label' not in item else item.pop('after_label')
 
 
     if item['type'] in ['radio', 'checkbox']:
         label_content = item.pop('label')
         form_input = input_(**item)
         input_label = div(class_=item['type'])(
-            label(form_input, *label_content))
+            label(form_input, *label_content), *after_label)
         if horizontal is not None:
             input_label = div(
                 class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(

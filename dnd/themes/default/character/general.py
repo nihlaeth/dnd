@@ -19,7 +19,8 @@ def _race_input(character: dict, race: dict) -> dict:
         'type': "radio",
         'name': "race",
         'value': race['name'],
-        'label': [race['name'], info_button],
+        'label': [race['name']],
+        'after_label': [info_button],
         'after': [info_well]}
     if race['name'] == character['race']['name']:
         result['checked'] = 'true'
