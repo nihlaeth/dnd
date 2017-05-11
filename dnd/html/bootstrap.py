@@ -55,7 +55,7 @@ def b_button(
         action: Optional[str]=None,
         id_: str=None) -> button:
     """Bootstrap button."""
-    tag = button(class_=f"btn")(*content)
+    tag = button(class_=f"btn", type_="button")(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
     if action is not None:
