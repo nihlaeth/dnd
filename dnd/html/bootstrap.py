@@ -143,7 +143,7 @@ def navigation(
             navigation_body))
 
 def collapse(
-        collapsible: Optional[Union[Tag, str]],
+        collapsible: Union[Tag, str],
         trigger: Optional[Tag]=None,
         accordion_id: Optional[str]=None) -> None:
     """Have one element collapse the other."""
