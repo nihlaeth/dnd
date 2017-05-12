@@ -52,14 +52,14 @@ def a_button(
 def b_button(
         *content,
         style: Style=Style.DEFAULT,
-        action: Optional[str]=None,
+        type_: Optional[str]=None,
         id_: str=None) -> button:
     """Bootstrap button."""
     tag = button(class_=f"btn", type_="button")(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
-    if action is not None:
-        tag.attributes['action'] = action
+    if type_ is not None:
+        tag.attributes['type'] = type_
     if id_ is not None:
         tag.attributes['id_'] = id_
     return tag
@@ -183,7 +183,7 @@ def _form_input(item: dict, horizontal: Optional[list]=None):
 
     input_label = label(for_=item['id'])(
         *item.pop('label')) if 'label' in item else ''
-    if horizontal is not None:
+    if horizontal is not None and input_label != '':
         add_class(
             input_label,
             "control-label col-sm-{}".format(horizontal[0]))
@@ -242,7 +242,7 @@ def async_form(
     for item in inputs:
         contents.extend(_form_input(item, horizontal))
     if isinstance(submit_button, str):
-        contents.append(b_button(submit_button, action="submit"))
+        contents.append(b_button(submit_button, type_="submit"))
     elif isinstance(submit_button, button):
         contents.append(submit_button)
     if horizontal is not None:

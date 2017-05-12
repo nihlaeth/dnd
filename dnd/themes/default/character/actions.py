@@ -15,7 +15,7 @@ def actions(character: dict) -> div:
         character data
     """
     trigger = a_button("Actions", url="#", style=Style.LINK, block=True)
-    rest_button = b_button("Rest", style=Style.SUCCESS, action="submit")
+    rest_button = b_button("Rest", style=Style.SUCCESS, type_="submit")
     add_class(rest_button, "btn-xs")
     return panel(
         [h4(class_="panel-title")(trigger)],

@@ -58,7 +58,32 @@ def _race(character, editing_privileges, races):
     return (display, info_row, edit_race)
 
 def _experience(character, editing_privileges):
-    return {}
+    value = character['xp']
+    if editing_privileges:
+        value = a_button(value, url="#", id_="xp-value")
+    display = {
+        'name': ['Experience:'],
+        'value': [value]}
+    if not editing_privileges:
+        return (display,)
+
+    edit_experience = {
+        'name': [async_form(
+            form_name="xp-form",
+            action=f"/api/{character['_id']}/xp/",
+            inputs=[{
+                'label': ["Experience:"],
+                'type': "number",
+                'id': "xp",
+                'name': "xp",
+                'value': character['xp'],
+                'min': "0"}],
+            horizontal=[5,5])],
+        '_id': "xp-form",
+        '_collapse': True}
+    collapse("xp-form", value, accordion_id="edit-accordion")
+
+    return (display, edit_experience)
 
 def _class(character, editing_privileges, classes):
     return {}
