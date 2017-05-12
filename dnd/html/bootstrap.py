@@ -8,7 +8,7 @@ from pyhtml import (
     ul, ol, li,
     span, div, nav,
     a, button,
-    form, input_, label,
+    form, input_, label, select, option,
 )
 
 from dnd.html.tools import add_class, sanitise_id
@@ -186,7 +186,16 @@ def _form_input(item: dict, horizontal: Optional[list]=None):
             input_label,
             "control-label col-sm-{}".format(horizontal[0]))
 
-    form_input = input_(**item)
+    if item['type'] == "select":
+        selected = item.pop('selected', None)
+        options = [option(
+            value=key,
+            selected="true" if key == selected else "false")(
+                *item['options'][key]) for key in item['options']]
+        del item['options']
+        form_input = select(**item)(*options)
+    else:
+        form_input = input_(**item)
     add_class(form_input, "form-control")
     if horizontal is not None:
         form_input = div(class_=f"col-sm-{horizontal[1]}")(
@@ -466,3 +475,36 @@ def panel(
     if style.value is not None:
         add_class(tag, f"panel-{style.value}")
     return tag
+
+def b_list(*items, type_: str="ul"):
+    """
+    TODO
+
+    TODO
+
+    Parameters
+    ----------
+    *items: TODO
+        TODO
+
+    Keyword Arguments
+    -----------------
+    type_: optional
+        currently unsupported, defaults to "ul"
+
+    Raises
+    ------
+    TODO
+
+    Returns
+    -------
+    TODO
+
+    Examples
+    --------
+    ..doctest::
+
+        >>> TODO
+    """
+    list_items = [li(class_="list-group-item")(*item['content']) for item in items]
+    return ul(class_="list-group")(*list_items)

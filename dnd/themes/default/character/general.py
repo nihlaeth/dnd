@@ -5,7 +5,7 @@ from dnd.html.tools import sanitise_id, add_class
 from dnd.html.bootstrap import (
     Style, collapse,
     a_button, b_button, b_label, badge, tooltip,
-    panel, b_table, async_form)
+    panel, b_table, async_form, b_list)
 
 def _race_input(character: dict, race: dict) -> dict:
     info_button = b_button('?', style=Style.INFO)
@@ -85,8 +85,56 @@ def _experience(character, editing_privileges):
 
     return (display, edit_experience)
 
+def class_form(character, classes):
+    """Form for selecting class per level."""
+    return async_form(
+        form_name="class-form",
+        action=f"/api/{character['_id']}/class/",
+        inputs=[{
+            'type': "select",
+            'name': str(level),
+            'options': {class_: [class_.capitalize()] for class_ in classes},
+            'selected': character['classes'][level - 1],
+            'id': f"level-{level}"} for level in range(
+                1, character['level'] + 1)],
+        horizontal=[1, 6])
+
 def _class(character, editing_privileges, classes):
-    return {}
+    # couple buttons and rows for class information collapsibles
+    info_rows = []
+    info_buttons = {}
+    for class_ in classes:
+        info_rows.append({
+            'name': [div(class_="well")(
+                classes[class_]['description'], _safe=True)],
+            '_collapse': True,
+            '_id': f"{class_}-info-table",
+            })
+        info_buttons[class_] = b_button("?", style=Style.INFO)
+        add_class(info_buttons[class_], "btn-xs")
+        collapse(
+            f"{class_}-info-table",
+            info_buttons[class_],
+            accordion_id="class-group")
+
+    value = b_list(*[{'content': [
+        class_.capitalize(),
+        b_label(character[class_]),
+        info_buttons[class_]]} for class_ in classes if character[class_] > 0])
+
+    if editing_privileges:
+        value = a_button(value, url="#", id_="class-value", block=True)
+
+    edit_form = {
+        'name': [div(class_="class-form-content")(class_form(character, classes))],
+        '_id': "class-form",
+        '_collapse': True}
+    collapse("class-form", value, accordion_id="edit-accordion")
+    display = {
+        'name': ['Class:'],
+        'value': [div(class_="btn-group")(value)]}
+
+    return (display, *info_rows, edit_form)
 
 def _general_table(character, editing_privileges, *, races, classes):
     return b_table(

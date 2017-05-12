@@ -28,6 +28,7 @@ from dnd.character import (
     convert_coins,
     calculate_stats)
 from dnd.themes.default.character.character import character_
+from dnd.themes.default.character.general import class_form
 
 async def get_character(request):
     """Fetch character from database."""
@@ -272,9 +273,7 @@ def _class_response_factory(response, character, app):
     response['#powers-section'] = {
         'collapse': "show" if character['warlock'] > 0 else "hide"}
     response['#class-form-content'] = {
-        'data': get_env(app).get_template(
-            'character_class_form.html').render(
-                character=character, classes=CLASSES),
+        'data': class_form(character, CLASSES).render(),
         'activateTooltip': True}
     _skill_response_factory(response, character, app)
     _spell_response_factory(response, character, app)
