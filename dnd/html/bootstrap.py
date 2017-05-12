@@ -52,14 +52,12 @@ def a_button(
 def b_button(
         *content,
         style: Style=Style.DEFAULT,
-        type_: Optional[str]=None,
+        type_: str="button",
         id_: str=None) -> button:
     """Bootstrap button."""
-    tag = button(class_=f"btn", type_="button")(*content)
+    tag = button(class_=f"btn", type_=type_)(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
-    if type_ is not None:
-        tag.attributes['type'] = type_
     if id_ is not None:
         tag.attributes['id_'] = id_
     return tag
