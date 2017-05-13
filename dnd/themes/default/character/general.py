@@ -1,11 +1,10 @@
 """Character general panel."""
-import copy
 from pyhtml import div, h4, form
 from dnd.html.tools import sanitise_id, add_class
 from dnd.html.bootstrap import (
     Style, collapse,
     a_button, b_button, b_label, badge, tooltip,
-    panel, b_table, b_tr, async_form, b_list)
+    panel, b_table, b_tr, async_form, b_input, b_list)
 
 def _race_input(character: dict, race: dict) -> dict:
     info_button = b_button('?', style=Style.INFO)
@@ -15,16 +14,15 @@ def _race_input(character: dict, race: dict) -> dict:
         id_=f"race-info-{sanitise_id(race['name'])}")(
             race['description'], _safe=True)
     collapse(info_well, info_button)
-    result = {
-        'type': "radio",
-        'name': "race",
-        'value': race['name'],
-        'label': [race['name']],
-        'after_label': [info_button],
-        'after': [info_well]}
-    if race['name'] == character['race']['name']:
-        result['checked'] = 'true'
-    return result
+    return (
+        b_input(
+            type_="radio",
+            name="race",
+            label_=race['name'],
+            after_label=info_button,
+            value=race['name'],
+            checked=True if race['name'] == character['race']['name'] else False),
+        info_well)
 
 def _race(character, editing_privileges, order, races):
     value = character['race']['name']
@@ -50,9 +48,10 @@ def _race(character, editing_privileges, order, races):
     edit_race = b_tr(
         order,
         name=async_form(
-            form_name="race-form",
-            action=f"/api/{character['_id']}/race/",
-            inputs=[_race_input(character, races[race]) for race in races]),
+            "race-form",
+            f"/api/{character['_id']}/race/",
+            *[item for race in races for item in _race_input(
+                character, races[race])]),
         id_="race-form")
     collapse(edit_race, value, accordion_id="edit-accordion")
 
@@ -72,15 +71,15 @@ def _experience(character, editing_privileges, order):
     edit_experience = b_tr(
         order,
         name=async_form(
-            form_name="xp-form",
-            action=f"/api/{character['_id']}/xp/",
-            inputs=[{
-                'label': ["Experience:"],
-                'type': "number",
-                'id': "xp",
-                'name': "xp",
-                'value': character['xp'],
-                'min': "0"}],
+            "xp-form",
+            f"/api/{character['_id']}/xp/",
+            b_input(
+                type_="number",
+                name="xp",
+                id_="xp",
+                label_="Experience:",
+                value=character['xp'],
+                min_="0"),
             horizontal=[5,5]),
         id_="xp-form")
     collapse(edit_experience, value, accordion_id="edit-accordion")
@@ -90,14 +89,14 @@ def _experience(character, editing_privileges, order):
 def class_form(character, classes):
     """Form for selecting class per level."""
     return async_form(
-        form_name="class-form",
-        action=f"/api/{character['_id']}/class/",
-        inputs=[{
-            'type': "select",
-            'name': str(level),
-            'options': {class_: [class_.capitalize()] for class_ in classes},
-            'selected': character['classes'][level - 1],
-            'id': f"level-{level}"} for level in range(
+        "class-form",
+        f"/api/{character['_id']}/class/",
+        *[b_input(
+            type_="select",
+            name=str(level),
+            id_=f"level-{level}",
+            options={class_: [class_.capitalize()] for class_ in classes},
+            selected=character['classes'][level - 1]) for level in range(
                 1, character['level'] + 1)],
         horizontal=[1, 6])
 
@@ -150,36 +149,38 @@ def _general_table(character, editing_privileges, *, races, classes):
         *_class(character, editing_privileges, order, classes))
 
 def _ability_edit_form(character, ability) -> form:
-    common = {'type': 'number', 'min': -25, 'max': 25}
-    base = copy.copy(common)
-    base.update({
-        'label': [tooltip(
-            "Base:",
-            title="base score that your roll at character creation")],
-        'min': 0,
-        'name': f"base-{ability}",
-        'id': f"base-{ability}",
-        'value': character[f'{ability}_base']})
-    level = copy.copy(common)
-    level.update({
-        'label': [tooltip(
-            "Attribute points:",
-            title="you get to alter one attribute by one point every four levels")],
-        'name': f"level-{ability}",
-        'id': f"level-{ability}",
-        'value': character[f'{ability}_level']})
-    temporary = copy.copy(common)
-    temporary.update({
-        'label': [tooltip(
-            "Temporary:",
-            title="temporary changes from spell effects")],
-        'name': f"temp-{ability}",
-        'id': f"temp-{ability}",
-        'value': character[f'{ability}_temp']})
     return async_form(
-        form_name=f"{ability}-form",
-        action=f"/api/{character['_id']}/ability/{ability}/",
-        inputs=[base, level, temporary],
+        f"{ability}-form",
+        f"/api/{character['_id']}/ability/{ability}/",
+        b_input(
+            type_='number',
+            name=f"base-{ability}",
+            id_=f"base-{ability}",
+            label_=tooltip(
+                "Base:",
+                title="base score that your roll at character creation"),
+            value=character[f'{ability}_base'],
+            min_=0),
+        b_input(
+            type_='number',
+            name=f"level-{ability}",
+            id_=f"level-{ability}",
+            label_=tooltip(
+                "Attribute points:",
+                title="you get to alter one attribute by one point every four levels"),
+            value=character[f'{ability}_level'],
+            min_=-25,
+            max_=25),
+        b_input(
+            type_='number',
+            name=f"temp-{ability}",
+            id_=f"temp-{ability}",
+            label_=tooltip(
+                "Temporary:",
+                title="temporary changes from spell effects"),
+            value=character[f'{ability}_temp'],
+            min_=-25,
+            max_=25),
         horizontal=[5, 5])
 
 def _ability_row(character, editing_privileges, ability):

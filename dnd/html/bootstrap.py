@@ -1,5 +1,4 @@
 """Bootstrap elements."""
-from types import GeneratorType
 from typing import Optional, Union
 from enum import Enum
 import uuid
@@ -12,7 +11,7 @@ from pyhtml import (
     form, input_, label, select, option,
 )
 
-from dnd.html.tools import add_class, sanitise_id
+from dnd.html.tools import add_class, sanitise_id, is_sequence
 
 class Style(Enum):
 
@@ -164,7 +163,10 @@ def _checkable(label_, after_label, selected, horizontal, **attributes):
     if label_ is None:
         raise AttributeError(
             "label_ is a required attribute for radio and checkbox inputs")
-    if selected is not None:
+    if not is_sequence(label_):
+        label_ = [label_]
+
+    if selected:
         attributes['selected'] = selected
     form_input = input_(**attributes)
     input_label = div(class_=attributes['type_'])(
@@ -181,7 +183,7 @@ def _label(id_, label_, horizontal):
     if id_ is None:
         raise AttributeError(
             "id_ is a required attribute if label_ is specified")
-    if isinstance(label_, (GeneratorType, list, tuple)):
+    if is_sequence(label_):
         input_label = label(for_=id_)(*label_)
     else:
         input_label = label(for_=id_)(label_)
@@ -194,7 +196,7 @@ def _label(id_, label_, horizontal):
 def _select(selected, options, **attributes):
     content = []
     for key in options:
-        if isinstance(options[key], (GeneratorType, list, tuple)):
+        if is_sequence(options[key]):
             options[key] = [options[key]]
         if selected == key:
             content.append(option(
@@ -264,12 +266,12 @@ def b_input(
 
     if after_label is None:
         after_label = []
-    if not isinstance(after_label, (GeneratorType, list, tuple)):
+    if not is_sequence(after_label):
         after_label = [after_label]
 
     if type_ in ['radio', 'checkbox']:
         return _checkable(
-            label_, after_label, selected, **attributes)
+            label_, after_label, selected, horizontal, **attributes)
 
     input_label = _label(id_, label_, horizontal)
 
@@ -421,7 +423,7 @@ def b_tr(
     contents = []
     for column in order:
         if column in cells:
-            if isinstance(cells[column], (GeneratorType, list, tuple)):
+            if is_sequence(cells[column]):
                 contents.append(td(*cells[column]))
             else:
                 contents.append(td(cells[column]))
@@ -475,7 +477,7 @@ def b_table(
     if header is not None:
         header_content = []
         for cell in header:
-            if isinstance(cell, (GeneratorType, list, tuple)):
+            if is_sequence(cell):
                 header_content.append(th(*cell))
             else:
                 header_content.append(th(cell))

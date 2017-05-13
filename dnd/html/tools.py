@@ -1,5 +1,6 @@
 """Tools for HTML generation."""
 import re
+from types import GeneratorType
 
 def add_class(tag, class_):
     """Ensure class is present in tag."""
@@ -24,3 +25,7 @@ def remove_class(tag, class_):
 def sanitise_id(text):
     """Make any string with at least one valid character a valid HTML id."""
     return "-".join(re.findall("[a-zA-Z0-9\\-_]*", text))
+
+def is_sequence(item):
+    """Test if item is a sequence but not a string."""
+    return not isinstance(item, str) and isinstance(item, (GeneratorType, list, tuple))
