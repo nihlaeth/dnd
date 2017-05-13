@@ -4,7 +4,7 @@ from dnd.themes.default.base import base
 from dnd.themes.default.character.actions import actions
 from dnd.themes.default.character.general import general
 from dnd.html.bootstrap import (
-    Style, b_button, badge, collapse, async_form, grid)
+    Style, b_button, badge, collapse, async_form, b_input, grid)
 
 def character_(
         characters,
@@ -19,15 +19,15 @@ def character_(
         "Edit", style=Style.INFO) if editing_privileges else ''
     edit_name_form = div(id_="edit-name-form")(
         async_form(
-            form_name="edit-name",
-            action=f"/api/{character['_id']}/name/",
+            "edit-name",
+            f"/api/{character['_id']}/name/",
+            b_input(
+                type_="input",
+                name="name",
+                id_="character-name",
+                label="Name:",
+                value=character['name']),
             submit_button="Edit",
-            inputs=[{
-                'label': ['Name:'],
-                'type': "input",
-                'id': "character-name",
-                'name': "name",
-                'value': character['name']}],
             inline=True)) if editing_privileges else ''
     collapse(edit_name_form, edit_name_button)
     return base(

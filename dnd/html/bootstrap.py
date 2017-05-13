@@ -160,43 +160,123 @@ def collapse(
         if accordion_id is not None:
             trigger.attributes['data-parent'] = f"#{accordion_id}"
 
-def _form_input(item: dict, horizontal: Optional[list]=None):
-    if item['type'] == "hidden":
-        return (input_(**item),)
+def _checkable(label_, after_label, selected, horizontal, **attributes):
+    if label_ is None:
+        raise AttributeError(
+            "label_ is a required attribute for radio and checkbox inputs")
+    if selected is not None:
+        attributes['selected'] = selected
+    form_input = input_(**attributes)
+    input_label = div(class_=attributes['type_'])(
+        label(form_input, *label_), *after_label)
+    if horizontal is not None:
+        input_label = div(
+            class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(
+                input_label)
+    return div(class_="form-group")(input_label)
 
-    before = [] if 'before' not in item else item.pop('before')
-    after = [] if 'after' not in item else item.pop('after')
-    after_label = [] if 'after_label' not in item else item.pop('after_label')
-
-
-    if item['type'] in ['radio', 'checkbox']:
-        label_content = item.pop('label')
-        form_input = input_(**item)
-        input_label = div(class_=item['type'])(
-            label(form_input, *label_content), *after_label)
-        if horizontal is not None:
-            input_label = div(
-                class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(
-                    input_label)
-        return (*before, input_label, *after)
-
-    input_label = label(for_=item['id'])(
-        *item.pop('label')) if 'label' in item else ''
+def _label(id_, label_, horizontal):
+    if label_ is None:
+        return ''
+    if id_ is None:
+        raise AttributeError(
+            "id_ is a required attribute if label_ is specified")
+    if isinstance(label_, (GeneratorType, list, tuple)):
+        input_label = label(for_=id_)(*label_)
+    else:
+        input_label = label(for_=id_)(label_)
     if horizontal is not None and input_label != '':
         add_class(
             input_label,
             "control-label col-sm-{}".format(horizontal[0]))
+    return input_label
 
-    if item['type'] == "select":
-        selected = item.pop('selected', None)
-        options = [option(
-            value=key,
-            selected="true" if key == selected else "false")(
-                *item['options'][key]) for key in item['options']]
-        del item['options']
-        form_input = select(**item)(*options)
+def _select(selected, options, **attributes):
+    content = []
+    for key in options:
+        if isinstance(options[key], (GeneratorType, list, tuple)):
+            options[key] = [options[key]]
+        if selected == key:
+            content.append(option(
+                value=key,
+                selected="true")(*options[key]))
+        else:
+            content.append(option(value=key)(*options[key]))
+    return select(**attributes)(*content)
+
+def b_input(
+        type_: str,
+        name: str,
+        id_: str=None,
+        label_: Optional[Union[list, Tag, str, int, float]]=None,
+        after_label: Union[list, Tag, str, int, float]=None,
+        selected: Optional[str]=None,
+        options: Optional[dict]=None,
+        horizontal: Optional[list]=None,
+        **attributes) -> Union[div, input_]:
+    """
+    Form input.
+
+    This currently supports any input except textareas.
+
+    Parameters
+    ----------
+    type
+        type of input (ex: number, radio, select)
+    name
+        name of the input field (you need this if you want to do anything
+        with the data)
+    id_: optional
+        id of the input field, required if label_ is specified, defaults to None
+    label_: optional
+        content of the label, defaults to None
+    after_label: optional
+        any content you want to place after the closing tag of the label,
+        defaults to None
+    selected: optional,
+        used for select, radio and checkbox type inputs. select expects a string
+        matching the key of the option, radio and checkboxes expect a Boolean,
+        defaults to None
+    options: optional,
+        keyvalue pairs used for select content, defaults to None
+    horizontal: optional
+        is form horizontal? if None: no, otherwise supply list of
+        small column widths for label and input ex: [2, 10], defaults to None
+
+    Keyword Arguments
+    -----------------
+    **attributes:
+        any HTML attribute you want assigned to the input
+
+    Raises
+    ------
+    AttributeError:
+        if label_ is missing for a radio or checkbox type input,
+        or if id_ is missing when label_ is specified.
+    """
+    attributes['type_'] = type_
+    attributes['name'] = name
+    if id_ is not None:
+        attributes['id_'] = id_
+
+    if type_ == "hidden":
+        return input_(**attributes)
+
+    if after_label is None:
+        after_label = []
+    if not isinstance(after_label, (GeneratorType, list, tuple)):
+        after_label = [after_label]
+
+    if type_ in ['radio', 'checkbox']:
+        return _checkable(
+            label_, after_label, selected, **attributes)
+
+    input_label = _label(id_, label_, horizontal)
+
+    if type_ == "select":
+        form_input = _select(selected, options, **attributes)
     else:
-        form_input = input_(**item)
+        form_input = input_(**attributes)
     add_class(form_input, "form-control")
     if horizontal is not None:
         form_input = div(class_=f"col-sm-{horizontal[1]}")(
@@ -204,64 +284,63 @@ def _form_input(item: dict, horizontal: Optional[list]=None):
         if input_label == '':
             add_class(form_input, f"col-sm-offset-{horizontal[0]}")
 
-    return (
-        *before,
-        div(class_="form-group")(input_label, form_input),
-        *after)
+    return div(class_="form-group")(input_label, *after_label, form_input)
 
 def async_form(
         form_name: str,
         action: str,
+        *content,
         submit_button: Union[str, button]="Submit",
-        inputs: Optional[list]=None,
         method: str="POST",
         inline: bool=False,
         horizontal: Optional[list]=None,
         error_id: Optional[str]=None) -> form:
     """
-    Simple asynchronous form.
+    Asynchronous form.
 
-    form_name: unique name used to generate ids inside the form
-    action: URL to send the data to
-    submit_text: text to put on the submit button
-    inputs = [
-        {
-            'label': [contents],
-            'type': 'number',
-            'id': 'some_number',
-            'name': 'some_number'
-            ... other input attributes
-        },
-        ...
-    ]
-    type, id and name are required.
-    method: submit method
-    inline: is form inline?
-    horizontal: is form horizontal? if None: no, otherwise supply list of
-    small column widths for label and input ex: [2, 10]
+    Parameters
+    ----------
+    form_name
+        unique name used to generate ids inside the form
+    action
+        URL to send the data to
+    *content
+        everything you want inside your form (use `b_input` to generate)
 
-    no support yet for option menus and textareas
+    Keyword Arguments
+    -----------------
+    submit_button: optional
+        either the text to use on the submit button, or in actual button,
+        defaults to Submit
+    method: optional
+        submit method, defaults to POST
+    inline: optional
+        is form inline? defaults to False
+    horizontal: optional
+        is form horizontal? if None: no, otherwise supply list of
+        small column widths for label and input (ex: `[2, 10]`), defaults to None
+    error_id: optional
+        id of the tag you want to use to store errors. if left empty, for will
+        have an internal field for this purpose, defaults to None
     """
     id_base = sanitise_id(form_name)
-    contents = []
+
+    error_field = ''
     if error_id is None:
         error_id = f"{id_base}-errors"
-        contents.append(div(id_=error_id))
-    for item in inputs:
-        contents.extend(_form_input(item, horizontal))
+        error_field = div(id_=error_id)
+
     if isinstance(submit_button, str):
-        contents.append(b_button(submit_button, type_="submit"))
-    elif isinstance(submit_button, button):
-        contents.append(submit_button)
+        submit_button = b_button(submit_button, type_="submit")
     if horizontal is not None:
-        contents[-1] = div(class_="form-group")(
+        submit_button = div(class_="form-group")(
             div(class_="col-sm-offset-{} col-sm-{}".format(*horizontal))(
-                contents[-1]))
+                submit_button))
     tag = form(
         data_async="true",
         data_target=f"#{error_id}",
         action=action,
-        method=method)(*contents)
+        method=method)(error_field, *content, submit_button)
     if inline:
         add_class(tag, "form-inline")
     if horizontal is not None:
@@ -305,11 +384,11 @@ def async_button(
     return async_form(
         form_name=form_name,
         action=action,
+        *[b_input(
+            type_='hidden',
+            name=name,
+            value=hidden_data[name]) for name in hidden_data],
         submit_button=submit_button,
-        inputs=[{
-            'name': name,
-            'type': 'hidden',
-            'value': hidden_data[name]} for name in hidden_data],
         error_id=error_id,
         inline=True)
 

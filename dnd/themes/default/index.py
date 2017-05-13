@@ -2,7 +2,8 @@
 from pyhtml import div, h1, br, tr
 from dnd.themes.default.base import base
 from dnd.html.bootstrap import (
-    Style, a_button, b_button, badge, collapse, async_form, b_table, b_tr)
+    Style, a_button, b_button, badge, collapse,
+    async_form, b_input, b_table, b_tr)
 
 # pylint: disable=invalid-name
 def _character_table_row(name, hp, _id, created_at, **_) -> tr:
@@ -32,15 +33,15 @@ def index(characters):
     add_character_button = b_button("Add", style=Style.INFO)
     add_character_form = div(id_="add-character-form")(
         async_form(
-            form_name="add-character",
-            action="/api/new-character/",
+            "add-character",
+            "/api/new-character/",
+            b_input(
+                type_="input",
+                name="name",
+                id_="character-name",
+                label_="Name:",
+                placeholer="Henk"),
             submit_button="Create",
-            inputs=[{
-                'label': ['Name:'],
-                'type': "input",
-                'id': "character-name",
-                'name': "name",
-                'placeholder': "Character name"}],
             inline=True))
     collapse(add_character_form, add_character_button)
 
