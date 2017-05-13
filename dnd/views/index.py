@@ -5,7 +5,7 @@ from aiohttp_login.decorators import restricted_api, login_required
 from aiohttp.web import json_response, Response
 from dnd.common import format_errors
 from dnd.character import calculate_stats
-from dnd.themes.default.index import index
+from dnd.themes.default.index import index_page
 
 @login_required
 async def index_handler(request):
@@ -23,7 +23,7 @@ async def index_handler(request):
         {'user_id': request['user']['_id']}).to_list(length=100)
     for character in characters:
         calculate_stats(character)
-    return Response(text=index(characters).render(), content_type='text/html')
+    return Response(text=index_page(characters).render(), content_type='text/html')
 
 @restricted_api
 async def new_character_data_handler(request):

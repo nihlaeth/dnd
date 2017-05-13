@@ -3,7 +3,7 @@ from pyhtml import div, h4
 from dnd.html.bootstrap import Style, a_button, b_button, async_button, panel
 from dnd.html.tools import add_class
 
-def actions(character: dict) -> div:
+def actions_panel(character: dict) -> div:
     """
     Actions panel for character page
 

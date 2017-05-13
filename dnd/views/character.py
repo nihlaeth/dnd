@@ -27,7 +27,7 @@ from dnd.character import (
     ARMOUR_AGES,
     convert_coins,
     calculate_stats)
-from dnd.themes.default.character.character import character_
+from dnd.themes.default.character.character import character_page
 from dnd.themes.default.character.general import class_form
 
 async def get_character(request):
@@ -63,13 +63,14 @@ async def character_handler(request):
     for character in characters:
         calculate_stats(character)
     errors, editing_privileges, character = await get_character(request)
-    return Response(text=character_(
+    return Response(text=character_page(
         characters,
         editing_privileges,
         character,
         abilities=ABILITIES,
         races=RACES,
-        classes=CLASSES).render(), content_type='text/html')
+        classes=CLASSES,
+        skills=SKILLS).render(), content_type='text/html')
     return {
         'spells': SPELLS,
         'prayers': PRAYERS,

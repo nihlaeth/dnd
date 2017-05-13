@@ -1,19 +1,21 @@
 """Character page."""
 from pyhtml import div, br, span
 from dnd.themes.default.base import base
-from dnd.themes.default.character.actions import actions
-from dnd.themes.default.character.general import general
+from dnd.themes.default.character.actions import actions_panel
+from dnd.themes.default.character.general import general_panel
+from dnd.themes.default.character.skills import skills_panel
 from dnd.html.bootstrap import (
     Style, b_button, badge, collapse, async_form, b_input, grid)
 
-def character_(
+def character_page(
         characters,
         editing_privileges,
         character,
         *,
         abilities,
         races,
-        classes):
+        classes,
+        skills):
     """Character page."""
     edit_name_button = b_button(
         "Edit", style=Style.INFO) if editing_privileges else ''
@@ -42,12 +44,14 @@ def character_(
             br(),
             div(id_="edit-accordion")(grid(
                 {'width': 4, 'content': [div(class_="panel-group")(
-                    actions(character),
-                    general(
+                    actions_panel(character),
+                    general_panel(
                         character,
                         editing_privileges,
                         abilities=abilities,
                         races=races,
                         classes=classes))]},
-                {'width': 4, 'content': []},
+                {'width': 4, 'content': [
+                    skills_panel(character, editing_privileges, skills),
+                ]},
                 {'width': 4, 'content': []}))])

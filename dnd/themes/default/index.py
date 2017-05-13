@@ -27,7 +27,7 @@ def _character_table(characters):
     table.children[0].attributes['id_'] = "character-table"
     return table
 
-def index(characters):
+def index_page(characters):
     """Index page."""
     # Create a form and a button that collapses it
     add_character_button = b_button("Add", style=Style.INFO)

@@ -222,7 +222,7 @@ def _abilities_table(character, editing_privileges, abilities):
             editing_privileges,
             ability)])
 
-def general(
+def general_panel(
         character: dict,
         editing_privileges: bool,
         *,
