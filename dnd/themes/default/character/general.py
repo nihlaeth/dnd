@@ -5,7 +5,7 @@ from dnd.html.tools import sanitise_id, add_class
 from dnd.html.bootstrap import (
     Style, collapse,
     a_button, b_button, b_label, badge, tooltip,
-    panel, b_table, async_form, b_list)
+    panel, b_table, b_tr, async_form, b_list)
 
 def _race_input(character: dict, race: dict) -> dict:
     info_button = b_button('?', style=Style.INFO)
@@ -26,49 +26,52 @@ def _race_input(character: dict, race: dict) -> dict:
         result['checked'] = 'true'
     return result
 
-def _race(character, editing_privileges, races):
+def _race(character, editing_privileges, order, races):
     value = character['race']['name']
     if editing_privileges:
         value = a_button(value, url="#", id_="race-value")
     info_button = b_button('?', style=Style.INFO)
 
-    display = {
-        'name': ['Race:'],
-        'value': [div(class_="btn-group")(value, info_button)]}
+    display = b_tr(
+        order,
+        name='Race:',
+        value=div(class_="btn-group")(value, info_button))
 
-    info_row = {
-        'name': [div(class_="well", id_="inner-race-info")(
-            character['race']['description'], _safe=True)],
-        '_id': "race-info",
-        '_collapse': True}
-    collapse("race-info", info_button)
+    info_row = b_tr(
+        order,
+        name=div(class_="well", id_="inner-race-info")(
+            character['race']['description'], _safe=True),
+        id_="race-info")
+    collapse(info_row, info_button)
 
     if not editing_privileges:
         return (display, info_row)
 
-    edit_race = {
-        'name': [async_form(
+    edit_race = b_tr(
+        order,
+        name=async_form(
             form_name="race-form",
             action=f"/api/{character['_id']}/race/",
-            inputs=[_race_input(character, races[race]) for race in races])],
-        '_id': "race-form",
-        '_collapse': True}
-    collapse("race-form", value, accordion_id="edit-accordion")
+            inputs=[_race_input(character, races[race]) for race in races]),
+        id_="race-form")
+    collapse(edit_race, value, accordion_id="edit-accordion")
 
     return (display, info_row, edit_race)
 
-def _experience(character, editing_privileges):
+def _experience(character, editing_privileges, order):
     value = character['xp']
     if editing_privileges:
         value = a_button(value, url="#", id_="xp-value")
-    display = {
-        'name': ['Experience:'],
-        'value': [value]}
+    display = b_tr(
+        order,
+        name='Experience:',
+        value=value)
     if not editing_privileges:
         return (display,)
 
-    edit_experience = {
-        'name': [async_form(
+    edit_experience = b_tr(
+        order,
+        name=async_form(
             form_name="xp-form",
             action=f"/api/{character['_id']}/xp/",
             inputs=[{
@@ -78,10 +81,9 @@ def _experience(character, editing_privileges):
                 'name': "xp",
                 'value': character['xp'],
                 'min': "0"}],
-            horizontal=[5,5])],
-        '_id': "xp-form",
-        '_collapse': True}
-    collapse("xp-form", value, accordion_id="edit-accordion")
+            horizontal=[5,5]),
+        id_="xp-form")
+    collapse(edit_experience, value, accordion_id="edit-accordion")
 
     return (display, edit_experience)
 
@@ -99,21 +101,20 @@ def class_form(character, classes):
                 1, character['level'] + 1)],
         horizontal=[1, 6])
 
-def _class(character, editing_privileges, classes):
+def _class(character, editing_privileges, order, classes):
     # couple buttons and rows for class information collapsibles
     info_rows = []
     info_buttons = {}
     for class_ in classes:
-        info_rows.append({
-            'name': [div(class_="well")(
-                classes[class_]['description'], _safe=True)],
-            '_collapse': True,
-            '_id': f"{class_}-info-table",
-            })
+        info_rows.append(b_tr(
+            order,
+            id_=f"{class_}-info-table",
+            name=div(class_="well")(
+                classes[class_]['description'], _safe=True)))
         info_buttons[class_] = b_button("?", style=Style.INFO)
         add_class(info_buttons[class_], "btn-xs")
         collapse(
-            f"{class_}-info-table",
+            info_rows[-1],
             info_buttons[class_],
             accordion_id="class-group")
 
@@ -125,28 +126,28 @@ def _class(character, editing_privileges, classes):
     if editing_privileges:
         value = a_button(value, url="#", id_="class-value", block=True)
 
-    edit_form = {
-        'name': [div(class_="class-form-content")(class_form(character, classes))],
-        '_id': "class-form",
-        '_collapse': True}
-    collapse("class-form", value, accordion_id="edit-accordion")
-    display = {
-        'name': ['Class:'],
-        'value': [div(class_="btn-group")(value)]}
+    edit_form = b_tr(
+        order,
+        id_="class-form",
+        name=div(class_="class-form-content")(class_form(character, classes)))
+    collapse(edit_form, value, accordion_id="edit-accordion")
+    display = b_tr(
+        order,
+        name='Class:',
+        value=div(class_="btn-group")(value))
 
     return (display, *info_rows, edit_form)
 
 def _general_table(character, editing_privileges, *, races, classes):
+    order = ['name', 'value']
     return b_table(
-        ['name', 'value'],
-        header_visibility=False,
-        body=[
-            *_race(character, editing_privileges, races),
-            {
-                'name': ['Level:'],
-                'value': [div(id_="level-value")(character['level'])]},
-            *_experience(character, editing_privileges),
-            *_class(character, editing_privileges, classes)])
+        *_race(character, editing_privileges, order, races),
+        b_tr(
+            order,
+            name="Level:",
+            value=div(id_="level-value")(character['level'])),
+        *_experience(character, editing_privileges, order),
+        *_class(character, editing_privileges, order, classes))
 
 def _ability_edit_form(character, ability) -> form:
     common = {'type': 'number', 'min': -25, 'max': 25}
@@ -182,35 +183,40 @@ def _ability_edit_form(character, ability) -> form:
         horizontal=[5, 5])
 
 def _ability_row(character, editing_privileges, ability):
-    display = {
-        '_id': f"{ability}-row",
-        'ability': [ability.capitalize()],
-        'value': [character[ability]],
-        'modifier': [badge(
-            character[f'{ability}_modifier'], id_=f"{ability}-modifier")]}
+    order = ['ability', 'value', 'modifier']
+    style = Style.BASIC
     if character[f'{ability}_temp'] < 0:
-        display['_style'] = Style.DANGER
+        style = Style.DANGER
     elif character[f'{ability}_temp'] > 0:
-        display['_style'] = Style.SUCCESS
+        style = Style.SUCCESS
+
+    value = character[ability]
+    if editing_privileges:
+        value = b_button(
+            value, id_=f"{ability}-value")
+    display = b_tr(
+        order,
+        id_=f"{ability}-row",
+        style=style,
+        ability=ability.capitalize(),
+        value=value,
+        modifier=badge(
+            character[f'{ability}_modifier'], id_=f"{ability}-modifier"))
     if not editing_privileges:
         return (display,)
-    display['value'][0] = b_button(
-        display['value'][0], id_=f"{ability}-value")
+    edit_form = b_tr(
+        order,
+        ability=_ability_edit_form(character, ability),
+        id_=f'{ability}-form')
     collapse(
-        f'{ability}-form',
-        display['value'][0],
+        edit_form,
+        value,
         accordion_id="edit-accordion")
-    edit_form = {
-        'ability': [_ability_edit_form(character, ability)],
-        '_id': f'{ability}-form',
-        '_collapse': True}
     return (display, edit_form)
 
 def _abilities_table(character, editing_privileges, abilities):
     return b_table(
-        ['ability', 'value', 'modifier'],
-        header_visibility=False,
-        body=[row for ability in abilities for row in _ability_row(
+        *[row for ability in abilities for row in _ability_row(
             character,
             editing_privileges,
             ability)])

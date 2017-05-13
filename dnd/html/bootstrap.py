@@ -1,4 +1,5 @@
 """Bootstrap elements."""
+from types import GeneratorType
 from typing import Optional, Union
 from enum import Enum
 import uuid
@@ -312,32 +313,57 @@ def async_button(
         error_id=error_id,
         inline=True)
 
-def _table_row(header, row) -> tr:
-    cells = []
-    for column in header:
-        if column in row:
-            cells.append(td(*row[column]))
+def b_tr(
+        order: list,
+        style:Style=Style.BASIC,
+        id_: Optional[str]=None,
+        **cells) -> tr:
+    """
+    Single table row.
+
+    Feed this to `b_table`.
+
+    Parameters
+    ----------
+    order
+        list with column names in order they appear in the table
+    style: optional
+        contextual style for row, defaults to Style.BASIC
+    id_: optional
+        value for ID attribute, defaults to None
+    collapsible: optional
+        whether this role should be collapsible, defaults to False
+
+    Keyword Arguments
+    -----------------
+    **cells: Union[Sequence, str, int, float]
+        contents of the columns defined in `order`
+    """
+    contents = []
+    for column in order:
+        if column in cells:
+            if isinstance(cells[column], (GeneratorType, list, tuple)):
+                contents.append(td(*cells[column]))
+            else:
+                contents.append(td(cells[column]))
             continue
-        if not cells:
-            cells.append(td())
+        if not contents:
+            contents.append(td())
             continue
-        if 'colspan' in cells[-1].attributes:
-            cells[-1].attributes['colspan'] += 1
+        if 'colspan' in contents[-1].attributes:
+            contents[-1].attributes['colspan'] += 1
         else:
-            cells[-1].attributes['colspan'] = 2
-    tag = tr(*cells)
-    if '_style' in row:
-        add_class(tag, row['_style'].value)
-    if '_collapse' in row:
-        collapse(tag)
-    if '_id' in row:
-        tag.attributes['id_'] = row['_id']
+            contents[-1].attributes['colspan'] = 2
+    tag = tr(*contents)
+    if style.value is not None:
+        add_class(tag, style.value)
+    if id_ is not None:
+        tag.attributes['id_'] = id_
     return tag
 
 def b_table(
-        header: list,
-        header_visibility: bool=True,
-        body: Optional[list]=None,
+        *rows: tr,
+        header: Optional[list]=None,
         condensed: bool=False,
         bordered: bool=False,
         striped: bool=False,
@@ -346,43 +372,36 @@ def b_table(
     """
     Bootstrap table.
 
-    header: list of strings that make up the table header and body
-        row indexes
-    header_visibility: whether to only use header for body ordering,
-        or to also display it
-    body:
-        body of the table
-    condensed: cut margins in half
-    bordered: display borders
-    striped: alternate white background and grey background for rows
-    hover: highlight row when mouse hovers over it
-    responsive: add horizontal scrolling for small screens
+    Parameters
+    ----------
+    *rows
+        table content, generate with `b_tr`
 
-    Example
-    =======
-    b_table(
-        header=['name', 'value'],
-        body=[
-            {
-                'name': ["mister", i(snuggles)],
-                'value': [5],
-                '_style': Style.INFO
-            },
-            {
-                'name': ["Marigold"],
-                'value': [42],
-                '_collapse': True,
-                '_id': "secret-name",
-            },
-        ]
-    )
+    Keyword Arguments
+    -----------------
+    header: optional
+        list with header contents (can be list, str, int or float), defaults to None
+    condensed: optional
+        cut margins in half, defaults to False
+    bordered: optional
+        display borders, defaults to False
+    striped: optional
+        alternate white background and grey background for rows, defaults to False
+    hover: optional
+        highlight row when mouse hovers over it, defaults to False
+    responsive: optional
+        add horizontal scrolling for small screens, defaults to False
     """
-    content = []
-    if header_visibility:
-        content.append(thead(tr(*[th(text) for text in header])))
-    if body is not None:
-        content.append(tbody(*[_table_row(header, row) for row in body]))
-    tag = table(class_="table")(*content)
+    table_head = ''
+    if header is not None:
+        header_content = []
+        for cell in header:
+            if isinstance(cell, (GeneratorType, list, tuple)):
+                header_content.append(th(*cell))
+            else:
+                header_content.append(th(cell))
+        table_head = thead(tr(*header_content))
+    tag = table(class_="table")(table_head, tbody(*rows))
 
     if condensed:
         add_class(tag, "table-condensed")

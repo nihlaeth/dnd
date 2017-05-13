@@ -1,11 +1,11 @@
 """Index page."""
-from pyhtml import div, h1, br
+from pyhtml import div, h1, br, tr
 from dnd.themes.default.base import base
 from dnd.html.bootstrap import (
-    Style, a_button, b_button, badge, collapse, async_form, b_table)
+    Style, a_button, b_button, badge, collapse, async_form, b_table, b_tr)
 
 # pylint: disable=invalid-name
-def _character_table_row(name, hp, _id, created_at, **_):
+def _character_table_row(name, hp, _id, created_at, **_) -> tr:
     """
     Render a row of the character table.
 
@@ -14,16 +14,15 @@ def _character_table_row(name, hp, _id, created_at, **_):
     `character['id_']` reduces visual noise
     """
     alive_badge = badge("R.I.P.") if hp < -9 else ''
-    return {
-        "Name": [a_button(name, url=f"/{_id}/{name}/"), alive_badge],
-        "Date created": [created_at.date()],
-    }
+    return b_tr(
+        ["name", "date"],
+        name=[a_button(name, url=f"/{_id}/{name}/"), alive_badge],
+        date=created_at.date())
 
 def _character_table(characters):
     table = b_table(
-        header=["Name", "Date created"],
-        body=[_character_table_row(**character) for character in characters],
-    )
+        *[_character_table_row(**character) for character in characters],
+        header=["Name", "Date created"])
     table.children[0].attributes['id_'] = "character-table"
     return table
 
