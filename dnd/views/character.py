@@ -13,6 +13,7 @@ from dnd.character import (
     ABILITIES,
     RACES,
     SKILLS,
+    SKILL_GROUPS,
     SPELLS,
     PRAYERS,
     PRAYER_SPHERES,
@@ -70,7 +71,8 @@ async def character_handler(request):
         abilities=ABILITIES,
         races=RACES,
         classes=CLASSES,
-        skills=SKILLS).render(), content_type='text/html')
+        skills=SKILLS,
+        skill_groups=SKILL_GROUPS).render(), content_type='text/html')
     return {
         'spells': SPELLS,
         'prayers': PRAYERS,

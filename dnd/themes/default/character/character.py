@@ -15,7 +15,8 @@ def character_page(
         abilities,
         races,
         classes,
-        skills):
+        skills,
+        skill_groups):
     """Character page."""
     edit_name_button = b_button(
         "Edit", style=Style.INFO) if editing_privileges else ''
@@ -52,6 +53,10 @@ def character_page(
                         races=races,
                         classes=classes))]},
                 {'width': 4, 'content': [
-                    skills_panel(character, editing_privileges, skills),
+                    skills_panel(
+                        character,
+                        editing_privileges,
+                        skills,
+                        skill_groups),
                 ]},
                 {'width': 4, 'content': []}))])

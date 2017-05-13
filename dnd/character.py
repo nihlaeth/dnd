@@ -18,6 +18,8 @@ SKILLS = {skill['name'].lower(): skill for skill in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/skills.yaml'),
     Loader=Loader) if skill is not None}
 
+SKILL_GROUPS = {SKILLS[skill]['group'] for skill in SKILLS}
+
 SPELLS = {spell['name'].lower(): spell for spell in load_all(
     resource_stream(Requirement.parse('dnd'), 'dnd/config/spells.yaml'),
     Loader=Loader) if spell is not None}

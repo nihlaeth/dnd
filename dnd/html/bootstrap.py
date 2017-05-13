@@ -53,11 +53,14 @@ def b_button(
         *content,
         style: Style=Style.DEFAULT,
         type_: str="button",
+        block: bool=False,
         id_: str=None) -> button:
     """Bootstrap button."""
     tag = button(class_=f"btn", type_=type_)(*content)
     if style.value is not None:
         add_class(tag, f"btn-{style.value}")
+    if block:
+        add_class(tag, "btn-block")
     if id_ is not None:
         tag.attributes['id_'] = id_
     return tag
@@ -159,15 +162,16 @@ def collapse(
         if accordion_id is not None:
             trigger.attributes['data-parent'] = f"#{accordion_id}"
 
-def _checkable(label_, after_label, selected, horizontal, **attributes):
+def _checkable(label_, after_label, horizontal, **attributes):
     if label_ is None:
         raise AttributeError(
             "label_ is a required attribute for radio and checkbox inputs")
+    if 'checked' in attributes and not attributes['checked']:
+        del attributes['checked']
+
     if not is_sequence(label_):
         label_ = [label_]
 
-    if selected:
-        attributes['selected'] = selected
     form_input = input_(**attributes)
     input_label = div(class_=attributes['type_'])(
         label(form_input, *label_), *after_label)
@@ -236,9 +240,7 @@ def b_input(
         any content you want to place after the closing tag of the label,
         defaults to None
     selected: optional,
-        used for select, radio and checkbox type inputs. select expects a string
-        matching the key of the option, radio and checkboxes expect a Boolean,
-        defaults to None
+        used for select type inputs, defaults to None
     options: optional,
         keyvalue pairs used for select content, defaults to None
     horizontal: optional
@@ -271,7 +273,7 @@ def b_input(
 
     if type_ in ['radio', 'checkbox']:
         return _checkable(
-            label_, after_label, selected, horizontal, **attributes)
+            label_, after_label, horizontal, **attributes)
 
     input_label = _label(id_, label_, horizontal)
 
